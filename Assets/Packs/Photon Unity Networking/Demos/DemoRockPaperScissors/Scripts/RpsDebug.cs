@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class RpsDebug : MonoBehaviour {
 
     [SerializeField]
-    private Button ConnectionDebugButton;
+    private Button ConnectionDebugButton = default;
 
     public bool ShowConnectionDebug;
 

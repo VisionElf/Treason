@@ -14,63 +14,62 @@ public class RpsCore : PunBehaviour, IPunTurnManagerCallbacks
 {
 
 	[SerializeField]
-	private RectTransform ConnectUiView;
+	private RectTransform ConnectUiView = default;
 
 	[SerializeField]
-	private RectTransform GameUiView;
+	private RectTransform GameUiView = default;
 
 	[SerializeField]
-	private CanvasGroup ButtonCanvasGroup;
+	private CanvasGroup ButtonCanvasGroup = default;
 
 	[SerializeField]
-	private RectTransform TimerFillImage;
+	private RectTransform TimerFillImage = default;
 
     [SerializeField]
-    private Text TurnText;
+    private Text TurnText = default;
 
     [SerializeField]
-    private Text TimeText;
+    private Text TimeText = default;
 
     [SerializeField]
-    private Text RemotePlayerText;
+    private Text RemotePlayerText = default;
 
     [SerializeField]
-    private Text LocalPlayerText;
+    private Text LocalPlayerText = default;
     
     [SerializeField]
-    private Image WinOrLossImage;
+    private Image WinOrLossImage = default;
 
 
     [SerializeField]
-    private Image localSelectionImage;
+    private Image localSelectionImage = default;
     public Hand localSelection;
 
     [SerializeField]
-    private Image remoteSelectionImage;
+    private Image remoteSelectionImage = default;
     public Hand remoteSelection;
 
 
     [SerializeField]
-    private Sprite SelectedRock;
+    private Sprite SelectedRock = default;
 
     [SerializeField]
-    private Sprite SelectedPaper;
+    private Sprite SelectedPaper = default;
 
     [SerializeField]
-    private Sprite SelectedScissors;
+    private Sprite SelectedScissors = default;
 
     [SerializeField]
-    private Sprite SpriteWin;
+    private Sprite SpriteWin = default;
 
     [SerializeField]
-    private Sprite SpriteLose;
+    private Sprite SpriteLose = default;
 
     [SerializeField]
-    private Sprite SpriteDraw;
+    private Sprite SpriteDraw = default;
 
 
-    [SerializeField]
-    private RectTransform DisconnectedPanel;
+    [SerializeField] private RectTransform DisconnectedPanel = default;
 
     private ResultType result;
 

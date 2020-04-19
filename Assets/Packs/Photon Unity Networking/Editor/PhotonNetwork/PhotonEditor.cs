@@ -155,7 +155,7 @@ public class PhotonEditor : EditorWindow
 		EditorApplication.playmodeStateChanged += PlaymodeStateChanged;
 		#endif
 
-        #if UNITY_2018
+        #if UNITY_2018_1_OR_NEWER
 		EditorApplication.projectChanged += EditorUpdate;
         EditorApplication.hierarchyChanged += EditorUpdate;
         #else
