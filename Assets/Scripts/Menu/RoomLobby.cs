@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CustomExtensions;
 using ExitGames.UtilityScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -33,6 +34,29 @@ namespace Menu
         {
             byte evCode = 1;
             object[] content = {new Vector3(10.0f, 2.0f, 5.0f), 1, 2, 5, 10};
+
+            List<Color> colors = new List<Color>
+            {
+                Color.red,
+                Color.blue,
+                Color.green,
+                Color.cyan,
+                Color.black,
+                Color.white,
+                Color.yellow,
+                Color.magenta,
+            };
+
+            colors.Shuffle();
+
+            for (var i = 0; i < PhotonNetwork.playerList.Length; i++)
+            {
+                var p = PhotonNetwork.playerList[i];
+                var color = colors[i];
+                var colorStr = ColorUtility.ToHtmlStringRGB(color);
+                PhotonNetwork.playerList[i].SetCustomProperty("Color", "#" + colorStr);
+            }
+
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             PhotonNetwork.RaiseEvent(evCode, content, true, raiseEventOptions);
         }

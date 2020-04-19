@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using CustomExtensions;
 using Managers;
 using TMPro;
 using UnityEngine;
@@ -84,11 +85,9 @@ namespace Menu
         {
             while (PhotonNetwork.connected)
             {
-                var customProps = new Hashtable
-                {
-                    ["Ping"] = PhotonNetwork.GetPing().ToString()
-                };
-                PhotonNetwork.player.SetCustomProperties(customProps);
+                var ping = PhotonNetwork.GetPing().ToString();
+                PhotonNetwork.player.SetCustomProperty("Ping", ping);
+                
                 yield return new WaitForSecondsRealtime(1f);
             }
         }

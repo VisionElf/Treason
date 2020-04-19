@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using CustomExtensions;
+using TMPro;
 using UnityEngine;
 using MonoBehaviour = Photon.MonoBehaviour;
 
@@ -8,6 +9,7 @@ public class Player : MonoBehaviour
     public Animator animator;
     public float speed;
     public Transform flipTransform;
+    public SpriteRenderer bodyRenderer;
     
     public float visionRange;
     public SpriteMask visionMask;
@@ -24,6 +26,12 @@ public class Player : MonoBehaviour
         {
             isLocalCharacter = photonView.isMine;
             playerNameText.text = photonView.owner.NickName;
+
+            var colorStr = photonView.owner.GetCustomProperty("Color", "#FFFFFF");
+            var color = Color.white;
+            if (ColorUtility.TryParseHtmlString(colorStr, out var tmp))
+                color = tmp;
+            bodyRenderer.color = color;
         }
 
         if (!isLocalCharacter)
