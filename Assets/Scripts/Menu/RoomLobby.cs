@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using ExitGames.Client.Photon;
+﻿using System.Collections.Generic;
 using ExitGames.UtilityScripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Menu
 {
@@ -11,6 +10,7 @@ namespace Menu
     {
         public PlayerItem playerItemPrefab;
         public RectTransform playerItemContainer;
+        public Button startButton;
 
         private List<PlayerItem> _playerItems;
 
@@ -57,6 +57,8 @@ namespace Menu
 
             foreach (var player in list)
                 CreatePlayerItem(player);
+
+            startButton.interactable = PhotonNetwork.isMasterClient;
         }
 
         private void ClearPlayerItems()

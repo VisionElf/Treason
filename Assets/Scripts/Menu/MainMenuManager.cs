@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using TMPro;
 using UnityEngine;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Menu
 {
@@ -49,6 +51,19 @@ namespace Menu
             Application.Quit();
         }
 
+        private IEnumerator UpdatePing()
+        {
+            while (PhotonNetwork.connected)
+            {
+                var customProps = new Hashtable
+                {
+                    ["Ping"] = PhotonNetwork.GetPing().ToString()
+                };
+                PhotonNetwork.player.SetCustomProperties(customProps);
+                yield return new WaitForSecondsRealtime(1f);
+            }
+        }
+
         public void OnJoinedLobby()
         {
             Debug.Log("OnJoinedLobby");
@@ -76,6 +91,7 @@ namespace Menu
         public void OnConnectedToPhoton()
         {
             Debug.Log("OnConnectedToPhoton");
+            StartCoroutine(UpdatePing());
         }
 
         public void OnLeftRoom()
@@ -117,6 +133,12 @@ namespace Menu
                 var obj = codeAndMsg[i];
                 Debug.Log($"{i}: {obj}");
             }
+        }
+
+        private void PrintHashtable(Hashtable table)
+        {
+            foreach (var t in table)
+                Debug.Log($"{t.Key} - {t.Value}");
         }
 
         public void OnLeftLobby()
@@ -169,7 +191,8 @@ namespace Menu
 
         public void OnPhotonCustomRoomPropertiesChanged(Hashtable propertiesThatChanged)
         {
-            Debug.Log("OnPhotonCustomRoomPropertiesChanged " + propertiesThatChanged);
+            Debug.Log("OnPhotonCustomRoomPropertiesChanged");
+            PrintHashtable(propertiesThatChanged);
         }
 
         public void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
