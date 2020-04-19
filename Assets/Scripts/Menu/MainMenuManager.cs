@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using Managers;
+using TMPro;
 using UnityEngine;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
@@ -10,13 +11,16 @@ namespace Menu
         public GameObject mainMenu;
         public RoomList roomList;
         public RoomLobby roomLobby;
+        public TMP_InputField playerNameInputField;
         
         private string _playerName;
         private const string KPrefsPlayerName = "Player_Name";
 
         private void Awake()
         {
-            ChangeName(PlayerPrefs.GetString(KPrefsPlayerName, ""));
+            var savedName = PlayerPrefs.GetString(KPrefsPlayerName, "");
+            playerNameInputField.text = savedName;
+            ChangeName(savedName);
         }
 
         private void Start()
@@ -50,8 +54,6 @@ namespace Menu
         {
             if (!string.IsNullOrEmpty(_playerName))
             {
-                PhotonNetwork.player.NickName = _playerName;
-
                 var roomName = $"{_playerName}'s Room";
                 NetworkManager.CreateRoom(roomName);
             }
@@ -61,7 +63,6 @@ namespace Menu
         {
             if (!string.IsNullOrEmpty(_playerName))
             {
-                PhotonNetwork.player.NickName = _playerName;
                 PhotonNetwork.JoinLobby(TypedLobby.Default);
             }
         }
@@ -75,7 +76,9 @@ namespace Menu
         {
             _playerName = newName;
             PlayerPrefs.SetString(KPrefsPlayerName, _playerName);
-            PlayerPrefs.Save();        }
+            PlayerPrefs.Save();
+            PhotonNetwork.player.NickName = _playerName;
+        }
 
         private IEnumerator UpdatePing()
         {

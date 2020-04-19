@@ -2117,6 +2117,7 @@ MonoBehaviour:
   mainMenu: {fileID: 714222980}
   roomList: {fileID: 461423483}
   roomLobby: {fileID: 887764744}
+  playerNameInputField: {fileID: 1656733149}
 --- !u!1 &1026375202
 GameObject:
   m_ObjectHideFlags: 0

@@ -337,7 +337,7 @@ MonoBehaviour:
   animator: {fileID: 7412298972117744014}
   speed: 6
   flipTransform: {fileID: 7460072665736409608}
-  visionRange: 18
+  visionRange: 25
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
 --- !u!114 &7460623510227591475
@@ -385,7 +385,7 @@ MonoBehaviour:
     TeleportIfDistanceGreaterThan: 3
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 6
+    InterpolateLerpSpeed: 8
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
