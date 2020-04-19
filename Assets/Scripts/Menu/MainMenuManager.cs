@@ -1,48 +1,68 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using ExitGames.Client.Photon;
-using TMPro;
+using Managers;
 using UnityEngine;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Menu
 {
-    public class MainMenuManager : MonoBehaviour, IPunCallbacks
+    public class MainMenuManager : MonoBehaviour
     {
         public GameObject mainMenu;
         public RoomList roomList;
         public RoomLobby roomLobby;
         
-        public TMP_InputField nameInputField;
+        private string _playerName;
+        private const string KPrefsPlayerName = "Player_Name";
+
+        private void Awake()
+        {
+            ChangeName(PlayerPrefs.GetString(KPrefsPlayerName, ""));
+        }
 
         private void Start()
         {
             PhotonNetwork.ConnectToRegion(CloudRegionCode.eu, Application.version);
         }
-        
+
+        private void OnEnable()
+        {
+            NetworkManager.onConnectedToPhoton += StartPingUpdate;
+            NetworkManager.onJoinedLobby += ShowRoomList;
+            NetworkManager.onLeftRoom += ShowMainMenu;
+            NetworkManager.onJoinedRoom += ShowRoomLobby;
+            NetworkManager.onRoomListUpdate += UpdateRoomList;
+            NetworkManager.onPhotonPlayerConnected += UpdatePlayerList;
+            NetworkManager.onPhotonPlayerDisconnected += UpdatePlayerList;
+        }
+
+        private void OnDisable()
+        {
+            NetworkManager.onConnectedToPhoton -= StartPingUpdate;
+            NetworkManager.onJoinedLobby -= ShowRoomList;
+            NetworkManager.onLeftRoom -= ShowMainMenu;
+            NetworkManager.onJoinedRoom -= ShowRoomLobby;
+            NetworkManager.onRoomListUpdate -= UpdateRoomList;
+            NetworkManager.onPhotonPlayerConnected -= UpdatePlayerList;
+            NetworkManager.onPhotonPlayerDisconnected -= UpdatePlayerList;
+        }
+
         public void CreateRoom()
         {
-            var playerName = nameInputField.text;
-            if (!string.IsNullOrEmpty(playerName))
+            if (!string.IsNullOrEmpty(_playerName))
             {
-                PhotonNetwork.player.NickName = playerName;
-                
-                var roomName = $"{playerName}'s Room";
-                var options = new RoomOptions
-                {
-                    MaxPlayers = 10
-                };
-                PhotonNetwork.CreateRoom(roomName, options, TypedLobby.Default);
+                PhotonNetwork.player.NickName = _playerName;
+
+                var roomName = $"{_playerName}'s Room";
+                NetworkManager.CreateRoom(roomName);
             }
         }
 
         public void JoinLobby()
         {
-            var playerName = nameInputField.text;
-            if (!string.IsNullOrEmpty(playerName))
+            if (!string.IsNullOrEmpty(_playerName))
             {
-                PhotonNetwork.player.NickName = playerName;
-                PhotonNetwork.JoinLobby(TypedLobby.Default);   
+                PhotonNetwork.player.NickName = _playerName;
+                PhotonNetwork.JoinLobby(TypedLobby.Default);
             }
         }
 
@@ -50,6 +70,12 @@ namespace Menu
         {
             Application.Quit();
         }
+
+        public void ChangeName(string newName)
+        {
+            _playerName = newName;
+            PlayerPrefs.SetString(KPrefsPlayerName, _playerName);
+            PlayerPrefs.Save();        }
 
         private IEnumerator UpdatePing()
         {
@@ -64,180 +90,38 @@ namespace Menu
             }
         }
 
-        public void OnJoinedLobby()
+        private void StartPingUpdate()
         {
-            Debug.Log("OnJoinedLobby");
-            roomList.Show();
-        }
-
-        public void OnReceivedRoomListUpdate()
-        {
-            Debug.Log("OnReceivedRoomListUpdate");
-            var rooms = PhotonNetwork.GetRoomList();
-            roomList.UpdateRoomList(rooms);
-        }
-        
-        public void OnConnectedToMaster()
-        {
-            Debug.Log("OnConnectedToMaster");
-        }
-
-        public void OnCreatedRoom()
-        {
-            Debug.Log("OnCreatedRoom");
-            Debug.Log(PhotonNetwork.room.Name);
-        }
-
-        public void OnConnectedToPhoton()
-        {
-            Debug.Log("OnConnectedToPhoton");
             StartCoroutine(UpdatePing());
         }
 
-        public void OnLeftRoom()
+        private void ShowRoomList()
         {
-            Debug.Log("OnLeftRoom");
+            roomList.Show();
+        }
+
+        private void UpdateRoomList()
+        {
+            var rooms = PhotonNetwork.GetRoomList();
+            roomList.UpdateRoomList(rooms);
+        }
+
+        private void ShowMainMenu()
+        {
             roomLobby.Hide();
             mainMenu.SetActive(true);
         }
 
-        public void OnJoinedRoom()
+        private void ShowRoomLobby()
         {
-            Debug.Log("OnJoinedRoom");
             mainMenu.SetActive(false);
             roomLobby.Show();
             roomLobby.UpdatePlayerList();
         }
 
-        public void OnMasterClientSwitched(PhotonPlayer newMasterClient)
+        private void UpdatePlayerList(PhotonPlayer newPlayer)
         {
-            Debug.Log("OnMasterClientSwitched " + newMasterClient);
-        }
-
-        public void OnPhotonCreateRoomFailed(object[] codeAndMsg)
-        {
-            Debug.Log("OnPhotonCreateRoomFailed " + codeAndMsg);
-            PrintArray(codeAndMsg);
-        }
-
-        public void OnPhotonJoinRoomFailed(object[] codeAndMsg)
-        {
-            Debug.Log("OnPhotonJoinRoomFailed");
-            PrintArray(codeAndMsg);
-        }
-
-        private void PrintArray(object[] codeAndMsg)
-        {
-            for (var i = 0; i < codeAndMsg.Length; i++)
-            {
-                var obj = codeAndMsg[i];
-                Debug.Log($"{i}: {obj}");
-            }
-        }
-
-        private void PrintHashtable(Hashtable table)
-        {
-            foreach (var t in table)
-                Debug.Log($"{t.Key} - {t.Value}");
-        }
-
-        public void OnLeftLobby()
-        {
-            Debug.Log("OnLeftLobby");
-        }
-
-        public void OnFailedToConnectToPhoton(DisconnectCause cause)
-        {
-            Debug.Log("OnFailedToConnectToPhoton " + cause);
-        }
-
-        public void OnConnectionFail(DisconnectCause cause)
-        {
-            Debug.Log("OnConnectionFail " + cause);
-        }
-
-        public void OnDisconnectedFromPhoton()
-        {
-            Debug.Log("OnDisconnectedFromPhoton");
-        }
-
-        public void OnPhotonInstantiate(PhotonMessageInfo info)
-        {
-            Debug.Log("OnPhotonInstantiate " + info);
-        }
-
-        public void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
-        {
-            Debug.Log("OnPhotonPlayerConnected " + newPlayer);
             roomLobby.UpdatePlayerList();
-        }
-
-        public void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
-        {
-            Debug.Log("OnPhotonPlayerDisconnected " + otherPlayer);
-            roomLobby.UpdatePlayerList();
-        }
-
-        public void OnPhotonRandomJoinFailed(object[] codeAndMsg)
-        {
-            Debug.Log("OnPhotonRandomJoinFailed");
-            PrintArray(codeAndMsg);
-        }
-
-        public void OnPhotonMaxCccuReached()
-        {
-            Debug.Log("OnPhotonMaxCccuReached");
-        }
-
-        public void OnPhotonCustomRoomPropertiesChanged(Hashtable propertiesThatChanged)
-        {
-            Debug.Log("OnPhotonCustomRoomPropertiesChanged");
-            PrintHashtable(propertiesThatChanged);
-        }
-
-        public void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
-        {
-            Debug.Log("OnPhotonPlayerPropertiesChanged " + playerAndUpdatedProps);
-        }
-
-        public void OnUpdatedFriendList()
-        {
-            Debug.Log("OnUpdatedFriendList");
-        }
-
-        public void OnCustomAuthenticationFailed(string debugMessage)
-        {
-            Debug.Log("OnCustomAuthenticationFailed " + debugMessage);
-        }
-
-        public void OnCustomAuthenticationResponse(Dictionary<string, object> data)
-        {
-            Debug.Log("OnCustomAuthenticationResponse " + data);
-        }
-
-        public void OnWebRpcResponse(OperationResponse response)
-        {
-            Debug.Log("OnWebRpcResponse " + response);
-        }
-
-        public void OnOwnershipRequest(object[] viewAndPlayer)
-        {
-            Debug.Log("OnOwnershipRequest " + viewAndPlayer);
-        }
-
-        public void OnLobbyStatisticsUpdate()
-        {
-            Debug.Log("OnLobbyStatisticsUpdate");
-        }
-
-        public void OnPhotonPlayerActivityChanged(PhotonPlayer otherPlayer)
-        {
-            Debug.Log("OnPhotonPlayerActivityChanged " + otherPlayer);
-        }
-
-        public void OnOwnershipTransfered(object[] viewAndPlayers)
-        {
-            Debug.Log("OnOwnershipTransfered " + viewAndPlayers);
         }
     }
 }
