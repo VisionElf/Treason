@@ -1,9 +1,11 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using CustomExtensions;
 using Managers;
+using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine;
-using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Menu
 {
@@ -26,7 +28,7 @@ namespace Menu
 
         private void Start()
         {
-            PhotonNetwork.ConnectToRegion(CloudRegionCode.eu, Application.version);
+            PhotonNetwork.ConnectUsingSettings();
         }
 
         private void OnEnable()
@@ -36,8 +38,8 @@ namespace Menu
             NetworkManager.onLeftRoom += ShowMainMenu;
             NetworkManager.onJoinedRoom += ShowRoomLobby;
             NetworkManager.onRoomListUpdate += UpdateRoomList;
-            NetworkManager.onPhotonPlayerConnected += UpdatePlayerList;
-            NetworkManager.onPhotonPlayerDisconnected += UpdatePlayerList;
+            NetworkManager.onPlayerEnteredRoom += UpdatePlayerList;
+            NetworkManager.onPlayerLeftRoom += UpdatePlayerList;
         }
 
         private void OnDisable()
@@ -47,8 +49,8 @@ namespace Menu
             NetworkManager.onLeftRoom -= ShowMainMenu;
             NetworkManager.onJoinedRoom -= ShowRoomLobby;
             NetworkManager.onRoomListUpdate -= UpdateRoomList;
-            NetworkManager.onPhotonPlayerConnected -= UpdatePlayerList;
-            NetworkManager.onPhotonPlayerDisconnected -= UpdatePlayerList;
+            NetworkManager.onPlayerEnteredRoom -= UpdatePlayerList;
+            NetworkManager.onPlayerLeftRoom -= UpdatePlayerList;
         }
 
         public void CreateRoom()
@@ -78,15 +80,15 @@ namespace Menu
             _playerName = newName;
             PlayerPrefs.SetString(KPrefsPlayerName, _playerName);
             PlayerPrefs.Save();
-            PhotonNetwork.player.NickName = _playerName;
+            PhotonNetwork.LocalPlayer.NickName = _playerName;
         }
 
         private IEnumerator UpdatePing()
         {
-            while (PhotonNetwork.connected)
+            while (PhotonNetwork.IsConnected)
             {
                 var ping = PhotonNetwork.GetPing().ToString();
-                PhotonNetwork.player.SetCustomProperty("Ping", ping);
+                PhotonNetwork.LocalPlayer.SetCustomProperty("Ping", ping);
 
                 yield return new WaitForSecondsRealtime(1f);
             }
@@ -102,10 +104,9 @@ namespace Menu
             roomList.Show();
         }
 
-        private void UpdateRoomList()
+        private void UpdateRoomList(List<RoomInfo> roomInfos)
         {
-            var rooms = PhotonNetwork.GetRoomList();
-            roomList.UpdateRoomList(rooms);
+            roomList.UpdateRoomList(roomInfos);
         }
 
         private void ShowMainMenu()
@@ -121,7 +122,7 @@ namespace Menu
             roomLobby.UpdatePlayerList();
         }
 
-        private void UpdatePlayerList(PhotonPlayer newPlayer)
+        private void UpdatePlayerList(Player player)
         {
             roomLobby.UpdatePlayerList();
         }

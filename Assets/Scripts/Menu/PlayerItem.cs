@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using CustomExtensions;
+using Photon.Realtime;
 
 namespace Menu
 {
@@ -11,9 +12,9 @@ namespace Menu
         public Image hostIcon;
         public TMP_Text pingText;
 
-        private PhotonPlayer _player;
+        private Player _player;
 
-        public void SetPlayer(PhotonPlayer player)
+        public void SetPlayer(Player player)
         {
             _player = player;
 

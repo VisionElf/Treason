@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using CustomExtensions;
-using ExitGames.UtilityScripts;
+using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -22,12 +24,12 @@ namespace Menu
 
         private void OnEnable()
         {
-            PhotonNetwork.OnEventCall += OnEvent;
+            PhotonNetwork.NetworkingClient.EventReceived += OnEvent;
         }
 
         private void OnDisable()
         {
-            PhotonNetwork.OnEventCall -= OnEvent;
+            PhotonNetwork.NetworkingClient.EventReceived -= OnEvent;
         }
 
         public void StartGame()
@@ -49,21 +51,23 @@ namespace Menu
 
             colors.Shuffle();
 
-            for (var i = 0; i < PhotonNetwork.playerList.Length; i++)
+            for (var i = 0; i < PhotonNetwork.PlayerList.Length; i++)
             {
-                var p = PhotonNetwork.playerList[i];
+                var p = PhotonNetwork.PlayerList[i];
                 var color = colors[i];
                 var colorStr = ColorUtility.ToHtmlStringRGB(color);
-                PhotonNetwork.playerList[i].SetCustomProperty("Color", "#" + colorStr);
+                PhotonNetwork.PlayerList[i].SetCustomProperty("Color", "#" + colorStr);
             }
 
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions {Receivers = ReceiverGroup.All};
-            PhotonNetwork.RaiseEvent(evCode, content, true, raiseEventOptions);
+            SendOptions sendOptions = new SendOptions { Reliability = true };
+            
+            PhotonNetwork.RaiseEvent(evCode, content, raiseEventOptions, sendOptions);
         }
 
-        private void OnEvent(byte eventcode, object content, int senderid)
+        private void OnEvent(EventData eventData)
         {
-            if (eventcode == 1)
+            if (eventData.Code == 1)
                 SceneManager.LoadScene(1, LoadSceneMode.Single);
         }
 
@@ -76,13 +80,13 @@ namespace Menu
         {
             ClearPlayerItems();
 
-            var list = new List<PhotonPlayer>(PhotonNetwork.playerList);
-            list.Sort((a, b) => b.GetRoomIndex().CompareTo(a.GetRoomIndex()));
+            var list = new List<Player>(PhotonNetwork.PlayerList);
+            list.Sort((a, b) => b.ActorNumber.CompareTo(a.ActorNumber));
 
             foreach (var player in list)
                 CreatePlayerItem(player);
 
-            startButton.interactable = PhotonNetwork.isMasterClient;
+            startButton.interactable = PhotonNetwork.IsMasterClient;
         }
 
         private void ClearPlayerItems()
@@ -93,7 +97,7 @@ namespace Menu
             _playerItems.Clear();
         }
 
-        private void CreatePlayerItem(PhotonPlayer player)
+        private void CreatePlayerItem(Player player)
         {
             var item = Instantiate(playerItemPrefab, playerItemContainer);
             item.SetPlayer(player);

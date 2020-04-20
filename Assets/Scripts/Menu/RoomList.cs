@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 namespace Menu
@@ -35,7 +37,7 @@ namespace Menu
             _roomItems.Clear();
         }
 
-        public void UpdateRoomList(RoomInfo[] rooms)
+        public void UpdateRoomList(List<RoomInfo> rooms)
         {
             ClearRoomItems();
 
