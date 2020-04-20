@@ -11,7 +11,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PhotonTransformViewRotationControl 
+public class PhotonTransformViewRotationControl
 {
     PhotonTransformViewRotationModel m_Model;
     Quaternion m_NetworkRotation;

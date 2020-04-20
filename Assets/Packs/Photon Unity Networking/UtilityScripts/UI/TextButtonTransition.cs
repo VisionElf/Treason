@@ -8,9 +8,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-using UnityEngine;  
-using System.Collections;  
-using UnityEngine.EventSystems;  
+using UnityEngine;
+using System.Collections;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ExitGames.UtilityScripts
@@ -21,7 +21,7 @@ namespace ExitGames.UtilityScripts
 	/// </summary>
 	[RequireComponent(typeof(Text))]
 	public class TextButtonTransition : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
-		
+
 		Text _text;
 
 		public Color NormalColor= Color.white;
@@ -36,10 +36,10 @@ namespace ExitGames.UtilityScripts
 		{
 			_text.color = HoverColor;
 		}
-		
+
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			_text.color = NormalColor; 
+			_text.color = NormalColor;
 		}
 	}
 }

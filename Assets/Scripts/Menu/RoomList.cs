@@ -7,9 +7,9 @@ namespace Menu
     {
         public RoomItem roomItemPrefab;
         public RectTransform roomItemsContainer;
-        
+
         private List<RoomItem> _roomItems;
-        
+
         private void Awake()
         {
             _roomItems = new List<RoomItem>();
@@ -19,7 +19,7 @@ namespace Menu
         {
             gameObject.SetActive(true);
         }
-        
+
         public void Hide()
         {
             ClearRoomItems();
@@ -31,14 +31,14 @@ namespace Menu
         {
             foreach (var item in _roomItems)
                 Destroy(item.gameObject);
-            
+
             _roomItems.Clear();
         }
 
         public void UpdateRoomList(RoomInfo[] rooms)
         {
             ClearRoomItems();
-            
+
             foreach (var room in rooms)
                 CreateRoom(room);
         }

@@ -59,7 +59,7 @@ namespace ExitGames.Client.Photon.Chat
         /// Result of Subscribe operation. Returns subscription result for every requested channel name.
         /// </summary>
         /// <remarks>
-        /// If multiple channels sent in Subscribe operation, OnSubscribed may be called several times, each call with part of sent array or with single channel in "channels" parameter. 
+        /// If multiple channels sent in Subscribe operation, OnSubscribed may be called several times, each call with part of sent array or with single channel in "channels" parameter.
         /// Calls order and order of channels in "channels" parameter may differ from order of channels in "channels" parameter of Subscribe operation.
         /// </remarks>
         /// <param name="channels">Array of channel names.</param>
@@ -69,7 +69,7 @@ namespace ExitGames.Client.Photon.Chat
         /// <summary>
         /// Result of Unsubscribe operation. Returns for channel name if the channel is now unsubscribed.
         /// </summary>
-        /// If multiple channels sent in Unsubscribe operation, OnUnsubscribed may be called several times, each call with part of sent array or with single channel in "channels" parameter. 
+        /// If multiple channels sent in Unsubscribe operation, OnUnsubscribed may be called several times, each call with part of sent array or with single channel in "channels" parameter.
         /// Calls order and order of channels in "channels" parameter may differ from order of channels in "channels" parameter of Unsubscribe operation.
         /// <param name="channels">Array of channel names that are no longer subscribed.</param>
         void OnUnsubscribed(string[] channels);

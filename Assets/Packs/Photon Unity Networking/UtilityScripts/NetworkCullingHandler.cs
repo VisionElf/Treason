@@ -88,7 +88,7 @@ public class NetworkCullingHandler : MonoBehaviour, IPunObservable
         this.lastPosition = this.currentPosition;
         this.currentPosition = transform.position;
 
-        // This is a simple position comparison of the current and the previous position. 
+        // This is a simple position comparison of the current and the previous position.
         // When using Network Culling in a bigger project keep in mind that there might
         // be more transform-related options, e.g. the rotation, or other options to check.
         if (this.currentPosition != this.lastPosition)

@@ -9,7 +9,7 @@ public class GUI_Demo : MonoBehaviour {
 
 	Rect windowRect = new Rect (0, 0, 400, 380);
 	bool toggleTxt = false;
-	string stringToEdit = "Text Label";	
+	string stringToEdit = "Text Label";
 	string textToEdit = "TextBox:\nHello World\nI've got few lines...";
 	float hSliderValue = 0.0f;
 	float vSliderValue = 0.0f;
@@ -18,14 +18,14 @@ public class GUI_Demo : MonoBehaviour {
 	Vector2 scrollPosition = Vector2.zero;
 
 
-	void Start () 
+	void Start ()
 	{
 		windowRect.x = (Screen.width - windowRect.width)/2;
 		windowRect.y = (Screen.height - windowRect.height)/2;
 	}
 
 
-	void OnGUI () 
+	void OnGUI ()
 	{
 		GUI.skin = guiSkin;
 		windowRect = GUI.Window (0, windowRect, DoMyWindow, "My Window");
@@ -33,7 +33,7 @@ public class GUI_Demo : MonoBehaviour {
 
 
 
-	void DoMyWindow (int windowID) 
+	void DoMyWindow (int windowID)
 	{
 
 		GUI.Box(new Rect(10,50,120,250),"Box title");

@@ -8,9 +8,9 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-using UnityEngine;  
-using System.Collections;  
-using UnityEngine.EventSystems;  
+using UnityEngine;
+using System.Collections;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace ExitGames.UtilityScripts
@@ -36,7 +36,7 @@ namespace ExitGames.UtilityScripts
 		public void OnEnable()
 		{
 			_text = GetComponent<Text>();
-		
+
 			toggle.onValueChanged.AddListener(OnValueChanged);
 		}
 
@@ -57,7 +57,7 @@ namespace ExitGames.UtilityScripts
 			isHover = true;
 			_text.color = toggle.isOn?HoverOnColor:HoverOffColor;
 		}
-		
+
 		public void OnPointerExit(PointerEventData eventData)
 		{
 			isHover = false;

@@ -12,7 +12,7 @@ namespace Menu
         public Button joinButton;
 
         private RoomInfo _room;
-        
+
         public void SetRoom(RoomInfo room, UnityAction callback)
         {
             joinButton.onClick.RemoveAllListeners();

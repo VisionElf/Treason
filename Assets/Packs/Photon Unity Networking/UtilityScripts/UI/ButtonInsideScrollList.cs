@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="ButtonInsideScrollList.cs" company="Exit Games GmbH">
-//   Part of: Photon Unity Utilities, 
+//   Part of: Photon Unity Utilities,
 // </copyright>
 // <summary>
 //  Used on Buttons inside UI lists to prevent scrollRect parent to scroll when down on buttons.

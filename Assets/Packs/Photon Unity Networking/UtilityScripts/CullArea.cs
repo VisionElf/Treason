@@ -20,7 +20,7 @@ public class CullArea : MonoBehaviour
     public readonly byte FIRST_GROUP_ID = 1;
 
     /// <summary>
-    ///     This represents the order in which updates are sent. 
+    ///     This represents the order in which updates are sent.
     ///     The number represents the subdivision of the cell hierarchy:
     ///     - 0: message is sent to all players
     ///     - 1: message is sent to players who are interested in the matching cell of the first subdivision

@@ -12,7 +12,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PhotonTransformViewPositionControl 
+public class PhotonTransformViewPositionControl
 {
     PhotonTransformViewPositionModel m_Model;
     float m_CurrentSpeed;
@@ -89,7 +89,7 @@ public class PhotonTransformViewPositionControl
                 // knowing the last (incoming) position and the one before, we can guess a speed.
                 // note that the speed is times sendRateOnSerialize! we send X updates/sec, so our estimate has to factor that in.
                 float estimatedSpeed = (Vector3.Distance(m_NetworkPosition, GetOldestStoredNetworkPosition()) / m_OldNetworkPositions.Count) * PhotonNetwork.sendRateOnSerialize;
-            
+
                 // move towards the targetPosition (including estimates, if that's active) with the speed calculated from the last updates.
                 currentPosition = Vector3.MoveTowards(currentPosition, targetPosition, Time.deltaTime * estimatedSpeed );
                 break;

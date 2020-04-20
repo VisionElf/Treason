@@ -807,7 +807,7 @@ using ExitGames.Client.Photon;
             {
                 if (sendOptions.Channel != raiseEventOptions.SequenceChannel || sendOptions.Encrypt != raiseEventOptions.Encrypt)
                 {
-                    // TODO: This should be a one-time warning. 
+                    // TODO: This should be a one-time warning.
                     // NOTE: Later on, it will be impossible to mix up SendOptions and RaiseEventOptions, as they won't have overlapping settings.
                     this.Listener.DebugReturn(DebugLevel.WARNING, "You are using RaiseEventOptions and SendOptions with conflicting settings. Please check channel and encryption value.");
                 }

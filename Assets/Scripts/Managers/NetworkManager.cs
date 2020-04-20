@@ -15,7 +15,7 @@ namespace Managers
         public static Action onJoinedRoom;
         public static Action<PhotonPlayer> onPhotonPlayerConnected;
         public static Action<PhotonPlayer> onPhotonPlayerDisconnected;
-        
+
         public static void CreateRoom(string roomName, byte maxPlayers = 10)
         {
             var options = new RoomOptions
@@ -24,7 +24,7 @@ namespace Managers
             };
             PhotonNetwork.CreateRoom(roomName, options, TypedLobby.Default);
         }
-        
+
         public void OnConnectedToPhoton()
         {
             onConnectedToPhoton?.Invoke();
@@ -147,7 +147,7 @@ namespace Managers
         public void OnOwnershipTransfered(object[] viewAndPlayers)
         {
         }
-        
+
         private void PrintArray(object[] codeAndMsg)
         {
             for (var i = 0; i < codeAndMsg.Length; i++)

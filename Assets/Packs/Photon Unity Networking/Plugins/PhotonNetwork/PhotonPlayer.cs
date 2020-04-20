@@ -40,7 +40,7 @@ public class PhotonPlayer : IComparable<PhotonPlayer>, IComparable<int>, IEquata
 
     /// <summary>Nickname of this player.</summary>
     /// <remarks>Set the PhotonNetwork.playerName to make the name synchronized in a room.</remarks>
-    public string NickName 
+    public string NickName
     {
         get
         {

@@ -16,7 +16,7 @@ namespace ExitGames.Client.DemoParticle
     /// A utility class that turns it's ShouldExecute property to true after a set interval time has passed.
     /// </summary>
     /// <remarks>
-    /// TimeKeepers can be useful to execute tasks in a certain interval within a game loop (integrating a recurring task into a certain thread). 
+    /// TimeKeepers can be useful to execute tasks in a certain interval within a game loop (integrating a recurring task into a certain thread).
     ///
     /// An interval can be overridden, when you set ShouldExecute to true.
     /// Call Reset after execution of whatever you do to re-enable the TimeKeeper (ShouldExecute becomes false until interval passed).
@@ -35,10 +35,10 @@ namespace ExitGames.Client.DemoParticle
 
         /// <summary>Turns true of the time interval has passed (after reset or creation) or someone set ShouldExecute manually.</summary>
         /// <remarks>Call Reset to start a new interval.</remarks>
-        public bool ShouldExecute 
+        public bool ShouldExecute
         {
-            get { return (this.IsEnabled && (this.shouldExecute || (Environment.TickCount - this.lastExecutionTime > this.Interval))); } 
-            set { this.shouldExecute = value; } 
+            get { return (this.IsEnabled && (this.shouldExecute || (Environment.TickCount - this.lastExecutionTime > this.Interval))); }
+            set { this.shouldExecute = value; }
         }
 
         /// <summary>

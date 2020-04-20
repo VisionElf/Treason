@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    
+
     public CameraFollow cameraFollow;
     public Player playerPrefab;
 

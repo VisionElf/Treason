@@ -36,7 +36,7 @@ internal class PhotonHandler : MonoBehaviour
     private int nextSendTickCount = 0;
 
     private int nextSendTickCountOnSerialize = 0;
-	
+
     private static bool sendThreadShouldRun;
 
     private static Stopwatch timerToStopConnectionInBackground;

@@ -13,7 +13,7 @@ namespace Menu
         public RoomList roomList;
         public RoomLobby roomLobby;
         public TMP_InputField playerNameInputField;
-        
+
         private string _playerName;
         private const string KPrefsPlayerName = "Player_Name";
 
@@ -87,7 +87,7 @@ namespace Menu
             {
                 var ping = PhotonNetwork.GetPing().ToString();
                 PhotonNetwork.player.SetCustomProperty("Ping", ping);
-                
+
                 yield return new WaitForSecondsRealtime(1f);
             }
         }

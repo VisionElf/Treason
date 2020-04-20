@@ -10,11 +10,11 @@ public class CameraFollow : MonoBehaviour
     private void Update()
     {
         if (!_target) return;
-        
+
         _targetPosition = _target.transform.position;
         _targetPosition.z = transform.position.z;
     }
-    
+
     private void LateUpdate()
     {
         if (!_target) return;

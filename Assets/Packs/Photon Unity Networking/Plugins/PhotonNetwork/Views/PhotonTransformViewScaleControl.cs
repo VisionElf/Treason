@@ -11,7 +11,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PhotonTransformViewScaleControl 
+public class PhotonTransformViewScaleControl
 {
     PhotonTransformViewScaleModel m_Model;
     Vector3 m_NetworkScale = Vector3.one;

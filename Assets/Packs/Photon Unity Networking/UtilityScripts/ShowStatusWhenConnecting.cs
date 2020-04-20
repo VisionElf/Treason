@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShowStatusWhenConnecting : MonoBehaviour 
+public class ShowStatusWhenConnecting : MonoBehaviour
 {
     public GUISkin Skin;
 

@@ -4,11 +4,11 @@ using UnityEngine;
 /// Very basic component to move a GameObject by WASD and Space.
 /// </summary>
 /// <remarks>
-/// Requires a PhotonView. 
+/// Requires a PhotonView.
 /// Disables itself on GameObjects that are not owned on Start.
-/// 
-/// Speed affects movement-speed. 
-/// JumpForce defines how high the object "jumps". 
+///
+/// Speed affects movement-speed.
+/// JumpForce defines how high the object "jumps".
 /// JumpTimeout defines after how many seconds you can jump again.
 /// </remarks>
 [RequireComponent(typeof (PhotonView))]

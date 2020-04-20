@@ -1842,10 +1842,10 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
                 // PUN assumes you fetch the name-server's list of regions to ping them
                 if (PhotonNetwork.PhotonServerSettings.HostType == ServerSettings.HostingOption.BestRegion)
                 {
-					
+
 			        CloudRegionCode bestFromPrefs = PhotonHandler.BestRegionCodeInPreferences;
-					if (bestFromPrefs != CloudRegionCode.none && 
-				    this.AvailableRegions.Exists(x => x.Code == bestFromPrefs) 
+					if (bestFromPrefs != CloudRegionCode.none &&
+				    this.AvailableRegions.Exists(x => x.Code == bestFromPrefs)
 				    )
 			        {
 						Debug.Log("Best region found in PlayerPrefs. Connecting to: " + bestFromPrefs);
@@ -2568,7 +2568,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
                 break;
 
             case EventCode.Leave:
-				
+
 				// Clean up if we were loading asynchronously.
 				if (_AsyncLevelLoadingOperation!=null)
 				{
@@ -2628,7 +2628,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
 
             case PunEvent.CloseConnection:
 
-				
+
 
                 // MasterClient "requests" a disconnection from us
                 if (originatingPlayer == null || !originatingPlayer.IsMasterClient)
@@ -4041,7 +4041,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
             return;
         }
 
-		// we are currently loading asynchronously, so we need to check when it's done, we might have not been able to do so 
+		// we are currently loading asynchronously, so we need to check when it's done, we might have not been able to do so
 		// when we joined the room
 		if (PhotonNetwork.inRoom && _AsyncLevelLoadingOperation != null)
 		{
@@ -4658,7 +4658,7 @@ internal class NetworkingPeer : LoadBalancingPeer, IPhotonPeerListener
 			}
         }
     }
-	
+
 	protected internal void SetLevelInPropsIfSynced(object levelId, bool asyncLoading = false)
     {
         if (!PhotonNetwork.automaticallySyncScene || !PhotonNetwork.isMasterClient || PhotonNetwork.room == null)
