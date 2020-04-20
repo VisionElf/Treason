@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3895583331608209616, guid: e63f7fc1b1f9c684dac4ac71f0ddd77e, type: 2}
+  - {fileID: -6592880106530329199, guid: 5530fc59977b1ed4694c5b7c72719540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -194,8 +194,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e63f7fc1b1f9c684dac4ac71f0ddd77e, type: 2}
-  m_sharedMaterial: {fileID: -3895583331608209616, guid: e63f7fc1b1f9c684dac4ac71f0ddd77e,
+  m_fontAsset: {fileID: 11400000, guid: 5530fc59977b1ed4694c5b7c72719540, type: 2}
+  m_sharedMaterial: {fileID: -6592880106530329199, guid: 5530fc59977b1ed4694c5b7c72719540,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -229,7 +229,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_textAlignment: 514
-  m_characterSpacing: 0
+  m_characterSpacing: -5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
     textComponent: {fileID: 3241142889095061895}
     characterCount: 6
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -338,7 +338,7 @@ MonoBehaviour:
   speed: 5
   flipTransform: {fileID: 7460072665736409608}
   bodyRenderer: {fileID: 5534021108507863893}
-  visionRange: 25
+  visionRange: 20
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
 --- !u!114 &7460623510227591475
