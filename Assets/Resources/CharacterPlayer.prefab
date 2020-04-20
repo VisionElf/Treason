@@ -116,7 +116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.1}
+  m_AnchoredPosition: {x: 0, y: 0.5}
   m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4275380712655304832
@@ -137,7 +137,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3895583331608209616, guid: e63f7fc1b1f9c684dac4ac71f0ddd77e, type: 2}
+  - {fileID: -6592880106530329199, guid: 5530fc59977b1ed4694c5b7c72719540, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,10 +192,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VisionElf
+  m_text: Your Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e63f7fc1b1f9c684dac4ac71f0ddd77e, type: 2}
-  m_sharedMaterial: {fileID: -3895583331608209616, guid: e63f7fc1b1f9c684dac4ac71f0ddd77e,
+  m_fontAsset: {fileID: 11400000, guid: 5530fc59977b1ed4694c5b7c72719540, type: 2}
+  m_sharedMaterial: {fileID: -6592880106530329199, guid: 5530fc59977b1ed4694c5b7c72719540,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -227,9 +227,9 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 514
-  m_characterSpacing: 0
+  m_characterSpacing: -5
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
     textComponent: {fileID: 3241142889095061895}
     characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -335,10 +335,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 3241142889095061895}
   animator: {fileID: 7412298972117744014}
-  speed: 6
+  speed: 4.5
   flipTransform: {fileID: 7460072665736409608}
   bodyRenderer: {fileID: 5534021108507863893}
-  visionRange: 25
+  visionRange: 20
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
 --- !u!114 &7460623510227591475
@@ -364,8 +364,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 7460623510227591474}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &7460623510227591474
