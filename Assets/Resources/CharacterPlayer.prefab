@@ -337,7 +337,7 @@ MonoBehaviour:
   animator: {fileID: 7412298972117744014}
   speed: 6
   flipTransform: {fileID: 7460072665736409608}
-  bodyRenderer: {fileID: 7313068441526784280}
+  bodyRenderer: {fileID: 5534021108507863893}
   visionRange: 25
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
@@ -501,6 +501,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95898481864777010, guid: 7cc9b2bd52c9e11419af9d383352621e,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b739c97f7e3b2e947a06b9ada5029a50, type: 2}
     - target: {fileID: 212699115550802086, guid: 7cc9b2bd52c9e11419af9d383352621e,
         type: 3}
       propertyPath: m_MaskInteraction
@@ -550,9 +555,9 @@ Animator:
     type: 3}
   m_PrefabInstance: {fileID: 7460623509926880444}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &7313068441526784280 stripped
+--- !u!212 &5534021108507863893 stripped
 SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 212874855828977060, guid: 7cc9b2bd52c9e11419af9d383352621e,
+  m_CorrespondingSourceObject: {fileID: 3118108793238540265, guid: 7cc9b2bd52c9e11419af9d383352621e,
     type: 3}
   m_PrefabInstance: {fileID: 7460623509926880444}
   m_PrefabAsset: {fileID: 0}

@@ -10,10 +10,10 @@ public class Player : MonoBehaviour
     public float speed;
     public Transform flipTransform;
     public SpriteRenderer bodyRenderer;
-    
+
     public float visionRange;
     public SpriteMask visionMask;
-    
+
     public bool isLocalCharacter;
 
     private bool _running;
@@ -39,13 +39,13 @@ public class Player : MonoBehaviour
         else
             visionMask.transform.localScale = visionRange / 2f * Vector3.one;
     }
-    
+
     public void Update()
     {
         UpdateAnimations();
-        
+
         if (!isLocalCharacter) return;
-        
+
         var x = 0;
         var y = 0;
 
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
             x = -1;
         if (Input.GetKey(KeyCode.D))
             x = 1;
-        
+
         Move(x, y);
     }
 
@@ -75,14 +75,15 @@ public class Player : MonoBehaviour
     private void UpdateAnimations()
     {
         var dist = transform.position - _previousPosition;
-        _running = dist.magnitude > 0.01f;
+        _running = dist.magnitude > 0f;
 
         if (_running && dist.x != 0f)
         {
             var flip = dist.x < 0 ? 1f : -1f;
             flipTransform.localScale = new Vector3(flip, 1f, 1f);
         }
-        
+
+        animator.SetFloat("Speed", speed);
         animator.SetBool("Running", _running);
         _previousPosition = transform.position;
     }

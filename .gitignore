@@ -22,6 +22,9 @@
 # Visual Studio cache directory
 .vs/
 
+# Line Endings Unifier (VS Extension)
+.leu
+
 # Gradle cache directory
 .gradle/
 
