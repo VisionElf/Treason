@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public TMP_Text playerNameText;
     public Animator animator;
     public float speed;
+    public float diagonalMultiplier;
     public Transform flipTransform;
     public SpriteRenderer bodyRenderer;
 
@@ -18,18 +19,21 @@ public class Player : MonoBehaviour
 
     private bool _running;
     private Vector3 _previousPosition;
+    private Vector3 _facingDirection;
 
     private void Start()
     {
-        _previousPosition = transform.position;
+        _previousPosition = transform.localPosition;
+        _facingDirection = Vector3.right;
+
         if (photonView && photonView.owner != null)
         {
             isLocalCharacter = photonView.isMine;
             playerNameText.text = photonView.owner.NickName;
 
-            var colorStr = photonView.owner.GetCustomProperty("Color", "#FFFFFF");
-            var color = Color.white;
-            if (ColorUtility.TryParseHtmlString(colorStr, out var tmp))
+            string colorStr = photonView.owner.GetCustomProperty("Color", "#FFFFFF");
+            Color color = Color.white;
+            if (ColorUtility.TryParseHtmlString(colorStr, out Color tmp))
                 color = tmp;
             bodyRenderer.color = color;
         }
@@ -43,27 +47,16 @@ public class Player : MonoBehaviour
     public void Update()
     {
         UpdateAnimations();
+        UpdateDepth();
 
         if (!isLocalCharacter) return;
 
-        var x = 0;
-        var y = 0;
-
-        if (Input.GetKey(KeyCode.Z))
-            y = 1;
-        if (Input.GetKey(KeyCode.S))
-            y = -1;
-        if (Input.GetKey(KeyCode.Q))
-            x = -1;
-        if (Input.GetKey(KeyCode.D))
-            x = 1;
-
-        Move(x, y);
+        Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
     }
 
     private void LateUpdate()
     {
-        var dist = GameManager.Instance.GetDistanceToLocalCharacter(transform.position);
+        float dist = GameManager.Instance.GetDistanceToLocalCharacter(transform.position);
         SetVisible(dist <= visionRange / 4f);
     }
 
@@ -74,27 +67,41 @@ public class Player : MonoBehaviour
 
     private void UpdateAnimations()
     {
-        var dist = transform.position - _previousPosition;
+        Vector3 dist = transform.localPosition - _previousPosition;
         _running = dist.magnitude > 0f;
 
         if (_running && dist.x != 0f)
-        {
-            var flip = dist.x < 0 ? 1f : -1f;
-            flipTransform.localScale = new Vector3(flip, 1f, 1f);
-        }
+            SetFacingDirection(dist.x < 0 ? Vector3.left : Vector3.right);
 
         animator.SetFloat("Speed", speed);
         animator.SetBool("Running", _running);
-        _previousPosition = transform.position;
+        _previousPosition = transform.localPosition;
+    }
+
+    private void UpdateDepth()
+    {
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y);
+    }
+
+    private void SetFacingDirection(Vector3 direction)
+    {
+        if (_facingDirection == direction) return;
+
+        _facingDirection = direction;
+        flipTransform.localScale = Vector3.Scale(flipTransform.localScale, new Vector3(-1f, 1f, 1f));
     }
 
     private void Move(int x, int y)
     {
-        foreach (var dir in new[] { new Vector3(x, y), new Vector3(x, 0), new Vector3(0, y) })
+        if (x == 0 && y == 0) return;
+
+        float distance = speed * Time.deltaTime;
+
+        foreach (Vector3 dir in new[] { new Vector3(x, y), new Vector3(x, 0), new Vector3(0, y) })
         {
-            var direction = dir.normalized;
-            var distance = speed * Time.deltaTime;
-            if (!Physics2D.Raycast(transform.position, direction, distance))
+            Vector3 direction = dir.normalized;
+
+            if (!Physics2D.Raycast(transform.localPosition, direction, distance))
             {
                 transform.position += distance * direction;
                 return;

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public CameraFollow cameraFollow;
     public Player playerPrefab;
+    public Transform playerParent;
 
     private Player _localCharacter;
 
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour
             _localCharacter.isLocalCharacter = true;
         }
         cameraFollow.SetTarget(_localCharacter.transform);
+
+        if (playerParent != null)
+            _localCharacter.transform.SetParent(playerParent);
     }
 
     public float GetDistanceToLocalCharacter(Vector3 position)
