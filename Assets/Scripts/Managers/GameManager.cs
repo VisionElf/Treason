@@ -18,11 +18,13 @@ namespace Managers
             }
         }
 
+
         public CameraFollow cameraFollow;
         public Character characterPrefab;
         public Transform characterParent;
 
         private Character _localCharacter;
+        public Character LocalCharacter => _localCharacter;
 
         public void Start()
         {
