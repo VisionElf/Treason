@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using Cameras;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Managers
