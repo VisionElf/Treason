@@ -2,9 +2,14 @@
 using Data;
 using Managers;
 using Photon.Pun;
+using System.Linq;
+using System.Xml.Schema;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class Character : MonoBehaviourPun
 {
     private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
@@ -16,7 +21,6 @@ public class Character : MonoBehaviourPun
     public TMP_Text playerNameText;
     public Animator animator;
     public float speed;
-    public float diagonalMultiplier;
     public Transform flipTransform;
     public Renderer spriteRenderer;
 
@@ -28,11 +32,13 @@ public class Character : MonoBehaviourPun
     private bool _running;
     private Vector3 _previousPosition;
     private Vector3 _facingDirection;
+    private BoxCollider2D _hitbox;
 
     private void Start()
     {
         _previousPosition = transform.localPosition;
         _facingDirection = Vector3.right;
+        _hitbox = GetComponent<BoxCollider2D>();
 
         if (photonView && photonView.Owner != null)
         {
@@ -47,7 +53,10 @@ public class Character : MonoBehaviourPun
         }
 
         if (!isLocalCharacter)
+        {
             visionMask.gameObject.SetActive(false);
+            _hitbox.enabled = false;
+        }
         else
             visionMask.transform.localScale = visionRange / 2f * Vector3.one;
     }
@@ -132,14 +141,14 @@ public class Character : MonoBehaviourPun
 
         float distance = speed * Time.deltaTime;
 
-        foreach (Vector3 dir in new[] { new Vector3(x, y), new Vector3(x, 0), new Vector3(0, y) })
+        foreach (Vector3 dir in new Vector3[] { new Vector3(x, y), new Vector3(x, 0), new Vector3(0, y) })
         {
             Vector3 direction = dir.normalized;
 
-            if (!Physics2D.Raycast(transform.localPosition, direction, distance))
+            if (!Physics2D.BoxCast(_hitbox.bounds.center, _hitbox.bounds.size, 0f, direction, distance))
             {
                 transform.position += distance * direction;
-                return;
+                break;
             }
         }
     }
