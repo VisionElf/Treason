@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2008417367}
   - component: {fileID: 2008417368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3443175989702060536}
   - component: {fileID: 8628734866037141227}
   - component: {fileID: 3241142889095061895}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 2136064726254221553}
   - component: {fileID: 4094762659643444565}
   - component: {fileID: 4040953918193099422}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - component: {fileID: 7460623510227591474}
   - component: {fileID: 7460623510227591485}
   - component: {fileID: 4211383089097986386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CharacterPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -477,6 +477,9 @@ MonoBehaviour:
   speed: 4
   flipTransform: {fileID: 2136064726254221553}
   spriteRenderer: {fileID: 4040953918193099422}
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 1024
   visionRange: 20
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
@@ -490,7 +493,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.25}
@@ -515,7 +518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5086373347267133039}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}

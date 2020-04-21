@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4701228}
   - component: {fileID: 4701229}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230349727}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collisions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 507733938}
   - component: {fileID: 507733939}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -641,7 +641,7 @@ GameObject:
   - component: {fileID: 943774153}
   - component: {fileID: 943774154}
   - component: {fileID: 943774155}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120575919}
   - component: {fileID: 1120575920}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 1161481971}
   - component: {fileID: 1161481970}
   - component: {fileID: 1161481969}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crate3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1102,7 +1102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1314798063}
   - component: {fileID: 1314798064}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1562173966}
   - component: {fileID: 1562173967}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1217,7 +1217,7 @@ GameObject:
   - component: {fileID: 1571445864}
   - component: {fileID: 1571445865}
   - component: {fileID: 1571445866}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Crate2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1327,7 +1327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1814793592}
   - component: {fileID: 1814793593}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

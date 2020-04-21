@@ -23,6 +23,7 @@ public class Character : MonoBehaviourPun
     public float speed;
     public Transform flipTransform;
     public Renderer spriteRenderer;
+    public LayerMask obstacleMask;
 
     public float visionRange;
     public SpriteMask visionMask;
@@ -145,7 +146,7 @@ public class Character : MonoBehaviourPun
         {
             Vector3 direction = dir.normalized;
 
-            if (!Physics2D.BoxCast(_hitbox.bounds.center, _hitbox.bounds.size, 0f, direction, distance))
+            if (!Physics2D.BoxCast(_hitbox.bounds.center, _hitbox.bounds.size, 0f, direction, distance, obstacleMask))
             {
                 transform.position += distance * direction;
                 break;
