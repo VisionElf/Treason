@@ -1,20 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Managers
 {
-    public class NetworkManager : MonoBehaviour, IPunCallbacks
+    public class NetworkManager : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks, IInRoomCallbacks, ILobbyCallbacks
     {
         public static Action onConnectedToPhoton;
         public static Action onJoinedLobby;
-        public static Action onRoomListUpdate;
+        public static Action<List<RoomInfo>> onRoomListUpdate;
         public static Action onLeftRoom;
         public static Action onJoinedRoom;
-        public static Action<PhotonPlayer> onPhotonPlayerConnected;
-        public static Action<PhotonPlayer> onPhotonPlayerDisconnected;
+        public static Action<Player> onPlayerEnteredRoom;
+        public static Action<Player> onPlayerLeftRoom;
+
+        private void OnEnable()
+        {
+            PhotonNetwork.AddCallbackTarget(this);
+        }
+
+        private void OnDisable()
+        {
+            PhotonNetwork.RemoveCallbackTarget(this);
+        }
 
         public static void CreateRoom(string roomName, byte maxPlayers = 10)
         {
@@ -25,102 +37,22 @@ namespace Managers
             PhotonNetwork.CreateRoom(roomName, options, TypedLobby.Default);
         }
 
-        public void OnConnectedToPhoton()
-        {
-            onConnectedToPhoton?.Invoke();
-        }
+        #region CONNECTION
 
-        public void OnLeftRoom()
-        {
-            onLeftRoom?.Invoke();
-        }
-
-        public void OnJoinedLobby()
-        {
-            onJoinedLobby?.Invoke();
-        }
-
-        public void OnReceivedRoomListUpdate()
-        {
-            onRoomListUpdate?.Invoke();
-        }
-
-        public void OnJoinedRoom()
-        {
-            onJoinedRoom?.Invoke();
-        }
-
-        public void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
-        {
-            onPhotonPlayerConnected?.Invoke(newPlayer);
-        }
-
-        public void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
-        {
-            onPhotonPlayerDisconnected?.Invoke(otherPlayer);
-        }
-
-        public void OnMasterClientSwitched(PhotonPlayer newMasterClient)
-        {
-        }
-
-        public void OnPhotonCreateRoomFailed(object[] codeAndMsg)
-        {
-        }
-
-        public void OnPhotonJoinRoomFailed(object[] codeAndMsg)
-        {
-        }
-
-        public void OnCreatedRoom()
-        {
-        }
-
-        public void OnLeftLobby()
-        {
-        }
-
-        public void OnFailedToConnectToPhoton(DisconnectCause cause)
-        {
-        }
-
-        public void OnConnectionFail(DisconnectCause cause)
-        {
-        }
-
-        public void OnDisconnectedFromPhoton()
-        {
-        }
-
-        public void OnPhotonInstantiate(PhotonMessageInfo info)
-        {
-        }
-
-        public void OnPhotonRandomJoinFailed(object[] codeAndMsg)
+        public void OnConnected()
         {
         }
 
         public void OnConnectedToMaster()
         {
+            onConnectedToPhoton?.Invoke();
         }
 
-        public void OnPhotonMaxCccuReached()
+        public void OnDisconnected(DisconnectCause cause)
         {
         }
 
-        public void OnPhotonCustomRoomPropertiesChanged(Hashtable propertiesThatChanged)
-        {
-        }
-
-        public void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
-        {
-        }
-
-        public void OnUpdatedFriendList()
-        {
-        }
-
-        public void OnCustomAuthenticationFailed(string debugMessage)
+        public void OnRegionListReceived(RegionHandler regionHandler)
         {
         }
 
@@ -128,39 +60,92 @@ namespace Managers
         {
         }
 
-        public void OnWebRpcResponse(OperationResponse response)
+        public void OnCustomAuthenticationFailed(string debugMessage)
+        {
+        }
+        
+        #endregion
+
+        #region MATCHMAKING
+
+        public void OnJoinRandomFailed(short returnCode, string message)
         {
         }
 
-        public void OnOwnershipRequest(object[] viewAndPlayer)
+        public void OnLeftRoom()
+        {
+            onLeftRoom?.Invoke();
+        }
+
+        public void OnFriendListUpdate(List<FriendInfo> friendList)
         {
         }
 
-        public void OnLobbyStatisticsUpdate()
+        public void OnCreatedRoom()
         {
         }
 
-        public void OnPhotonPlayerActivityChanged(PhotonPlayer otherPlayer)
+        public void OnCreateRoomFailed(short returnCode, string message)
         {
         }
 
-        public void OnOwnershipTransfered(object[] viewAndPlayers)
+        public void OnJoinedRoom()
+        {
+            onJoinedRoom?.Invoke();
+        }
+
+        public void OnJoinRoomFailed(short returnCode, string message)
         {
         }
 
-        private void PrintArray(object[] codeAndMsg)
+        #endregion
+
+        #region LOBBY
+
+        public void OnJoinedLobby()
         {
-            for (var i = 0; i < codeAndMsg.Length; i++)
-            {
-                var obj = codeAndMsg[i];
-                Debug.Log($"{i}: {obj}");
-            }
+            onJoinedLobby?.Invoke();
         }
 
-        private void PrintHashtable(Hashtable table)
+        public void OnLeftLobby()
         {
-            foreach (var t in table)
-                Debug.Log($"{t.Key} - {t.Value}");
         }
+
+        public void OnRoomListUpdate(List<RoomInfo> roomList)
+        {
+            onRoomListUpdate?.Invoke(roomList);
+        }
+
+        public void OnLobbyStatisticsUpdate(List<TypedLobbyInfo> lobbyStatistics)
+        {
+        }
+
+        #endregion
+
+        #region ROOM
+
+        public void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            onPlayerEnteredRoom?.Invoke(newPlayer);
+        }
+
+        public void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            onPlayerLeftRoom?.Invoke(otherPlayer);
+        }
+
+        public void OnRoomPropertiesUpdate(Hashtable propertiesThatChanged)
+        {
+        }
+
+        public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+        {
+        }
+
+        public void OnMasterClientSwitched(Player newMasterClient)
+        {
+        }
+
+        #endregion
     }
 }
