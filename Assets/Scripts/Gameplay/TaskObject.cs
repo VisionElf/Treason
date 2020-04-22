@@ -1,4 +1,5 @@
 ﻿using Gameplay.Data;
+using Gameplay.Tasks;
 using UnityEngine;
 
 namespace Gameplay
@@ -28,7 +29,7 @@ namespace Gameplay
 
         public override void Interact()
         {
-            Debug.Log("Interact");
+            TaskManager.Instance.ShowTask(taskData);
         }
     }
 }

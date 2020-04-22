@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 namespace Gameplay.Tasks.Wires
 {
-    [ExecuteInEditMode]
     public class Wire : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         public RectTransform back;
