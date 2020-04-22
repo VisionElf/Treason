@@ -174,5 +174,10 @@ namespace Gameplay
                 transform.position += distance * direction;
             }
         }
+
+        public Vector3 GetPosition2D()
+        {
+            return new Vector3(transform.position.x, transform.position.y, 0);
+        }
     }
 }
