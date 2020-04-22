@@ -11,14 +11,17 @@ namespace Gameplay
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                var player = GameManager.Instance.LocalCharacter;
-                var dist = Vector3.Distance(transform.position, player.transform.position);
-
-                if (dist <= interactRange)
+                if (CanInteract())
                 {
                     Interact();
                 }
             }
+        }
+
+        protected bool CanInteract()
+        {
+            var dist = Vector3.Distance(transform.position, GameManager.Instance.LocalCharacter.GetPosition2D());
+            return dist <= interactRange;
         }
 
         public abstract void Interact();
