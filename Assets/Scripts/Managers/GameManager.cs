@@ -22,17 +22,22 @@ namespace Managers
         public CameraFollow cameraFollow;
         public Character characterPrefab;
         public Transform characterParent;
+        // Debug
+        public Transform characterSpawnPoint;
 
         private Character _localCharacter;
         public Character LocalCharacter => _localCharacter;
 
         public void Start()
         {
+            if (characterSpawnPoint == null)
+                characterSpawnPoint = transform;
+
             if (PhotonNetwork.IsConnected)
-                _localCharacter = PhotonNetwork.Instantiate(characterPrefab.name, Vector3.zero, Quaternion.identity, 0).GetComponent<Character>();
+                _localCharacter = PhotonNetwork.Instantiate(characterPrefab.name, characterSpawnPoint.position, Quaternion.identity, 0).GetComponent<Character>();
             else
             {
-                _localCharacter = Instantiate(characterPrefab, Vector3.zero, Quaternion.identity);
+                _localCharacter = Instantiate(characterPrefab, characterSpawnPoint.position, Quaternion.identity);
                 _localCharacter.isLocalCharacter = true;
             }
             cameraFollow.SetTarget(_localCharacter.transform);

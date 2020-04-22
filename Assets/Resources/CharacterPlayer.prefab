@@ -116,7 +116,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.65}
+  m_AnchoredPosition: {x: 0, y: 0.5}
   m_SizeDelta: {x: 2, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4275380712655304832
@@ -155,9 +155,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: -2105358953
+  m_SortingLayer: 5
+  m_SortingOrder: 0
 --- !u!33 &3443175989702060536
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 3.5
-  m_fontSizeBase: 3.5
+  m_fontSize: 2.6
+  m_fontSizeBase: 2.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -372,8 +372,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2058335787
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 6362290972351372809, guid: 0c7b2f380306ce74cbe0dc935e97a057,
     type: 3}
@@ -473,13 +473,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorData: {fileID: 11400000, guid: 6053c3c734ae35d42bd4034e307b1a97, type: 2}
   playerNameText: {fileID: 3241142889095061895}
-  animator: {fileID: 4094762659643444565}
   speed: 4
+  animator: {fileID: 4094762659643444565}
   flipTransform: {fileID: 2136064726254221553}
   spriteRenderer: {fileID: 4040953918193099422}
   obstacleMask:
     serializedVersion: 2
     m_Bits: 1024
+  collisionDirections: 8
   visionRange: 20
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
@@ -496,7 +497,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
+  m_Offset: {x: 0, y: -0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

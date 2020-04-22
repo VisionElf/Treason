@@ -38,15 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Background
     uniqueID: 51771263
     locked: 0
   - name: Floor+Walls
     uniqueID: 2266039745
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Player
+    uniqueID: 2236631509
     locked: 0
-  - name: Border
+  - name: PlayerName
+    uniqueID: 2189608343
+    locked: 0
+  - name: OverPlayer
     uniqueID: 2314097171
     locked: 0
