@@ -6,6 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Menu
 {
@@ -15,6 +16,8 @@ namespace Menu
         public RoomList roomList;
         public RoomLobby roomLobby;
         public TMP_InputField playerNameInputField;
+
+        public Button createButton;
 
         private string _playerName;
         private const string KPrefsPlayerName = "Player_Name";
@@ -28,6 +31,7 @@ namespace Menu
 
         private void Start()
         {
+            createButton.interactable = false;
             PhotonNetwork.ConnectUsingSettings();
         }
 
@@ -96,6 +100,7 @@ namespace Menu
 
         private void StartPingUpdate()
         {
+            createButton.interactable = true;
             StartCoroutine(UpdatePing());
         }
 
