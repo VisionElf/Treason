@@ -1318,8 +1318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd60487e30584d84b8445b2f118a1532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxOffset: 0.25
-  speed: 0.0025
+  targetOffset: {x: 0, y: 0.25, z: 0}
+  duration: 1
   easing:
     serializedVersion: 2
     m_Curve:
