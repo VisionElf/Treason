@@ -50,9 +50,9 @@ TagManager:
   - name: Player
     uniqueID: 2236631509
     locked: 0
-  - name: PlayerName
-    uniqueID: 2189608343
-    locked: 0
   - name: OverPlayer
     uniqueID: 2314097171
+    locked: 0
+  - name: PlayerName
+    uniqueID: 2189608343
     locked: 0

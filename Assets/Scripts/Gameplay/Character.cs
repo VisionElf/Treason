@@ -131,7 +131,7 @@ namespace Gameplay
 
         private void UpdateDepth()
         {
-            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y);
+            transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.y / 1000f);
         }
 
         private void SetFacingDirection(Vector3 direction)
