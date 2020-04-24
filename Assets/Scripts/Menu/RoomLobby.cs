@@ -36,7 +36,7 @@ namespace Menu
         {
             byte evCode = 1;
             object[] content = {new Vector3(10.0f, 2.0f, 5.0f), 1, 2, 5, 10};
-
+            
             List<Color> colors = new List<Color>
             {
                 Color.red,
@@ -50,13 +50,21 @@ namespace Menu
             };
 
             colors.Shuffle();
+            var roleList = new List<Player>(PhotonNetwork.PlayerList);
+            roleList.Shuffle();
+            var imposterCount = 1;
+            for (int i = 0; i < imposterCount; i++)
+                roleList.RemoveAt(0);
 
             for (var i = 0; i < PhotonNetwork.PlayerList.Length; i++)
             {
                 var p = PhotonNetwork.PlayerList[i];
                 var color = colors[i];
                 var colorStr = ColorUtility.ToHtmlStringRGB(color);
+                var isCrewmate = roleList.Contains(p);
+                
                 PhotonNetwork.PlayerList[i].SetCustomProperty("Color", "#" + colorStr);
+                PhotonNetwork.PlayerList[i].SetCustomProperty("Role", isCrewmate ? 0 : 1);
             }
 
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions {Receivers = ReceiverGroup.All};

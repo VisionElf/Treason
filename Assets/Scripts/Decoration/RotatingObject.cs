@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 
-public class RotatingObject : MonoBehaviour
+namespace Decoration
 {
-    public float speed;
-
-    void Update()
+    public class RotatingObject : MonoBehaviour
     {
-        transform.Rotate(new Vector3(0f, 0f, speed));
+        public float speed;
+
+        void Update()
+        {
+            transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
+        }
     }
 }
