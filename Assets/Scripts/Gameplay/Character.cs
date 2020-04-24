@@ -106,7 +106,7 @@ namespace Gameplay
             UpdateDepth();
 
             if (!isLocalCharacter) return;
-
+            
             Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
