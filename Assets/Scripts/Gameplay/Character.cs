@@ -1,11 +1,11 @@
-﻿using System;
-using System.Numerics;
-using CustomExtensions;
+﻿using CustomExtensions;
 using Data;
 using Managers;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+
+using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 namespace Gameplay
@@ -15,33 +15,35 @@ namespace Gameplay
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
         private static readonly int ShaderColor3 = Shader.PropertyToID("_Color3");
-        
+
         private static readonly int AnimatorHashSpeed = Animator.StringToHash("Speed");
         private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
 
         [Header("Visual")]
         public ColorData colorData;
         public TMP_Text playerNameText;
-        
+
+        [Header("Animation")]
+        public float minAnimationSpeed;
+        public float maxAnimationSpeed;
+
         [Header("Movement")]
         public float speed;
         public Animator animator;
-        public Transform flipTransform;
-        public Renderer spriteRenderer;
-        
+        public SpriteRenderer spriteRenderer;
+
         [Header("Collision")]
         public LayerMask obstacleMask;
 
         [Header("Vision")]
         public float visionRange;
         public SpriteMask visionMask;
-        
+
         [Header("Misc")]
         public bool isLocalCharacter;
 
         private bool _running;
         private Vector3 _previousPosition;
-        private Vector3 _facingDirection;
         private Rigidbody2D _body;
 
         private void Awake()
@@ -52,7 +54,6 @@ namespace Gameplay
         private void Start()
         {
             _previousPosition = transform.localPosition;
-            _facingDirection = Vector3.right;
 
             if (photonView && photonView.Owner != null)
             {
@@ -67,9 +68,7 @@ namespace Gameplay
             }
 
             if (!isLocalCharacter)
-            {
                 visionMask.gameObject.SetActive(false);
-            }
             else
                 visionMask.transform.localScale = visionRange / 2f * Vector3.one;
         }
@@ -106,7 +105,7 @@ namespace Gameplay
             UpdateDepth();
 
             if (!isLocalCharacter) return;
-            
+
             Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -114,7 +113,7 @@ namespace Gameplay
         {
             float dist = GameManager.Instance.GetDistanceToLocalCharacter(transform.position);
             SetVisible(dist <= visionRange / 4f);
-            
+
             UpdateAnimations();
         }
 
@@ -125,15 +124,19 @@ namespace Gameplay
 
         private void UpdateAnimations()
         {
-            Vector3 dist = transform.localPosition - _previousPosition;
-            _running = dist.magnitude > 0f || _body.velocity.magnitude > 0f;
+            Vector2 dist = transform.localPosition - _previousPosition;
+            if (dist.x.AlmostEquals(0f, 0.001f))
+                dist.x = 0f;
+            if (dist.y.AlmostEquals(0f, 0.001f))
+                dist.y = 0f;
+            _running = dist.magnitude > 0f;
 
-            if (_running && dist.x != 0f)
+            if (_running && dist.x != 0)
                 SetFacingDirection(dist.x < 0 ? Vector3.left : Vector3.right);
 
-            animator.SetFloat(AnimatorHashSpeed, speed);
-            animator.SetBool(AnimatorHashRunning, _running);
             _previousPosition = transform.localPosition;
+            animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
+            animator.SetBool(AnimatorHashRunning, _running);
         }
 
         private void UpdateDepth()
@@ -143,10 +146,7 @@ namespace Gameplay
 
         private void SetFacingDirection(Vector3 direction)
         {
-            if (_facingDirection == direction) return;
-
-            _facingDirection = direction;
-            flipTransform.localScale = Vector3.Scale(flipTransform.localScale, new Vector3(-1f, 1f, 1f));
+            spriteRenderer.flipX = direction == Vector3.left;
         }
 
         private void Move(int x, int y)
