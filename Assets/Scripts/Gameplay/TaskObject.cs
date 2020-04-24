@@ -24,7 +24,7 @@ namespace Gameplay
         
         public void SetOutlineColor(Color color)
         {
-            spriteRenderer.material.SetColor("_Outline", color);
+            spriteRenderer.material.SetColor("_OutlineColor", color);
         }
 
         public override void Interact()

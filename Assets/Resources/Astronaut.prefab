@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8628734866037141227}
   - component: {fileID: 3241142889095061895}
   m_Layer: 9
-  m_Name: Text (TMP)
+  m_Name: PlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,7 +189,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -400,9 +399,10 @@ GameObject:
   - component: {fileID: 7460623510227591475}
   - component: {fileID: 7460623510227591474}
   - component: {fileID: 7460623510227591485}
-  - component: {fileID: 4211383089097986386}
+  - component: {fileID: 611162520565561327}
+  - component: {fileID: 1502756518605699422}
   m_Layer: 9
-  m_Name: CharacterPlayer
+  m_Name: Astronaut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -481,12 +481,11 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 1024
-  collisionDirections: 8
   visionRange: 20
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
---- !u!61 &4211383089097986386
-BoxCollider2D:
+--- !u!58 &611162520565561327
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -498,19 +497,30 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.25}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: -0.245}
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.13}
-  m_EdgeRadius: 0
+  m_Radius: 0.13744716
+--- !u!50 &1502756518605699422
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7460623510227591487}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8173587082097458216
 GameObject:
   m_ObjectHideFlags: 0

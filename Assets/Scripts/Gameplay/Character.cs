@@ -1,19 +1,23 @@
 ﻿using System;
+using System.Numerics;
 using CustomExtensions;
 using Data;
 using Managers;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 namespace Gameplay
 {
-    [RequireComponent(typeof(BoxCollider2D))]
     public class Character : MonoBehaviourPun
     {
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
         private static readonly int ShaderColor3 = Shader.PropertyToID("_Color3");
+        
+        private static readonly int AnimatorHashSpeed = Animator.StringToHash("Speed");
+        private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
 
         [Header("Visual")]
         public ColorData colorData;
@@ -27,7 +31,6 @@ namespace Gameplay
         
         [Header("Collision")]
         public LayerMask obstacleMask;
-        public int collisionDirections = 8;
 
         [Header("Vision")]
         public float visionRange;
@@ -39,13 +42,17 @@ namespace Gameplay
         private bool _running;
         private Vector3 _previousPosition;
         private Vector3 _facingDirection;
-        private BoxCollider2D _hitbox;
+        private Rigidbody2D _body;
+
+        private void Awake()
+        {
+            _body = GetComponent<Rigidbody2D>();
+        }
 
         private void Start()
         {
             _previousPosition = transform.localPosition;
             _facingDirection = Vector3.right;
-            _hitbox = GetComponent<BoxCollider2D>();
 
             if (photonView && photonView.Owner != null)
             {
@@ -62,7 +69,6 @@ namespace Gameplay
             if (!isLocalCharacter)
             {
                 visionMask.gameObject.SetActive(false);
-                _hitbox.enabled = false;
             }
             else
                 visionMask.transform.localScale = visionRange / 2f * Vector3.one;
@@ -97,11 +103,10 @@ namespace Gameplay
 
         public void Update()
         {
-            UpdateAnimations();
             UpdateDepth();
 
             if (!isLocalCharacter) return;
-
+            
             Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -109,6 +114,8 @@ namespace Gameplay
         {
             float dist = GameManager.Instance.GetDistanceToLocalCharacter(transform.position);
             SetVisible(dist <= visionRange / 4f);
+            
+            UpdateAnimations();
         }
 
         private void SetVisible(bool value)
@@ -119,13 +126,13 @@ namespace Gameplay
         private void UpdateAnimations()
         {
             Vector3 dist = transform.localPosition - _previousPosition;
-            _running = dist.magnitude > 0f;
+            _running = dist.magnitude > 0f || _body.velocity.magnitude > 0f;
 
             if (_running && dist.x != 0f)
                 SetFacingDirection(dist.x < 0 ? Vector3.left : Vector3.right);
 
-            animator.SetFloat("Speed", speed);
-            animator.SetBool("Running", _running);
+            animator.SetFloat(AnimatorHashSpeed, speed);
+            animator.SetBool(AnimatorHashRunning, _running);
             _previousPosition = transform.localPosition;
         }
 
@@ -144,35 +151,14 @@ namespace Gameplay
 
         private void Move(int x, int y)
         {
-            if (x == 0 && y == 0) return;
+            if (x == 0 && y == 0)
+            {
+                _body.velocity = Vector3.zero;
+                return;
+            }
 
-            var distance = speed * Time.deltaTime;
             var direction = new Vector3(x, y).normalized;
-
-            var tolerance = 0.01f;
-            var pos = _hitbox.bounds.center;
-            var hit = Physics2D.BoxCast(pos, _hitbox.bounds.size, 0f, direction, distance, obstacleMask);
-            if (hit)
-            {
-                if (x == 0 && Math.Abs(hit.point.x - pos.x) > tolerance)
-                {
-                    Vector3 perp = Vector2.Perpendicular(direction);
-                    var xDir = hit.point.x - pos.x;
-                    perp.x *= Mathf.Sign(xDir) * Mathf.Sign(y);
-                    transform.position += distance * perp.normalized;
-                }
-                if (y == 0 && Math.Abs(hit.point.y - pos.y) > tolerance)
-                {
-                    Vector3 perp = Vector2.Perpendicular(direction);
-                    var yDir = hit.point.y - pos.y;
-                    perp.y *= -Mathf.Sign(yDir) * Mathf.Sin(x);
-                    transform.position += distance * perp.normalized;
-                }
-            }
-            else
-            {
-                transform.position += distance * direction;
-            }
+            _body.velocity = direction * speed;
         }
 
         public Vector3 GetPosition2D()

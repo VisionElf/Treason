@@ -1,16 +1,25 @@
 fileFormatVersion: 2
-guid: 483a4b0eb12a41643bbfac47200a117e
+guid: d22fcb2436b245245921a0191c51b7f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4855525801822949395
-    second: CafetTasks_0
+      213: 908771799132276211
+    second: MainScreenCrew_0
   - first:
-      213: 7359889245958065099
-    second: CafetTasks_1
+      213: -8377626046586448741
+    second: MainScreenCrew_1
   - first:
-      213: -6796873847912815918
-    second: CafetTasks_2
+      213: 4773931681587857664
+    second: MainScreenCrew_2
+  - first:
+      213: 5359226502043072263
+    second: MainScreenCrew_3
+  - first:
+      213: 6014417053292068006
+    second: MainScreenCrew_4
+  - first:
+      213: 2689635110456450329
+    second: MainScreenCrew_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -108,43 +117,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CafetTasks_0
+      name: MainScreenCrew_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 50
-        height: 62
+        y: 282
+        width: 134
+        height: 230
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: def69984205bd9cb0800000000000000
-      internalID: -4855525801822949395
+      spriteID: 3f50c2de22b9c9c00800000000000000
+      internalID: 908771799132276211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CafetTasks_1
+      name: MainScreenCrew_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 0
-        width: 46
-        height: 62
+        x: 134
+        y: 298
+        width: 198
+        height: 214
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcb4c8b5644932660800000000000000
-      internalID: 7359889245958065099
+      spriteID: b9497284f71bcbb80800000000000000
+      internalID: -8377626046586448741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainScreenCrew_2
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 120
+        width: 143
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009070f2299604240800000000000000
+      internalID: 4773931681587857664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainScreenCrew_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 141
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707f225fb1ccf5a40800000000000000
+      internalID: 5359226502043072263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainScreenCrew_4
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 111
+        width: 186
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac7688b170877350800000000000000
+      internalID: 6014417053292068006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MainScreenCrew_5
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 324
+        width: 142
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ddc26f1e0835520800000000000000
+      internalID: 2689635110456450329
       vertices: []
       indices: 
       edges: []
