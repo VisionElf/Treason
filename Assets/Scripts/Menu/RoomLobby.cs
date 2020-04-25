@@ -64,7 +64,7 @@ namespace Menu
                 var isCrewmate = roleList.Contains(p);
                 
                 PhotonNetwork.PlayerList[i].SetCustomProperty("Color", "#" + colorStr);
-                PhotonNetwork.PlayerList[i].SetCustomProperty("Role", isCrewmate ? 0 : 1);
+                PhotonNetwork.PlayerList[i].SetCustomProperty("Role", isCrewmate ? "0" : "1");
             }
 
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions {Receivers = ReceiverGroup.All};

@@ -18,5 +18,15 @@ namespace CustomExtensions
                 list[n] = value;
             }
         }
+
+        public static T Random<T>(this IList<T> list)
+        {
+            return list[UnityEngine.Random.Range(0, list.Count)];
+        }
+        
+        public static T Random<T>(this T[] list)
+        {
+            return list[UnityEngine.Random.Range(0, list.Length)];
+        }
     }
 }
