@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.ComponentModel;
 using CustomExtensions;
-using Gameplay;
 using UnityEngine;
 
 namespace Audio
@@ -21,31 +19,13 @@ namespace Audio
     
     public class Footsteps : MonoBehaviour
     {
-        public float period;
         public FootstepsList[] list;
+        public AudioSource source;
         
-        private Astronaut _astronaut;
-        private float _time;
-        private AudioSource _source;
-        
-        private void Awake()
+        private void OnEnable()
         {
-            _astronaut = GetComponentInParent<Astronaut>();
-            _source = GetComponent<AudioSource>();
-        }
-
-        private void LateUpdate()
-        {
-            if (_astronaut.IsRunning)
-            {
-                _time += Time.deltaTime;
-                if (_time >= period)
-                {
-                    _time = 0f;
-                    var list = GetFootstepList(FootstepType.Metal);
-                    list.audioClips.PlayRandomSound(_source);
-                }
-            }
+            var list = GetFootstepList(FootstepType.Metal);
+            list.audioClips.PlayRandomSound(source);
         }
 
         private FootstepsList GetFootstepList(FootstepType type)
