@@ -10,7 +10,7 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Gameplay
 {
-    public class Character : MonoBehaviourPun
+    public class Astronaut : MonoBehaviourPun
     {
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
@@ -32,9 +32,6 @@ namespace Gameplay
         public Animator animator;
         public SpriteRenderer spriteRenderer;
 
-        [Header("Collision")]
-        public LayerMask obstacleMask;
-
         [Header("Vision")]
         public float visionRange;
         public SpriteMask visionMask;
@@ -45,6 +42,7 @@ namespace Gameplay
         private bool _running;
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
+        public bool IsRunning => _running;
 
         private void Awake()
         {
@@ -130,7 +128,6 @@ namespace Gameplay
             if (dist.y.AlmostEquals(0f, 0.001f))
                 dist.y = 0f;
             _running = dist.magnitude > 0f;
-
             if (_running && dist.x != 0)
                 SetFacingDirection(dist.x < 0 ? Vector3.left : Vector3.right);
 

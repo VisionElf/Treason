@@ -20,7 +20,7 @@ namespace Gameplay
 
         protected bool CanInteract()
         {
-            var dist = Vector3.Distance(transform.position, GameManager.Instance.LocalCharacter.GetPosition2D());
+            var dist = Vector3.Distance(transform.position, GameManager.Instance.LocalAstronaut.GetPosition2D());
             return dist <= interactRange;
         }
 
