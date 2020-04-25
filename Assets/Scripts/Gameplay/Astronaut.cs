@@ -38,11 +38,15 @@ namespace Gameplay
 
         [Header("Misc")]
         public bool isLocalCharacter;
+        public RoleData[] roleList;
 
         private bool _running;
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
         public bool IsRunning => _running;
+
+        private RoleData _role;
+        public RoleData Role => _role;
 
         private void Awake()
         {
@@ -58,17 +62,31 @@ namespace Gameplay
                 isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
 
+                string roleStr = photonView.Owner.GetCustomProperty("Role", "0");
+                SetRole(roleStr);
+
                 string colorStr = photonView.Owner.GetCustomProperty("Color", "#FFFFFF");
                 Color color = Color.white;
                 if (ColorUtility.TryParseHtmlString(colorStr, out Color tmp))
                     color = tmp;
                 SetColor(color);
             }
+            else
+            {
+                SetRole(Random.Range(0, roleList.Length).ToString());
+//                SetColor(color);
+            }
 
             if (!isLocalCharacter)
                 visionMask.gameObject.SetActive(false);
             else
                 visionMask.transform.localScale = visionRange / 2f * Vector3.one;
+        }
+
+        private void SetRole(string roleStr)
+        {
+            var index = int.Parse(roleStr);
+            _role = roleList[index];
         }
 
         private void OnDrawGizmosSelected()

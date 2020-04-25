@@ -636,6 +636,9 @@ MonoBehaviour:
   visionRange: 20
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
+  roleList:
+  - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
+  - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
 --- !u!61 &3913097468069752354
 BoxCollider2D:
   m_ObjectHideFlags: 0
