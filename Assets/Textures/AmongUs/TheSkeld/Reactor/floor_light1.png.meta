@@ -1,0 +1,1028 @@
+fileFormatVersion: 2
+guid: 4c984352a98394e49a74b33478dec671
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1389898863996814574
+    second: floor_light1_off
+  - first:
+      213: -1020945656854898834
+    second: floor_light1_1
+  - first:
+      213: -1338723299634288728
+    second: floor_light1_2
+  - first:
+      213: 4164875019758753647
+    second: floor_light1_3
+  - first:
+      213: 1190553789903210698
+    second: floor_light1_4
+  - first:
+      213: 3118691014511293554
+    second: floor_light1_5
+  - first:
+      213: -5297016730446316693
+    second: floor_light1_6
+  - first:
+      213: 4853611094226323401
+    second: floor_light1_7
+  - first:
+      213: 6846254573541101738
+    second: floor_light1_8
+  - first:
+      213: -959602173848842639
+    second: floor_light1_9
+  - first:
+      213: -5980074479407579116
+    second: floor_light1_10
+  - first:
+      213: 183717997795075692
+    second: floor_light1_11
+  - first:
+      213: -4946161923188494576
+    second: floor_light1_12
+  - first:
+      213: -487098866162715935
+    second: floor_light1_13
+  - first:
+      213: 6071402257291990736
+    second: floor_light1_14
+  - first:
+      213: 4890467946778199192
+    second: floor_light1_15
+  - first:
+      213: 1077684099573597811
+    second: floor_light1_16
+  - first:
+      213: -8907541897795510331
+    second: floor_light1_17
+  - first:
+      213: -7312015944240800020
+    second: floor_light1_18
+  - first:
+      213: -7306395455609406248
+    second: floor_light1_19
+  - first:
+      213: -7995740020120945012
+    second: floor_light1_20
+  - first:
+      213: 8246203631172346026
+    second: floor_light1_21
+  - first:
+      213: -1960671079820469739
+    second: floor_light1_22
+  - first:
+      213: -532973596219646249
+    second: floor_light1_23
+  - first:
+      213: -4884320911558717375
+    second: floor_light1_24
+  - first:
+      213: -5691021275821985369
+    second: floor_light1_25
+  - first:
+      213: -6156394788821037238
+    second: floor_light1_26
+  - first:
+      213: -1450205382861787569
+    second: floor_light1_27
+  - first:
+      213: -5825167413292975116
+    second: floor_light1_28
+  - first:
+      213: -7121522783668913830
+    second: floor_light1_29
+  - first:
+      213: -7258264668802322020
+    second: floor_light1_30
+  - first:
+      213: -3590500981279463702
+    second: floor_light1_31
+  - first:
+      213: -5532101586877414828
+    second: floor_light1_32
+  - first:
+      213: -3907511606645044466
+    second: floor_light1_33
+  - first:
+      213: -7030865972652196061
+    second: floor_light1_34
+  - first:
+      213: -8841863046727429566
+    second: floor_light1_35
+  - first:
+      213: 6692116203086741770
+    second: floor_light1_36
+  - first:
+      213: -1398944537202529545
+    second: floor_light1_37
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 75
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: floor_light1_off
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 441
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4cf3e17a9e94310800000000000000
+      internalID: 1389898863996814574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_1
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 441
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e679f24955fd4d1f0800000000000000
+      internalID: -1020945656854898834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_2
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 441
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a762c87046eb6de0800000000000000
+      internalID: -1338723299634288728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_3
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 441
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f675e9693cb9cc930800000000000000
+      internalID: 4164875019758753647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_4
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 441
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac80d253d52b58010800000000000000
+      internalID: 1190553789903210698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 378
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274f52444f0d74b20800000000000000
+      internalID: 3118691014511293554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_6
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 378
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b327439573d76b0800000000000000
+      internalID: -5297016730446316693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_7
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 378
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7414d139d7b5340800000000000000
+      internalID: 4853611094226323401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_8
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 378
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa09fc9f248c20f50800000000000000
+      internalID: 6846254573541101738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_9
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 378
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e0c0638eecea2f0800000000000000
+      internalID: -959602173848842639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410488cd1f1820da0800000000000000
+      internalID: -5980074479407579116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_11
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 315
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66eb6dab82bc8200800000000000000
+      internalID: 183717997795075692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_12
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 315
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f69cecfe3bb5bb0800000000000000
+      internalID: -4946161923188494576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_13
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 315
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e230e7792a7d39f0800000000000000
+      internalID: -487098866162715935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_14
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 315
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6d4627f24f14450800000000000000
+      internalID: 6071402257291990736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8940621dfae6ed340800000000000000
+      internalID: 4890467946778199192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_16
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 252
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376cb2f8af3b4fe00800000000000000
+      internalID: 1077684099573597811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_17
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 252
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf5dff86dd026480800000000000000
+      internalID: -8907541897795510331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_18
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 252
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceed88b4d30868a90800000000000000
+      internalID: -7312015944240800020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_19
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 252
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc7fd74b087a9a90800000000000000
+      internalID: -7306395455609406248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 189
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ef050a0dc690190800000000000000
+      internalID: -7995740020120945012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_21
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 189
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa060952386607270800000000000000
+      internalID: 8246203631172346026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_22
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 189
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a5bed7a0c4ac4e0800000000000000
+      internalID: -1960671079820469739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_23
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 189
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de5aaa865f7a98f0800000000000000
+      internalID: -532973596219646249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_24
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 189
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140d7895208673cb0800000000000000
+      internalID: -4884320911558717375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 126
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1b07d4d4e6501b0800000000000000
+      internalID: -5691021275821985369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 126
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4f814bbe87109aa0800000000000000
+      internalID: -6156394788821037238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_27
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 126
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ee92743e5dfdbe0800000000000000
+      internalID: -1450205382861787569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_28
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 126
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fbbd75c919d82fa0800000000000000
+      internalID: -5825167413292975116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_29
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 126
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59309b72c44b2d90800000000000000
+      internalID: -7121522783668913830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91f44a5db6754b90800000000000000
+      internalID: -7258264668802322020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_31
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 63
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6652d716afb2ec0800000000000000
+      internalID: -3590500981279463702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_32
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 63
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4520cc4cae60a33b0800000000000000
+      internalID: -5532101586877414828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_33
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 63
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0bc43a85eab5c9c0800000000000000
+      internalID: -3907511606645044466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_34
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 63
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f3fa426a85d6e90800000000000000
+      internalID: -7030865972652196061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242982bb7646b4580800000000000000
+      internalID: -8841863046727429566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_36
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 0
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a010f98fa3c2fdc50800000000000000
+      internalID: 6692116203086741770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floor_light1_37
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 0
+        width: 134
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fae197fa53f59ce0800000000000000
+      internalID: -1398944537202529545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -16,12 +16,12 @@ namespace Audio
         public FootstepType type;
         public AudioClip[] audioClips;
     }
-    
+
     public class Footsteps : MonoBehaviour
     {
         public FootstepsList[] list;
         public AudioSource source;
-        
+
         private void OnEnable()
         {
             var list = GetFootstepList(FootstepType.Metal);
