@@ -80,7 +80,10 @@ namespace Gameplay
             if (!isLocalCharacter)
                 visionMask.gameObject.SetActive(false);
             else
+            {
                 visionMask.transform.localScale = visionRange / 2f * Vector3.one;
+                gameObject.AddComponent<AudioListener>();
+            }
         }
 
         private void SetRole(string roleStr)
