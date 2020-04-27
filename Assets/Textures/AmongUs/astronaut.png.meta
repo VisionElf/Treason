@@ -1,46 +1,52 @@
 fileFormatVersion: 2
-guid: 04a488738ecb5ef43a14eda4b09e86bd
+guid: bbe54f815dc03394b8aa4f8e5318bfb5
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -6900054268500017981
-    second: astronaut_no_shadow_idle
+    second: astronaut_idle
   - first:
       213: -5317839095611928621
-    second: astronaut_no_shadow_run_1
+    second: astronaut_run_1
   - first:
       213: 8259661459580857557
-    second: astronaut_no_shadow_run_2
+    second: astronaut_run_2
   - first:
       213: -1040486999155196957
-    second: astronaut_no_shadow_run_3
+    second: astronaut_run_3
   - first:
       213: -7872651286211631172
-    second: astronaut_no_shadow_run_4
+    second: astronaut_run_4
   - first:
       213: -6764556317307327313
-    second: astronaut_no_shadow_run_5
+    second: astronaut_run_5
   - first:
       213: -6161291915505959940
-    second: astronaut_no_shadow_run_6
+    second: astronaut_run_6
   - first:
       213: -8362927626143783243
-    second: astronaut_no_shadow_run_7
+    second: astronaut_run_7
   - first:
       213: 5063466567962179215
-    second: astronaut_no_shadow_run_8
+    second: astronaut_run_8
   - first:
       213: 1448248192186988358
-    second: astronaut_no_shadow_run_9
+    second: astronaut_run_9
   - first:
       213: -7790256560406349612
-    second: astronaut_no_shadow_run_10
+    second: astronaut_run_10
   - first:
       213: -7236998062944151359
-    second: astronaut_no_shadow_run_11
+    second: astronaut_run_11
   - first:
       213: -2499517146264556708
-    second: astronaut_no_shadow_run_12
+    second: astronaut_run_12
+  - first:
+      213: -8352551160568446875
+    second: astronaut_vent_1
+  - first:
+      213: -56674058578424102
+    second: astronaut_vent_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -138,7 +144,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: astronaut_no_shadow_idle
+      name: astronaut_idle
       rect:
         serializedVersion: 2
         x: 0
@@ -146,7 +152,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -159,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_1
+      name: astronaut_run_1
       rect:
         serializedVersion: 2
         x: 84
@@ -167,7 +173,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -180,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_2
+      name: astronaut_run_2
       rect:
         serializedVersion: 2
         x: 168
@@ -188,7 +194,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -201,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_3
+      name: astronaut_run_3
       rect:
         serializedVersion: 2
         x: 252
@@ -209,7 +215,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -222,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_4
+      name: astronaut_run_4
       rect:
         serializedVersion: 2
         x: 336
@@ -230,7 +236,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_5
+      name: astronaut_run_5
       rect:
         serializedVersion: 2
         x: 0
@@ -251,7 +257,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_6
+      name: astronaut_run_6
       rect:
         serializedVersion: 2
         x: 84
@@ -272,7 +278,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,7 +291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_7
+      name: astronaut_run_7
       rect:
         serializedVersion: 2
         x: 168
@@ -293,7 +299,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -306,7 +312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_8
+      name: astronaut_run_8
       rect:
         serializedVersion: 2
         x: 252
@@ -314,7 +320,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -327,7 +333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_9
+      name: astronaut_run_9
       rect:
         serializedVersion: 2
         x: 336
@@ -335,7 +341,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -348,7 +354,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_10
+      name: astronaut_run_10
       rect:
         serializedVersion: 2
         x: 0
@@ -356,7 +362,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -369,7 +375,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_11
+      name: astronaut_run_11
       rect:
         serializedVersion: 2
         x: 84
@@ -377,7 +383,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -390,7 +396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: astronaut_no_shadow_run_12
+      name: astronaut_run_12
       rect:
         serializedVersion: 2
         x: 168
@@ -398,7 +404,7 @@ TextureImporter:
         width: 84
         height: 116
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,6 +412,48 @@ TextureImporter:
       bones: []
       spriteID: c5b27e2066eef4dd0800000000000000
       internalID: -2499517146264556708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astronaut_vent_1
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 84
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5608a0229f6c51c80800000000000000
+      internalID: -8352551160568446875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: astronaut_vent_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 84
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade04767e37a63ff0800000000000000
+      internalID: -56674058578424102
       vertices: []
       indices: 
       edges: []

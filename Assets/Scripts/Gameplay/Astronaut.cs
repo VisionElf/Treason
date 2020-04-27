@@ -10,6 +10,12 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace Gameplay
 {
+    public enum PlayerState
+    {
+        NORMAL,
+        IN_VENT
+    }
+
     public class Astronaut : MonoBehaviourPun
     {
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
@@ -47,17 +53,19 @@ namespace Gameplay
 
         public bool IsRunning { get; private set; }
         public RoleData Role { get; private set; }
+        public PlayerState State { get; set; }
 
         private void Awake()
         {
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
+            State = PlayerState.NORMAL;
 
             if (photonView && photonView.Owner != null)
             {
                 string roleStr = photonView.Owner.GetCustomProperty("RoleIndex", "0");
                 SetRole(roleStr);
-                
+
                 string colorStr = photonView.Owner.GetCustomProperty("ColorIndex", "0");
                 SetColor(int.Parse(colorStr));
             }
@@ -122,7 +130,7 @@ namespace Gameplay
         {
             UpdateDepth();
 
-            if (!isLocalCharacter) return;
+            if (!isLocalCharacter || State == PlayerState.IN_VENT) return;
 
             Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
