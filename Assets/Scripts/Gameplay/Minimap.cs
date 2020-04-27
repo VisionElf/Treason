@@ -17,9 +17,7 @@ namespace Gameplay
 
         private void Start()
         {
-            _player = GameManager.Instance.LocalAstronaut;
-            
-            Toggle();
+            minimapObject.SetActive(false);
         }
 
         void Update()
@@ -29,6 +27,9 @@ namespace Gameplay
 
             if (!minimapObject.activeSelf) return;
 
+            if (!_player)
+                _player = GameManager.Instance.LocalAstronaut;
+            
             astronautIcon.anchoredPosition = (_player.transform.position / scale) - offset;
         }
 
