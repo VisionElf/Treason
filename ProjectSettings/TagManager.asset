@@ -59,6 +59,9 @@ TagManager:
   - name: PlayerName
     uniqueID: 2189608343
     locked: 0
+  - name: LineOfSight
+    uniqueID: 3040220915
+    locked: 0
   - name: UI
-    uniqueID: 3648486063
+    uniqueID: 2386710767
     locked: 0
