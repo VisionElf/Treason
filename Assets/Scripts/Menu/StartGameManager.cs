@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using Gameplay;
+using Managers;
 using UnityEngine;
 
 namespace Menu
@@ -8,14 +10,21 @@ namespace Menu
         public float preDelay;
         public float postDelay;
         public GameObject shPanel;
-        public GameObject rolePanel;
+        public RoleMenu rolePanel;
 
         public IEnumerator Start()
         {
             yield return new WaitForSeconds(preDelay);
 
+            Astronaut localAstronaut = null;
+            while (localAstronaut == null)
+            {
+                localAstronaut = GameManager.Instance.LocalAstronaut;
+                yield return null;
+            }
+
             shPanel.SetActive(false);
-            rolePanel.SetActive(true);
+            rolePanel.Show(localAstronaut);
             
             yield return new WaitForSeconds(postDelay);
 

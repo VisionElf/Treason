@@ -2097,7 +2097,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &6063395331884164050
 MonoBehaviour:
@@ -2153,7 +2153,7 @@ MonoBehaviour:
   preDelay: 2
   postDelay: 5
   shPanel: {fileID: 7048372980648620322}
-  rolePanel: {fileID: 5724023978546572070}
+  rolePanel: {fileID: 2585612812933639515}
 --- !u!1 &6917462131886934850
 GameObject:
   m_ObjectHideFlags: 0
