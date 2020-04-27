@@ -39,6 +39,7 @@ namespace Gameplay
         [Header("Misc")]
         public bool isLocalCharacter;
         public RoleData[] roleList;
+        public ColorData[] colorList;
 
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
@@ -51,6 +52,15 @@ namespace Gameplay
         {
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
+
+            if (photonView && photonView.Owner != null)
+            {
+                string roleStr = photonView.Owner.GetCustomProperty("RoleIndex", "0");
+                SetRole(roleStr);
+                
+                string colorStr = photonView.Owner.GetCustomProperty("ColorIndex", "0");
+                SetColor(int.Parse(colorStr));
+            }
         }
 
         private void Start()
@@ -61,20 +71,11 @@ namespace Gameplay
             {
                 isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
-
-                string roleStr = photonView.Owner.GetCustomProperty("Role", "0");
-                SetRole(roleStr);
-
-                string colorStr = photonView.Owner.GetCustomProperty("Color", "#FFFFFF");
-                Color color = Color.white;
-                if (ColorUtility.TryParseHtmlString(colorStr, out Color tmp))
-                    color = tmp;
-                SetColor(color);
             }
             else
             {
+                //Debug
                 SetRole(Random.Range(0, roleList.Length).ToString());
-//                SetColor(color);
             }
 
             if (!isLocalCharacter)
@@ -101,15 +102,9 @@ namespace Gameplay
             SetColor(colorData, true);
         }
 
-        private void SetColor(Color color)
+        private void SetColor(int colorIndex)
         {
-            if (!spriteRenderer) return;
-
-            var material = spriteRenderer.material;
-
-            material.SetColor(ShaderColor1, color);
-            material.SetColor(ShaderColor2, Color.white);
-            material.SetColor(ShaderColor3, color);
+            SetColor(colorList[colorIndex], false);
         }
 
         private void SetColor(ColorData data, bool useShared)

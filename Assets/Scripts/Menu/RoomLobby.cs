@@ -35,42 +35,33 @@ namespace Menu
         public void StartGame()
         {
             byte evCode = 1;
-            object[] content = {new Vector3(10.0f, 2.0f, 5.0f), 1, 2, 5, 10};
-            
-            List<Color> colors = new List<Color>
-            {
-                Color.red,
-                Color.blue,
-                Color.green,
-                Color.cyan,
-                Color.black,
-                Color.white,
-                Color.yellow,
-                Color.magenta,
-            };
 
+            var colors = new List<int>();
+            for (var i = 0; i < 12; i++) colors.Add(i);
             colors.Shuffle();
+            
             var roleList = new List<Player>(PhotonNetwork.PlayerList);
             roleList.Shuffle();
+            
             var imposterCount = 1;
-            for (int i = 0; i < imposterCount; i++)
+            
+            for (var i = 0; i < imposterCount; i++)
                 roleList.RemoveAt(0);
 
             for (var i = 0; i < PhotonNetwork.PlayerList.Length; i++)
             {
                 var p = PhotonNetwork.PlayerList[i];
-                var color = colors[i];
-                var colorStr = ColorUtility.ToHtmlStringRGB(color);
+                var colorIndex = colors[i];
                 var isCrewmate = roleList.Contains(p);
                 
-                PhotonNetwork.PlayerList[i].SetCustomProperty("Color", "#" + colorStr);
-                PhotonNetwork.PlayerList[i].SetCustomProperty("Role", isCrewmate ? "0" : "1");
+                PhotonNetwork.PlayerList[i].SetCustomProperty("ColorIndex", colorIndex.ToString());
+                PhotonNetwork.PlayerList[i].SetCustomProperty("RoleIndex", isCrewmate ? "0" : "1");
             }
 
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions {Receivers = ReceiverGroup.All};
             SendOptions sendOptions = new SendOptions { Reliability = true };
             
-            PhotonNetwork.RaiseEvent(evCode, content, raiseEventOptions, sendOptions);
+            PhotonNetwork.RaiseEvent(evCode, null, raiseEventOptions, sendOptions);
         }
 
         private void OnEvent(EventData eventData)

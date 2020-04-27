@@ -1,41 +1,56 @@
-﻿using System.Linq;
-using Managers;
+﻿using Managers;
 using UnityEngine;
-using UnityEngine.UIElements;
-using Vector3 = UnityEngine.Vector3;
 
 namespace Gameplay
 {
     public class Minimap : MonoBehaviour
     {
-        public GameObject minimapObject;
+        public RectTransform minimapObject;
         public RectTransform astronautIcon;
-        public Vector3 offset;
-        public float scale;
+        public MiniMapRoomElement roomElementPrefab;
 
         private Astronaut _player;
+        
+        public static Minimap Instance;
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {
-            minimapObject.SetActive(false);
+            minimapObject.gameObject.SetActive(false);
         }
 
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Tab))
                 Toggle();
 
-            if (!minimapObject.activeSelf) return;
+            if (!minimapObject.gameObject.activeSelf) return;
 
             if (!_player)
                 _player = GameManager.Instance.LocalAstronaut;
-            
-            astronautIcon.anchoredPosition = (_player.transform.position / scale) - offset;
+
+            astronautIcon.anchoredPosition = Map.Instance.WorldToMinimapPosition(_player.transform.position);
         }
 
         public void Toggle()
         {
-            minimapObject.SetActive(!minimapObject.activeSelf);
+            minimapObject.gameObject.SetActive(!minimapObject.gameObject.activeSelf);
+        }
+
+        public void AddMiniMapRoomElement(Vector3 pos, MapRoom room)
+        {
+            var txt = Instantiate(roomElementPrefab, minimapObject);
+            txt.GetComponent<RectTransform>().anchoredPosition = pos;
+            txt.SetRoom(room);
+        }
+
+        public Vector2 GetSize()
+        {
+            return minimapObject.sizeDelta;
         }
     }
 }
