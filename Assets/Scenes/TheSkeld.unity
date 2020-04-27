@@ -4520,7 +4520,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -646481233
+  m_SortingLayerID: -2105358953
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &297925279
@@ -12307,6 +12307,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299661200}
     m_Modifications:
+    - target: {fileID: 2008417368, guid: cf2b13f82c82bad4e8463e5f2acfe15f, type: 3}
+      propertyPath: m_FrontSortingLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008417368, guid: cf2b13f82c82bad4e8463e5f2acfe15f, type: 3}
+      propertyPath: m_BackSortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3241142889095061895, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -14687,9 +14695,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2058335787
-  m_SortingLayer: 4
-  m_SortingOrder: -1
+  m_SortingLayerID: -1254746381
+  m_SortingLayer: 7
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 41e732ddb828c6446966352b8b513511, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
