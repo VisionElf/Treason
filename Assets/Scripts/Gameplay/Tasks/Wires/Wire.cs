@@ -10,21 +10,19 @@ namespace Gameplay.Tasks.Wires
         public RectTransform middle;
         public RectTransform front;
 
+        public Image[] coloredImages;
+
+        public float bonusWidth;
+
         public PointerListener clickZone;
 
-        private bool _selected;
-        private float _canvasMultX = 1f;
-        private float _canvasMultY = 1f;
+        private Color _color;
+        public Color Color => _color;
 
-        private void Awake()
-        {
-            var scaler = GetComponentInParent<CanvasScaler>();
-            if (scaler)
-            {
-                _canvasMultX = scaler.scaleFactor * scaler.referenceResolution.x / Screen.width;
-                _canvasMultY = scaler.scaleFactor * scaler.referenceResolution.y / Screen.height;
-            }
-        }
+        private bool _selected;
+        private WireTask _wireTask;
+        
+        public bool IsSelected => _selected;
 
         private void OnEnable()
         {
@@ -34,13 +32,22 @@ namespace Gameplay.Tasks.Wires
                 clickZone.onUp += OnUp;
             }
         }
-        
+
         private void OnDisable()
         {
             if (clickZone)
             {
                 clickZone.onDown -= OnDown;
                 clickZone.onUp -= OnUp;
+            }
+        }
+
+        public void SetColor(Color color)
+        {
+            _color = color;
+            foreach (var img in coloredImages)
+            {
+                img.color = color;
             }
         }
 
@@ -60,16 +67,15 @@ namespace Gameplay.Tasks.Wires
             {
                 front.position = Input.mousePosition;
             }
-            
+
             if (front && middle && back)
             {
-                var direction = front.position - middle.position;
-
+                var distance = Vector3.Distance(front.anchoredPosition, middle.anchoredPosition);
                 var size = middle.sizeDelta;
-                size.x = direction.magnitude * _canvasMultX;
-                
+                size.x = distance + bonusWidth;
                 middle.sizeDelta = size;
 
+                var direction = front.position - middle.position;
                 var angle = Vector3.Angle(direction, new Vector3(1f, 0));
                 var rot = Quaternion.Euler(0f, 0f, Mathf.Sign(direction.y) * angle);
                 middle.rotation = rot;
@@ -85,6 +91,17 @@ namespace Gameplay.Tasks.Wires
         public void OnPointerUp(PointerEventData eventData)
         {
             Debug.Log("Up");
+        }
+
+        public void SetPosition(Vector3 position)
+        {
+            _selected = false;
+            front.position = position;
+        }
+
+        public void SetWireTask(WireTask task)
+        {
+            _wireTask = task;
         }
     }
 }
