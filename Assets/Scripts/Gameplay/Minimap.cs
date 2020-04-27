@@ -1,32 +1,40 @@
-﻿using Gameplay;
-using System.Linq;
+﻿using System.Linq;
+using Managers;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Vector3 = UnityEngine.Vector3;
 
-public class Minimap : MonoBehaviour
+namespace Gameplay
 {
-    public Transform astronautIcon;
-    public Vector3 offset;
-    public float scale;
-    public GameObject graphics;
-
-    private Astronaut _player;
-
-    private void Start()
+    public class Minimap : MonoBehaviour
     {
-        _player = null;
-    }
+        public GameObject minimapObject;
+        public RectTransform astronautIcon;
+        public Vector3 offset;
+        public float scale;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-            graphics.SetActive(!graphics.activeSelf);
+        private Astronaut _player;
 
-        if (!graphics.activeSelf) return;
+        private void Start()
+        {
+            _player = GameManager.Instance.LocalAstronaut;
+            
+            Toggle();
+        }
 
-        if (_player == null)
-            _player = FindObjectsOfType<Astronaut>().First((p) => p.isLocalCharacter);
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+                Toggle();
 
-        astronautIcon.localPosition = (_player.transform.position / scale) - offset;
+            if (!minimapObject.activeSelf) return;
+
+            astronautIcon.anchoredPosition = (_player.transform.position / scale) - offset;
+        }
+
+        public void Toggle()
+        {
+            minimapObject.SetActive(!minimapObject.activeSelf);
+        }
     }
 }

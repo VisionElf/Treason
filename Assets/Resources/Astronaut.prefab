@@ -634,7 +634,7 @@ MonoBehaviour:
   speed: 4
   animator: {fileID: 4094762659643444565}
   spriteRenderer: {fileID: 4040953918193099422}
-  visionRange: 10
+  visionRange: 15
   visionMask: {fileID: 2008417368}
   isLocalCharacter: 0
   roleList:
