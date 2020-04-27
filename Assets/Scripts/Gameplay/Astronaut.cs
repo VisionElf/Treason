@@ -4,7 +4,7 @@ using Managers;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.Windows.Speech;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -182,13 +182,12 @@ namespace Gameplay
                 return;
             }
 
-            var direction = new Vector3(x, y).normalized;
-            _body.velocity = direction * speed;
+            WalkIn(new Vector3(x, y).normalized);
         }
 
-        public Vector3 GetPosition2D()
-        {
-            return new Vector3(transform.position.x, transform.position.y, 0);
-        }
+        public Vector3 GetPosition2D() => new Vector3(transform.position.x, transform.position.y, 0);
+        public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
+        public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
+        public void ResetSpeed() => _body.velocity = Vector3.zero;
     }
 }

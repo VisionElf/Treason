@@ -18,10 +18,15 @@ namespace Gameplay
             }
         }
 
-        protected bool CanInteract()
+        protected bool IsInRange()
         {
             var dist = Vector3.Distance(transform.position, GameManager.Instance.LocalAstronaut.GetPosition2D());
             return dist <= interactRange;
+        }
+
+        protected virtual bool CanInteract()
+        {
+            return IsInRange();
         }
 
         public abstract void Interact();

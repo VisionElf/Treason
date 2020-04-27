@@ -3,50 +3,44 @@ guid: bbe54f815dc03394b8aa4f8e5318bfb5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6900054268500017981
+      213: 6362290972351372809
     second: astronaut_idle
   - first:
-      213: -5317839095611928621
+      213: -1288049615716269
     second: astronaut_run_1
   - first:
-      213: 8259661459580857557
+      213: 3882900790196195014
     second: astronaut_run_2
   - first:
-      213: -1040486999155196957
+      213: 5617970741713943694
     second: astronaut_run_3
   - first:
-      213: -7872651286211631172
+      213: -5826254180988321375
     second: astronaut_run_4
   - first:
-      213: -6764556317307327313
+      213: 8320248626341413291
     second: astronaut_run_5
   - first:
-      213: -6161291915505959940
+      213: 6061804866908208440
     second: astronaut_run_6
   - first:
-      213: -8362927626143783243
+      213: -7879347905028560554
     second: astronaut_run_7
   - first:
-      213: 5063466567962179215
+      213: 970926691857807743
     second: astronaut_run_8
   - first:
-      213: 1448248192186988358
+      213: 8951438286592332391
     second: astronaut_run_9
   - first:
-      213: -7790256560406349612
+      213: -3890122624531228361
     second: astronaut_run_10
   - first:
-      213: -7236998062944151359
+      213: 8583788947061083919
     second: astronaut_run_11
   - first:
-      213: -2499517146264556708
+      213: -3000299213262099927
     second: astronaut_run_12
-  - first:
-      213: -8352551160568446875
-    second: astronaut_vent_1
-  - first:
-      213: -56674058578424102
-    second: astronaut_vent_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -158,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cc732b63351e30a0800000000000000
-      internalID: -6900054268500017981
+      spriteID: 90e9da43ee56b4850800000000000000
+      internalID: 6362290972351372809
       vertices: []
       indices: 
       edges: []
@@ -179,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3dfcd55848d3336b0800000000000000
-      internalID: -5317839095611928621
+      spriteID: 350c334968c6bfff0800000000000000
+      internalID: -1288049615716269
       vertices: []
       indices: 
       edges: []
@@ -200,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dc2d4ff55630a270800000000000000
-      internalID: 8259661459580857557
+      spriteID: 6ce4ab932b5d2e530800000000000000
+      internalID: 3882900790196195014
       vertices: []
       indices: 
       edges: []
@@ -221,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eb31f546927f81f0800000000000000
-      internalID: -1040486999155196957
+      spriteID: e8cb562df9a07fd40800000000000000
+      internalID: 5617970741713943694
       vertices: []
       indices: 
       edges: []
@@ -242,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb765d4cd59beb290800000000000000
-      internalID: -7872651286211631172
+      spriteID: 1a18e03f0bcf42fa0800000000000000
+      internalID: -5826254180988321375
       vertices: []
       indices: 
       edges: []
@@ -263,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: faca5cb9ed77f12a0800000000000000
-      internalID: -6764556317307327313
+      spriteID: ba103080b06777370800000000000000
+      internalID: 8320248626341413291
       vertices: []
       indices: 
       edges: []
@@ -284,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfbf7c295a1be7aa0800000000000000
-      internalID: -6161291915505959940
+      spriteID: 83d3ccdd86bdf1450800000000000000
+      internalID: 6061804866908208440
       vertices: []
       indices: 
       edges: []
@@ -305,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b62669f1a9e0fb80800000000000000
-      internalID: -8362927626143783243
+      spriteID: 659ed03b3dee6a290800000000000000
+      internalID: -7879347905028560554
       vertices: []
       indices: 
       edges: []
@@ -326,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f86b373240c054640800000000000000
-      internalID: 5063466567962179215
+      spriteID: f79312b9eac697d00800000000000000
+      internalID: 970926691857807743
       vertices: []
       indices: 
       edges: []
@@ -347,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64738e1ce06391410800000000000000
-      internalID: 1448248192186988358
+      spriteID: 762da25e1b5e93c70800000000000000
+      internalID: 8951438286592332391
       vertices: []
       indices: 
       edges: []
@@ -368,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d8b2dfcee273e390800000000000000
-      internalID: -7790256560406349612
+      spriteID: 7391b107512830ac0800000000000000
+      internalID: -3890122624531228361
       vertices: []
       indices: 
       edges: []
@@ -389,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c81602ea94019b90800000000000000
-      internalID: -7236998062944151359
+      spriteID: f0f0088819ebf1770800000000000000
+      internalID: 8583788947061083919
       vertices: []
       indices: 
       edges: []
@@ -410,50 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b27e2066eef4dd0800000000000000
-      internalID: -2499517146264556708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: astronaut_vent_1
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 0
-        width: 84
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5608a0229f6c51c80800000000000000
-      internalID: -8352551160568446875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: astronaut_vent_2
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 84
-        height: 116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ade04767e37a63ff0800000000000000
-      internalID: -56674058578424102
+      spriteID: 92ae0a503cbcc56d0800000000000000
+      internalID: -3000299213262099927
       vertices: []
       indices: 
       edges: []
