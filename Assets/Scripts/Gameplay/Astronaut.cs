@@ -20,7 +20,6 @@ namespace Gameplay
         private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
 
         [Header("Visual")]
-        public ColorData colorData;
         public TMP_Text playerNameText;
 
         [Header("Animation")]
@@ -95,11 +94,6 @@ namespace Gameplay
         {
             var index = int.Parse(roleStr);
             Role = roleList[index];
-        }
-
-        private void OnDrawGizmosSelected()
-        {
-            SetColor(colorData, true);
         }
 
         private void SetColor(int colorIndex)
