@@ -40,17 +40,17 @@ namespace Gameplay
         public bool isLocalCharacter;
         public RoleData[] roleList;
 
-        private bool _running;
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
-        public bool IsRunning => _running;
+        private Collider2D _hitbox;
 
-        private RoleData _role;
-        public RoleData Role => _role;
+        public bool IsRunning { get; private set; }
+        public RoleData Role { get; private set; }
 
         private void Awake()
         {
             _body = GetComponent<Rigidbody2D>();
+            _hitbox = GetComponent<Collider2D>();
         }
 
         private void Start()
@@ -78,7 +78,11 @@ namespace Gameplay
             }
 
             if (!isLocalCharacter)
+            {
                 visionMask.gameObject.SetActive(false);
+                _body.bodyType = RigidbodyType2D.Static;
+                _hitbox.enabled = false;
+            }
             else
             {
                 visionMask.transform.localScale = visionRange / 2f * Vector3.one;
@@ -89,7 +93,7 @@ namespace Gameplay
         private void SetRole(string roleStr)
         {
             var index = int.Parse(roleStr);
-            _role = roleList[index];
+            Role = roleList[index];
         }
 
         private void OnDrawGizmosSelected()
@@ -148,13 +152,13 @@ namespace Gameplay
                 dist.x = 0f;
             if (dist.y.AlmostEquals(0f, 0.001f))
                 dist.y = 0f;
-            _running = dist.magnitude > 0f;
-            if (_running && dist.x != 0)
+            IsRunning = dist.magnitude > 0f;
+            if (IsRunning && dist.x != 0)
                 SetFacingDirection(dist.x < 0 ? Vector3.left : Vector3.right);
 
             _previousPosition = transform.localPosition;
             animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
-            animator.SetBool(AnimatorHashRunning, _running);
+            animator.SetBool(AnimatorHashRunning, IsRunning);
         }
 
         private void UpdateDepth()
