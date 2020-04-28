@@ -8,13 +8,15 @@ using TMPro;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
+using Photon.Realtime;
 
 namespace Gameplay
 {
     public enum PlayerState
     {
         NORMAL,
-        IN_VENT
+        IN_VENT,
+        DEAD
     }
 
     public class Astronaut : MonoBehaviourPun
@@ -29,30 +31,33 @@ namespace Gameplay
         private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
         private static readonly int AnimatorHashKilled = Animator.StringToHash("Killed");
 
-        [Header("Visual")] public TMP_Text playerNameText;
+        [Header("Visual")]
+        public TMP_Text playerNameText;
 
-        [Header("Animation")] public float minAnimationSpeed;
+        [Header("Animation")]
+        public float minAnimationSpeed;
         public float maxAnimationSpeed;
 
-        [Header("Movement")] public float speed;
+        [Header("Movement")]
+        public float speed;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
         public float visionRange;
         public LayerMask visibleLayerMask;
         public SpriteRenderer outline;
 
-        [Header("Misc")] public bool isLocalCharacter;
+        [Header("Misc")]
+        public bool isLocalCharacter;
         public ColorData[] colorList;
 
-        [Header("Roles")] public RoleData[] roleList;
+        [Header("Roles")]
+        public RoleData[] roleList;
         public int debugRoleIndex;
         public float interactRange;
 
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
         private Collider2D _hitbox;
-
-        private bool _dead;
 
         private Astronaut _currentKillTarget;
         private Astronaut _currentReportTarget;
@@ -128,7 +133,7 @@ namespace Gameplay
         {
             UpdateDepth();
 
-            if (!_dead && isLocalCharacter && State != PlayerState.IN_VENT)
+            if (State == PlayerState.NORMAL && isLocalCharacter)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -155,7 +160,7 @@ namespace Gameplay
 
                 SetVisible(visible);
 
-                if (!_dead)
+                if (State != PlayerState.DEAD)
                 {
                     if (visible && dist <= interactRange && localCharacter.IsImpostor() && !IsImpostor())
                         localCharacter.SetKillInteract(this, dist);
@@ -171,7 +176,7 @@ namespace Gameplay
                 }
             }
 
-            if (!_dead)
+            if (State != PlayerState.DEAD)
                 UpdateAnimations();
         }
 
@@ -260,7 +265,7 @@ namespace Gameplay
         public void Kill()
         {
             animator.SetTrigger(AnimatorHashKilled);
-            _dead = true;
+            State = PlayerState.DEAD;
             playerNameText.color = Color.clear;
         }
 
