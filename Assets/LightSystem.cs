@@ -84,7 +84,7 @@ public class LightSystem : MonoBehaviour
 
     private void UpdateTexture()
     {
-        Vector2 playerPos = _localAstronaut.GetCenter();
+        Vector2 playerPos = _localAstronaut.transform.position;
         var center = new Vector2(_width, _height) / 2f;
         var maxPixelDist = GetRange() / textureResolution;
 
@@ -136,7 +136,7 @@ public class LightSystem : MonoBehaviour
 
     private void LateUpdate()
     {
-        var position = _localAstronaut.GetCenter();
+        var position = _localAstronaut.transform.position;
         if (mode == LightSystemMode.Camera)
             position = _mainCamera.transform.position;
 

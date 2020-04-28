@@ -568,11 +568,13 @@ MonoBehaviour:
   playerNameText: {fileID: 3241142889095061895}
   minAnimationSpeed: 2
   maxAnimationSpeed: 5
-  speed: 4
+  speed: 3
   animator: {fileID: 4094762659643444565}
   spriteRenderer: {fileID: 4040953918193099422}
-  visionRange: 15
-  visionMask: {fileID: 0}
+  visionRange: 560
+  visibleLayerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   isLocalCharacter: 0
   roleList:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}

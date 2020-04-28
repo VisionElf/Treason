@@ -30,10 +30,8 @@ namespace Gameplay
         public float speed;
         public Animator animator;
         public SpriteRenderer spriteRenderer;
-
-        [Header("Vision")]
         public float visionRange;
-        public SpriteMask visionMask;
+        public LayerMask visibleLayerMask;
 
         [Header("Misc")]
         public bool isLocalCharacter;
@@ -54,10 +52,10 @@ namespace Gameplay
 
             if (photonView && photonView.Owner != null)
             {
-                string roleStr = photonView.Owner.GetCustomProperty("RoleIndex", "0");
+                var roleStr = photonView.Owner.GetCustomProperty("RoleIndex", "0");
                 SetRole(roleStr);
                 
-                string colorStr = photonView.Owner.GetCustomProperty("ColorIndex", "0");
+                var colorStr = photonView.Owner.GetCustomProperty("ColorIndex", "0");
                 SetColor(int.Parse(colorStr));
             }
         }
@@ -79,13 +77,11 @@ namespace Gameplay
 
             if (!isLocalCharacter)
             {
-                if (visionMask) visionMask.gameObject.SetActive(false);
                 _body.bodyType = RigidbodyType2D.Static;
                 _hitbox.enabled = false;
             }
             else
             {
-                if (visionMask) visionMask.transform.localScale = visionRange / 2f * Vector3.one;
                 gameObject.AddComponent<AudioListener>();
             }
         }
@@ -123,8 +119,20 @@ namespace Gameplay
 
         private void LateUpdate()
         {
-            float dist = GameManager.Instance.GetDistanceToLocalCharacter(transform.position);
-            SetVisible(dist <= visionRange / 4f);
+            if (!isLocalCharacter)
+            {
+                var localCharacter = GameManager.Instance.LocalAstronaut;
+                Vector2 pos = transform.position;
+                Vector2 localPos = localCharacter.transform.position;
+                
+                var dir = pos - localPos;
+                var dist = dir.magnitude;
+                
+                if (dist <= visionRange)
+                    SetVisible(!Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask));
+                else
+                    SetVisible(false);
+            }
 
             UpdateAnimations();
         }

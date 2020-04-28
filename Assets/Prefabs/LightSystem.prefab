@@ -81,7 +81,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 3
-  sharpness: 0.001
+  sharpness: 0.5
   blackMask: {fileID: 2987331487381239531}
   visionMask: {fileID: 2987331489430656899}
   visionMaskSprite: {fileID: 2987331489430656896}
