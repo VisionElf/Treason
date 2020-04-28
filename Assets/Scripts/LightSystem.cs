@@ -13,13 +13,15 @@ public class LightSystem : MonoBehaviour
     public float radius;
     public LightSystemMode mode;
 
-    [Header("Settings")] public LayerMask layerMask;
+    [Header("Settings")]
+    public LayerMask layerMask;
     public int textureResolution;
     public int resolutionInEditor;
     public Gradient maskGradient;
     [Range(0.001f, 1f)] public float sharpness;
 
-    [Header("References")] public SpriteRenderer blackMask;
+    [Header("References")]
+    public SpriteRenderer blackMask;
     public SpriteMask visionMask;
     public SpriteRenderer visionMaskSprite;
 
