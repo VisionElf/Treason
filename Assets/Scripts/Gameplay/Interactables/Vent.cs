@@ -1,10 +1,7 @@
-﻿using Gameplay;
-using Managers;
-using Photon.Pun;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Gameplay.Interactables
+namespace Gameplay.Interactables
 {
     public class Vent : Interactable
     {
@@ -71,7 +68,7 @@ namespace Assets.Scripts.Gameplay.Interactables
         {
             _player.ResetSpeed();
 
-            while (!Vector3.Distance(transform.position, _player.transform.position).AlmostEquals(0f, 0.01f))
+            while (Vector3.Distance(transform.position, _player.transform.position) > 0.1f)
             {
                 _player.WalkTowards(transform.position);
                 yield return null;
