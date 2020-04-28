@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using Gameplay;
+using Managers;
 using UnityEngine;
 
 public class LightSystem : MonoBehaviour
@@ -21,7 +22,7 @@ public class LightSystem : MonoBehaviour
     public SpriteRenderer visionMaskSprite;
 
     private Camera _mainCamera;
-    private Transform _localAstronaut;
+    private Astronaut _localAstronaut;
 
     private Texture2D _spriteTexture2D;
     private Texture2D _maskTexture2D;
@@ -34,39 +35,41 @@ public class LightSystem : MonoBehaviour
 
     private void Start()
     {
-        _localAstronaut = GameManager.Instance.LocalAstronaut.transform;
+        _localAstronaut = GameManager.Instance.LocalAstronaut;
         _mainCamera = Camera.main;
 
         visionMask.sprite = CreateSprite(ref _maskTexture2D);
         visionMaskSprite.sprite = CreateSprite(ref _spriteTexture2D);
-        visionMask.transform.localScale = textureResolution * Vector3.one;
+
+        var resolution = (float)Screen.width / Screen.height;
+        var ortho = _mainCamera.orthographicSize;
+        var ppp = 100f / _width;
+        var orthoCameraWidth = resolution * ortho * 2f;
+        var maskScale = orthoCameraWidth * ppp;
+        visionMask.transform.localScale = maskScale * Vector3.one;
 
         var tmp1 = _mainCamera.ViewportToWorldPoint(new Vector3(0f, 0f));
-        var tmp2 = _mainCamera.ViewportToWorldPoint(new Vector3(1f, 0f));
+        var tmp2 = _mainCamera.ViewportToWorldPoint(new Vector3(1f, 1f));
         _cameraWorldWidth = Mathf.Abs(tmp1.x - tmp2.x);
-
-        tmp1 = _mainCamera.ViewportToWorldPoint(new Vector3(0f, 0f));
-        tmp2 = _mainCamera.ViewportToWorldPoint(new Vector3(0f, 1f));
         _cameraWorldHeight = Mathf.Abs(tmp1.y - tmp2.y);
     }
 
-    private Sprite CreateSprite(ref Texture2D texture2D)
+    private Sprite CreateSprite(ref Texture2D texture)
     {
         _width = Screen.width / textureResolution;
         _height = Screen.height / textureResolution;
 
-        texture2D = new Texture2D(_width, _height);
+        texture = new Texture2D(_width, _height);
         for (var i = 0; i < _width; i++)
         {
             for (var j = 0; j < _height; j++)
             {
-                texture2D.SetPixel(i, j, Color.clear);
+                texture.SetPixel(i, j, Color.clear);
             }
         }
-
-        texture2D.Apply();
-
-        return Sprite.Create(texture2D, new Rect(0, 0, _width, _height), new Vector2(0.5f, 0.5f));
+        
+        texture.Apply();
+        return Sprite.Create(texture, new Rect(0, 0, _width, _height), new Vector2(0.5f, 0.5f));
     }
 
     private float GetRange()
@@ -76,7 +79,7 @@ public class LightSystem : MonoBehaviour
 
     private void UpdateTexture()
     {
-        Vector2 playerPos = _localAstronaut.transform.position;
+        Vector2 playerPos = _localAstronaut.GetCenter();
         var center = new Vector2(_width, _height) / 2f;
         var maxPixelDist = GetRange() / textureResolution;
 
@@ -96,6 +99,7 @@ public class LightSystem : MonoBehaviour
                 {
                     var viewportCoord = new Vector2(pos.x / _width, pos.y / _height);
                     var worldPos = Vector2.zero;
+                    
                     if (mode == LightSystemMode.World)
                     {
                         var offset = fullWorldCameraPos;
@@ -127,7 +131,7 @@ public class LightSystem : MonoBehaviour
 
     private void LateUpdate()
     {
-        var position = _localAstronaut.position;
+        var position = _localAstronaut.GetCenter();
         if (mode == LightSystemMode.Camera)
             position = _mainCamera.transform.position;
         

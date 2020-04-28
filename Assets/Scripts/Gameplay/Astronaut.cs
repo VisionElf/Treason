@@ -176,5 +176,11 @@ namespace Gameplay
         {
             return new Vector3(transform.position.x, transform.position.y, 0);
         }
+
+        public Vector2 GetCenter()
+        {
+            Vector2 pos = transform.position;
+            return pos + _hitbox.offset;
+        }
     }
 }
