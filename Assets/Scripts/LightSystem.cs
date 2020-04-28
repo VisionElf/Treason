@@ -40,7 +40,7 @@ public class LightSystem : MonoBehaviour
 #if UNITY_EDITOR
         textureResolution = resolutionInEditor;
 #endif
-        _localAstronaut = GameManager.Instance.LocalAstronaut;
+        _localAstronaut = Astronaut.LocalAstronaut;
         _mainCamera = Camera.main;
 
         visionMask.sprite = CreateSprite(ref _maskTexture2D);

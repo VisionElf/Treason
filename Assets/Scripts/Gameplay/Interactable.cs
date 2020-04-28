@@ -1,5 +1,4 @@
-﻿using Managers;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Gameplay
 {
@@ -20,7 +19,7 @@ namespace Gameplay
 
         protected bool CanInteract()
         {
-            var dist = Vector3.Distance(transform.position, GameManager.Instance.LocalAstronaut.GetPosition2D());
+            var dist = Vector3.Distance(transform.position, Astronaut.LocalAstronaut.GetPosition2D());
             return dist <= interactRange;
         }
 

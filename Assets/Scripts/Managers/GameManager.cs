@@ -25,30 +25,24 @@ namespace Managers
         // Debug
         public Transform characterSpawnPoint;
 
-        private Astronaut _localAstronaut;
-        public Astronaut LocalAstronaut => _localAstronaut;
-
         public void Start()
         {
             if (characterSpawnPoint == null)
                 characterSpawnPoint = transform;
 
+            Astronaut astronaut = null;
             if (PhotonNetwork.IsConnected)
-                _localAstronaut = PhotonNetwork.Instantiate(astronautPrefab.name, characterSpawnPoint.position, Quaternion.identity, 0).GetComponent<Astronaut>();
+                astronaut = PhotonNetwork.Instantiate(astronautPrefab.name, characterSpawnPoint.position, Quaternion.identity, 0).GetComponent<Astronaut>();
             else
             {
-                _localAstronaut = Instantiate(astronautPrefab, characterSpawnPoint.position, Quaternion.identity);
-                _localAstronaut.isLocalCharacter = true;
+                astronaut = Instantiate(astronautPrefab, characterSpawnPoint.position, Quaternion.identity);
+                astronaut.isLocalCharacter = true;
+                Astronaut.LocalAstronaut = astronaut;
             }
-            cameraFollow.SetTarget(_localAstronaut.transform);
+            cameraFollow.SetTarget(astronaut.transform);
 
             if (characterParent != null)
-                _localAstronaut.transform.SetParent(characterParent);
-        }
-
-        public float GetDistanceToLocalCharacter(Vector3 position)
-        {
-            return Vector3.Distance(position, _localAstronaut.transform.position);
+                astronaut.transform.SetParent(characterParent);
         }
     }
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roleName: Crewmate
   roleColor: {r: 0.53333336, g: 0.9607843, b: 0.99215686, a: 1}
+  playerNameColor: {r: 1, g: 1, b: 1, a: 1}

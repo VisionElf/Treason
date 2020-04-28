@@ -31,7 +31,7 @@ namespace Gameplay
             if (!minimapObject.gameObject.activeSelf) return;
 
             if (!_player)
-                _player = GameManager.Instance.LocalAstronaut;
+                _player = Astronaut.LocalAstronaut;
 
             astronautIcon.anchoredPosition = Map.Instance.WorldToMinimapPosition(_player.transform.position);
         }

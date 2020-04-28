@@ -7,5 +7,6 @@ namespace Data
     {
         public string roleName;
         public Color roleColor;
+        public Color playerNameColor;
     }
 }

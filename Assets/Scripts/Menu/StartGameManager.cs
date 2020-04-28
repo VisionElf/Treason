@@ -19,7 +19,7 @@ namespace Menu
             Astronaut localAstronaut = null;
             while (localAstronaut == null)
             {
-                localAstronaut = GameManager.Instance.LocalAstronaut;
+                localAstronaut = Astronaut.LocalAstronaut;
                 yield return null;
             }
 

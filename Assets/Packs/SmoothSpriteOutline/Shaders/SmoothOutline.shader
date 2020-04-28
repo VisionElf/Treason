@@ -11,6 +11,7 @@
 		_OutlineSize("Outline Size", Float) = 1
 		_OutlineMultiplier("Outline Power", Range(0, 20)) = 1
 		[PowerSlider(3.0)]_TransparencyCutout("Transparency Tolerance", Range(0, 10)) = 1
+		_TransparencyTreshold("Transparency Treshold", Range(0, 1)) = 1
 
 		_Size("Rect Size", Range(0, 3)) = 1
 
@@ -35,7 +36,7 @@
 
 		Cull Off
 		Lighting Off
-		ZWrite Off
+		ZWrite True
 		Blend One OneMinusSrcAlpha
 
 		// OUTLINE PASS
@@ -74,6 +75,7 @@
 			fixed _OutlineSize;
 			fixed _OutlineMultiplier;
 			fixed _TransparencyCutout;
+			fixed _TransparencyTreshold;
 			fixed _Size;
 
 			fixed4 _SpriteUVs;
@@ -223,8 +225,19 @@
 				cBlur.a *= saturate(1 - spriteCol.a * _TransparencyCutout);
 
 				cBlur.rgb = _OutlineColor.rgb * _OutlineMultiplier;
-				cBlur.a *= _OutlineColor.a;
 				cBlur.rgb *= cBlur.a;
+				
+				if (_TransparencyTreshold < 1)
+				{
+                    if (cBlur.a > _TransparencyTreshold)
+                        cBlur.a = _OutlineColor.a;
+                    else
+                        cBlur.a = 0;
+				}
+				else
+				{
+					cBlur.a *= _OutlineColor.a;
+				}
 
 				return cBlur;
 			}
