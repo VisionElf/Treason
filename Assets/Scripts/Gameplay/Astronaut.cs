@@ -79,13 +79,13 @@ namespace Gameplay
 
             if (!isLocalCharacter)
             {
-                visionMask.gameObject.SetActive(false);
+                if (visionMask) visionMask.gameObject.SetActive(false);
                 _body.bodyType = RigidbodyType2D.Static;
                 _hitbox.enabled = false;
             }
             else
             {
-                visionMask.transform.localScale = visionRange / 2f * Vector3.one;
+                if (visionMask) visionMask.transform.localScale = visionRange / 2f * Vector3.one;
                 gameObject.AddComponent<AudioListener>();
             }
         }
