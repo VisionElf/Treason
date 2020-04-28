@@ -1,4 +1,5 @@
-﻿using CustomExtensions;
+﻿using Assets.Scripts.Gameplay.Interactables;
+using CustomExtensions;
 using Data;
 using Managers;
 using Photon.Pun;

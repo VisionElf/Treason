@@ -8,9 +8,20 @@ namespace Assets.Scripts.Gameplay.Interactables
 {
     public class Vent : Interactable
     {
+        [Header("Arrow")]
+        public GameObject arrowPrefab;
+        public Transform arrowOrigin;
+
+        [Header("Animation")]
         public Animator animator;
-        public AudioSource source;
+
+        [Header("Audio")]
+        public AudioSource audioSource;
         public AudioClip openCloseSound;
+        public AudioClip[] moveSounds;
+
+        [Header("Gameplay")]
+        public Vent[] accessibleVents;
 
         private Astronaut _player;
         private bool _canInteract;
@@ -31,21 +42,23 @@ namespace Assets.Scripts.Gameplay.Interactables
             _canInteract = false;
             _player.State = PlayerState.IN_VENT;
             _player.animator.Play("Astronaut_Vent_In");
-            source.pitch = Random.Range(0.75f, 1.25f);
-            source.PlayOneShot(openCloseSound);
+            audioSource.pitch = Random.Range(0.75f, 1.25f);
+            audioSource.PlayOneShot(openCloseSound);
         }
 
         public void OnEnterVentEnd()
         {
             _canInteract = true;
+            DisplayArrows();
         }
 
         public void OnExitVentBegin()
         {
             _canInteract = false;
             _player.animator.Play("Astronaut_Vent_Out");
-            source.pitch = Random.Range(0.75f, 1.25f);
-            source.PlayOneShot(openCloseSound);
+            audioSource.pitch = Random.Range(0.75f, 1.25f);
+            audioSource.PlayOneShot(openCloseSound);
+            ClearArrows();
         }
 
         public void OnExitVentEnd()
@@ -76,9 +89,37 @@ namespace Assets.Scripts.Gameplay.Interactables
             yield return null;
         }
 
+        public void DisplayArrows()
+        {
+            foreach (Vent vent in accessibleVents)
+            {
+                Vector3 direction = vent.arrowOrigin.position - arrowOrigin.position;
+                float angle = Vector3.SignedAngle(direction, Vector3.right, Vector3.back);
+                GameObject arrow = Instantiate(arrowPrefab, arrowOrigin.position, Quaternion.Euler(0f, 0f, angle), arrowOrigin);
+                arrow.GetComponent<VentArrow>().Initialize(_player, this, vent);
+            }
+        }
+
+        public void ClearArrows()
+        {
+            for (int i = 0; i < arrowOrigin.transform.childCount; ++i)
+                Destroy(arrowOrigin.transform.GetChild(i).gameObject);
+        }
+
+        public void SetPlayer(Astronaut player)
+        {
+            _player = player;
+        }
+
+        public void PlayMoveSound()
+        {
+            audioSource.pitch = Random.Range(0.75f, 1.25f);
+            audioSource.PlayOneShot(moveSounds[Random.Range(0, moveSounds.Length)]);
+        }
+
         public override void Interact()
         {
-            _player = GameManager.Instance.LocalAstronaut;
+            SetPlayer(GameManager.Instance.LocalAstronaut);
             _canInteract = false;
 
             if (_player.State == PlayerState.IN_VENT)
