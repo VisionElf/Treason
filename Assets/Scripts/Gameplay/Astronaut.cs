@@ -233,7 +233,6 @@ namespace Gameplay
         {
             if (_currentReportTarget == target)
             {
-                _currentReportTarget.HideOutline();
                 _currentReportTarget = null;
 
                 OnReportInteractDisable?.Invoke();
@@ -252,8 +251,6 @@ namespace Gameplay
             }
 
             _currentReportTarget = target;
-            target.ShowOutline();
-
             OnReportInteractEnable?.Invoke();
         }
 
