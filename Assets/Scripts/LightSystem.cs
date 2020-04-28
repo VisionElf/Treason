@@ -48,15 +48,15 @@ public class LightSystem : MonoBehaviour
         visionMask.sprite = CreateSprite(ref _maskTexture2D);
         visionMaskSprite.sprite = CreateSprite(ref _spriteTexture2D);
 
-        var resolution = (float) Screen.width / Screen.height;
-        var ortho = _mainCamera.orthographicSize;
-        var ppp = 100f / _width;
-        var orthoCameraWidth = resolution * ortho * 2f;
-        var maskScale = orthoCameraWidth * ppp;
+        float resolution = (float)Screen.width / Screen.height;
+        float ortho = _mainCamera.orthographicSize;
+        float ppp = 100f / _width;
+        float orthoCameraWidth = resolution * ortho * 2f;
+        float maskScale = orthoCameraWidth * ppp;
         visionMask.transform.localScale = maskScale * Vector3.one;
 
-        var tmp1 = _mainCamera.ViewportToWorldPoint(new Vector3(0f, 0f));
-        var tmp2 = _mainCamera.ViewportToWorldPoint(new Vector3(1f, 1f));
+        Vector3 tmp1 = _mainCamera.ViewportToWorldPoint(new Vector3(0f, 0f));
+        Vector3 tmp2 = _mainCamera.ViewportToWorldPoint(new Vector3(1f, 1f));
         _cameraWorldWidth = Mathf.Abs(tmp1.x - tmp2.x);
         _cameraWorldHeight = Mathf.Abs(tmp1.y - tmp2.y);
     }
@@ -67,9 +67,9 @@ public class LightSystem : MonoBehaviour
         _height = _width;
 
         texture = new Texture2D(_width, _height);
-        for (var i = 0; i < _width; i++)
+        for (int i = 0; i < _width; i++)
         {
-            for (var j = 0; j < _height; j++)
+            for (int j = 0; j < _height; j++)
             {
                 texture.SetPixel(i, j, Color.clear);
             }
@@ -87,29 +87,29 @@ public class LightSystem : MonoBehaviour
     private void UpdateTexture()
     {
         Vector2 playerPos = _localAstronaut.transform.position;
-        var center = new Vector2(_width, _height) / 2f;
-        var maxPixelDist = GetRange() / textureResolution;
+        Vector2 center = new Vector2(_width, _height) / 2f;
+        float maxPixelDist = GetRange() / textureResolution;
 
-        var bottomLeftWorldPos = playerPos + new Vector2(-_cameraWorldWidth / 2f, -_cameraWorldWidth / 2f);
-        var fullWorldCameraPos = new Vector2(_cameraWorldWidth, _cameraWorldWidth);
+        Vector2 bottomLeftWorldPos = playerPos + new Vector2(-_cameraWorldWidth / 2f, -_cameraWorldWidth / 2f);
+        Vector2 fullWorldCameraPos = new Vector2(_cameraWorldWidth, _cameraWorldWidth);
 
-        for (var i = 0; i < _width; i++)
+        for (int i = 0; i < _width; i++)
         {
-            for (var j = 0; j < _height; j++)
+            for (int j = 0; j < _height; j++)
             {
-                var pos = new Vector2(i, j);
+                Vector2 pos = new Vector2(i, j);
 
-                var dist = Vector2.Distance(pos, center);
-                var percent = Mathf.Clamp01(dist / maxPixelDist);
+                float dist = Vector2.Distance(pos, center);
+                float percent = Mathf.Clamp01(dist / maxPixelDist);
 
                 if (percent < 1f)
                 {
-                    var viewportCoord = new Vector2(pos.x / _width, pos.y / _height);
-                    var worldPos = Vector2.zero;
+                    Vector2 viewportCoord = new Vector2(pos.x / _width, pos.y / _height);
+                    Vector2 worldPos = Vector2.zero;
 
                     if (mode == LightSystemMode.World)
                     {
-                        var offset = fullWorldCameraPos;
+                        Vector2 offset = fullWorldCameraPos;
                         offset.Scale(viewportCoord);
                         worldPos = bottomLeftWorldPos + offset;
                     }
@@ -118,14 +118,14 @@ public class LightSystem : MonoBehaviour
                         worldPos = _mainCamera.ViewportToWorldPoint(viewportCoord);
                     }
 
-                    var dir = worldPos - playerPos;
-                    var ray = new Ray(playerPos, dir);
+                    Vector2 dir = worldPos - playerPos;
+                    Ray ray = new Ray(playerPos, dir);
 
-                    var raycast = Physics2D.Raycast(ray.origin, ray.direction, dir.magnitude, layerMask);
+                    RaycastHit2D raycast = Physics2D.Raycast(ray.origin, ray.direction, dir.magnitude, layerMask);
                     if (raycast) percent = 1f;
                 }
 
-                var color = new Color(1f, 1f, 1f, percent >= 1f ? 0f : 1f);
+                Color color = new Color(1f, 1f, 1f, percent >= 1f ? 0f : 1f);
 
                 _maskTexture2D.SetPixel(i, j, color);
                 _spriteTexture2D.SetPixel(i, j, maskGradient.Evaluate(percent));
@@ -138,7 +138,7 @@ public class LightSystem : MonoBehaviour
 
     private void LateUpdate()
     {
-        var position = _localAstronaut.transform.position;
+        Vector3 position = _localAstronaut.transform.position;
         if (mode == LightSystemMode.Camera)
             position = _mainCamera.transform.position;
 
