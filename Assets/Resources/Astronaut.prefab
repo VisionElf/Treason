@@ -703,8 +703,8 @@ MonoBehaviour:
   roleList:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
   - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
-  debugRoleIndex: 0
-  interactRange: 0
+  debugRoleIndex: 1
+  interactRange: 2
 --- !u!114 &7460623510227591475
 MonoBehaviour:
   m_ObjectHideFlags: 0
