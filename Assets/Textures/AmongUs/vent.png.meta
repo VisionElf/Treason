@@ -19,7 +19,7 @@ TextureImporter:
     second: vent_4
   - first:
       213: 5456085744243761087
-    second: vent_5
+    second: vent_normal
   - first:
       213: -1972420660734134503
     second: vent_6
@@ -225,7 +225,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: vent_5
+      name: vent_normal
       rect:
         serializedVersion: 2
         x: 118
