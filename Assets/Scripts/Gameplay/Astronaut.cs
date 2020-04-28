@@ -1,4 +1,3 @@
-﻿using Assets.Scripts.Gameplay.Interactables;
 ﻿using System;
 using System.Collections;
 using CustomExtensions;

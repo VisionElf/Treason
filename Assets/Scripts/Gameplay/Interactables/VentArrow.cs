@@ -1,7 +1,6 @@
-﻿using Gameplay;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.Gameplay.Interactables
+namespace Gameplay.Interactables
 {
     public class VentArrow : MonoBehaviour
     {
