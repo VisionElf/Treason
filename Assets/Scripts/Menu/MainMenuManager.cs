@@ -31,6 +31,8 @@ namespace Menu
 
         private void Start()
         {
+            Application.targetFrameRate = 25;
+            
             createButton.interactable = false;
             PhotonNetwork.ConnectUsingSettings();
         }
