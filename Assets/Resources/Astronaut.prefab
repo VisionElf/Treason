@@ -357,7 +357,7 @@ SpriteRenderer:
   m_SortingLayerID: -2058335787
   m_SortingLayer: 5
   m_SortingOrder: -1
-  m_Sprite: {fileID: -6900054268500017981, guid: 04a488738ecb5ef43a14eda4b09e86bd,
+  m_Sprite: {fileID: 6362290972351372809, guid: bbe54f815dc03394b8aa4f8e5318bfb5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -366,7 +366,7 @@ SpriteRenderer:
   m_Size: {x: 0.62222224, y: 0.85925925}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &6307258161190128550
@@ -703,8 +703,8 @@ MonoBehaviour:
   roleList:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
   - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
-  debugRoleIndex: 0
-  interactRange: 0
+  debugRoleIndex: 1
+  interactRange: 2
 --- !u!114 &7460623510227591475
 MonoBehaviour:
   m_ObjectHideFlags: 0
