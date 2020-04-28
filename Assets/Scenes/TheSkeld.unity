@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6016369
 GameObject:
@@ -2146,7 +2146,7 @@ PrefabInstance:
     - target: {fileID: 6063395331884164048, guid: 6b928dfd590c60d4ab220adcd6acb9c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6063395331884164048, guid: 6b928dfd590c60d4ab220adcd6acb9c9,
         type: 3}
@@ -8909,19 +8909,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &592673213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomName: Navigation
 --- !u!1 &600878885
 GameObject:
   m_ObjectHideFlags: 0
@@ -15495,7 +15482,7 @@ MonoBehaviour:
   - {fileID: 1565822895}
   - {fileID: 1394887264}
   - {fileID: 1212804454}
-  - {fileID: 592673213}
+  - {fileID: 2051532845}
   - {fileID: 262962664}
   - {fileID: 1328737907}
   - {fileID: 1456541778}
@@ -18248,7 +18235,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485684820
 GameObject:
@@ -26009,7 +25996,7 @@ PrefabInstance:
     - target: {fileID: 1036256681951539681, guid: 791cf63e9a5b3f3498530cf4023785a0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1036256681951539681, guid: 791cf63e9a5b3f3498530cf4023785a0,
         type: 3}

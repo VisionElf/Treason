@@ -684,7 +684,7 @@ MonoBehaviour:
   visionRange: 4
   visibleLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   outline: {fileID: 5000062614298253507}
   isLocalCharacter: 0
   colorList:
