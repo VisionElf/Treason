@@ -62,7 +62,7 @@ public class LightSystem : MonoBehaviour
     private Sprite CreateSprite(ref Texture2D texture)
     {
         _width = Screen.width / textureResolution;
-        _height = Screen.height / textureResolution;
+        _height = _width;
 
         texture = new Texture2D(_width, _height);
         for (var i = 0; i < _width; i++)
@@ -88,8 +88,8 @@ public class LightSystem : MonoBehaviour
         var center = new Vector2(_width, _height) / 2f;
         var maxPixelDist = GetRange() / textureResolution;
 
-        var bottomLeftWorldPos = playerPos + new Vector2(-_cameraWorldWidth / 2f, -_cameraWorldHeight / 2f);
-        var fullWorldCameraPos = new Vector2(_cameraWorldWidth, _cameraWorldHeight);
+        var bottomLeftWorldPos = playerPos + new Vector2(-_cameraWorldWidth / 2f, -_cameraWorldWidth / 2f);
+        var fullWorldCameraPos = new Vector2(_cameraWorldWidth, _cameraWorldWidth);
 
         for (var i = 0; i < _width; i++)
         {
