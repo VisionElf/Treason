@@ -16,7 +16,7 @@ TagManager:
   - Interactable
   - Player
   - Obstacle
-  - 
+  - LightObstacle
   - 
   - 
   - 
@@ -64,6 +64,9 @@ TagManager:
     locked: 0
   - name: LineOfSight
     uniqueID: 3040220915
+    locked: 0
+  - name: NotAffectedLoS
+    uniqueID: 2845909385
     locked: 0
   - name: UI
     uniqueID: 2386710767

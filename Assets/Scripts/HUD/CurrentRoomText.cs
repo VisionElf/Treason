@@ -21,7 +21,7 @@ namespace HUD
 
         private void Update()
         {
-            var localPlayer = GameManager.Instance.LocalAstronaut;
+            var localPlayer = Astronaut.LocalAstronaut;
             if (localPlayer)
             {
                 var room = Map.Instance.GetRoomAt(localPlayer.transform.position);

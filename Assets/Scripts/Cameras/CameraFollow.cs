@@ -18,10 +18,13 @@ namespace Cameras
             _targetPosition.z = transform.position.z;
             transform.position = Vector3.Lerp(transform.position, _targetPosition, lerpSpeed * Time.deltaTime);
         }
-
+        
         public void SetTarget(Transform target)
         {
             _target = target;
+            _targetPosition = _target.transform.position;
+            _targetPosition.z = transform.position.z;
+            transform.position = _targetPosition;
         }
     }
 }
