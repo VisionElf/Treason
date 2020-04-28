@@ -119,7 +119,7 @@ namespace Assets.Scripts.Gameplay.Interactables
 
         public override void Interact()
         {
-            SetPlayer(GameManager.Instance.LocalAstronaut);
+            SetPlayer(Astronaut.LocalAstronaut);
             _canInteract = false;
 
             if (_player.State == PlayerState.IN_VENT)
