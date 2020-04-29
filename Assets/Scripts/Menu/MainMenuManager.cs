@@ -6,6 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Menu
@@ -14,7 +15,6 @@ namespace Menu
     {
         public GameObject mainMenu;
         public RoomList roomList;
-        public RoomLobby roomLobby;
         public TMP_InputField playerNameInputField;
 
         public Button createButton;
@@ -44,8 +44,6 @@ namespace Menu
             NetworkManager.onLeftRoom += ShowMainMenu;
             NetworkManager.onJoinedRoom += ShowRoomLobby;
             NetworkManager.onRoomListUpdate += UpdateRoomList;
-            NetworkManager.onPlayerEnteredRoom += UpdatePlayerList;
-            NetworkManager.onPlayerLeftRoom += UpdatePlayerList;
         }
 
         private void OnDisable()
@@ -55,8 +53,6 @@ namespace Menu
             NetworkManager.onLeftRoom -= ShowMainMenu;
             NetworkManager.onJoinedRoom -= ShowRoomLobby;
             NetworkManager.onRoomListUpdate -= UpdateRoomList;
-            NetworkManager.onPlayerEnteredRoom -= UpdatePlayerList;
-            NetworkManager.onPlayerLeftRoom -= UpdatePlayerList;
         }
 
         public void CreateRoom()
@@ -118,20 +114,15 @@ namespace Menu
 
         private void ShowMainMenu()
         {
-            roomLobby.Hide();
             mainMenu.SetActive(true);
         }
 
         private void ShowRoomLobby()
         {
-            mainMenu.SetActive(false);
-            roomLobby.Show();
-            roomLobby.UpdatePlayerList();
-        }
-
-        private void UpdatePlayerList(Player player)
-        {
-            roomLobby.UpdatePlayerList();
+            SceneManager.LoadScene(1, LoadSceneMode.Single);
+//            mainMenu.SetActive(false);
+//            roomLobby.Show();
+//            roomLobby.UpdatePlayerList();
         }
     }
 }

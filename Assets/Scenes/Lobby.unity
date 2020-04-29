@@ -745,8 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraFollow: {fileID: 1360367114}
-  characterPrefab: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
-    type: 3}
+  astronautPrefab: {fileID: 0}
   characterParent: {fileID: 0}
   characterSpawnPoint: {fileID: 0}
 --- !u!1 &843273690
@@ -1508,7 +1507,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3bdf70ded29b745e699fe139942dde35, type: 2}
+  - {fileID: 2100000, guid: e99c251a0f328214bb375ed9dae5b754, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: d60f3d624bdfc7f4693b43cb014299bd
   - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: da0a4dfc132b6e948a8ec4d4539e99ee
+  - enabled: 1
     path: Assets/Scenes/TheSkeld.unity
     guid: 79f7e72b5183251469092d3f6a042cea
   m_configObjects: {}
