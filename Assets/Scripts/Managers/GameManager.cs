@@ -1,7 +1,9 @@
 ﻿using Cameras;
+using CustomExtensions;
 using Gameplay;
 using Photon.Pun;
 using System.Linq;
+using Photon.Realtime;
 using UnityEngine;
 
 namespace Managers
@@ -10,35 +12,36 @@ namespace Managers
     {
         public const string DeleteInGameTag = "DeleteInGame";
 
-        private static GameManager _instance;
-        public static GameManager Instance
-        {
-            get
-            {
-                if (_instance == null)
-                    _instance = FindObjectOfType<GameManager>();
-                return _instance;
-            }
-        }
-
-
         public CameraFollow cameraFollow;
         public Astronaut astronautPrefab;
         public Transform characterParent;
-        // Debug
-        public Transform characterSpawnPoint;
+        public Transform[] characterSpawnPoints;
+
+        private void OnEnable()
+        {
+            NetworkManager.onPlayerPropertiesUpdate += UpdatePlayer;
+        }
+
+        private void OnDisable()
+        {
+            NetworkManager.onPlayerPropertiesUpdate -= UpdatePlayer;
+        }
 
         public void Start()
         {
-            if (characterSpawnPoint == null)
-                characterSpawnPoint = transform;
-
-            Astronaut astronaut = null;
+            var index = 0;
             if (PhotonNetwork.IsConnected)
-                astronaut = PhotonNetwork.Instantiate(astronautPrefab.name, characterSpawnPoint.position, Quaternion.identity, 0).GetComponent<Astronaut>();
+                index = PhotonNetwork.PlayerList.Length - 1;
+            var spawnPosition = characterSpawnPoints[index % characterSpawnPoints.Length].position;
+
+            Astronaut astronaut;
+            if (PhotonNetwork.IsConnected)
+            {
+                astronaut = PhotonNetwork.Instantiate(astronautPrefab.name, spawnPosition, Quaternion.identity).GetComponent<Astronaut>();
+            }
             else
             {
-                astronaut = Instantiate(astronautPrefab, characterSpawnPoint.position, Quaternion.identity);
+                astronaut = Instantiate(astronautPrefab, spawnPosition, Quaternion.identity);
                 astronaut.isLocalCharacter = true;
                 Astronaut.LocalAstronaut = astronaut;
             }
@@ -46,9 +49,16 @@ namespace Managers
 
             if (characterParent != null)
                 astronaut.transform.SetParent(characterParent);
+            astronaut.OnSpawn();
 
             // Delete all gameobjects tagged with "DeleteInGame"
             FindObjectsOfType<Transform>().Where((obj) => obj.CompareTag(DeleteInGameTag)).ToList().ForEach((t) => Destroy(t.gameObject));
+        }
+
+        private void UpdatePlayer(Player player)
+        {
+            var astro = player.GetAstronaut();
+            if (astro) astro.UpdateAstronaut();
         }
     }
 }

@@ -8,7 +8,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Managers
 {
-    public class NetworkManager : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks, IInRoomCallbacks, ILobbyCallbacks
+    public class NetworkManager : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks, IInRoomCallbacks, ILobbyCallbacks, IPunInstantiateMagicCallback
     {
         public static Action onConnectedToPhoton;
         public static Action onJoinedLobby;
@@ -17,6 +17,12 @@ namespace Managers
         public static Action onJoinedRoom;
         public static Action<Player> onPlayerEnteredRoom;
         public static Action<Player> onPlayerLeftRoom;
+        public static Action<Player> onPlayerPropertiesUpdate;
+
+        private void Start()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
 
         private void OnEnable()
         {
@@ -140,6 +146,7 @@ namespace Managers
 
         public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
+            onPlayerPropertiesUpdate?.Invoke(targetPlayer);
         }
 
         public void OnMasterClientSwitched(Player newMasterClient)
@@ -147,5 +154,10 @@ namespace Managers
         }
 
         #endregion
+
+        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        {
+            Debug.Log($"OnPhotonInstantiate: {info}");
+        }
     }
 }

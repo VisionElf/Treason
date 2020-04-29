@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using CustomExtensions;
 using Data;
 using Photon.Pun;
@@ -8,6 +9,7 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
@@ -21,6 +23,7 @@ namespace Gameplay
     public class Astronaut : MonoBehaviourPun
     {
         public static Astronaut LocalAstronaut;
+        public static List<Astronaut> Astronauts = new List<Astronaut>();
 
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
@@ -47,12 +50,15 @@ namespace Gameplay
 
         [Header("Misc")]
         public bool isLocalCharacter;
-        public ColorData[] colorList;
+        public ColorListData colorList;
 
         [Header("Roles")]
         public RoleData[] roleList;
         public int debugRoleIndex;
         public float interactRange;
+
+        [Header("Sounds")]
+        public AudioClip spawnSound;
 
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
@@ -71,20 +77,30 @@ namespace Gameplay
         public static Action OnReportInteractEnable;
         public static Action OnReportInteractDisable;
 
+        private AudioSource _audioSource;
+
         private void Awake()
         {
+            Astronauts.Add(this);
+            
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
+            _audioSource = GetComponent<AudioSource>();
             State = PlayerState.NORMAL;
 
             if (photonView && photonView.Owner != null)
             {
-                string roleStr = photonView.Owner.GetCustomProperty("RoleIndex", "0");
-                SetRole(roleStr);
+                var roleIndex = photonView.Owner.GetColorIndex();
+                SetRole(roleIndex);
 
-                string colorStr = photonView.Owner.GetCustomProperty("ColorIndex", "0");
-                SetColor(int.Parse(colorStr));
+                var colorIndex = photonView.Owner.GetRoleIndex();
+                SetColor(colorIndex);
             }
+        }
+
+        private void OnDestroy()
+        {
+            Astronauts.Remove(this);
         }
 
         private IEnumerator Start()
@@ -95,10 +111,13 @@ namespace Gameplay
             {
                 isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
+                
+                if (!isLocalCharacter && SceneManager.GetActiveScene().buildIndex == 1)
+                    OnSpawn();
             }
             else
             {
-                SetRole(debugRoleIndex.ToString());
+                SetRole(debugRoleIndex);
             }
 
             if (!isLocalCharacter)
@@ -145,33 +164,36 @@ namespace Gameplay
             if (!isLocalCharacter)
             {
                 var localCharacter = LocalAstronaut;
-                Vector2 pos = transform.position;
-                Vector2 localPos = localCharacter.transform.position;
-
-                var dir = pos - localPos;
-                var dist = dir.magnitude;
-
-                var visible = false;
-                if (dist <= visionRange)
+                if (localCharacter)
                 {
-                    visible = !Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask);
-                }
+                    Vector2 pos = transform.position;
+                    Vector2 localPos = localCharacter.transform.position;
 
-                SetVisible(visible);
+                    var dir = pos - localPos;
+                    var dist = dir.magnitude;
 
-                if (State != PlayerState.DEAD)
-                {
-                    if (visible && dist <= interactRange && localCharacter.IsImpostor() && !IsImpostor())
-                        localCharacter.SetKillInteract(this, dist);
+                    var visible = false;
+                    if (dist <= visionRange)
+                    {
+                        visible = !Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask);
+                    }
+
+                    SetVisible(visible);
+
+                    if (State != PlayerState.DEAD)
+                    {
+                        if (visible && dist <= interactRange && localCharacter.IsImpostor() && !IsImpostor())
+                            localCharacter.SetKillInteract(this, dist);
+                        else
+                            localCharacter.RemoveKillInteract(this);
+                    }
                     else
-                        localCharacter.RemoveKillInteract(this);
-                }
-                else
-                {
-                    if (visible && dist <= interactRange)
-                        localCharacter.SetReportInteract(this, dist);
-                    else
-                        localCharacter.RemoveReportInteract(this);
+                    {
+                        if (visible && dist <= interactRange)
+                            localCharacter.SetReportInteract(this, dist);
+                        else
+                            localCharacter.RemoveReportInteract(this);
+                    }
                 }
             }
 
@@ -179,15 +201,14 @@ namespace Gameplay
                 UpdateAnimations();
         }
 
-        private void SetRole(string roleStr)
+        private void SetRole(int roleIndex)
         {
-            var index = int.Parse(roleStr);
-            Role = roleList[index];
+            Role = roleList[roleIndex];
         }
 
         private void SetColor(int colorIndex)
         {
-            SetColor(colorList[colorIndex]);
+            SetColor(colorList.list[colorIndex]);
         }
 
         private void SetColor(ColorData data)
@@ -338,5 +359,17 @@ namespace Gameplay
         public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
         public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
         public void ResetSpeed() => _body.velocity = Vector3.zero;
+
+        public void OnSpawn()
+        {
+            _audioSource.PlayOneShot(spawnSound);
+            animator.SetTrigger("Spawn");
+        }
+
+        public void UpdateAstronaut()
+        {
+            if (!PhotonNetwork.IsConnected) return;
+            SetColor(photonView.Owner.GetColorIndex());
+        }
     }
 }
