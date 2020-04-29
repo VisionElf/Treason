@@ -50,7 +50,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
-  textureResolution: 5
+  textureResolution: 15
   resolutionInEditor: 15
   maskGradient:
     serializedVersion: 2

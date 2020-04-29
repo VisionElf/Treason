@@ -26,7 +26,6 @@ public class LightSystem : MonoBehaviour
     public SpriteRenderer visionMaskSprite;
 
     private Camera _mainCamera;
-    private Astronaut _localAstronaut;
 
     private Texture2D _spriteTexture2D;
     private Texture2D _maskTexture2D;
@@ -42,7 +41,6 @@ public class LightSystem : MonoBehaviour
 #if UNITY_EDITOR
         textureResolution = resolutionInEditor;
 #endif
-        _localAstronaut = Astronaut.LocalAstronaut;
         _mainCamera = Camera.main;
 
         visionMask.sprite = CreateSprite(ref _maskTexture2D);
@@ -86,7 +84,7 @@ public class LightSystem : MonoBehaviour
 
     private void UpdateTexture()
     {
-        Vector2 playerPos = _localAstronaut.transform.position;
+        Vector2 playerPos = Astronaut.LocalAstronaut.transform.position;
         Vector2 center = new Vector2(_width, _height) / 2f;
         float maxPixelDist = GetRange() / textureResolution;
 
@@ -138,7 +136,9 @@ public class LightSystem : MonoBehaviour
 
     private void LateUpdate()
     {
-        Vector3 position = _localAstronaut.transform.position;
+        if (!Astronaut.LocalAstronaut) return;
+        
+        Vector3 position = Astronaut.LocalAstronaut.transform.position;
         if (mode == LightSystemMode.Camera)
             position = _mainCamera.transform.position;
 

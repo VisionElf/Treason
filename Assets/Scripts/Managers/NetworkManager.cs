@@ -8,7 +8,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 namespace Managers
 {
-    public class NetworkManager : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks, IInRoomCallbacks, ILobbyCallbacks
+    public class NetworkManager : MonoBehaviour, IConnectionCallbacks, IMatchmakingCallbacks, IInRoomCallbacks, ILobbyCallbacks, IPunInstantiateMagicCallback
     {
         public static Action onConnectedToPhoton;
         public static Action onJoinedLobby;
@@ -152,5 +152,10 @@ namespace Managers
         }
 
         #endregion
+
+        public void OnPhotonInstantiate(PhotonMessageInfo info)
+        {
+            Debug.Log($"OnPhotonInstantiate: {info}");
+        }
     }
 }

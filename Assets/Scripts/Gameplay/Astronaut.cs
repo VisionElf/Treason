@@ -8,6 +8,7 @@ using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay
 {
@@ -101,6 +102,9 @@ namespace Gameplay
             {
                 isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
+                
+                if (!isLocalCharacter && SceneManager.GetActiveScene().buildIndex == 1)
+                    OnSpawn();
             }
             else
             {
