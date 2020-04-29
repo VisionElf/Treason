@@ -349,7 +349,7 @@ namespace Gameplay
             transform.localPosition = position;
         }
 
-        private void SetFacingDirection(Direction dir)
+        public void SetFacingDirection(Direction dir)
         {
             if (_facingDirection == dir) return;
             _facingDirection = dir;
