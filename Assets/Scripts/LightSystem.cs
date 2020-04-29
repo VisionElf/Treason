@@ -1,153 +1,148 @@
-﻿using Gameplay;
-using Managers;
+﻿using System;
+using Gameplay;
 using UnityEngine;
 
 public class LightSystem : MonoBehaviour
 {
-    public enum LightSystemMode
-    {
-        Camera,
-        World
-    }
-
-    public float radius;
-    public LightSystemMode mode;
-
-    [Header("Settings")]
-    public LayerMask layerMask;
-    public int textureResolution;
-    public int resolutionInEditor;
-    public Gradient maskGradient;
-    [Range(0.001f, 1f)] public float sharpness;
-
-    [Header("References")]
+    public float range;
+    public BoxCollider2D mapCollider;
+    public int resolution;
+    public SpriteRenderer spriteRenderer;
     public SpriteRenderer blackMask;
-    public SpriteMask visionMask;
-    public SpriteRenderer visionMaskSprite;
+    public SpriteMask spriteMask;
+    public LayerMask layerMask;
+    public Gradient gradient;
 
-    private Camera _mainCamera;
-
-    private Texture2D _spriteTexture2D;
-    private Texture2D _maskTexture2D;
-
-    private int _width;
-    private int _height;
-
+    private Texture2D _texture;
+    private Texture2D _maskTexture;
+    
     private float _cameraWorldWidth;
     private float _cameraWorldHeight;
+    private Vector2 _bottomLeftCameraOffset;
+
+    private bool[,] _calculatePixels;
 
     private void Start()
     {
-#if UNITY_EDITOR
-        textureResolution = resolutionInEditor;
-#endif
-        _mainCamera = Camera.main;
+        var size = mapCollider.size;
 
-        visionMask.sprite = CreateSprite(ref _maskTexture2D);
-        visionMaskSprite.sprite = CreateSprite(ref _spriteTexture2D);
+        var width = Mathf.RoundToInt(size.x * resolution);
+        var height = Mathf.RoundToInt(size.y * resolution);
 
-        float resolution = (float)Screen.width / Screen.height;
-        float ortho = _mainCamera.orthographicSize;
-        float ppp = 100f / _width;
-        float orthoCameraWidth = resolution * ortho * 2f;
-        float maskScale = orthoCameraWidth * ppp;
-        visionMask.transform.localScale = maskScale * Vector3.one;
-
-        Vector3 tmp1 = _mainCamera.ViewportToWorldPoint(new Vector3(0f, 0f));
-        Vector3 tmp2 = _mainCamera.ViewportToWorldPoint(new Vector3(1f, 1f));
+        var mainCamera = Camera.main;
+        var tmp1 = mainCamera.ViewportToWorldPoint(new Vector3(0f, 0f));
+        var tmp2 = mainCamera.ViewportToWorldPoint(new Vector3(1f, 1f));
         _cameraWorldWidth = Mathf.Abs(tmp1.x - tmp2.x);
         _cameraWorldHeight = Mathf.Abs(tmp1.y - tmp2.y);
-    }
+        _bottomLeftCameraOffset = new Vector2(-_cameraWorldWidth / 2f, -_cameraWorldHeight / 2f);
 
-    private Sprite CreateSprite(ref Texture2D texture)
-    {
-        _width = Screen.width / textureResolution;
-        _height = _width;
-
-        texture = new Texture2D(_width, _height);
-        for (int i = 0; i < _width; i++)
+        _texture = new Texture2D(width, height);
+        _maskTexture = new Texture2D(width, height);
+        
+        _calculatePixels = new bool[width, height];
+        for (var i = 0; i < width; i++)
         {
-            for (int j = 0; j < _height; j++)
+            for (var j = 0; j < height; j++)
             {
-                texture.SetPixel(i, j, Color.clear);
+                var pos = TexturePointToWorldPosition(new Point(i, j));
+                var ray = new Ray(pos, Vector3.forward);
+                var value = !Physics2D.Raycast(ray.origin, ray.direction, 100f, layerMask);
+                _calculatePixels[i, j] = value;
+                if (!value)
+                    _texture.SetPixel(i, j, gradient.Evaluate(1f));
             }
         }
+        _texture.Apply();
 
-        texture.Apply();
-        return Sprite.Create(texture, new Rect(0, 0, _width, _height), new Vector2(0.5f, 0.5f));
-    }
+        transform.position = mapCollider.offset;
+        spriteRenderer.transform.localScale = new Vector3(size.x * 100 / width, size.y * 100 / height);
 
-    private float GetRange()
-    {
-        return radius / _cameraWorldWidth * Screen.width / 2f;
-    }
-
-    private void UpdateTexture()
-    {
-        Vector2 playerPos = Astronaut.LocalAstronaut.transform.position;
-        Vector2 center = new Vector2(_width, _height) / 2f;
-        float maxPixelDist = GetRange() / textureResolution;
-
-        Vector2 bottomLeftWorldPos = playerPos + new Vector2(-_cameraWorldWidth / 2f, -_cameraWorldWidth / 2f);
-        Vector2 fullWorldCameraPos = new Vector2(_cameraWorldWidth, _cameraWorldWidth);
-
-        for (int i = 0; i < _width; i++)
-        {
-            for (int j = 0; j < _height; j++)
-            {
-                Vector2 pos = new Vector2(i, j);
-
-                float dist = Vector2.Distance(pos, center);
-                float percent = Mathf.Clamp01(dist / maxPixelDist);
-
-                if (percent < 1f)
-                {
-                    Vector2 viewportCoord = new Vector2(pos.x / _width, pos.y / _height);
-                    Vector2 worldPos = Vector2.zero;
-
-                    if (mode == LightSystemMode.World)
-                    {
-                        Vector2 offset = fullWorldCameraPos;
-                        offset.Scale(viewportCoord);
-                        worldPos = bottomLeftWorldPos + offset;
-                    }
-                    else if (mode == LightSystemMode.Camera)
-                    {
-                        worldPos = _mainCamera.ViewportToWorldPoint(viewportCoord);
-                    }
-
-                    Vector2 dir = worldPos - playerPos;
-                    Ray ray = new Ray(playerPos, dir);
-
-                    RaycastHit2D raycast = Physics2D.Raycast(ray.origin, ray.direction, dir.magnitude, layerMask);
-                    if (raycast) percent = 1f;
-                }
-
-                Color color = new Color(1f, 1f, 1f, percent >= 1f ? 0f : 1f);
-
-                _maskTexture2D.SetPixel(i, j, color);
-                _spriteTexture2D.SetPixel(i, j, maskGradient.Evaluate(percent));
-            }
-        }
-
-        _maskTexture2D.Apply();
-        _spriteTexture2D.Apply();
+        spriteRenderer.sprite = Sprite.Create(_texture, new Rect(0, 0, _texture.width, _texture.height), Vector2.one / 2f);
+        spriteMask.sprite = Sprite.Create(_maskTexture, new Rect(0, 0, _texture.width, _texture.height), Vector2.one / 2f);
+        blackMask.color = gradient.Evaluate(1f);
     }
 
     private void LateUpdate()
     {
-        if (!Astronaut.LocalAstronaut) return;
-        
-        Vector3 position = Astronaut.LocalAstronaut.transform.position;
-        if (mode == LightSystemMode.Camera)
-            position = _mainCamera.transform.position;
-
-        blackMask.transform.position = position;
-        visionMask.transform.position = position;
-
-        visionMask.alphaCutoff = sharpness;
-        blackMask.color = maskGradient.Evaluate(1f);
-
         UpdateTexture();
+    }
+
+    private void UpdateTexture()
+    {
+        var offset = 0.1f;
+        var start = ViewportToTexturePoint(-offset, -offset);
+        var end = ViewportToTexturePoint(1f + offset, 1f + offset);
+
+        Vector2 playerPos = Astronaut.LocalAstronaut.transform.position;
+            
+        for (var i = start.I; i <= end.I; i++)
+        {
+            for (var j = start.J; j < end.J; j++)
+            {
+                if (_calculatePixels[i, j])
+                {
+                    var pos = TexturePointToWorldPosition(new Point(i, j));
+                    var dir = pos - playerPos;
+                    var dist = dir.magnitude;
+                    var percent = dir.magnitude / range;
+                
+                    var color = gradient.Evaluate(1f);
+                    var maskColor = Color.clear;
+                
+                    if (percent <= 1f)
+                    {
+                        var ray = new Ray(playerPos, dir);
+                        if (!Physics2D.Raycast(ray.origin, ray.direction, dist, layerMask))
+                        {
+                            color = gradient.Evaluate(percent);
+                            maskColor = Color.white;
+                        }
+                    }
+                
+                    _texture.SetPixel(i, j, color);
+                    _maskTexture.SetPixel(i, j, maskColor);
+                }
+            }
+        }
+        
+        _texture.Apply();
+        _maskTexture.Apply();
+    }
+
+    private Point ViewportToTexturePoint(float i, float j)
+    {
+        return WorldPositionToTexturePoint(ViewportToWorldPosition(new Vector2(i, j)));
+    }
+
+    private Vector2 TexturePointToWorldPosition(Point point)
+    {
+        var x = (float) point.I / _texture.width;
+        var y = (float) point.J / _texture.height;
+        var pos = new Vector2(x, y);
+        pos.Scale(mapCollider.size);
+        
+        return mapCollider.offset - mapCollider.size / 2f + pos;
+    }
+
+    private Vector2 ViewportToWorldPosition(Vector2 viewport)
+    {
+        Vector2 playerPos = Astronaut.LocalAstronaut.transform.position;
+        var fullWorldCameraPos = new Vector2(_cameraWorldWidth, _cameraWorldHeight);
+        var offset = fullWorldCameraPos;
+        offset.Scale(viewport);
+        return playerPos + offset + _bottomLeftCameraOffset;
+    }
+
+    private Point WorldPositionToTexturePoint(Vector2 pos)
+    {
+        var offset = mapCollider.offset;
+        var size = mapCollider.size;
+        pos += offset;
+        pos += size / 2f;
+
+        var point = new Point(pos.x * _texture.width / size.x, pos.y * _texture.height / size.y);
+        point.I = Mathf.Clamp(point.I, 0, _texture.width - 1);
+        point.J = Mathf.Clamp(point.J, 0, _texture.height - 1);
+        return point;
     }
 }
