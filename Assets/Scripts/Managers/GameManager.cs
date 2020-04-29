@@ -5,6 +5,7 @@ using Photon.Pun;
 using System.Linq;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Managers
 {
@@ -49,16 +50,11 @@ namespace Managers
 
             if (characterParent != null)
                 astronaut.transform.SetParent(characterParent);
-            astronaut.OnSpawn();
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+                astronaut.Spawn();
 
             // Delete all gameobjects tagged with "DeleteInGame"
             FindObjectsOfType<Transform>().Where((obj) => obj.CompareTag(DeleteInGameTag)).ToList().ForEach((t) => Destroy(t.gameObject));
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                Astronaut.LocalAstronaut.OnSpawn();
         }
 
         private void UpdatePlayer(Player player)

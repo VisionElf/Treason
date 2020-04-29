@@ -38,7 +38,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.083333336
-        value: {x: 0, y: -0.21, z: 0}
+        value: {x: 0, y: -0.11, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -48,7 +48,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -64,7 +64,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.1
+        time: 0.016666668
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -76,26 +76,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Offset/Graphics/Sprite
-    classID: 1
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Offset/Graphics/Shadow
+    path: Graphics/Shadow
     classID: 1
     script: {fileID: 0}
   - curve:
@@ -123,27 +104,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Offset/Graphics/PlayerName
+    path: Graphics/PlayerName
     classID: 1
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_AnchoredPosition.x
-    path: Offset/Graphics/PlayerName
-    classID: 224
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
@@ -159,7 +121,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.42499998
+        value: 0.405
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -168,34 +130,34 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.033333335
-        value: 0.329
-        inSlope: -7.23
-        outSlope: -7.23
+        value: 0.325
+        inSlope: -5.4300003
+        outSlope: -5.4300003
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.05
-        value: 0.184
-        inSlope: -11.5199995
-        outSlope: -11.5199995
+        value: 0.224
+        inSlope: -9.059999
+        outSlope: -9.059999
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.06666667
-        value: -0.055
-        inSlope: -17.85
-        outSlope: -17.85
+        value: 0.023
+        inSlope: -16.32
+        outSlope: -16.32
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.083333336
-        value: -0.411
+        value: -0.32
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -206,7 +168,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: Offset/Graphics/PlayerName
+    path: Graphics/PlayerName
     classID: 224
     script: {fileID: 0}
   m_PPtrCurves:
@@ -229,8 +191,10 @@ AnimationClip:
     - time: 0.083333336
       value: {fileID: 2692861219231812196, guid: 14550c46bd096224a8614ff5589bff38,
         type: 3}
+    - time: 0.1
+      value: {fileID: 0}
     attribute: m_Sprite
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -241,54 +205,40 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1099456920
+      path: 1079350252
       attribute: 1
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1099456920
+      path: 4103775
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 31681579
+      path: 43973468
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 320004333
-      attribute: 2086281974
-      script: {fileID: 0}
-      typeID: 1
-      customType: 0
-      isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 320004333
+      path: 43973468
       attribute: 538195251
       script: {fileID: 0}
       typeID: 224
       customType: 28
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1099456920
+      path: 1079350252
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 320004333
-      attribute: 1460864421
-      script: {fileID: 0}
-      typeID: 224
-      customType: 28
-      isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: -8020936783078321308, guid: 14550c46bd096224a8614ff5589bff38, type: 3}
     - {fileID: 4804475965504125838, guid: 14550c46bd096224a8614ff5589bff38, type: 3}
@@ -296,12 +246,13 @@ AnimationClip:
     - {fileID: 7657105667790073909, guid: 14550c46bd096224a8614ff5589bff38, type: 3}
     - {fileID: -1709532342728552744, guid: 14550c46bd096224a8614ff5589bff38, type: 3}
     - {fileID: 2692861219231812196, guid: 14550c46bd096224a8614ff5589bff38, type: 3}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.11666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -317,6 +268,34 @@ AnimationClip:
     m_HeightFromFeet: 0
     m_Mirror: 0
   m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.016666668
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Graphics/Shadow
+    classID: 1
+    script: {fileID: 0}
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -351,7 +330,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -377,7 +356,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.083333336
-        value: -0.21
+        value: -0.11
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -388,7 +367,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -425,7 +404,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -453,74 +432,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Offset/Graphics/Sprite
+    path: Graphics/PlayerName
     classID: 1
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Offset/Graphics/Shadow
-    classID: 1
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 0.1
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_IsActive
-    path: Offset/Graphics/PlayerName
-    classID: 1
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_AnchoredPosition.x
-    path: Offset/Graphics/PlayerName
-    classID: 224
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
@@ -536,7 +449,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.016666668
-        value: 0.42499998
+        value: 0.405
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -545,34 +458,34 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.033333335
-        value: 0.329
-        inSlope: -7.23
-        outSlope: -7.23
+        value: 0.325
+        inSlope: -5.4300003
+        outSlope: -5.4300003
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.05
-        value: 0.184
-        inSlope: -11.5199995
-        outSlope: -11.5199995
+        value: 0.224
+        inSlope: -9.059999
+        outSlope: -9.059999
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.06666667
-        value: -0.055
-        inSlope: -17.85
-        outSlope: -17.85
+        value: 0.023
+        inSlope: -16.32
+        outSlope: -16.32
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.083333336
-        value: -0.411
+        value: -0.32
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -583,7 +496,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_AnchoredPosition.y
-    path: Offset/Graphics/PlayerName
+    path: Graphics/PlayerName
     classID: 224
     script: {fileID: 0}
   m_EulerEditorCurves: []

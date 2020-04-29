@@ -17,7 +17,8 @@ namespace Gameplay
     {
         NORMAL,
         IN_VENT,
-        DEAD
+        DEAD,
+        SPAWNING
     }
 
     public enum Direction
@@ -123,7 +124,7 @@ namespace Gameplay
                 playerNameText.text = photonView.Owner.NickName;
 
                 if (!isLocalCharacter && SceneManager.GetActiveScene().buildIndex == 1)
-                    OnSpawn();
+                    Spawn();
             }
             else
             {
@@ -141,8 +142,6 @@ namespace Gameplay
             }
 
             if (isLocalCharacter) LocalAstronaut = this;
-
-            outline.enabled = false;
 
             yield return null;
 
@@ -289,28 +288,6 @@ namespace Gameplay
             return Role.roleName.Equals("Impostor");
         }
 
-        public void Kill()
-        {
-            animator.SetTrigger(AnimatorHashKilled);
-            State = PlayerState.DEAD;
-            playerNameText.color = Color.clear;
-        }
-
-        public void KillTarget()
-        {
-            _currentKillTarget.Kill();
-            RemoveKillInteract(_currentKillTarget);
-        }
-
-        public void ReportTarget()
-        {
-            if (_currentReportTarget)
-            {
-                _currentReportTarget.transform.position = new Vector2(-5000, -5000);
-                RemoveReportInteract(_currentReportTarget);
-            }
-        }
-
         private void SetVisible(bool value)
         {
             playerNameText.enabled = value;
@@ -349,16 +326,6 @@ namespace Gameplay
             transform.localPosition = position;
         }
 
-        public void SetFacingDirection(Direction dir)
-        {
-            if (_facingDirection == dir) return;
-            _facingDirection = dir;
-            Vector3 newDirection = new Vector3(-1f, 1f, 1f);
-
-            graphics.localScale = Vector3.Scale(graphics.localScale, newDirection);
-            playerNameText.rectTransform.localScale = Vector3.Scale(playerNameText.rectTransform.localScale, newDirection);
-        }
-
         private void Move(int x, int y)
         {
             if (x == 0 && y == 0)
@@ -370,21 +337,62 @@ namespace Gameplay
             WalkIn(new Vector3(x, y).normalized);
         }
 
-        public Vector2 GetPosition2D() => transform.position;
-        public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
-        public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
-        public void ResetSpeed() => _body.velocity = Vector3.zero;
-
-        public void OnSpawn()
+        private void OnSpawnBegin()
         {
+            State = PlayerState.SPAWNING;
             _audioSource.PlayOneShot(spawnSound);
             animator.SetTrigger("Spawn");
         }
 
+        private void OnSpawnEnd()
+        {
+            State = PlayerState.NORMAL;
+        }
+
+        public void SetFacingDirection(Direction dir)
+        {
+            if (_facingDirection == dir) return;
+            _facingDirection = dir;
+            Vector3 newDirection = new Vector3(-1f, 1f, 1f);
+
+            graphics.localScale = Vector3.Scale(graphics.localScale, newDirection);
+            playerNameText.rectTransform.localScale = Vector3.Scale(playerNameText.rectTransform.localScale, newDirection);
+        }
+
+        public Vector2 GetPosition2D() => transform.position;
+
+        #region Controls
+        public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
+        public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
+        public void ResetSpeed() => _body.velocity = Vector3.zero;
+        public void Spawn() => OnSpawnBegin();
         public void UpdateAstronaut()
         {
             if (!PhotonNetwork.IsConnected) return;
             SetColor(photonView.Owner.GetColorIndex());
+        }
+        #endregion Controls
+
+        public void Kill()
+        {
+            animator.SetTrigger(AnimatorHashKilled);
+            State = PlayerState.DEAD;
+            playerNameText.color = Color.clear;
+        }
+
+        public void KillTarget()
+        {
+            _currentKillTarget.Kill();
+            RemoveKillInteract(_currentKillTarget);
+        }
+
+        public void ReportTarget()
+        {
+            if (_currentReportTarget)
+            {
+                _currentReportTarget.transform.position = new Vector2(-5000, -5000);
+                RemoveReportInteract(_currentReportTarget);
+            }
         }
     }
 }

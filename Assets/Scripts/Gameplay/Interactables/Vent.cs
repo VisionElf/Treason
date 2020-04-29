@@ -73,6 +73,7 @@ namespace Gameplay.Interactables
                 _player.WalkTowards(transform.position);
                 yield return null;
             }
+            _player.transform.position = transform.position;
 
             _player.ResetSpeed();
             animator.Play("Vent_Enter");

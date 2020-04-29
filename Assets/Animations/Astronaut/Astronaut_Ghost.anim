@@ -20,7 +20,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -0.034, y: -0.022, z: 0}
+        value: {x: -0.032, y: -0.022, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -30,7 +30,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
   m_ScaleCurves: []
   m_FloatCurves:
   - curve:
@@ -38,7 +38,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -48,9 +48,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Offset/Graphics/Shadow
-    classID: 212
+    attribute: m_IsActive
+    path: Graphics/Shadow
+    classID: 1
     script: {fileID: 0}
   m_PPtrCurves:
   - curve:
@@ -151,7 +151,7 @@ AnimationClip:
     - time: 1.9583334
       value: {fileID: 21300038, guid: e8ffc4956608f8247a35f6fd69380907, type: 3}
     attribute: m_Sprite
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 24
@@ -162,21 +162,21 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 31681579
-      attribute: 3305885265
+      path: 4103775
+      attribute: 2086281974
       script: {fileID: 0}
-      typeID: 212
+      typeID: 1
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1099456920
+      path: 1079350252
       attribute: 0
       script: {fileID: 0}
       typeID: 212
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
-      path: 1099456920
+      path: 1079350252
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -257,7 +257,26 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -0.034
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Graphics/Shadow
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: -0.032
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -268,7 +287,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -287,7 +306,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -306,27 +325,8 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: Offset/Graphics/Sprite
+    path: Graphics/Sprite
     classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: Infinity
-        outSlope: Infinity
-        tangentMode: 103
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_Enabled
-    path: Offset/Graphics/Shadow
-    classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
