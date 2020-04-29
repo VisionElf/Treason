@@ -1555,6 +1555,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1360367113}
     m_Modifications:
+    - target: {fileID: -6786347260209345156, guid: fd1012ea15c77c241aa428c23bebc258,
+        type: 3}
+      propertyPath: acceleration
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -6786347260209345156, guid: fd1012ea15c77c241aa428c23bebc258,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6786347260209345156, guid: fd1012ea15c77c241aa428c23bebc258,
+        type: 3}
+      propertyPath: period
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1737141553122483, guid: fd1012ea15c77c241aa428c23bebc258, type: 3}
       propertyPath: m_Name
       value: CameraPrefab

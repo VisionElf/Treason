@@ -40,9 +40,10 @@ namespace Audio
             }
 
             _time += Time.deltaTime;
-            if (_time >= period / Mathf.Clamp(astronaut.speed, astronaut.minAnimationSpeed, astronaut.maxAnimationSpeed))
+            float totalPeriod = period / Mathf.Clamp(astronaut.speed, astronaut.minAnimationSpeed, astronaut.maxAnimationSpeed);
+            if (_time >= totalPeriod)
             {
-                _time = 0f;
+                _time -= totalPeriod;
                 FootstepsList list = GetFootstepList(FootstepType.Metal);
                 list.audioClips.PlayRandomSound(source);
             }

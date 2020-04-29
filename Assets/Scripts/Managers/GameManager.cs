@@ -55,6 +55,12 @@ namespace Managers
             FindObjectsOfType<Transform>().Where((obj) => obj.CompareTag(DeleteInGameTag)).ToList().ForEach((t) => Destroy(t.gameObject));
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                Astronaut.LocalAstronaut.OnSpawn();
+        }
+
         private void UpdatePlayer(Player player)
         {
             var astro = player.GetAstronaut();

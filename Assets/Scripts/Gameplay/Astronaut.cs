@@ -20,6 +20,12 @@ namespace Gameplay
         DEAD
     }
 
+    public enum Direction
+    {
+        RIGHT,
+        LEFT
+    }
+
     public class Astronaut : MonoBehaviourPun
     {
         public static Astronaut LocalAstronaut;
@@ -35,18 +41,21 @@ namespace Gameplay
 
         [Header("Visual")]
         public TMP_Text playerNameText;
+        public SpriteRenderer outline;
 
         [Header("Animation")]
         public float minAnimationSpeed;
         public float maxAnimationSpeed;
+        public Animator animator;
+        public SpriteRenderer spriteRenderer;
+        public Transform graphics;
 
         [Header("Movement")]
         public float speed;
-        public Animator animator;
-        public SpriteRenderer spriteRenderer;
+
+        [Header("Vision")]
         public float visionRange;
         public LayerMask visibleLayerMask;
-        public SpriteRenderer outline;
 
         [Header("Misc")]
         public bool isLocalCharacter;
@@ -78,11 +87,12 @@ namespace Gameplay
         public static Action OnReportInteractDisable;
 
         private AudioSource _audioSource;
+        private Direction _facingDirection;
 
         private void Awake()
         {
             Astronauts.Add(this);
-            
+
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
             _audioSource = GetComponent<AudioSource>();
@@ -111,7 +121,7 @@ namespace Gameplay
             {
                 isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
-                
+
                 if (!isLocalCharacter && SceneManager.GetActiveScene().buildIndex == 1)
                     OnSpawn();
             }
@@ -325,7 +335,7 @@ namespace Gameplay
                 dist.y = 0f;
             IsRunning = dist.magnitude > 0f;
             if (IsRunning && dist.x != 0)
-                SetFacingDirection(dist.x < 0 ? Vector3.left : Vector3.right);
+                SetFacingDirection(dist.x < 0 ? Direction.LEFT : Direction.RIGHT);
 
             _previousPosition = transform.localPosition;
             animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
@@ -339,9 +349,14 @@ namespace Gameplay
             transform.localPosition = position;
         }
 
-        private void SetFacingDirection(Vector3 direction)
+        private void SetFacingDirection(Direction dir)
         {
-            spriteRenderer.flipX = direction == Vector3.left;
+            if (_facingDirection == dir) return;
+            _facingDirection = dir;
+            Vector3 newDirection = new Vector3(-1f, 1f, 1f);
+
+            graphics.localScale = Vector3.Scale(graphics.localScale, newDirection);
+            playerNameText.rectTransform.localScale = Vector3.Scale(playerNameText.rectTransform.localScale, newDirection);
         }
 
         private void Move(int x, int y)
