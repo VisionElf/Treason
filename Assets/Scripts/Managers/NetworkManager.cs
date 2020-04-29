@@ -18,6 +18,11 @@ namespace Managers
         public static Action<Player> onPlayerEnteredRoom;
         public static Action<Player> onPlayerLeftRoom;
 
+        private void Start()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
         private void OnEnable()
         {
             PhotonNetwork.AddCallbackTarget(this);

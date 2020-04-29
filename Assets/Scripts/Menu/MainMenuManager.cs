@@ -17,7 +17,7 @@ namespace Menu
         public RoomList roomList;
         public TMP_InputField playerNameInputField;
 
-        public Button createButton;
+        public Button[] buttons;
 
         private string _playerName;
         private const string KPrefsPlayerName = "Player_Name";
@@ -31,27 +31,25 @@ namespace Menu
 
         private void Start()
         {
-            Application.targetFrameRate = 25;
-            
-            createButton.interactable = false;
+            foreach (var btn in buttons) btn.interactable = false;
             PhotonNetwork.ConnectUsingSettings();
         }
 
         private void OnEnable()
         {
-            NetworkManager.onConnectedToPhoton += StartPingUpdate;
+            NetworkManager.onConnectedToPhoton += EnableButtons;
             NetworkManager.onJoinedLobby += ShowRoomList;
             NetworkManager.onLeftRoom += ShowMainMenu;
-            NetworkManager.onJoinedRoom += ShowRoomLobby;
+            NetworkManager.onJoinedRoom += LoadLobbyLevel;
             NetworkManager.onRoomListUpdate += UpdateRoomList;
         }
 
         private void OnDisable()
         {
-            NetworkManager.onConnectedToPhoton -= StartPingUpdate;
+            NetworkManager.onConnectedToPhoton -= EnableButtons;
             NetworkManager.onJoinedLobby -= ShowRoomList;
             NetworkManager.onLeftRoom -= ShowMainMenu;
-            NetworkManager.onJoinedRoom -= ShowRoomLobby;
+            NetworkManager.onJoinedRoom -= LoadLobbyLevel;
             NetworkManager.onRoomListUpdate -= UpdateRoomList;
         }
 
@@ -85,21 +83,9 @@ namespace Menu
             PhotonNetwork.LocalPlayer.NickName = _playerName;
         }
 
-        private IEnumerator UpdatePing()
+        private void EnableButtons()
         {
-            while (PhotonNetwork.IsConnected)
-            {
-                var ping = PhotonNetwork.GetPing().ToString();
-                PhotonNetwork.LocalPlayer.SetCustomProperty("Ping", ping);
-
-                yield return new WaitForSecondsRealtime(1f);
-            }
-        }
-
-        private void StartPingUpdate()
-        {
-            createButton.interactable = true;
-            StartCoroutine(UpdatePing());
+            foreach (var btn in buttons) btn.interactable = true;
         }
 
         private void ShowRoomList()
@@ -117,12 +103,9 @@ namespace Menu
             mainMenu.SetActive(true);
         }
 
-        private void ShowRoomLobby()
+        private void LoadLobbyLevel()
         {
-            SceneManager.LoadScene(1, LoadSceneMode.Single);
-//            mainMenu.SetActive(false);
-//            roomLobby.Show();
-//            roomLobby.UpdatePlayerList();
+            PhotonNetwork.LoadLevel(1);
         }
     }
 }

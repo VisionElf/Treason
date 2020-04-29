@@ -54,6 +54,9 @@ namespace Gameplay
         public int debugRoleIndex;
         public float interactRange;
 
+        [Header("Sounds")]
+        public AudioClip spawnSound;
+
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
         private Collider2D _hitbox;
@@ -71,10 +74,13 @@ namespace Gameplay
         public static Action OnReportInteractEnable;
         public static Action OnReportInteractDisable;
 
+        private AudioSource _audioSource;
+
         private void Awake()
         {
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
+            _audioSource = GetComponent<AudioSource>();
             State = PlayerState.NORMAL;
 
             if (photonView && photonView.Owner != null)
@@ -145,33 +151,36 @@ namespace Gameplay
             if (!isLocalCharacter)
             {
                 var localCharacter = LocalAstronaut;
-                Vector2 pos = transform.position;
-                Vector2 localPos = localCharacter.transform.position;
-
-                var dir = pos - localPos;
-                var dist = dir.magnitude;
-
-                var visible = false;
-                if (dist <= visionRange)
+                if (localCharacter)
                 {
-                    visible = !Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask);
-                }
+                    Vector2 pos = transform.position;
+                    Vector2 localPos = localCharacter.transform.position;
 
-                SetVisible(visible);
+                    var dir = pos - localPos;
+                    var dist = dir.magnitude;
 
-                if (State != PlayerState.DEAD)
-                {
-                    if (visible && dist <= interactRange && localCharacter.IsImpostor() && !IsImpostor())
-                        localCharacter.SetKillInteract(this, dist);
+                    var visible = false;
+                    if (dist <= visionRange)
+                    {
+                        visible = !Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask);
+                    }
+
+                    SetVisible(visible);
+
+                    if (State != PlayerState.DEAD)
+                    {
+                        if (visible && dist <= interactRange && localCharacter.IsImpostor() && !IsImpostor())
+                            localCharacter.SetKillInteract(this, dist);
+                        else
+                            localCharacter.RemoveKillInteract(this);
+                    }
                     else
-                        localCharacter.RemoveKillInteract(this);
-                }
-                else
-                {
-                    if (visible && dist <= interactRange)
-                        localCharacter.SetReportInteract(this, dist);
-                    else
-                        localCharacter.RemoveReportInteract(this);
+                    {
+                        if (visible && dist <= interactRange)
+                            localCharacter.SetReportInteract(this, dist);
+                        else
+                            localCharacter.RemoveReportInteract(this);
+                    }
                 }
             }
 
@@ -338,5 +347,11 @@ namespace Gameplay
         public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
         public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
         public void ResetSpeed() => _body.velocity = Vector3.zero;
+
+        public void OnSpawn()
+        {
+            _audioSource.PlayOneShot(spawnSound);
+            animator.SetTrigger("Spawn");
+        }
     }
 }
