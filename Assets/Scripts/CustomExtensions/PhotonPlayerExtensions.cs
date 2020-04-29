@@ -1,22 +1,58 @@
 ﻿using ExitGames.Client.Photon;
+using Gameplay;
+using Photon.Realtime;
 
 namespace CustomExtensions
 {
+    public static class PlayerProperties
+    {
+        public const string ColorIndex = "ColorIndex";
+        public const string RoleIndex = "RoleIndex";
+    }
+    
     public static class PhotonPlayerExtensions
     {
-        public static T GetCustomProperty<T>(this Photon.Realtime.Player player, string name, T defaultValue) where T : class
+        private static void SetProperty(this Player player, string key, object obj)
         {
-            if (player.CustomProperties.ContainsKey(name))
-                return player.CustomProperties[name] as T;
-            return defaultValue;
+            var hashtable = new Hashtable {[key] = obj};
+            player.SetCustomProperties(hashtable);
         }
 
-        public static void SetCustomProperty(this Photon.Realtime.Player player, string key, object value)
+        private static object GetProperty(this Player player, string key, object defaultValue)
         {
-            var properties = player.CustomProperties;
-            if (properties == null) properties = new Hashtable();
-            properties[key] = value;
-            player.SetCustomProperties(properties);
+            object value;
+            if (player.CustomProperties.TryGetValue(key, out value)) return value;
+            return defaultValue;
+        }
+        
+        public static void SetColorIndex(this Player player, int value)
+        {
+            player.SetProperty(PlayerProperties.ColorIndex, value);
+        }
+        
+        public static int GetColorIndex(this Player player)
+        {
+            return (int)player.GetProperty(PlayerProperties.ColorIndex, 0);
+        }
+        
+        public static void SetRoleIndex(this Player player, int value)
+        {
+            player.SetProperty(PlayerProperties.RoleIndex, value);
+        }
+        
+        public static int GetRoleIndex(this Player player)
+        {
+            return (int)player.GetProperty(PlayerProperties.RoleIndex, 0);
+        }
+
+        public static Astronaut GetAstronaut(this Player player)
+        {
+            var list = Astronaut.Astronauts;
+            foreach (var obj in list)
+            {
+                if (Equals(obj.photonView.Owner, player)) return obj;
+            }
+            return null;
         }
     }
 }

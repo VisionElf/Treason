@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1547,6 +1547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 160974149}
+  colorList: {fileID: 11400000, guid: f50cf8bc3f0a93e4cb34a550ff354a1f, type: 2}
 --- !u!1001 &816958641
 PrefabInstance:
   m_ObjectHideFlags: 0

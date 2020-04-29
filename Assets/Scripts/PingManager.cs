@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using CustomExtensions;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
@@ -25,8 +24,6 @@ public class PingManager : SingletonMB<PingManager>
         while (PhotonNetwork.IsConnected)
         {
             CurrentPing = PhotonNetwork.GetPing();
-            PhotonNetwork.LocalPlayer.SetCustomProperty("Ping", CurrentPing);
-
             yield return new WaitForSecondsRealtime(pingUpdatePeriod);
         }
     }

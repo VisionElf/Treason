@@ -17,6 +17,7 @@ namespace Managers
         public static Action onJoinedRoom;
         public static Action<Player> onPlayerEnteredRoom;
         public static Action<Player> onPlayerLeftRoom;
+        public static Action<Player> onPlayerPropertiesUpdate;
 
         private void Start()
         {
@@ -145,6 +146,7 @@ namespace Managers
 
         public void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
+            onPlayerPropertiesUpdate?.Invoke(targetPlayer);
         }
 
         public void OnMasterClientSwitched(Player newMasterClient)

@@ -1,6 +1,8 @@
 ﻿using Cameras;
+using CustomExtensions;
 using Gameplay;
 using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
 
 namespace Managers
@@ -10,8 +12,17 @@ namespace Managers
         public CameraFollow cameraFollow;
         public Astronaut astronautPrefab;
         public Transform characterParent;
-        // Debug
         public Transform[] characterSpawnPoints;
+
+        private void OnEnable()
+        {
+            NetworkManager.onPlayerPropertiesUpdate += UpdatePlayer;
+        }
+        
+        private void OnDisable()
+        {
+            NetworkManager.onPlayerPropertiesUpdate -= UpdatePlayer;
+        }
 
         public void Start()
         {
@@ -37,6 +48,12 @@ namespace Managers
                 astronaut.transform.SetParent(characterParent);
 
             astronaut.OnSpawn();
+        }
+
+        private void UpdatePlayer(Player player)
+        {
+            var astro = player.GetAstronaut();
+            if (astro) astro.UpdateAstronaut();
         }
     }
 }

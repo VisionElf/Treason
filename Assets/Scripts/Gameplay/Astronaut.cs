@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using CustomExtensions;
 using Data;
 using Photon.Pun;
@@ -22,6 +23,7 @@ namespace Gameplay
     public class Astronaut : MonoBehaviourPun
     {
         public static Astronaut LocalAstronaut;
+        public static List<Astronaut> Astronauts = new List<Astronaut>();
 
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
@@ -48,7 +50,7 @@ namespace Gameplay
 
         [Header("Misc")]
         public bool isLocalCharacter;
-        public ColorData[] colorList;
+        public ColorListData colorList;
 
         [Header("Roles")]
         public RoleData[] roleList;
@@ -79,6 +81,8 @@ namespace Gameplay
 
         private void Awake()
         {
+            Astronauts.Add(this);
+            
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
             _audioSource = GetComponent<AudioSource>();
@@ -86,12 +90,17 @@ namespace Gameplay
 
             if (photonView && photonView.Owner != null)
             {
-                string roleStr = photonView.Owner.GetCustomProperty("RoleIndex", "0");
-                SetRole(roleStr);
+                var roleIndex = photonView.Owner.GetColorIndex();
+                SetRole(roleIndex);
 
-                string colorStr = photonView.Owner.GetCustomProperty("ColorIndex", "0");
-                SetColor(int.Parse(colorStr));
+                var colorIndex = photonView.Owner.GetRoleIndex();
+                SetColor(colorIndex);
             }
+        }
+
+        private void OnDestroy()
+        {
+            Astronauts.Remove(this);
         }
 
         private IEnumerator Start()
@@ -108,7 +117,7 @@ namespace Gameplay
             }
             else
             {
-                SetRole(debugRoleIndex.ToString());
+                SetRole(debugRoleIndex);
             }
 
             if (!isLocalCharacter)
@@ -192,15 +201,14 @@ namespace Gameplay
                 UpdateAnimations();
         }
 
-        private void SetRole(string roleStr)
+        private void SetRole(int roleIndex)
         {
-            var index = int.Parse(roleStr);
-            Role = roleList[index];
+            Role = roleList[roleIndex];
         }
 
         private void SetColor(int colorIndex)
         {
-            SetColor(colorList[colorIndex]);
+            SetColor(colorList.list[colorIndex]);
         }
 
         private void SetColor(ColorData data)
@@ -356,6 +364,12 @@ namespace Gameplay
         {
             _audioSource.PlayOneShot(spawnSound);
             animator.SetTrigger("Spawn");
+        }
+
+        public void UpdateAstronaut()
+        {
+            if (!PhotonNetwork.IsConnected) return;
+            SetColor(photonView.Owner.GetColorIndex());
         }
     }
 }

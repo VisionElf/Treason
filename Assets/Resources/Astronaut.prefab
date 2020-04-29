@@ -606,7 +606,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!95 &4094762659643444565
 Animator:
@@ -688,19 +688,7 @@ MonoBehaviour:
     m_Bits: 2048
   outline: {fileID: 5000062614298253507}
   isLocalCharacter: 0
-  colorList:
-  - {fileID: 11400000, guid: 2d5c1fdce4c30e14dac0571b90a5c967, type: 2}
-  - {fileID: 11400000, guid: 9586831b22da57a4a940990be20e7def, type: 2}
-  - {fileID: 11400000, guid: 738f647b394b3ab439c30b609e719cd4, type: 2}
-  - {fileID: 11400000, guid: 48e0a21703cc4d14dba739ecb4327639, type: 2}
-  - {fileID: 11400000, guid: c89f103459e21e441a2a5333b70d7121, type: 2}
-  - {fileID: 11400000, guid: 6dc0b26f38f7a594ebcdbe24d2fcf37a, type: 2}
-  - {fileID: 11400000, guid: b69c29ed89dabb943aba9dbb0a123202, type: 2}
-  - {fileID: 11400000, guid: 4b7218a6ed194254ea15874f94a5fb8a, type: 2}
-  - {fileID: 11400000, guid: 6053c3c734ae35d42bd4034e307b1a97, type: 2}
-  - {fileID: 11400000, guid: d361e6d9d20a4b7429228c9fefb0b73f, type: 2}
-  - {fileID: 11400000, guid: b9bf7606c6db51845adafa0fdf44b9e0, type: 2}
-  - {fileID: 11400000, guid: 3ee4b2892a7fbbf4cb4fc304aeaa606b, type: 2}
+  colorList: {fileID: 11400000, guid: f50cf8bc3f0a93e4cb34a550ff354a1f, type: 2}
   roleList:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
   - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
