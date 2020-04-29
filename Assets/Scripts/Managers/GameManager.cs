@@ -1,12 +1,15 @@
 ﻿using Cameras;
 using Gameplay;
 using Photon.Pun;
+using System.Linq;
 using UnityEngine;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        public const string DeleteInGameTag = "DeleteInGame";
+
         private static GameManager _instance;
         public static GameManager Instance
         {
@@ -43,6 +46,9 @@ namespace Managers
 
             if (characterParent != null)
                 astronaut.transform.SetParent(characterParent);
+
+            // Delete all gameobjects tagged with "DeleteInGame"
+            FindObjectsOfType<Transform>().Where((obj) => obj.CompareTag(DeleteInGameTag)).ToList().ForEach((t) => Destroy(t.gameObject));
         }
     }
 }

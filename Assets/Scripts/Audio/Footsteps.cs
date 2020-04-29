@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using CustomExtensions;
+using Gameplay;
 using UnityEngine;
 
 namespace Audio
@@ -19,23 +21,33 @@ namespace Audio
 
     public class Footsteps : MonoBehaviour
     {
+        public const float RunAnimationLength = 0.2f;
+
+        public float period;
+        public float offset;
         public FootstepsList[] list;
         public AudioSource source;
+        public Astronaut astronaut;
 
-        private void OnEnable()
-        {
-            var list = GetFootstepList(FootstepType.Metal);
-            list.audioClips.PlayRandomSound(source);
-        }
+        private float _time;
 
-        private FootstepsList GetFootstepList(FootstepType type)
+        private void LateUpdate()
         {
-            foreach (var elt in list)
+            if (!astronaut.IsRunning)
             {
-                if (elt.type == type)
-                    return elt;
+                _time = offset;
+                return;
             }
-            throw new InvalidEnumArgumentException();
+
+            _time += Time.deltaTime;
+            if (_time >= period / Mathf.Clamp(astronaut.speed, astronaut.minAnimationSpeed, astronaut.maxAnimationSpeed))
+            {
+                _time = 0f;
+                FootstepsList list = GetFootstepList(FootstepType.Metal);
+                list.audioClips.PlayRandomSound(source);
+            }
         }
+
+        private FootstepsList GetFootstepList(FootstepType type) => list.First((list) => list.type == type);
     }
 }
