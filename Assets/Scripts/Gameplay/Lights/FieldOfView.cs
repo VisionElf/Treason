@@ -1,21 +1,29 @@
 ﻿using System.Collections.Generic;
 using Gameplay;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
     public const float Angle = 361f;
 
-    public float radius = 3f;
-    public int textureResolution;
+    [Header("Base")] public float radius = 3f;
+
+    [Header("Settings")] public int textureResolution;
     public int cameraMult;
     public LayerMask layerMask;
-    public int edgeResolveIterations = 2;
+
+    [Header("Edge Smoother")] public int edgeResolveIterations = 2;
     public float edgeDstThreshold = 0.5f;
 
-    public Camera fovCamera;
+    [Header("References")] public Camera fovCamera;
     public MeshFilter meshFilter;
     public SpriteMask spriteMask;
+    public SpriteRenderer blackMask;
+
+    [Header("Gradient")] public int gradientTextureSize;
+    public Gradient gradient;
+    public SpriteRenderer gradientSpriteRenderer;
 
     private RenderTexture _renderTexture;
     private Texture2D _maskTexture;
@@ -49,6 +57,8 @@ public class FieldOfView : MonoBehaviour
 
         spriteMask.transform.localScale =
             new Vector3(cameraWidth * 100f / _width, cameraHeight * 100f / _height, 1f);
+
+        blackMask.color = gradient.Evaluate(1f);
     }
 
     private void UpdateMaskTexture()
@@ -65,6 +75,11 @@ public class FieldOfView : MonoBehaviour
     {
         var position = Astronaut.LocalAstronaut.transform.position;
         spriteMask.transform.position = position;
+        
+        var scale = 100f * radius * 2f / gradientTextureSize;
+        gradientSpriteRenderer.transform.position = position;
+        gradientSpriteRenderer.transform.localScale = new Vector3(scale, scale, 1f);
+
         var pos = position;
         pos.z = -10;
         fovCamera.transform.position = pos;
@@ -181,6 +196,28 @@ public class FieldOfView : MonoBehaviour
     private Vector3 DirFromAngle(float currentAngle)
     {
         return new Vector3(Mathf.Sin(currentAngle * Mathf.Deg2Rad), Mathf.Cos(currentAngle * Mathf.Deg2Rad), 0);
+    }
+
+    public Texture2D GenerateGradientTexture()
+    {
+        var texture = new Texture2D(gradientTextureSize, gradientTextureSize);
+        var halfSize = gradientTextureSize / 2;
+        var center = new Vector2(halfSize, halfSize);
+
+        for (var i = 0; i < gradientTextureSize; i++)
+        {
+            for (var j = 0; j < gradientTextureSize; j++)
+            {
+                var pos = new Vector2(i, j);
+                var dist = Vector2.Distance(pos, center);
+                var percent = dist / halfSize;
+
+                texture.SetPixel(i, j, gradient.Evaluate(percent));
+            }
+        }
+
+        texture.Apply();
+        return texture;
     }
 }
 
