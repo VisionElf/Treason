@@ -33,6 +33,8 @@ namespace Audio
 
         private void LateUpdate()
         {
+            if (astronaut.State == PlayerState.GHOST) return;
+
             if (!astronaut.IsRunning)
             {
                 _time = offset;

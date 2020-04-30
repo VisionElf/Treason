@@ -33,7 +33,7 @@ namespace Gameplay.Interactables
             return _canInteract && base.CanInteract();
         }
 
-        // Animation Events
+        #region AnimationEvents
         public void OnEnterVentBegin()
         {
             _canInteract = false;
@@ -63,6 +63,7 @@ namespace Gameplay.Interactables
             _canInteract = true;
             _player.State = PlayerState.NORMAL;
         }
+        #endregion AnimationEvents
 
         private IEnumerator EnterVent()
         {
