@@ -76,7 +76,7 @@ public class FieldOfView : MonoBehaviour
         var position = Astronaut.LocalAstronaut.transform.position;
         spriteMask.transform.position = position;
         
-        var scale = 100f * radius * 2f / gradientTextureSize;
+        var scale = 100f * radius * 2.01f / gradientTextureSize;
         gradientSpriteRenderer.transform.position = position;
         gradientSpriteRenderer.transform.localScale = new Vector3(scale, scale, 1f);
 
