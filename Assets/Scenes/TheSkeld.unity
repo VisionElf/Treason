@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -29003,7 +29003,7 @@ PrefabInstance:
     - target: {fileID: 7589962825676741822, guid: 3ed00f48d2f40c845afbbb2658ff9695,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7589962825676741822, guid: 3ed00f48d2f40c845afbbb2658ff9695,
         type: 3}
@@ -29022,97 +29022,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed00f48d2f40c845afbbb2658ff9695, type: 3}
---- !u!1001 &9157742988208675670
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 9157742987663821790, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742987663821790, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742987663821790, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975706, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975708, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_Name
-      value: LightSystem
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975708, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157742988801975709, guid: bf2f0528505a18544a6433832cfd2242,
-        type: 3}
-      propertyPath: mapCollider
-      value: 
-      objectReference: {fileID: 1299661202}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bf2f0528505a18544a6433832cfd2242, type: 3}
