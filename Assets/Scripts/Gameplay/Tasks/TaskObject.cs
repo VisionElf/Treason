@@ -11,25 +11,27 @@ namespace Gameplay
 
         private void Start()
         {
-            SetOutlineColor(Color.white);
+            SetShaderParameters(Color.white, 0f);
         }
 
         private void FixedUpdate()
         {
             if (CanInteract())
-                SetOutlineColor(Color.yellow);
+                SetShaderParameters(Color.white, .5f);
             else
-                SetOutlineColor(Color.white);
+                SetShaderParameters(Color.white, 0f);
         }
-        
-        public void SetOutlineColor(Color color)
+
+        public void SetShaderParameters(Color color, float blend)
         {
-            spriteRenderer.material.SetColor("_OutlineColor", color);
+            spriteRenderer.material.SetColor("_Color", color);
+            spriteRenderer.material.SetFloat("_Blend", blend);
         }
 
         public override void Interact()
         {
-            TaskManager.Instance.ShowTask(taskData);
+            if (TaskManager.Instance)
+                TaskManager.Instance.ShowTask(taskData);
         }
     }
 }
