@@ -9,11 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f722ce8c277f4642b3f9c4a582a2add, type: 3}
-  m_Name: Imposter
+  m_Script: {fileID: 11500000, guid: bdb2df5f667484e4a94b8e53c8c51176, type: 3}
+  m_Name: Astronaut
   m_EditorClassIdentifier: 
-  roleName: Impostor
-  roleColor: {r: 1, g: 0, b: 0, a: 1}
-  playerNameColor: {r: 1, g: 0, b: 0, a: 1}
-  abilities:
-  - {fileID: 11400000, guid: 531bd5f48bbb26f4eb003fa590648af4, type: 2}

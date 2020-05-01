@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomExtensions;
 using Data;
+using Gameplay.Actions.Data;
+using Gameplay.Data;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -61,6 +63,7 @@ namespace Gameplay
         [Header("Misc")]
         public bool isLocalCharacter;
         public ColorListData colorList;
+        public TargetTypeData targetTypeData;
 
         [Header("Roles")]
         public RoleData[] roleList;
@@ -93,6 +96,7 @@ namespace Gameplay
         private void Awake()
         {
             Astronauts.Add(this);
+            targetTypeData.Add(this);
 
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
@@ -111,6 +115,7 @@ namespace Gameplay
 
         private void OnDestroy()
         {
+            targetTypeData.Remove(this);
             Astronauts.Remove(this);
         }
 
@@ -159,6 +164,21 @@ namespace Gameplay
         public void Update()
         {
             UpdateDepth();
+
+            foreach (var ability in Role.abilities)
+            {
+                var target = ability.FindTarget(this);
+                if (ability.CanInteract(target))
+                {
+                    if (Input.GetKeyDown(ability.shortcutKey))
+                    {
+                        ability.Execute(new ActionContext(
+                            Context.SourceAstronaut, this,
+                            Context.TargetAstronaut, target
+                        ));
+                    }
+                }
+            }
 
             if (State == PlayerState.NORMAL && isLocalCharacter)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));

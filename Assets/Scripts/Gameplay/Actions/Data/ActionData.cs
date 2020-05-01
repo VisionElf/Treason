@@ -22,7 +22,7 @@ namespace Gameplay.Actions.Data
         public ActionContext(params object[] contextAndObjects)
         {
             _objects = new Dictionary<Context, object>();
-            for (var i = 0; i < contextAndObjects.Length - 1; i++)
+            for (var i = 0; i < contextAndObjects.Length - 1; i += 2)
             {
                 _objects.Add((Context)contextAndObjects[i], contextAndObjects[i + 1]);
             }
@@ -33,6 +33,15 @@ namespace Gameplay.Actions.Data
             if (_objects.ContainsKey(context))
                 return _objects[context] as T;
             return null;
+        }
+
+        public void Print()
+        {
+            Debug.Log("--CONTEXT--");
+            foreach (var pair in _objects)
+            {
+                Debug.Log($"{pair.Key} -> {pair.Value}");
+            }
         }
     }
 }

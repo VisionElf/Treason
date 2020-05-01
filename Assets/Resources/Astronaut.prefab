@@ -869,6 +869,7 @@ MonoBehaviour:
     m_Bits: 2048
   isLocalCharacter: 0
   colorList: {fileID: 11400000, guid: f50cf8bc3f0a93e4cb34a550ff354a1f, type: 2}
+  targetTypeData: {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
   roleList:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
   - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
