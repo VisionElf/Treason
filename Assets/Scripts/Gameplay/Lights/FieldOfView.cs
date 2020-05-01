@@ -31,7 +31,7 @@ namespace Gameplay.Lights
         private Texture2D _maskTexture;
 
         private Mesh _mesh;
-        public Transform TargetTransform => Astronaut.LocalAstronaut.transform;
+        public Vector3 SourcePosition => Astronaut.LocalAstronaut.GetCenter();
 
         private int _width;
         private int _height;
@@ -120,7 +120,7 @@ namespace Gameplay.Lights
 
         private PointInfo GetPointInfo(float angle)
         {
-            var pos = TargetTransform.position;
+            var pos = SourcePosition;
             var dir = DirFromAngle(angle);
 
             var hit = Physics2D.Raycast(pos, dir, radius, layerMask);
@@ -171,7 +171,7 @@ namespace Gameplay.Lights
             var colors = new Color[vertexCount];
             var triangles = new int[(vertexCount - 2) * 3];
 
-            vertices[0] = TargetTransform.position;
+            vertices[0] = SourcePosition;
             colors[0] = Color.white;
             for (var i = 0; i < vertexCount - 1; i++)
             {

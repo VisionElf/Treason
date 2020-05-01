@@ -394,5 +394,11 @@ namespace Gameplay
                 RemoveReportInteract(_currentReportTarget);
             }
         }
+
+        public Vector3 GetCenter()
+        {
+            Vector2 pos = transform.position;
+            return pos + _hitbox.offset;
+        }
     }
 }
