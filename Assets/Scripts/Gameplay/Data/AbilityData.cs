@@ -10,17 +10,18 @@ namespace Gameplay.Data
         public TargetTypeData[] targetTypes;
         public ActionData actionData;
         public KeyCode shortcutKey;
+        public Sprite abilityIcon;
 
-        public object FindTarget(object source)
+        public object FindTarget(ITarget source)
         {
             foreach (var targetType in targetTypes)
             {
                 foreach (var target in targetType.Targets)
                 {
                     if (target == source) continue;
-                    
-                    var sourcePos = (source as MonoBehaviour).transform.position;
-                    var targetPos = (target as MonoBehaviour).transform.position;
+
+                    var sourcePos = source.GetPosition();
+                    var targetPos = target.GetPosition();
                     var dist = Vector3.Distance(sourcePos, targetPos);
                     if (dist <= abilityRange)
                     {

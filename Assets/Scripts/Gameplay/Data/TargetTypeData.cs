@@ -6,15 +6,15 @@ namespace Gameplay.Data
     [CreateAssetMenu]
     public class TargetTypeData : ScriptableObject
     {
-        private List<object> _targets = new List<object>();
-        public List<object> Targets => _targets;
+        private List<ITarget> _targets = new List<ITarget>();
+        public List<ITarget> Targets => _targets;
 
-        public void Add(object target)
+        public void Add(ITarget target)
         {
             _targets.Add(target);
         }
 
-        public void Remove(object target)
+        public void Remove(ITarget target)
         {
             _targets.Remove(target);
         }
