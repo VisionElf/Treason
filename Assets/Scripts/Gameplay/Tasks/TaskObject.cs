@@ -9,11 +9,6 @@ namespace Gameplay
         public TaskData taskData;
         public SpriteRenderer spriteRenderer;
 
-        private void Start()
-        {
-            SetShaderParameters(Color.white, 0f);
-        }
-
         private void FixedUpdate()
         {
             if (CanInteract())
