@@ -97,7 +97,7 @@ namespace Gameplay.Lights
                 for (var j = start.y; j < end.y; j++)
                 {
                     if (!_calculatePixels[i, j]) continue;
-                
+
                     var pos = TexturePointToWorldPosition(new int2(i, j));
                     var dir = new float2(pos.x - playerPos.x, pos.y - playerPos.y);
 

@@ -3,7 +3,7 @@
 public class SingletonMB<T> : MonoBehaviour where T : MonoBehaviour
 {
 	private static T _instance;
-	
+
 	private static object _lock = new object();
 
 	private static bool _isQuitting = false;
@@ -37,7 +37,7 @@ public class SingletonMB<T> : MonoBehaviour where T : MonoBehaviour
         Instance.gameObject.SetActive(_Active);
     }
 
-	void OnDestroy () 
+	void OnDestroy ()
 	{
 		OnDestroySpecific();
 	}

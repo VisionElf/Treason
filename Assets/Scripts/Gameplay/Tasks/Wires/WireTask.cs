@@ -9,7 +9,7 @@ namespace Gameplay.Tasks.Wires
     {
         public Wire[] wires;
         public WireIn[] wiresIns;
-        
+
         private RectTransform _rectTransform;
 
         public Wire SelectedWire
@@ -46,7 +46,7 @@ namespace Gameplay.Tasks.Wires
             colors.Add(Color.red);
             colors.Add(Color.blue);
             colors.Add(Color.yellow);
-            
+
             colors.Shuffle();
             return colors;
         }
@@ -67,7 +67,7 @@ namespace Gameplay.Tasks.Wires
                 wire.SetWireTask(this);
                 wire.SetColor(colors1[i]);
             }
-            
+
             for (var i = 0; i < wiresIns.Length; i++)
             {
                 var wire = wiresIns[i];

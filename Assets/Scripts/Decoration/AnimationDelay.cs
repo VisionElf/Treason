@@ -7,7 +7,7 @@ public class AnimationDelay : MonoBehaviour
     public string booleanName;
 
     void Start()
-    
+
     {
         StartCoroutine(DelayAnimation());
     }

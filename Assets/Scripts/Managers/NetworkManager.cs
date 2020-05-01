@@ -69,7 +69,7 @@ namespace Managers
         public void OnCustomAuthenticationFailed(string debugMessage)
         {
         }
-        
+
         #endregion
 
         #region MATCHMAKING

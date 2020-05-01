@@ -18,7 +18,7 @@ namespace Gameplay.Abilities.Data
         {
             _actions.Remove(action);
         }
-        
+
         public void TriggerEvent()
         {
             foreach (var action in _actions)

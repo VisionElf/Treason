@@ -10,7 +10,7 @@ namespace Gameplay
         public MiniMapRoomElement roomElementPrefab;
 
         private Astronaut _player;
-        
+
         public static Minimap Instance;
 
         private void Awake()

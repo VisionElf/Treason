@@ -31,7 +31,7 @@ namespace Cameras
             _targetPosition.z = transform.position.z;
             transform.position = Vector3.Lerp(transform.position, _targetPosition, lerpSpeed * Time.deltaTime);
         }
-        
+
         public void SetTarget()
         {
             _target = Astronaut.LocalAstronaut.transform;

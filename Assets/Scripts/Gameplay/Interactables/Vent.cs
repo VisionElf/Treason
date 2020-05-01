@@ -150,7 +150,7 @@ namespace Gameplay.Interactables
             else
                 SetShaderParameters(Color.white, 0f);
         }
-        
+
         public void SetShaderParameters(Color color, float blend)
         {
             outline.material.SetColor("_Color", color);

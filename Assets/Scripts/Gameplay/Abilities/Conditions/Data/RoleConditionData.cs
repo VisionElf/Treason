@@ -10,7 +10,7 @@ namespace Gameplay.Abilities.Conditions.Data
         public Context source;
         public ConditionComparison comparison;
         public RoleData value;
-        
+
         public override bool Evaluate(ActionContext context)
         {
             var target = context.Get<Astronaut>(source);

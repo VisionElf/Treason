@@ -17,7 +17,7 @@ public class PingText : MonoBehaviour
     private void Update()
     {
         if (!PhotonNetwork.IsConnected) return;
-        
+
         var ping = PingManager.Instance.CurrentPing;
         _text.text = string.Format(_defaultText, ping);
     }

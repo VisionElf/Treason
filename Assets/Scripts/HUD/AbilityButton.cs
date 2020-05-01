@@ -11,7 +11,7 @@ namespace HUD
         public Image cooldownMask;
         public TMP_Text cooldownText;
         public TMP_Text shortcutText;
-    
+
         private Button _button;
         private Ability _ability;
 
@@ -24,7 +24,7 @@ namespace HUD
         {
             var percent = _ability.GetCooldownPercent();
             var seconds = _ability.GetCooldownSeconds();
-            
+
             cooldownMask.fillAmount = percent;
             _button.interactable = _ability.CanBeUsed();
             cooldownText.text = _ability.IsInCooldown() ? seconds.ToString() : "";
@@ -34,9 +34,9 @@ namespace HUD
         {
             _button.onClick.AddListener(ability.Execute);
             _ability = ability;
-            
+
             shortcutText.text = ability.AbilityData.shortcutKey.ToString();
-            
+
             foreach (var icon in icons)
                 icon.sprite = _ability.AbilityData.abilityIcon;
         }

@@ -71,7 +71,7 @@ public class HostManager : MonoBehaviour
             astro = player.GetAstronaut();
             yield return null;
         }
-        
+
         AttributeColor(player);
     }
 
@@ -98,7 +98,7 @@ public class HostManager : MonoBehaviour
             yield return new WaitForSeconds(1f);
             seconds -= 1;
         }
-        
+
         PhotonNetwork.LoadLevel(2);
     }
 

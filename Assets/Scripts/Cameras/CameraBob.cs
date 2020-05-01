@@ -25,7 +25,7 @@ namespace Cameras
                 _velocity = acc * acceleration;
                 _lastTime = Time.time;
             }
-            
+
             _currentBob += _velocity * Time.deltaTime;
             _currentBob = _currentBob.normalized * Mathf.Min(maxSpeed, _currentBob.magnitude);
         }

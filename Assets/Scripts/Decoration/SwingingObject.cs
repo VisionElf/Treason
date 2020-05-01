@@ -24,7 +24,7 @@ public class SwingingObject : MonoBehaviour
         _currentTime += Time.deltaTime * _mult;
         var percent = Mathf.Clamp01(_currentTime / duration);
         if (percent >= 1f || percent <= 0f) _mult *= -1;
-        
+
         transform.rotation = Quaternion.Euler(Vector3.Lerp(_startAngle, _endAngle, easing.Evaluate(percent)));
     }
 }

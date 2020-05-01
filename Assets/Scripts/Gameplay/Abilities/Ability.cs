@@ -40,7 +40,7 @@ namespace Gameplay.Abilities
         {
             ITarget closestTarget = null;
             var minDist = AbilityData.abilityRange;
-            
+
             var context = GetCurrentContext();
             foreach (var targetType in AbilityData.targetTypes)
             {
@@ -90,7 +90,7 @@ namespace Gameplay.Abilities
         private void SetTarget(ITarget target)
         {
             if (_currentTarget == target) return;
-            
+
             _currentTarget?.SetHighlight(false);
             _currentTarget = target;
             _currentTarget?.SetHighlight(true);

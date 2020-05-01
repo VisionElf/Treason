@@ -41,7 +41,7 @@ namespace Gameplay.Tasks
             else
                 SetShaderParameters(Color.white, 0f);
         }
-        
+
         public void SetShaderParameters(Color color, float blend)
         {
             spriteRenderer.material.SetColor("_Color", color);

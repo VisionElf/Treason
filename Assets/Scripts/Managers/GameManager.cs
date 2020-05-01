@@ -50,7 +50,7 @@ namespace Managers
             }
 
             OnLocalAstronautCreated.TriggerEvent();
-            
+
             if (characterParent != null)
                 astronaut.transform.SetParent(characterParent);
             if (SceneManager.GetActiveScene().buildIndex == 1)

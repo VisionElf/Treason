@@ -13,12 +13,12 @@ namespace Gameplay.Abilities.Data
 
         [Header("Basic Settings")]
         public float cooldown;
-        
+
         [Header("Target Settings")]
         public float abilityRange;
         public TargetTypeData[] targetTypes;
         public ConditionData[] conditions;
-        
+
         [Header("UI")]
         public Sprite abilityIcon;
         public KeyCode shortcutKey;

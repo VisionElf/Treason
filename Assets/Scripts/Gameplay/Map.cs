@@ -30,11 +30,11 @@ namespace Gameplay
             var mapSize = boxCollider.size;
             var xPercent = minimapSize.x / mapSize.x;
             var yPercent = minimapSize.y / mapSize.y;
-            
+
             var minimapPosition = worldPosition;
             minimapPosition.x *= xPercent;
             minimapPosition.y *= yPercent;
-            
+
             return minimapPosition;
         }
 

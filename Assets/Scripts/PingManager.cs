@@ -6,7 +6,7 @@ using UnityEngine;
 public class PingManager : SingletonMB<PingManager>
 {
     public float pingUpdatePeriod;
-    
+
     public int CurrentPing { get; private set; }
 
     private void OnEnable()

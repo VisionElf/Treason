@@ -111,7 +111,7 @@ namespace Gameplay
             {
                 SetRole(debugRoleIndex);
             }
-            
+
             if (isLocalCharacter) LocalAstronaut = this;
 
             CreateAbilities();
