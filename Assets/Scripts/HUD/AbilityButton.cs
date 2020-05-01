@@ -44,6 +44,8 @@ namespace HUD
 
         public void SetIcon(Sprite sprite)
         {
+            if (sprite == null || sprite == icons[0].sprite) return;
+            
             foreach (var icon in icons)
                 icon.sprite = sprite;
         }
