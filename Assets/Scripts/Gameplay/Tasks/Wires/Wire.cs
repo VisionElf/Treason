@@ -21,7 +21,7 @@ namespace Gameplay.Tasks.Wires
 
         private bool _selected;
         private WireTask _wireTask;
-        
+
         public bool IsSelected => _selected;
 
         private void OnEnable()

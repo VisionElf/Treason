@@ -16,7 +16,7 @@ public static class NetworkEvents
         {
             Reliability = true
         };
-        
+
         PhotonNetwork.RaiseEvent(StartGame, null, raiseEventOptions, sendOptions);
     }
 }

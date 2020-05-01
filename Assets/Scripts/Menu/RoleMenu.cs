@@ -12,7 +12,7 @@ namespace Menu
         public Image backgroundImage;
         public Image[] astronauts;
         public AudioClip menuSound;
-        
+
         private Animator _animator;
 
         private void Awake()
@@ -35,7 +35,7 @@ namespace Menu
 
             var role = localAstronaut.Role;
             var impostorsCount = 1;
-            
+
             roleText.text = role.roleName;
             roleText.color = role.roleColor;
             backgroundImage.color = role.roleColor;

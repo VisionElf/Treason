@@ -25,7 +25,7 @@ namespace Menu
 
             shPanel.SetActive(false);
             rolePanel.Show(localAstronaut);
-            
+
             yield return new WaitForSeconds(postDelay);
 
             gameObject.SetActive(false);

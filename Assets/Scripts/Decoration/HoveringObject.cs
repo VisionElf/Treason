@@ -22,7 +22,7 @@ public class HoveringObject : MonoBehaviour
         _currentTime += Time.deltaTime * _mult;
         var percent = Mathf.Clamp01(_currentTime / duration);
         if (percent >= 1f || percent <= 0f) _mult *= -1;
-        
+
         transform.position = Vector3.Lerp(_startPos, _startPos + targetOffset, easing.Evaluate(percent));
     }
 }

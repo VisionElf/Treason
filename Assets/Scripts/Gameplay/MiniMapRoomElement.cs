@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay
 {
@@ -10,6 +10,9 @@ namespace Gameplay
         public TMP_Text roomNameText;
         public GameObject adminPlayerIconPrefab;
         public RectTransform adminPlayerList;
+
+        public Button closeDoorButton; 
+        public Button sabotageRoomButton; 
 
         private List<GameObject> _iconList = new List<GameObject>();
         private MapRoom _room;
@@ -24,10 +27,31 @@ namespace Gameplay
             }
         }
 
+        public void TogglePlayerCountInRoomVisibility(bool visible)
+        {
+            adminPlayerList.gameObject.SetActive(visible);
+        }
+
+        public void ToggleSabotageButtonsVisibility(bool visible)
+        {
+            if (closeDoorButton) closeDoorButton.gameObject.SetActive(visible);
+            if (sabotageRoomButton) sabotageRoomButton.gameObject.SetActive(visible);
+        }
+
         public void SetRoom(MapRoom room)
         {
             roomNameText.text = room.roomName;
             _room = room;
+            
+            if (!room.HasDoors())
+                Destroy(closeDoorButton.gameObject);
+            else
+                closeDoorButton.onClick.AddListener(room.CloseDoors);
+            
+            if (!room.CanBeSabotaged())
+                Destroy(sabotageRoomButton.gameObject);
+            else
+                sabotageRoomButton.GetComponent<Image>().sprite = room.sabotageIcon;
         }
 
         public void SetAdminRoomCount(int count)

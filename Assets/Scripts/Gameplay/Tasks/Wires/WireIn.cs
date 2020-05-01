@@ -48,7 +48,7 @@ namespace Gameplay.Tasks.Wires
         private void OnEnter()
         {
             if (!_wireTask.SelectedWire) return;
-            
+
             if (_wireTask.SelectedWire.Color == _color)
             {
                 ledImage.color = Color.yellow;

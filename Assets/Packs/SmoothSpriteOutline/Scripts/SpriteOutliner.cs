@@ -6,7 +6,7 @@ public class SpriteOutliner : MonoBehaviour
 {
     [Tooltip("Only recalculates the sprite data when the sprite image or its pivot changes. Useful for saving performance.")]
     public bool UpdateOnlyOnSpriteChange = true;
-    
+
     private SpriteRenderer spriteRenderer;
     private Material mat;
 

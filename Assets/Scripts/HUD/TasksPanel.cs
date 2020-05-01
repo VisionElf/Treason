@@ -8,7 +8,7 @@ public class TasksPanel : MonoBehaviour
     public LayoutElement panelElt;
     public Button tabButton;
     public float slideDuration = 0.4f;
-    
+
     private RectTransform _rectTransform;
     private bool _isShowing;
 
@@ -22,7 +22,7 @@ public class TasksPanel : MonoBehaviour
     {
         tabButton.onClick.AddListener(Toggle);
     }
-    
+
     private void OnDisable()
     {
         tabButton.onClick.RemoveListener(Toggle);

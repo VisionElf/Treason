@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Gameplay.Abilities.Data;
+using Gameplay.Data;
+using UnityEngine;
 
 namespace Data
 {
@@ -8,5 +10,6 @@ namespace Data
         public string roleName;
         public Color roleColor;
         public Color playerNameColor;
+        public AbilityData[] abilities;
     }
 }

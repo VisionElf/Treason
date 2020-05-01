@@ -14,28 +14,12 @@ namespace Gameplay
             Instance = this;
         }
 
-        public void Start()
+        public Vector2 GetPositionPercent(Vector3 worldPosition)
         {
-            var minimap = Minimap.Instance;
-            foreach (var room in rooms)
-            {
-                var pos = WorldToMinimapPosition(room.GetCenter());
-                minimap.AddMiniMapRoomElement(pos, room);
-            }
-        }
-
-        public Vector2 WorldToMinimapPosition(Vector3 worldPosition)
-        {
-            var minimapSize = Minimap.Instance.GetSize();
             var mapSize = boxCollider.size;
-            var xPercent = minimapSize.x / mapSize.x;
-            var yPercent = minimapSize.y / mapSize.y;
-            
-            var minimapPosition = worldPosition;
-            minimapPosition.x *= xPercent;
-            minimapPosition.y *= yPercent;
-            
-            return minimapPosition;
+            var xPercent = worldPosition.x / mapSize.x;
+            var yPercent = worldPosition.y / mapSize.y;
+            return new Vector2(xPercent, yPercent);
         }
 
         public MapRoom GetRoomAt(Vector3 position)

@@ -47,10 +47,7 @@ TagManager:
   - name: Floor+Walls
     uniqueID: 2266039745
     locked: 0
-  - name: Vents
-    uniqueID: 2343218641
-    locked: 0
-  - name: PlayerShadow
+  - name: UnderPlayer
     uniqueID: 3002636785
     locked: 0
   - name: Player
