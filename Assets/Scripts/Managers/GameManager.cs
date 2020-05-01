@@ -1,8 +1,9 @@
-﻿using Cameras;
-using CustomExtensions;
+﻿using CustomExtensions;
 using Gameplay;
 using Photon.Pun;
 using System.Linq;
+using Gameplay.Abilities.Data;
+using Gameplay.Data;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,10 +14,11 @@ namespace Managers
     {
         public const string DeleteInGameTag = "DeleteInGame";
 
-        public CameraFollow cameraFollow;
         public Astronaut astronautPrefab;
         public Transform characterParent;
         public Transform[] characterSpawnPoints;
+
+        public EventData OnLocalAstronautCreated;
 
         private void OnEnable()
         {
@@ -46,8 +48,9 @@ namespace Managers
                 astronaut.isLocalCharacter = true;
                 Astronaut.LocalAstronaut = astronaut;
             }
-            cameraFollow.SetTarget(astronaut.transform);
 
+            OnLocalAstronautCreated.TriggerEvent();
+            
             if (characterParent != null)
                 astronaut.transform.SetParent(characterParent);
             if (SceneManager.GetActiveScene().buildIndex == 1)

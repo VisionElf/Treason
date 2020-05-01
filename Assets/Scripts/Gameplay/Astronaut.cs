@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomExtensions;
 using Data;
+using Gameplay.Abilities;
+using Gameplay.Abilities.Data;
+using Gameplay.Data;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -27,7 +30,7 @@ namespace Gameplay
         LEFT
     }
 
-    public class Astronaut : MonoBehaviourPun
+    public class Astronaut : MonoBehaviourPun, ITarget
     {
         public static Astronaut LocalAstronaut;
         public static List<Astronaut> Astronauts = new List<Astronaut>();
@@ -61,11 +64,11 @@ namespace Gameplay
         [Header("Misc")]
         public bool isLocalCharacter;
         public ColorListData colorList;
+        public TargetTypeData targetTypeData;
 
         [Header("Roles")]
         public RoleData[] roleList;
         public int debugRoleIndex;
-        public float interactRange;
 
         [Header("Sounds")]
         public AudioClip spawnSound;
@@ -74,25 +77,20 @@ namespace Gameplay
         private Rigidbody2D _body;
         private Collider2D _hitbox;
 
-        private Astronaut _currentKillTarget;
-        private Astronaut _currentReportTarget;
-
         public bool IsRunning { get; private set; }
         public RoleData Role { get; private set; }
         public PlayerState State { get; set; }
 
-        public static Action OnKillInteractEnable;
-        public static Action OnKillInteractDisable;
-
-        public static Action OnReportInteractEnable;
-        public static Action OnReportInteractDisable;
-
         private AudioSource _audioSource;
         private Direction _facingDirection;
+
+        private List<Ability> _abilities;
+        public List<Ability> Abilities => _abilities;
 
         private void Awake()
         {
             Astronauts.Add(this);
+            targetTypeData.Add(this);
 
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
@@ -101,16 +99,35 @@ namespace Gameplay
 
             if (photonView && photonView.Owner != null)
             {
+                isLocalCharacter = photonView.IsMine;
+
                 var roleIndex = photonView.Owner.GetColorIndex();
                 SetRole(roleIndex);
 
                 var colorIndex = photonView.Owner.GetRoleIndex();
                 SetColor(colorIndex);
             }
+            else
+            {
+                SetRole(debugRoleIndex);
+            }
+            
+            if (isLocalCharacter) LocalAstronaut = this;
+
+            CreateAbilities();
+        }
+
+        private void CreateAbilities()
+        {
+            _abilities = new List<Ability>();
+            foreach (var abilityData in Role.abilities)
+                _abilities.Add(new Ability(abilityData, this));
+            SetHighlight(false);
         }
 
         private void OnDestroy()
         {
+            targetTypeData.Remove(this);
             Astronauts.Remove(this);
         }
 
@@ -120,15 +137,10 @@ namespace Gameplay
 
             if (photonView && photonView.Owner != null)
             {
-                isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
 
                 if (!isLocalCharacter && SceneManager.GetActiveScene().buildIndex == 1)
                     Spawn();
-            }
-            else
-            {
-                SetRole(debugRoleIndex);
             }
 
             if (!isLocalCharacter)
@@ -160,6 +172,9 @@ namespace Gameplay
         {
             UpdateDepth();
 
+            foreach (var ability in _abilities)
+                ability.Update();
+
             if (State == PlayerState.NORMAL && isLocalCharacter)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
@@ -188,21 +203,6 @@ namespace Gameplay
                     }
 
                     SetVisible(visible);
-
-                    if (State != PlayerState.DEAD)
-                    {
-                        if (visible && dist <= interactRange && localCharacter.IsImpostor() && !IsImpostor())
-                            localCharacter.SetKillInteract(this, dist);
-                        else
-                            localCharacter.RemoveKillInteract(this);
-                    }
-                    else
-                    {
-                        if (visible && dist <= interactRange)
-                            localCharacter.SetReportInteract(this, dist);
-                        else
-                            localCharacter.RemoveReportInteract(this);
-                    }
                 }
             }
 
@@ -230,59 +230,6 @@ namespace Gameplay
             material.SetColor(ShaderColor3, data.color3);
         }
 
-        private void RemoveKillInteract(Astronaut target)
-        {
-            if (_currentKillTarget == target)
-            {
-                _currentKillTarget.HideOutline();
-                _currentKillTarget = null;
-
-                OnKillInteractDisable?.Invoke();
-            }
-        }
-
-        private void SetKillInteract(Astronaut target, float dist)
-        {
-            if (_currentKillTarget == target) return;
-
-            if (_currentKillTarget)
-            {
-                var currDist = Vector2.Distance(_currentKillTarget.transform.position, transform.position);
-                if (dist >= currDist) return;
-                RemoveKillInteract(_currentKillTarget);
-            }
-
-            _currentKillTarget = target;
-            target.ShowOutline();
-
-            OnKillInteractEnable?.Invoke();
-        }
-
-        private void RemoveReportInteract(Astronaut target)
-        {
-            if (_currentReportTarget == target)
-            {
-                _currentReportTarget = null;
-
-                OnReportInteractDisable?.Invoke();
-            }
-        }
-
-        private void SetReportInteract(Astronaut target, float dist)
-        {
-            if (_currentReportTarget == target) return;
-
-            if (_currentReportTarget)
-            {
-                var currDist = Vector2.Distance(_currentReportTarget.transform.position, transform.position);
-                if (dist >= currDist) return;
-                RemoveReportInteract(_currentReportTarget);
-            }
-
-            _currentReportTarget = target;
-            OnReportInteractEnable?.Invoke();
-        }
-
         private bool IsImpostor()
         {
             return Role.roleName.Equals("Impostor");
@@ -291,16 +238,6 @@ namespace Gameplay
         private void SetVisible(bool value)
         {
             playerNameText.enabled = value;
-        }
-
-        private void HideOutline()
-        {
-            outline.enabled = false;
-        }
-
-        private void ShowOutline()
-        {
-            outline.enabled = true;
         }
 
         private void UpdateAnimations()
@@ -380,25 +317,20 @@ namespace Gameplay
             playerNameText.color = Color.clear;
         }
 
-        public void KillTarget()
-        {
-            _currentKillTarget.Kill();
-            RemoveKillInteract(_currentKillTarget);
-        }
-
-        public void ReportTarget()
-        {
-            if (_currentReportTarget)
-            {
-                _currentReportTarget.transform.position = new Vector2(-5000, -5000);
-                RemoveReportInteract(_currentReportTarget);
-            }
-        }
-
         public Vector3 GetCenter()
         {
             Vector2 pos = transform.position;
             return pos + _hitbox.offset;
+        }
+
+        public Vector3 GetPosition()
+        {
+            return transform.position;
+        }
+
+        public void SetHighlight(bool value)
+        {
+            outline.enabled = value;
         }
     }
 }

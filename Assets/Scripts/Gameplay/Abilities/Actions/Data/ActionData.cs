@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Actions.Data
+namespace Gameplay.Abilities.Actions.Data
 {
     public abstract class ActionData : ScriptableObject
     {
@@ -10,9 +10,8 @@ namespace Gameplay.Actions.Data
 
     public enum Context
     {
-        TargetAstronaut,
-        SourceAstronaut,
-        TargetInteractable
+        Target,
+        Source
     }
 
     public class ActionContext
@@ -22,7 +21,7 @@ namespace Gameplay.Actions.Data
         public ActionContext(params object[] contextAndObjects)
         {
             _objects = new Dictionary<Context, object>();
-            for (var i = 0; i < contextAndObjects.Length - 1; i++)
+            for (var i = 0; i < contextAndObjects.Length - 1; i += 2)
             {
                 _objects.Add((Context)contextAndObjects[i], contextAndObjects[i + 1]);
             }
@@ -33,6 +32,14 @@ namespace Gameplay.Actions.Data
             if (_objects.ContainsKey(context))
                 return _objects[context] as T;
             return null;
+        }
+
+        public void Set(Context context, object obj)
+        {
+            if (_objects.ContainsKey(context))
+                _objects[context] = obj;
+            else
+                _objects.Add(context, obj);
         }
     }
 }
