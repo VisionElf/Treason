@@ -32,13 +32,25 @@ namespace HUD
 
         public void SetAbility(Ability ability)
         {
+            ability.Button = this;
+                
             _button.onClick.AddListener(ability.Execute);
             _ability = ability;
 
             shortcutText.text = ability.AbilityData.shortcutKey.ToString();
 
+            ResetIcon();
+        }
+
+        public void SetIcon(Sprite sprite)
+        {
             foreach (var icon in icons)
-                icon.sprite = _ability.AbilityData.abilityIcon;
+                icon.sprite = sprite;
+        }
+
+        public void ResetIcon()
+        {
+            SetIcon(_ability.AbilityData.abilityIcon);
         }
     }
 }

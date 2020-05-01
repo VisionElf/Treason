@@ -1,7 +1,9 @@
 ﻿using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
 using Gameplay.Abilities.Data;
+using HUD;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.Abilities
 {
@@ -12,6 +14,8 @@ namespace Gameplay.Abilities
         private ITarget _source;
         private ITarget _currentTarget;
         private float _lastExecutedTime;
+        
+        public AbilityButton Button { get; set; }
 
         public Ability(AbilityData abilityData, ITarget source)
         {
@@ -30,10 +34,13 @@ namespace Gameplay.Abilities
 
             SetTarget(GetClosestAvailableTarget());
 
-            if (_currentTarget != null && Input.GetKeyDown(AbilityData.shortcutKey))
-            {
+            if (_currentTarget != null && _currentTarget is Interactable interactable)
+                Button.SetIcon(interactable.specificIcon);
+            else
+                Button.ResetIcon();
+            
+            if ((!AbilityData.RequireTarget || _currentTarget != null) && Input.GetKeyDown(AbilityData.shortcutKey))
                 Execute();
-            }
         }
 
         private ITarget GetClosestAvailableTarget()
@@ -111,7 +118,9 @@ namespace Gameplay.Abilities
 
         public bool CanBeUsed()
         {
-            return !IsInCooldown() && _currentTarget != null;
+            if (!AbilityData.RequireTarget || _currentTarget != null)
+                return !IsInCooldown();
+            return false;
         }
 
         public bool IsInCooldown()

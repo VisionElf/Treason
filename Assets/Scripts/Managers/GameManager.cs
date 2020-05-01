@@ -49,6 +49,7 @@ namespace Managers
                 Astronaut.LocalAstronaut = astronaut;
             }
 
+            Astronaut.LocalAstronaut.CreateAbilities();
             OnLocalAstronautCreated.TriggerEvent();
 
             if (characterParent != null)

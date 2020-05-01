@@ -1,11 +1,15 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Gameplay
 {
     public class MapRoom : MonoBehaviour
     {
         public string roomName;
+        public Door[] doors;
+        public Sprite sabotageIcon;
+        public Transform minimapPosition;
 
         private BoxCollider2D _boxCollider2D;
 
@@ -16,10 +20,7 @@ namespace Gameplay
 
         public Vector3 GetCenter()
         {
-            if (!_boxCollider2D) return transform.position;
-
-            Vector2 pos = transform.position;
-            return pos + _boxCollider2D.offset;
+            return minimapPosition.position;
         }
 
         public bool IsInsideRoom(Vector3 worldPos)
@@ -32,5 +33,21 @@ namespace Gameplay
         }
 
         public int GetPlayersInsideRoom() => FindObjectsOfType<Astronaut>().Count((p) => IsInsideRoom(p.transform.position));
+
+        public bool HasDoors()
+        {
+            return doors.Length > 0;
+        }
+
+        public bool CanBeSabotaged()
+        {
+            return sabotageIcon != null;
+        }
+
+        public void CloseDoors()
+        {
+            foreach (var door in doors)
+                door.Close();
+        }
     }
 }

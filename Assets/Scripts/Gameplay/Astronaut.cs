@@ -113,11 +113,9 @@ namespace Gameplay
             }
 
             if (isLocalCharacter) LocalAstronaut = this;
-
-            CreateAbilities();
         }
 
-        private void CreateAbilities()
+        public void CreateAbilities()
         {
             _abilities = new List<Ability>();
             foreach (var abilityData in Role.abilities)
@@ -172,8 +170,11 @@ namespace Gameplay
         {
             UpdateDepth();
 
-            foreach (var ability in _abilities)
-                ability.Update();
+            if (_abilities != null)
+            {
+                foreach (var ability in _abilities)
+                    ability.Update();
+            }
 
             if (State == PlayerState.NORMAL && isLocalCharacter)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));

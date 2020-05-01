@@ -4,6 +4,8 @@ namespace Gameplay
 {
     public class Door : MonoBehaviour
     {
+        public float closeDuration;
+        
         private Animator _animator;
         private bool _closed;
 
@@ -39,6 +41,7 @@ namespace Gameplay
         public void Close()
         {
             SetClosed(true);
+            Invoke(nameof(Open), closeDuration);
         }
     }
 }
