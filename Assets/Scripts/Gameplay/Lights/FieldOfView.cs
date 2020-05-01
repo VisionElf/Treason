@@ -77,6 +77,7 @@ namespace Gameplay.Lights
         {
             var position = Astronaut.LocalAstronaut.transform.position;
             spriteMask.transform.position = position;
+            position.z = 0;
         
             var scale = 100f * radius * 2.01f / gradientTextureSize;
             gradientSpriteRenderer.transform.position = position;
