@@ -61,6 +61,7 @@ namespace Gameplay.Lights
                 new Vector3(cameraWidth * 100f / _width, cameraHeight * 100f / _height, 1f);
 
             blackMask.color = gradient.Evaluate(1f);
+            blackMask.enabled = true;
         }
 
         private void UpdateMaskTexture()
