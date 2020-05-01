@@ -13277,7 +13277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be07fad6dce34994eacb0b2ed4210d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraFollow: {fileID: 1360367114}
   astronautPrefab: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
     type: 3}
   characterParent: {fileID: 1299661200}
@@ -13292,6 +13291,8 @@ MonoBehaviour:
   - {fileID: 2104295779}
   - {fileID: 1056040200}
   - {fileID: 586688208}
+  OnLocalAstronautCreated: {fileID: 11400000, guid: 130cceb769a728040a31aba88e05af77,
+    type: 2}
 --- !u!1 &727581637
 GameObject:
   m_ObjectHideFlags: 0
@@ -21439,6 +21440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df86ce4ec8ac68146ad7816abd8dff4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initializeEvent: {fileID: 11400000, guid: 130cceb769a728040a31aba88e05af77, type: 2}
   lerpSpeed: 5
 --- !u!1 &1361825087
 GameObject:
@@ -34939,6 +34941,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347119240691418426, guid: 791cf63e9a5b3f3498530cf4023785a0,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347119240691418426, guid: 791cf63e9a5b3f3498530cf4023785a0,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347119240691418426, guid: 791cf63e9a5b3f3498530cf4023785a0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347119240691418426, guid: 791cf63e9a5b3f3498530cf4023785a0,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347119240691418426, guid: 791cf63e9a5b3f3498530cf4023785a0,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2347119240691418426, guid: 791cf63e9a5b3f3498530cf4023785a0,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3421297445087627601, guid: 791cf63e9a5b3f3498530cf4023785a0,
         type: 3}

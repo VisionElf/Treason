@@ -1,13 +1,12 @@
-﻿using System;
-using Gameplay.Actions.Data;
+﻿using Gameplay.Abilities.Actions.Data;
 using UnityEngine;
 
-namespace Gameplay.Conditions.Data
+namespace Gameplay.Abilities.Conditions.Data
 {
     public abstract class ConditionData : ScriptableObject
     {
         public abstract bool Evaluate(ActionContext context);
-        
+
         public bool Compare(object a, object b, ConditionComparison comp)
         {
             switch (comp)
@@ -17,12 +16,26 @@ namespace Gameplay.Conditions.Data
                 case ConditionComparison.NotEqual:
                     return a != b;
             }
+
             return false;
         }
     }
 
     public enum ConditionComparison
     {
-        Equal, NotEqual
+        Equal,
+        NotEqual
+    }
+
+    public static class ConditionDataExtensions
+    {
+        public static bool Evaluate(this ConditionData[] conditions, ActionContext context)
+        {
+            foreach (var cond in conditions)
+            {
+                if (!cond.Evaluate(context)) return false;
+            }
+            return true;
+        }
     }
 }

@@ -1225,8 +1225,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9158453089483328239}
   - component: {fileID: 3393664557017904145}
+  - component: {fileID: 3239830079116808857}
   m_Layer: 5
-  m_Name: ActionButtons
+  m_Name: AbilityButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1260,6 +1261,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3082069679557871030}
   m_CullTransparentMesh: 0
+--- !u!114 &3239830079116808857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3082069679557871030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02e5d42cbdf9cc4089d6aa79909de6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initializeEvent: {fileID: 11400000, guid: 130cceb769a728040a31aba88e05af77, type: 2}
+  abilityButtonPrefab: {fileID: 6475765759036786288, guid: a43b0f1ed85b9694e949d519a6d55618,
+    type: 3}
+  container: {fileID: 7941229559964319565}
 --- !u!1 &5642275164162818958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1669,7 @@ GameObject:
   - component: {fileID: 7941229559964319565}
   - component: {fileID: 7009337532603108579}
   m_Layer: 5
-  m_Name: Container
+  m_Name: GridLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,7 +1692,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -40, y: -40}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7009337532603108579
 MonoBehaviour:
@@ -1690,10 +1707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
   m_ChildAlignment: 8
   m_StartCorner: 3
   m_StartAxis: 1

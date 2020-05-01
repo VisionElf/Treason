@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using CustomExtensions;
 using Data;
-using Gameplay.Actions.Data;
+using Gameplay.Abilities;
+using Gameplay.Abilities.Data;
 using Gameplay.Data;
 using Photon.Pun;
 using TMPro;
@@ -68,7 +69,6 @@ namespace Gameplay
         [Header("Roles")]
         public RoleData[] roleList;
         public int debugRoleIndex;
-        public float interactRange;
 
         [Header("Sounds")]
         public AudioClip spawnSound;
@@ -84,6 +84,9 @@ namespace Gameplay
         private AudioSource _audioSource;
         private Direction _facingDirection;
 
+        private List<Ability> _abilities;
+        public List<Ability> Abilities => _abilities;
+
         private void Awake()
         {
             Astronauts.Add(this);
@@ -96,12 +99,30 @@ namespace Gameplay
 
             if (photonView && photonView.Owner != null)
             {
+                isLocalCharacter = photonView.IsMine;
+
                 var roleIndex = photonView.Owner.GetColorIndex();
                 SetRole(roleIndex);
 
                 var colorIndex = photonView.Owner.GetRoleIndex();
                 SetColor(colorIndex);
             }
+            else
+            {
+                SetRole(debugRoleIndex);
+            }
+            
+            if (isLocalCharacter) LocalAstronaut = this;
+
+            CreateAbilities();
+        }
+
+        private void CreateAbilities()
+        {
+            _abilities = new List<Ability>();
+            foreach (var abilityData in Role.abilities)
+                _abilities.Add(new Ability(abilityData, this));
+            SetHighlight(false);
         }
 
         private void OnDestroy()
@@ -116,15 +137,10 @@ namespace Gameplay
 
             if (photonView && photonView.Owner != null)
             {
-                isLocalCharacter = photonView.IsMine;
                 playerNameText.text = photonView.Owner.NickName;
 
                 if (!isLocalCharacter && SceneManager.GetActiveScene().buildIndex == 1)
                     Spawn();
-            }
-            else
-            {
-                SetRole(debugRoleIndex);
             }
 
             if (!isLocalCharacter)
@@ -156,23 +172,8 @@ namespace Gameplay
         {
             UpdateDepth();
 
-            foreach (var ability in Role.abilities)
-            {
-                var target = ability.FindTarget(this);
-                
-                var context = new ActionContext(
-                    Context.SourceAstronaut, this,
-                    Context.TargetAstronaut, target
-                );
-                
-                if (ability.CanInteract(context))
-                {
-                    if (Input.GetKeyDown(ability.shortcutKey))
-                    {
-                        ability.Execute(context);
-                    }
-                }
-            }
+            foreach (var ability in _abilities)
+                ability.Update();
 
             if (State == PlayerState.NORMAL && isLocalCharacter)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
@@ -325,6 +326,11 @@ namespace Gameplay
         public Vector3 GetPosition()
         {
             return transform.position;
+        }
+
+        public void SetHighlight(bool value)
+        {
+            outline.enabled = value;
         }
     }
 }

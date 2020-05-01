@@ -1,14 +1,27 @@
-﻿using System;
+﻿using Gameplay;
+using Gameplay.Abilities.Data;
+using Gameplay.Data;
 using UnityEngine;
 
 namespace Cameras
 {
     public class CameraFollow : MonoBehaviour
     {
+        public EventData initializeEvent;
         public float lerpSpeed;
 
         private Transform _target;
         private Vector3 _targetPosition;
+
+        private void Awake()
+        {
+            initializeEvent.Register(SetTarget);
+        }
+
+        private void OnDestroy()
+        {
+            initializeEvent.Unregister(SetTarget);
+        }
 
         private void LateUpdate()
         {
@@ -19,9 +32,9 @@ namespace Cameras
             transform.position = Vector3.Lerp(transform.position, _targetPosition, lerpSpeed * Time.deltaTime);
         }
         
-        public void SetTarget(Transform target)
+        public void SetTarget()
         {
-            _target = target;
+            _target = Astronaut.LocalAstronaut.transform;
             _targetPosition = _target.transform.position;
             _targetPosition.z = transform.position.z;
             transform.position = _targetPosition;

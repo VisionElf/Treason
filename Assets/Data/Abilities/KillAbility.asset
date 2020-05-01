@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: KillAbility
   m_EditorClassIdentifier: 
   actionData: {fileID: 11400000, guid: cff22a2e27c17b74c90d767187cbb361, type: 2}
+  cooldown: 25
   abilityRange: 1
   targetTypes:
   - {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}

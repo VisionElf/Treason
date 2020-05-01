@@ -1,7 +1,8 @@
-﻿using UnityEditor;
+﻿using Gameplay.Data;
+using UnityEditor;
 using UnityEngine;
 
-namespace Gameplay.Data.Editor
+namespace Gameplay.Abilities.Data.Editor
 {
     [CustomEditor(typeof(EventData))]
     public class EventDataEditor : UnityEditor.Editor

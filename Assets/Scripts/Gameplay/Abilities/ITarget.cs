@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Abilities
 {
     public interface ITarget
     {
         Vector3 GetPosition();
+        void SetHighlight(bool value);
     }
 }

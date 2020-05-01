@@ -1,4 +1,5 @@
-﻿using Gameplay.Data;
+﻿using Gameplay.Abilities.Data;
+using Gameplay.Data;
 using UnityEngine;
 
 namespace Data

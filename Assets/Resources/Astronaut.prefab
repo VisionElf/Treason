@@ -420,7 +420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8469976835592136626
 Transform:
   m_ObjectHideFlags: 0
@@ -874,7 +874,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
   - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
   debugRoleIndex: 1
-  interactRange: 2
   spawnSound: {fileID: 8300000, guid: 2b21477e7f228ab4188f68796a2cdb8e, type: 3}
 --- !u!114 &7460623510227591475
 MonoBehaviour:

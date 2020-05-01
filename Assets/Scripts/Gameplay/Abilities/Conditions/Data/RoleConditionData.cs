@@ -1,8 +1,8 @@
 ﻿using Data;
-using Gameplay.Actions.Data;
+using Gameplay.Abilities.Actions.Data;
 using UnityEngine;
 
-namespace Gameplay.Conditions.Data
+namespace Gameplay.Abilities.Conditions.Data
 {
     [CreateAssetMenu]
     public class RoleConditionData : ConditionData

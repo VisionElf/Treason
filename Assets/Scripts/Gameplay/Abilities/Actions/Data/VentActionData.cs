@@ -1,15 +1,15 @@
 ﻿using Gameplay.Interactables;
 using UnityEngine;
 
-namespace Gameplay.Actions.Data
+namespace Gameplay.Abilities.Actions.Data
 {
     [CreateAssetMenu]
     public class VentActionData : ActionData
     {
         public override void Execute(ActionContext context)
         {
-            var source = context.Get<Astronaut>(Context.SourceAstronaut);
-            var vent = context.Get<Vent>(Context.TargetInteractable);
+            var source = context.Get<Astronaut>(Context.Source);
+            var vent = context.Get<Vent>(Context.Target);
             
             vent.Interact(); // Add source?
         }
