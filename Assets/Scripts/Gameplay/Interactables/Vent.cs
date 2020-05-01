@@ -129,13 +129,16 @@ namespace Gameplay.Interactables
 
         public void Interact(Astronaut astronaut)
         {
-            SetPlayer(astronaut);
-            _canInteract = false;
+            if (_canInteract)
+            {
+                SetPlayer(astronaut);
+                _canInteract = false;
 
-            if (_player.State == PlayerState.IN_VENT)
-                StartCoroutine(ExitVent());
-            else
-                StartCoroutine(EnterVent());
+                if (_player.State == PlayerState.IN_VENT)
+                    StartCoroutine(ExitVent());
+                else
+                    StartCoroutine(EnterVent());
+            }
         }
 
         public Vector3 GetPosition()
