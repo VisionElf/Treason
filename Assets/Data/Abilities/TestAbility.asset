@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91aeb013a702fa443a5ab189cf841772, type: 3}
   m_Name: TestAbility
   m_EditorClassIdentifier: 
-  actionData: {fileID: 0}
+  actionData: {fileID: 11400000, guid: cff22a2e27c17b74c90d767187cbb361, type: 2}
