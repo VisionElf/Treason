@@ -1,4 +1,5 @@
 ﻿using Gameplay.Actions.Data;
+using Gameplay.Conditions.Data;
 using UnityEngine;
 
 namespace Gameplay.Data
@@ -6,11 +7,17 @@ namespace Gameplay.Data
     [CreateAssetMenu]
     public class AbilityData : ScriptableObject
     {
+        [Header("Action")]
+        public ActionData actionData;
+        
+        [Header("Settings")]
         public float abilityRange;
         public TargetTypeData[] targetTypes;
-        public ActionData actionData;
-        public KeyCode shortcutKey;
+        public ConditionData[] conditions;
+        
+        [Header("UI")]
         public Sprite abilityIcon;
+        public KeyCode shortcutKey;
 
         public object FindTarget(ITarget source)
         {
@@ -32,9 +39,13 @@ namespace Gameplay.Data
             return null;
         }
 
-        public bool CanInteract(object target)
+        public bool CanInteract(ActionContext context)
         {
-            return target != null;
+            foreach (var cond in conditions)
+            {
+                if (!cond.Evaluate(context)) return false;
+            }
+            return true;
         }
 
         public void Execute(ActionContext context)

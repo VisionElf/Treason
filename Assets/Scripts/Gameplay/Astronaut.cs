@@ -159,14 +159,17 @@ namespace Gameplay
             foreach (var ability in Role.abilities)
             {
                 var target = ability.FindTarget(this);
-                if (ability.CanInteract(target))
+                
+                var context = new ActionContext(
+                    Context.SourceAstronaut, this,
+                    Context.TargetAstronaut, target
+                );
+                
+                if (ability.CanInteract(context))
                 {
                     if (Input.GetKeyDown(ability.shortcutKey))
                     {
-                        ability.Execute(new ActionContext(
-                            Context.SourceAstronaut, this,
-                            Context.TargetAstronaut, target
-                        ));
+                        ability.Execute(context);
                     }
                 }
             }
