@@ -28,16 +28,19 @@ namespace Gameplay.Abilities
                 return;
             }
 
-            SetTarget(FindTarget());
+            SetTarget(GetClosestAvailableTarget());
 
-            if (Input.GetKeyDown(AbilityData.shortcutKey))
+            if (_currentTarget != null && Input.GetKeyDown(AbilityData.shortcutKey))
             {
                 Execute();
             }
         }
 
-        private ITarget FindTarget()
+        private ITarget GetClosestAvailableTarget()
         {
+            ITarget closestTarget = null;
+            var minDist = AbilityData.abilityRange;
+            
             var context = GetCurrentContext();
             foreach (var targetType in AbilityData.targetTypes)
             {
@@ -50,13 +53,14 @@ namespace Gameplay.Abilities
                     var sourcePos = _source.GetPosition();
                     var targetPos = target.GetPosition();
                     var dist = Vector3.Distance(sourcePos, targetPos);
-                    if (dist <= AbilityData.abilityRange)
+                    if (dist < minDist)
                     {
-                        return target;
+                        closestTarget = target;
+                        minDist = dist;
                     }
                 }
             }
-            return null;
+            return closestTarget;
         }
 
         private bool EvaluateConditions(ActionContext context)

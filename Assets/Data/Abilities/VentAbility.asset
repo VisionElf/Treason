@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91aeb013a702fa443a5ab189cf841772, type: 3}
-  m_Name: KillAbility
+  m_Name: VentAbility
   m_EditorClassIdentifier: 
-  actionData: {fileID: 11400000, guid: cff22a2e27c17b74c90d767187cbb361, type: 2}
-  cooldown: 25
+  actionData: {fileID: 11400000, guid: 6032122291f5cea469e6bda277d337fa, type: 2}
+  cooldown: 0
   abilityRange: 1
   targetTypes:
-  - {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
-  conditions:
-  - {fileID: 11400000, guid: 1977d8a2fc27e0c4a8059b43fb4c4ece, type: 2}
-  abilityIcon: {fileID: 21300036, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
-  shortcutKey: 116
+  - {fileID: 11400000, guid: 0b7eaed86d662374287f0df90f41bec4, type: 2}
+  conditions: []
+  abilityIcon: {fileID: 21300050, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
+  shortcutKey: 118

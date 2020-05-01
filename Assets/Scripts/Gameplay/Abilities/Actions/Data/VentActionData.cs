@@ -10,8 +10,7 @@ namespace Gameplay.Abilities.Actions.Data
         {
             var source = context.Get<Astronaut>(Context.Source);
             var vent = context.Get<Vent>(Context.Target);
-            
-            vent.Interact(); // Add source?
+            vent.Interact(source);
         }
     }
 }

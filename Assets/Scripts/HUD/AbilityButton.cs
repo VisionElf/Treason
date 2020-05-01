@@ -10,6 +10,7 @@ namespace HUD
         public Image[] icons;
         public Image cooldownMask;
         public TMP_Text cooldownText;
+        public TMP_Text shortcutText;
     
         private Button _button;
         private Ability _ability;
@@ -33,6 +34,8 @@ namespace HUD
         {
             _button.onClick.AddListener(ability.Execute);
             _ability = ability;
+            
+            shortcutText.text = ability.AbilityData.shortcutKey.ToString();
             
             foreach (var icon in icons)
                 icon.sprite = _ability.AbilityData.abilityIcon;

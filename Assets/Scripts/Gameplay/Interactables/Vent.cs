@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Gameplay.Abilities;
+using Gameplay.Abilities.Data;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Gameplay.Interactables
 {
-    public class Vent : Interactable
+    public class Vent : MonoBehaviour, ITarget
     {
         [Header("Arrow")]
         public GameObject arrowPrefab;
@@ -11,6 +15,7 @@ namespace Gameplay.Interactables
 
         [Header("Animation")]
         public Animator animator;
+        public SpriteRenderer outline;
 
         [Header("Audio")]
         public AudioSource audioSource;
@@ -18,19 +23,26 @@ namespace Gameplay.Interactables
         public AudioClip[] moveSounds;
 
         [Header("Gameplay")]
+        public TargetTypeData targetType;
         public Vent[] accessibleVents;
 
         private Astronaut _player;
         private bool _canInteract;
 
+        private void Awake()
+        {
+            targetType.Add(this);
+            SetHighlight(false);
+        }
+
+        private void OnDestroy()
+        {
+            targetType.Remove(this);
+        }
+
         private void Start()
         {
             _canInteract = true;
-        }
-
-        protected override bool CanInteract()
-        {
-            return _canInteract && base.CanInteract();
         }
 
         // Animation Events
@@ -115,15 +127,34 @@ namespace Gameplay.Interactables
             audioSource.PlayOneShot(moveSounds[Random.Range(0, moveSounds.Length)]);
         }
 
-        public override void Interact()
+        public void Interact(Astronaut astronaut)
         {
-            SetPlayer(Astronaut.LocalAstronaut);
+            SetPlayer(astronaut);
             _canInteract = false;
 
             if (_player.State == PlayerState.IN_VENT)
                 StartCoroutine(ExitVent());
             else
                 StartCoroutine(EnterVent());
+        }
+
+        public Vector3 GetPosition()
+        {
+            return transform.position;
+        }
+
+        public void SetHighlight(bool value)
+        {
+            if (value)
+                SetShaderParameters(Color.red, .5f);
+            else
+                SetShaderParameters(Color.white, 0f);
+        }
+        
+        public void SetShaderParameters(Color color, float blend)
+        {
+            outline.material.SetColor("_Color", color);
+            outline.material.SetFloat("_Blend", blend);
         }
     }
 }

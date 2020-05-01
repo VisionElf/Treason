@@ -249,9 +249,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4325752740235946220}
+  - component: {fileID: 6045172303102738567}
   - component: {fileID: 4325752740235946223}
   - component: {fileID: 4325752740235946222}
-  - component: {fileID: 6045172303102738567}
   m_Layer: 0
   m_Name: Vent
   m_TagString: Untagged
@@ -276,6 +276,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6045172303102738567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4325752740235946221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05936c7d5198ef459c89dce3dffc085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowPrefab: {fileID: 1139136766282123568, guid: ff45aa59463ae8842a57cd7fee95dddc,
+    type: 3}
+  arrowOrigin: {fileID: 8377989387451005687}
+  animator: {fileID: 4325752740235946222}
+  outline: {fileID: 4325752740235946223}
+  audioSource: {fileID: 544232038705390371}
+  openCloseSound: {fileID: 8300000, guid: 22f76549c00ce4e4b991303295c3391f, type: 3}
+  moveSounds:
+  - {fileID: 8300000, guid: c6e6611f6b54fb841a2daadd3ba4aefe, type: 3}
+  - {fileID: 8300000, guid: a19c0491c10b12746b302927464b8153, type: 3}
+  - {fileID: 8300000, guid: 6ccdd19e14388f84caae1072d47250ed, type: 3}
+  targetType: {fileID: 11400000, guid: 0b7eaed86d662374287f0df90f41bec4, type: 2}
+  accessibleVents: []
 --- !u!212 &4325752740235946223
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -294,7 +319,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bb8ccdb0b65fbe541b150d0010b8192e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -346,27 +371,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6045172303102738567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4325752740235946221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05936c7d5198ef459c89dce3dffc085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactRange: 1
-  arrowPrefab: {fileID: 1139136766282123568, guid: ff45aa59463ae8842a57cd7fee95dddc,
-    type: 3}
-  arrowOrigin: {fileID: 8377989387451005687}
-  animator: {fileID: 4325752740235946222}
-  audioSource: {fileID: 544232038705390371}
-  openCloseSound: {fileID: 8300000, guid: 22f76549c00ce4e4b991303295c3391f, type: 3}
-  moveSounds:
-  - {fileID: 8300000, guid: c6e6611f6b54fb841a2daadd3ba4aefe, type: 3}
-  - {fileID: 8300000, guid: a19c0491c10b12746b302927464b8153, type: 3}
-  - {fileID: 8300000, guid: 6ccdd19e14388f84caae1072d47250ed, type: 3}
-  accessibleVents: []
