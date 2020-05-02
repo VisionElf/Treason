@@ -699,7 +699,7 @@ MonoBehaviour:
   animator: {fileID: 7541920351911303659}
   spriteRenderer: {fileID: 4040953918193099422}
   graphics: {fileID: 2839895915470749470}
-  speed: 3
+  speed: 6
   visionRange: 4
   visibleLayerMask:
     serializedVersion: 2
