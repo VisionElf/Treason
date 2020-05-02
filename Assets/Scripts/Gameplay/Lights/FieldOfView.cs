@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Gameplay;
 using Unity.Mathematics;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Gameplay.Lights
         public MeshFilter meshFilter;
         public SpriteMask spriteMask;
         public SpriteRenderer blackMask;
+        public SpriteMask fullMask;
 
         [Header("Gradient")] public int gradientTextureSize;
         public Gradient gradient;
@@ -35,6 +37,7 @@ namespace Gameplay.Lights
 
         private int _width;
         private int _height;
+        private bool _active;
 
         private void Start()
         {
@@ -61,7 +64,7 @@ namespace Gameplay.Lights
                 new Vector3(cameraWidth * 100f / _width, cameraHeight * 100f / _height, 1f);
 
             blackMask.color = gradient.Evaluate(1f);
-            blackMask.enabled = true;
+            SetActive(true);
         }
 
         private void UpdateMaskTexture()
@@ -74,8 +77,16 @@ namespace Gameplay.Lights
             RenderTexture.active = currentRt;
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                SetActive(!_active);
+        }
+
         private void LateUpdate()
         {
+            if (!_active) return;
+            
             var position = Astronaut.LocalAstronaut.transform.position;
             spriteMask.transform.position = position;
             position.z = 0;
@@ -90,6 +101,14 @@ namespace Gameplay.Lights
 
             DrawFieldOfView();
             UpdateMaskTexture();
+        }
+
+        public void SetActive(bool active)
+        {
+            _active = active;
+            blackMask.enabled = active;
+            gradientSpriteRenderer.enabled = active;
+            fullMask.enabled = !active;
         }
 
         private EdgeInfo FindEdge(PointInfo minViewCast, PointInfo maxViewCast)
