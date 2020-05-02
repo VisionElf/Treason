@@ -56,9 +56,6 @@ namespace Managers
                 astronaut.transform.SetParent(characterParent);
             if (SceneManager.GetActiveScene().buildIndex == 1)
                 astronaut.Spawn();
-
-            // Delete all gameobjects tagged with "DeleteInGame"
-            FindObjectsOfType<Transform>().Where((obj) => obj.CompareTag(DeleteInGameTag)).ToList().ForEach((t) => Destroy(t.gameObject));
         }
 
         private void UpdatePlayer(Player player)

@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - DeleteInGame
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -65,6 +64,12 @@ TagManager:
     locked: 0
   - name: NotAffectedLoS
     uniqueID: 2845909385
+    locked: 0
+  - name: Ghost
+    uniqueID: 4275415169
+    locked: 0
+  - name: GhostName
+    uniqueID: 1773474713
     locked: 0
   - name: UI
     uniqueID: 2386710767

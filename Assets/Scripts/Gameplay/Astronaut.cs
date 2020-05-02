@@ -13,6 +13,7 @@ using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using Interactables;
 
 namespace Gameplay
 {
@@ -20,7 +21,7 @@ namespace Gameplay
     {
         NORMAL,
         IN_VENT,
-        DEAD,
+        GHOST,
         SPAWNING
     }
 
@@ -39,9 +40,13 @@ namespace Gameplay
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
         private static readonly int ShaderColor3 = Shader.PropertyToID("_Color3");
 
+        private static readonly int AnimatorHashSpawn = Animator.StringToHash("Spawn");
         private static readonly int AnimatorHashSpeed = Animator.StringToHash("Speed");
         private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
-        private static readonly int AnimatorHashKilled = Animator.StringToHash("Killed");
+        private static readonly int AnimatorHashGhost = Animator.StringToHash("Ghost");
+
+        private const string GhostSortingLayerName = "Ghost";
+        private const string GhostNameSortingLayerName = "GhostName";
 
         [Header("Visual")]
         public TMP_Text playerNameText;
@@ -60,11 +65,15 @@ namespace Gameplay
         [Header("Vision")]
         public float visionRange;
         public LayerMask visibleLayerMask;
+        public GameObject fieldOfViewPrefab;
 
         [Header("Misc")]
         public bool isLocalCharacter;
         public ColorListData colorList;
         public TargetTypeData targetTypeData;
+
+        [Header("Dead")]
+        public GameObject deadAstronautPrefab;
 
         [Header("Roles")]
         public RoleData[] roleList;
@@ -176,7 +185,7 @@ namespace Gameplay
                     ability.Update();
             }
 
-            if (State == PlayerState.NORMAL && isLocalCharacter)
+            if ((State == PlayerState.NORMAL || State == PlayerState.GHOST) && isLocalCharacter)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -186,7 +195,7 @@ namespace Gameplay
             outline.transform.localPosition = spriteRenderer.transform.localPosition;
             outline.transform.localScale = spriteRenderer.transform.localScale;
 
-            if (!isLocalCharacter)
+            if (!isLocalCharacter && State != PlayerState.GHOST)
             {
                 var localCharacter = LocalAstronaut;
                 if (localCharacter)
@@ -199,16 +208,13 @@ namespace Gameplay
 
                     var visible = false;
                     if (dist <= visionRange)
-                    {
                         visible = !Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask);
-                    }
 
                     SetVisible(visible);
                 }
             }
 
-            if (State != PlayerState.DEAD)
-                UpdateAnimations();
+            UpdateAnimations();
         }
 
         private void SetRole(int roleIndex)
@@ -238,7 +244,8 @@ namespace Gameplay
 
         private void SetVisible(bool value)
         {
-            playerNameText.enabled = value;
+            if (State != PlayerState.GHOST)
+                playerNameText.enabled = value;
         }
 
         private void UpdateAnimations()
@@ -253,8 +260,12 @@ namespace Gameplay
                 SetFacingDirection(dist.x < 0 ? Direction.LEFT : Direction.RIGHT);
 
             _previousPosition = transform.localPosition;
-            animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
-            animator.SetBool(AnimatorHashRunning, IsRunning);
+
+            if (State != PlayerState.GHOST)
+            {
+                animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
+                animator.SetBool(AnimatorHashRunning, IsRunning);
+            }
         }
 
         private void UpdateDepth()
@@ -279,9 +290,10 @@ namespace Gameplay
         {
             State = PlayerState.SPAWNING;
             _audioSource.PlayOneShot(spawnSound);
-            animator.SetTrigger("Spawn");
+            animator.SetTrigger(AnimatorHashSpawn);
         }
 
+        // Animation Event
         private void OnSpawnEnd()
         {
             State = PlayerState.NORMAL;
@@ -313,9 +325,13 @@ namespace Gameplay
 
         public void Kill()
         {
-            animator.SetTrigger(AnimatorHashKilled);
-            State = PlayerState.DEAD;
-            playerNameText.color = Color.clear;
+            GameObject deadAstronaut = Instantiate(deadAstronautPrefab, transform.position, transform.rotation, transform.parent);
+            deadAstronaut.transform.localScale = transform.localScale;
+            _hitbox.enabled = false;
+            spriteRenderer.color = new Color(1f, 1f, 1f, 0.25f);
+            spriteRenderer.sortingLayerID = SortingLayer.NameToID(GhostSortingLayerName);
+            State = PlayerState.GHOST;
+            animator.SetTrigger(AnimatorHashGhost);
         }
 
         public Vector3 GetCenter()

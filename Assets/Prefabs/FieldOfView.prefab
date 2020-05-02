@@ -510,9 +510,9 @@ SpriteMask:
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_MaskAlphaCutoff: 0.5
-  m_FrontSortingLayerID: 0
+  m_FrontSortingLayerID: -1449057911
   m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
+  m_FrontSortingLayer: 9
   m_BackSortingLayer: 0
   m_FrontSortingOrder: 0
   m_BackSortingOrder: 0
