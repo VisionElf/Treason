@@ -68,7 +68,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2058335787
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -192,7 +192,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2105358953
-  m_SortingLayer: 7
+  m_SortingLayer: 6
   m_SortingOrder: 0
 --- !u!33 &3443175989702060536
 MeshFilter:
@@ -220,8 +220,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -390,7 +390,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2058335787
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 6362290972351372809, guid: bbe54f815dc03394b8aa4f8e5318bfb5,
     type: 3}
@@ -446,8 +446,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ab8ee9be34f1bd498460ef7ead5ab2b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   period: 0.8
   offset: 0.1
   list:
@@ -627,7 +627,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2058335787
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 6362290972351372809, guid: bbe54f815dc03394b8aa4f8e5318bfb5,
     type: 3}
@@ -690,8 +690,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f76c3560fb80924ca0d75c7e2300b47, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerNameText: {fileID: 3241142889095061895}
   outline: {fileID: 5000062614298253507}
   minAnimationSpeed: 1
@@ -704,11 +704,12 @@ MonoBehaviour:
   visibleLayerMask:
     serializedVersion: 2
     m_Bits: 2048
+  fieldOfViewPrefab: {fileID: 0}
   isLocalCharacter: 0
   colorList: {fileID: 11400000, guid: f50cf8bc3f0a93e4cb34a550ff354a1f, type: 2}
+  targetTypeData: {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
   deadAstronautPrefab: {fileID: 7541688153605476177, guid: 101e0209ed59cdd4b8b73a0c63eae7c7,
     type: 3}
-  targetTypeData: {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
   roleList:
   - {fileID: 11400000, guid: e9f54294d8961fe40a2467eb93981fe5, type: 2}
   - {fileID: 11400000, guid: 1c568f9d4fb72f54ab77321918df5f5f, type: 2}
@@ -724,8 +725,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
@@ -746,8 +747,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
@@ -831,7 +832,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -1000,7 +1001,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1292330511
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 61be3141d19173848a247d22a3c031c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}

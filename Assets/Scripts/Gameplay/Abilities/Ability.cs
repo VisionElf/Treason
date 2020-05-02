@@ -34,10 +34,13 @@ namespace Gameplay.Abilities
 
             SetTarget(GetClosestAvailableTarget());
 
-            if (_currentTarget != null && _currentTarget is Interactable interactable)
-                Button.SetIcon(interactable.specificIcon);
-            else
-                Button.ResetIcon();
+            if (Button)
+            {
+                if (_currentTarget != null && _currentTarget is Interactable interactable)
+                    Button.SetIcon(interactable.specificIcon);
+                else
+                    Button.ResetIcon();
+            }
             
             if ((!AbilityData.RequireTarget || _currentTarget != null) && Input.GetKeyDown(AbilityData.shortcutKey))
                 Execute();
