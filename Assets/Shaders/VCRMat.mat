@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VCRMat
+  m_Shader: {fileID: -6465566751694194690, guid: b4ffaff9aea74a54bb9d9dd67039b1a7,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_8BF40D26:
+        m_Texture: {fileID: 2800000, guid: 6eb354df072b9bc469864a3db27fe8c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3D93734: 0
+    - Vector1_A04D45F7: 0.15
+    - Vector1_E46F0A9: 100
+    - _ColorMask: 0
+    - _SencilReadMask: 0
+    - _Stencil: 0
+    - _StencilComp: 0
+    - _StencilOp: 0
+    - _StencilReadMask: 0
+    - _StencilWriteMask: 0
+    m_Colors:
+    - Color_4EA14451: {r: 0, g: 1, b: 0, a: 1}
+    - Vector2_4DDAF479: {r: 1.5, g: 1, b: 0, a: 0}
+    - _ColorMask: {r: 1, g: 1, b: 1, a: 1}
