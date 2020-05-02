@@ -77,12 +77,6 @@ namespace Gameplay.Lights
             RenderTexture.active = currentRt;
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                SetActive(!_active);
-        }
-
         private void LateUpdate()
         {
             if (!_active) return;
