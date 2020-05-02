@@ -1,6 +1,5 @@
 ﻿using System;
 using CustomExtensions;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -10,6 +9,10 @@ namespace Gameplay.Tasks
     public class EmptyGarbageManager : MonoBehaviour
     {
         public float distanceToPull;
+
+        public AudioClip garbStart;
+        public AudioClip garbLoop;
+        public AudioClip garbEnd;
         
         public RectTransform root;
         public Image leafPrefab;
@@ -28,6 +31,12 @@ namespace Gameplay.Tasks
         private Vector3 _handleWorldPosition;
         private Vector2 _handlePosition;
         private bool _isHoldingDown;
+        private AudioSource _audioSource;
+
+        private void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
 
         private void Start()
         {
@@ -47,36 +56,71 @@ namespace Gameplay.Tasks
             handle.onUp += OnUp;
         }
 
+        private void SetHoldingDown(bool value)
+        {
+            if (_isHoldingDown != value)
+            {
+                _isHoldingDown = value;
+                if (value)
+                    OnStart();
+                else
+                    OnEnd();
+            }
+            else
+            {
+                if (value) TryLoop();
+            }
+        }
+
+        private void TryLoop()
+        {
+            if (!_audioSource.isPlaying)
+            {
+                _audioSource.clip = garbLoop;
+                _audioSource.loop = true;
+                _audioSource.Play();
+            }
+        }
+
+        private void OnStart()
+        {
+            _audioSource.Stop();
+            _audioSource.PlayOneShot(garbStart);
+        }
+
+        private void OnEnd()
+        {
+            _audioSource.Stop();
+            _audioSource.PlayOneShot(garbEnd);
+        }
+
         private void Update()
         {
-            _isHoldingDown = false;
-
-            if (_handlePressed)
+            var newHoldingDown = false;
+            var mousePos = Input.mousePosition;
+            var delta = _handleWorldPosition.y - mousePos.y;
+            
+            if (_handlePressed && delta > 0)
             {
-                var mousePos = Input.mousePosition;
-                var delta = _handleWorldPosition.y - mousePos.y;
-                if (delta > 0)
-                {
-                    var percent = Mathf.Clamp01(delta / distanceToPull);
-                    var pos = handleRectTransform.anchoredPosition;
-                    pos.y = Mathf.Lerp(0f, _handlePosition.y, 1f - percent);
+                var percent = Mathf.Clamp01(delta / distanceToPull);
+                var pos = handleRectTransform.anchoredPosition;
+                pos.y = Mathf.Lerp(0f, _handlePosition.y, 1f - percent);
 
-                    var scaleY = 1f - percent;
-                    if (delta > distanceToPull)
-                    {
-                        scaleY = -1f;
-                        pos.y = -_handlePosition.y;
-                        _isHoldingDown = true;
-                    }
-                    
-                    handleRectTransform.anchoredPosition = pos;
-                    bars.transform.localScale = new Vector3(1f, scaleY, 1f);
+                var scaleY = 1f - percent;
+                if (delta > distanceToPull)
+                {
+                    scaleY = -1f;
+                    pos.y = -_handlePosition.y;
+                    newHoldingDown = true;
                 }
-                else
-                    ResetPositions();
+                
+                handleRectTransform.anchoredPosition = pos;
+                bars.transform.localScale = new Vector3(1f, scaleY, 1f);
             }
             else
                 ResetPositions();
+            
+            SetHoldingDown(newHoldingDown);
 
             bottomCollider.enabled = !_isHoldingDown;
         }
