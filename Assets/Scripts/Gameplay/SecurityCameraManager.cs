@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.Abilities.Data;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Gameplay
@@ -6,6 +7,8 @@ namespace Gameplay
     public class SecurityCameraManager : MonoBehaviour
     {
         public RawImage[] rawImages;
+        public EventData cameraStartEvent;
+        public EventData cameraStopEvent;
 
         private static SecurityCameraManager _instance;
         private static bool _isShowing;
@@ -30,12 +33,14 @@ namespace Gameplay
         {
             _isShowing = false;
             gameObject.SetActive(false);
+            cameraStopEvent.TriggerEvent();
         }
 
         private void Show()
         {
             _isShowing = true;
             gameObject.SetActive(true);
+            cameraStartEvent.TriggerEvent();
         }
 
         private void Start()

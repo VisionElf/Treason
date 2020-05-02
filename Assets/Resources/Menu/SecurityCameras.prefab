@@ -333,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1.4
+  m_ScaleFactor: 1.3
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -375,6 +375,8 @@ MonoBehaviour:
   - {fileID: 3127086077283772177}
   - {fileID: 7603100588543373116}
   - {fileID: 4096905994896478154}
+  cameraStartEvent: {fileID: 11400000, guid: 0c29bf3fc40a9124a9045fc2e63050bf, type: 2}
+  cameraStopEvent: {fileID: 11400000, guid: c63d6fe5ecb4afb4ea1e67f79e8f2dc5, type: 2}
 --- !u!1 &952688921554549332
 GameObject:
   m_ObjectHideFlags: 0
