@@ -1,5 +1,6 @@
 ﻿using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
+using HUD;
 using UnityEngine;
 
 namespace Gameplay.Abilities.Data
@@ -21,6 +22,7 @@ namespace Gameplay.Abilities.Data
         [Header("UI")]
         public Sprite abilityIcon;
         public KeyCode shortcutKey;
+        public ButtonLocationInfo buttonLocationInfo;
 
         public bool RequireTarget => abilityRange > 0;
     }

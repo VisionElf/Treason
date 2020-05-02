@@ -10,7 +10,7 @@ namespace HUD
     {
         public EventData initializeEvent;
         public AbilityButton abilityButtonPrefab;
-        public RectTransform container;
+        public ButtonLocation[] buttonLocations;
 
         public void Awake()
         {
@@ -30,11 +30,27 @@ namespace HUD
                 CreateAbilityButton(ability);
             }
         }
-
+        
         private void CreateAbilityButton(Ability ability)
         {
-            var btn = Instantiate(abilityButtonPrefab, container);
-            btn.SetAbility(ability);
+            var parent = FindButtonLocation(ability.AbilityData.buttonLocationInfo);
+            if (parent)
+            {
+                var btn = Instantiate(abilityButtonPrefab, parent);
+                btn.SetAbility(ability);
+            }
+        }
+
+        private Transform FindButtonLocation(object buttonLocationInfo)
+        {
+            foreach (var btn in buttonLocations)
+            {
+                if (btn.infos.Equals(buttonLocationInfo))
+                {
+                    return btn.transform;
+                }
+            }
+            return null;
         }
     }
 }

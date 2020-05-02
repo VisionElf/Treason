@@ -11,6 +11,8 @@ namespace Gameplay
         private Animator _animator;
         private bool _closed;
         private AudioSource _audioSource;
+        
+        private static readonly int AnimatorHashClosed = Animator.StringToHash("Closed");
 
         private void Awake()
         {
@@ -31,7 +33,7 @@ namespace Gameplay
                 else _audioSource.PlayOneShot(openSound);
             }
             _closed = closed;
-            _animator.SetBool("Closed", _closed);
+            _animator.SetBool(AnimatorHashClosed, _closed);
         }
 
         public void Open()

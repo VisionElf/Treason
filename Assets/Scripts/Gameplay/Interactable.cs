@@ -25,7 +25,7 @@ namespace Gameplay
             targetTypeData.Remove(this);
         }
 
-        private void OnUse()
+        public virtual void Interact()
         {
             actionData.Execute(new ActionContext());
             _isUsing = true;
@@ -58,8 +58,11 @@ namespace Gameplay
 
         public void SetShaderParameters(Color color, float blend)
         {
-            spriteRenderer.material.SetColor("_Color", color);
-            spriteRenderer.material.SetFloat("_Blend", blend);
+            if (spriteRenderer)
+            {
+                spriteRenderer.material.SetColor("_Color", color);
+                spriteRenderer.material.SetFloat("_Blend", blend);   
+            }
         }
     }
 }

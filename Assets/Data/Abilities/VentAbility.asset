@@ -20,3 +20,7 @@ MonoBehaviour:
   conditions: []
   abilityIcon: {fileID: 21300050, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   shortcutKey: 118
+  buttonLocationInfo:
+    panelIndex: 0
+    x: 2
+    y: 0

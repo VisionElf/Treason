@@ -24,12 +24,14 @@ namespace Gameplay
         private static bool _isShowing;
 
         private List<MiniMapRoomElement> _roomElements;
+        private static MiniMapType _currentMapType;
 
         public static void ToggleMiniMap(MiniMapType miniMapType)
         {
             if (_instance == null)
                 _instance = Instantiate(Resources.Load<MiniMap>("Menu/MiniMap"));
-            if (_isShowing)
+            
+            if (_isShowing && miniMapType == _currentMapType)
                 HideMiniMap();
             else
                 _instance.Show(miniMapType);
@@ -69,6 +71,7 @@ namespace Gameplay
 
         private void Show(MiniMapType miniMapType)
         {
+            _currentMapType = miniMapType;
             _isShowing = true;
             gameObject.SetActive(true);
             SetMiniMapColor(GetMiniMapColor(miniMapType));

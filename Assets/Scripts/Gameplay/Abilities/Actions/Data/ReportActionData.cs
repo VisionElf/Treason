@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Gameplay.Interactables;
+using UnityEngine;
 
 namespace Gameplay.Abilities.Actions.Data
 {
@@ -7,12 +8,11 @@ namespace Gameplay.Abilities.Actions.Data
     {
         public override void Execute(ActionContext context)
         {
-            var target = context.Get<Astronaut>(Context.Target);
+            var target = context.Get<DeadAstronaut>(Context.Target);
 
             if (target != null)
             {
-                Debug.Log("Reported!");
-                Destroy(target.gameObject);
+                target.Interact();
             }
         }
     }

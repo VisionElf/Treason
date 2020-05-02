@@ -21,3 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1977d8a2fc27e0c4a8059b43fb4c4ece, type: 2}
   abilityIcon: {fileID: 21300036, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   shortcutKey: 116
+  buttonLocationInfo:
+    panelIndex: 0
+    x: 1
+    y: 0

@@ -17,6 +17,11 @@ MonoBehaviour:
   abilityRange: 1
   targetTypes:
   - {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
+  - {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   conditions: []
   abilityIcon: {fileID: 21300048, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   shortcutKey: 101
+  buttonLocationInfo:
+    panelIndex: 0
+    x: 0
+    y: 0

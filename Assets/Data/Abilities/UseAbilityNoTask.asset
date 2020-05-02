@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91aeb013a702fa443a5ab189cf841772, type: 3}
-  m_Name: SabotageAbility
+  m_Name: UseAbilityNoTask
   m_EditorClassIdentifier: 
-  actionData: {fileID: 11400000, guid: e7a629bf100e6a2418cb5cdeac826c1e, type: 2}
+  actionData: {fileID: 11400000, guid: dc8027165f509aa42b9a356b08ed3c0c, type: 2}
   cooldown: 0
-  abilityRange: 0
-  targetTypes: []
+  abilityRange: 1
+  targetTypes:
+  - {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   conditions: []
-  abilityIcon: {fileID: 21300042, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
-  shortcutKey: 120
+  abilityIcon: {fileID: 21300048, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
+  shortcutKey: 101
   buttonLocationInfo:
     panelIndex: 0
-    x: 1
-    y: 1
+    x: 0
+    y: 0

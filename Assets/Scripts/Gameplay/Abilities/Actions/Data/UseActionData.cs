@@ -8,7 +8,10 @@ namespace Gameplay.Abilities.Actions.Data
         public override void Execute(ActionContext context)
         {
             var target = context.Get<MonoBehaviour>(Context.Target);
-            target.SendMessage("OnUse");
+            if (target is Interactable interactable)
+                interactable.Interact();
+            else
+                target.SendMessage("Interact");
         }
     }
 }

@@ -13,7 +13,6 @@ using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
-using Interactables;
 
 namespace Gameplay
 {
