@@ -17,6 +17,7 @@ MonoBehaviour:
   abilityRange: 0
   targetTypes: []
   conditions: []
+  ghostKeepAbility: 1
   abilityIcon: {fileID: 21300038, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   shortcutKey: 9
   buttonLocationInfo:

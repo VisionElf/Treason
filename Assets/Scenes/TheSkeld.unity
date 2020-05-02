@@ -5123,6 +5123,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299661200}
     m_Modifications:
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3241142889095061895, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5154,6 +5174,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443175989702060536, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607973415168568002, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5222,11 +5247,6 @@ PrefabInstance:
         type: 3}
       propertyPath: debugRoleIndex
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
-        type: 3}
-      propertyPath: minAnimationSpeed
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
@@ -5323,6 +5343,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 216603332}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &251425048
 GameObject:
   m_ObjectHideFlags: 0
@@ -5568,6 +5591,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299661200}
     m_Modifications:
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3241142889095061895, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5599,6 +5642,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443175989702060536, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607973415168568002, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -5667,11 +5715,6 @@ PrefabInstance:
         type: 3}
       propertyPath: debugRoleIndex
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
-        type: 3}
-      propertyPath: minAnimationSpeed
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
@@ -14708,6 +14751,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1032955953}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1001 &710914395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15707,6 +15753,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 155045944}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &761370817
 GameObject:
   m_ObjectHideFlags: 0
@@ -20220,6 +20269,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 404372808}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!114 &1062354454 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7690898935440736750, guid: 9e5997220750e814687ef6baae1aaf15,
@@ -20356,6 +20408,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299661200}
     m_Modifications:
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3241142889095061895, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -20387,6 +20459,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443175989702060536, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607973415168568002, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20455,11 +20532,6 @@ PrefabInstance:
         type: 3}
       propertyPath: debugRoleIndex
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
-        type: 3}
-      propertyPath: minAnimationSpeed
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
@@ -20622,6 +20694,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 50442342}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!60 &1088459771
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20700,6 +20775,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1299661200}
     m_Modifications:
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70772623263203188, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3241142889095061895, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -20731,6 +20826,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443175989702060536, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607973415168568002, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20799,11 +20899,6 @@ PrefabInstance:
         type: 3}
       propertyPath: debugRoleIndex
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
-        type: 3}
-      propertyPath: minAnimationSpeed
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
@@ -25178,6 +25273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1717644250}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &1385754208
 GameObject:
   m_ObjectHideFlags: 0
@@ -31999,6 +32097,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1197311264}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!60 &1708512816
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -32310,6 +32411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 989400951}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &1717644248
 GameObject:
   m_ObjectHideFlags: 0
@@ -35377,6 +35481,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 784027392}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &1923445731
 GameObject:
   m_ObjectHideFlags: 0
@@ -37245,6 +37352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1630890115}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &2061018061
 GameObject:
   m_ObjectHideFlags: 0
@@ -38622,6 +38732,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 385499684}
+  maxVolume: 1
+  fadeInDuration: 1
+  fadeOutDuration: 1
 --- !u!1 &2097766882
 GameObject:
   m_ObjectHideFlags: 0

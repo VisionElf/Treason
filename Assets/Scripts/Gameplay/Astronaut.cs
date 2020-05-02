@@ -13,6 +13,8 @@ using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
+using Gameplay.Lights;
+using HUD;
 
 namespace Gameplay
 {
@@ -44,8 +46,7 @@ namespace Gameplay
         private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
         private static readonly int AnimatorHashGhost = Animator.StringToHash("Ghost");
 
-        private const string GhostSortingLayerName = "Ghost";
-        private const string GhostNameSortingLayerName = "GhostName";
+        private const string GhostLayerName = "Ghost";
 
         [Header("Visual")]
         public TMP_Text playerNameText;
@@ -64,7 +65,6 @@ namespace Gameplay
         [Header("Vision")]
         public float visionRange;
         public LayerMask visibleLayerMask;
-        public GameObject fieldOfViewPrefab;
 
         [Header("Misc")]
         public bool isLocalCharacter;
@@ -72,6 +72,7 @@ namespace Gameplay
         public TargetTypeData targetTypeData;
 
         [Header("Dead")]
+        public EventData localAstronautToGhostEvent;
         public GameObject deadAstronautPrefab;
 
         [Header("Roles")]
@@ -88,12 +89,10 @@ namespace Gameplay
         public bool IsRunning { get; private set; }
         public RoleData Role { get; private set; }
         public PlayerState State { get; set; }
+        public List<Ability> Abilities { get; private set; }
 
         private AudioSource _audioSource;
         private Direction _facingDirection;
-
-        private List<Ability> _abilities;
-        public List<Ability> Abilities => _abilities;
 
         private void Awake()
         {
@@ -125,9 +124,16 @@ namespace Gameplay
 
         public void CreateAbilities()
         {
-            _abilities = new List<Ability>();
-            foreach (var abilityData in Role.abilities)
-                _abilities.Add(new Ability(abilityData, this));
+            Abilities = new List<Ability>();
+            foreach (AbilityData abilityData in Role.abilities)
+                Abilities.Add(new Ability(abilityData, this));
+        }
+
+        public void RemoveNonGhostAbilities()
+        {
+            List<Ability> currentAbilities = new List<Ability>(Abilities);
+            foreach (Ability ability in currentAbilities)
+                if (!ability.GhostKeepAbility) Abilities.Remove(ability);
         }
 
         private void OnDestroy()
@@ -161,7 +167,7 @@ namespace Gameplay
             if (isLocalCharacter) LocalAstronaut = this;
 
             yield return null;
-            
+
             SetHighlight(false);
             DelayedSetup();
         }
@@ -178,13 +184,12 @@ namespace Gameplay
         {
             UpdateDepth();
 
-            if (_abilities != null)
-            {
-                foreach (var ability in _abilities)
-                    ability.Update();
-            }
+            if (Input.GetKeyDown(KeyCode.Space) && isLocalCharacter)
+                Kill();
 
-            if ((State == PlayerState.NORMAL || State == PlayerState.GHOST) && isLocalCharacter)
+            Abilities?.ForEach((a) => a.Update());
+
+            if (isLocalCharacter && (State == PlayerState.NORMAL || State == PlayerState.GHOST))
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -196,16 +201,16 @@ namespace Gameplay
 
             if (!isLocalCharacter && State != PlayerState.GHOST)
             {
-                var localCharacter = LocalAstronaut;
-                if (localCharacter)
+                Astronaut localCharacter = LocalAstronaut;
+                if (localCharacter && localCharacter.State != PlayerState.GHOST)
                 {
                     Vector2 pos = transform.position;
                     Vector2 localPos = localCharacter.transform.position;
 
-                    var dir = pos - localPos;
-                    var dist = dir.magnitude;
+                    Vector2 dir = pos - localPos;
+                    float dist = dir.magnitude;
 
-                    var visible = false;
+                    bool visible = false;
                     if (dist <= visionRange)
                         visible = !Physics2D.Raycast(localPos, dir.normalized, dist, visibleLayerMask);
 
@@ -236,15 +241,9 @@ namespace Gameplay
             material.SetColor(ShaderColor3, data.color3);
         }
 
-        private bool IsImpostor()
+        private void SetVisible(bool visible)
         {
-            return Role.roleName.Equals("Impostor");
-        }
-
-        private void SetVisible(bool value)
-        {
-            if (State != PlayerState.GHOST)
-                playerNameText.enabled = value;
+            playerNameText.enabled = visible;
         }
 
         private void UpdateAnimations()
@@ -260,7 +259,7 @@ namespace Gameplay
 
             _previousPosition = transform.localPosition;
 
-            if (State != PlayerState.GHOST)
+            if (State == PlayerState.NORMAL)
             {
                 animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
                 animator.SetBool(AnimatorHashRunning, IsRunning);
@@ -310,7 +309,6 @@ namespace Gameplay
 
         public Vector2 GetPosition2D() => transform.position;
 
-        #region Controls
         public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
         public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
         public void ResetSpeed() => _body.velocity = Vector3.zero;
@@ -320,33 +318,36 @@ namespace Gameplay
             if (!PhotonNetwork.IsConnected) return;
             SetColor(photonView.Owner.GetColorIndex());
         }
-        #endregion Controls
 
         public void Kill()
         {
             GameObject deadAstronaut = Instantiate(deadAstronautPrefab, transform.position, transform.rotation, transform.parent);
-            deadAstronaut.transform.localScale = transform.localScale;
-            _hitbox.enabled = false;
-            spriteRenderer.color = new Color(1f, 1f, 1f, 0.25f);
-            spriteRenderer.sortingLayerID = SortingLayer.NameToID(GhostSortingLayerName);
+            deadAstronaut.transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y);
+            ToGhost();
+        }
+
+        public void ToGhost()
+        {
             State = PlayerState.GHOST;
+            gameObject.SetLayerRecursively(GhostLayerName);
+            spriteRenderer.sortingLayerName = GhostLayerName;
+            _hitbox.isTrigger = true;
             animator.SetTrigger(AnimatorHashGhost);
+
+            if (isLocalCharacter)
+            {
+                RemoveNonGhostAbilities();
+                Camera.main.cullingMask |= 1 << LayerMask.NameToLayer(GhostLayerName);
+
+                foreach (Astronaut astronaut in FindObjectsOfType<Astronaut>())
+                    astronaut.SetVisible(true);
+
+                localAstronautToGhostEvent.TriggerEvent();
+            }
         }
 
-        public Vector3 GetCenter()
-        {
-            Vector2 pos = transform.position;
-            return pos + _hitbox.offset;
-        }
-
-        public Vector3 GetPosition()
-        {
-            return transform.position;
-        }
-
-        public void SetHighlight(bool value)
-        {
-            outline.enabled = value;
-        }
+        public Vector3 GetCenter() => (Vector2)transform.position + _hitbox.offset;
+        public Vector3 GetPosition() => transform.position;
+        public void SetHighlight(bool value) => outline.enabled = value;
     }
 }

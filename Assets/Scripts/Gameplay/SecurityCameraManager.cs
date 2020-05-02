@@ -17,7 +17,7 @@ namespace Gameplay
         {
             if (_instance == null)
                 _instance = Instantiate(Resources.Load<SecurityCameraManager>("Menu/SecurityCameras"));
-        
+
             if (!_isShowing)
                 _instance.Show();
             else

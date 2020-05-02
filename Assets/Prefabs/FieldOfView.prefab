@@ -291,6 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02cbaa0797f14fa40a04eafe64f90e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableEvents:
+  - {fileID: 11400000, guid: dc367b99a566deb4293c7bad0dda28cb, type: 2}
   radius: 4
   textureResolution: 2
   cameraMult: 2
