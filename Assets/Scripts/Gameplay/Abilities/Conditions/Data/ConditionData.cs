@@ -12,9 +12,9 @@ namespace Gameplay.Abilities.Conditions.Data
             switch (comp)
             {
                 case ConditionComparison.Equal:
-                    return a == b;
+                    return a.Equals(b);
                 case ConditionComparison.NotEqual:
-                    return a != b;
+                    return !a.Equals(b);
             }
 
             return false;

@@ -704,10 +704,11 @@ MonoBehaviour:
   visibleLayerMask:
     serializedVersion: 2
     m_Bits: 2048
-  fieldOfViewPrefab: {fileID: 0}
   isLocalCharacter: 0
   colorList: {fileID: 11400000, guid: f50cf8bc3f0a93e4cb34a550ff354a1f, type: 2}
   targetTypeData: {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
+  localAstronautToGhostEvent: {fileID: 11400000, guid: dc367b99a566deb4293c7bad0dda28cb,
+    type: 2}
   deadAstronautPrefab: {fileID: 7541688153605476177, guid: 101e0209ed59cdd4b8b73a0c63eae7c7,
     type: 3}
   roleList:

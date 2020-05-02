@@ -1,56 +1,62 @@
 ﻿using Gameplay;
 using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
-using Gameplay.Data;
+using System.Linq;
 using UnityEngine;
 
 namespace HUD
 {
     public class AbilityButtonManager : MonoBehaviour
     {
-        public EventData initializeEvent;
+        public EventData[] updateButtonsEvents;
         public AbilityButton abilityButtonPrefab;
         public ButtonLocation[] buttonLocations;
 
         public void Awake()
         {
-            initializeEvent.Register(CreateButtons);
+            foreach (EventData e in updateButtonsEvents)
+                e.Register(UpdateAbilityButtons);
         }
 
         private void OnDestroy()
         {
-            initializeEvent.Unregister(CreateButtons);
+            foreach (EventData e in updateButtonsEvents)
+                e.Unregister(UpdateAbilityButtons);
         }
 
-        private void CreateButtons()
+        private void CreateAbilityButtons()
         {
-            var abilities = Astronaut.LocalAstronaut.Abilities;
-            foreach (var ability in abilities)
-            {
-                CreateAbilityButton(ability);
-            }
+            Astronaut.LocalAstronaut.Abilities.ForEach((a) => CreateAbilityButton(a));
         }
-        
+
+        private void UpdateAbilityButtons()
+        {
+            ClearAbilityButtons();
+            CreateAbilityButtons();
+        }
+
         private void CreateAbilityButton(Ability ability)
         {
-            var parent = FindButtonLocation(ability.AbilityData.buttonLocationInfo);
+            Transform parent = FindButtonLocation(ability.AbilityData.buttonLocationInfo);
             if (parent)
             {
-                var btn = Instantiate(abilityButtonPrefab, parent);
+                AbilityButton btn = Instantiate(abilityButtonPrefab, parent);
                 btn.SetAbility(ability);
+            }
+        }
+
+        private void ClearAbilityButtons()
+        {
+            foreach (ButtonLocation btn in buttonLocations)
+            {
+                for (int i = 0; i < btn.transform.childCount; ++i)
+                    Destroy(btn.transform.GetChild(i).gameObject);
             }
         }
 
         private Transform FindButtonLocation(object buttonLocationInfo)
         {
-            foreach (var btn in buttonLocations)
-            {
-                if (btn.infos.Equals(buttonLocationInfo))
-                {
-                    return btn.transform;
-                }
-            }
-            return null;
+            return buttonLocations.First((btn) => btn.infos.Equals(buttonLocationInfo)).transform;
         }
     }
 }

@@ -11,11 +11,12 @@ namespace Gameplay.Abilities
     {
         public AbilityData AbilityData;
 
-        private ITarget _source;
+        private readonly ITarget _source;
         private ITarget _currentTarget;
         private float _lastExecutedTime;
         
         public AbilityButton Button { get; set; }
+        public bool GhostKeepAbility => AbilityData.ghostKeepAbility;
 
         public Ability(AbilityData abilityData, ITarget source)
         {

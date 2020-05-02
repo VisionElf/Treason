@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Gameplay;
-using Unity.Mathematics;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using EventData = Gameplay.Abilities.Data.EventData;
 
 namespace Gameplay.Lights
 {
@@ -10,22 +8,30 @@ namespace Gameplay.Lights
     {
         public const float Angle = 361f;
 
-        [Header("Base")] public float radius = 3f;
+        [Header("Events")]
+        public EventData[] disableEvents;
 
-        [Header("Settings")] public int textureResolution;
+        [Header("Base")]
+        public float radius = 3f;
+
+        [Header("Settings")]
+        public int textureResolution;
         public int cameraMult;
         public LayerMask layerMask;
 
-        [Header("Edge Smoother")] public int edgeResolveIterations = 2;
+        [Header("Edge Smoother")]
+        public int edgeResolveIterations = 2;
         public float edgeDstThreshold = 0.5f;
 
-        [Header("References")] public Camera fovCamera;
+        [Header("References")]
+        public Camera fovCamera;
         public MeshFilter meshFilter;
         public SpriteMask spriteMask;
         public SpriteRenderer blackMask;
         public SpriteMask fullMask;
 
-        [Header("Gradient")] public int gradientTextureSize;
+        [Header("Gradient")]
+        public int gradientTextureSize;
         public Gradient gradient;
         public SpriteRenderer gradientSpriteRenderer;
 
@@ -38,6 +44,18 @@ namespace Gameplay.Lights
         private int _width;
         private int _height;
         private bool _active;
+
+        private void Awake()
+        {
+            foreach (EventData e in disableEvents)
+                e.Register(() => SetActive(false));
+        }
+
+        private void OnDestroy()
+        {
+            foreach (EventData e in disableEvents)
+                e.Unregister(() => SetActive(false));
+        }
 
         private void Start()
         {
@@ -80,7 +98,7 @@ namespace Gameplay.Lights
         private void LateUpdate()
         {
             if (!_active) return;
-            
+
             var position = Astronaut.LocalAstronaut.transform.position;
             spriteMask.transform.position = position;
             position.z = 0;

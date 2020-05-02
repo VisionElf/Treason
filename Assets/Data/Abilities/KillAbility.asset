@@ -19,6 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
   conditions:
   - {fileID: 11400000, guid: 1977d8a2fc27e0c4a8059b43fb4c4ece, type: 2}
+  - {fileID: 11400000, guid: 245211d05799faf45af4e7414683870a, type: 2}
   abilityIcon: {fileID: 21300036, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   shortcutKey: 116
   buttonLocationInfo:

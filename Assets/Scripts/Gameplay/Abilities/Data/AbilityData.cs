@@ -19,6 +19,9 @@ namespace Gameplay.Abilities.Data
         public TargetTypeData[] targetTypes;
         public ConditionData[] conditions;
 
+        [Header("Ghost Settings")]
+        public bool ghostKeepAbility;
+
         [Header("UI")]
         public Sprite abilityIcon;
         public KeyCode shortcutKey;

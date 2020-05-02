@@ -1340,7 +1340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02e5d42cbdf9cc4089d6aa79909de6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initializeEvent: {fileID: 11400000, guid: 130cceb769a728040a31aba88e05af77, type: 2}
+  updateButtonsEvents:
+  - {fileID: 11400000, guid: 130cceb769a728040a31aba88e05af77, type: 2}
+  - {fileID: 11400000, guid: dc367b99a566deb4293c7bad0dda28cb, type: 2}
   abilityButtonPrefab: {fileID: 6475765759036786288, guid: a43b0f1ed85b9694e949d519a6d55618,
     type: 3}
   buttonLocations:
