@@ -184,7 +184,7 @@ namespace Gameplay
         {
             UpdateDepth();
 
-            if (Input.GetKeyDown(KeyCode.Space) && isLocalCharacter)
+            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Space) && isLocalCharacter)
                 Kill();
 
             Abilities?.ForEach((a) => a.Update());
@@ -337,7 +337,9 @@ namespace Gameplay
             if (isLocalCharacter)
             {
                 RemoveNonGhostAbilities();
-                Camera.main.cullingMask |= 1 << LayerMask.NameToLayer(GhostLayerName);
+
+                foreach (Camera camera in FindObjectsOfType<Camera>())
+                    camera.cullingMask |= 1 << LayerMask.NameToLayer(GhostLayerName);
 
                 foreach (Astronaut astronaut in FindObjectsOfType<Astronaut>())
                     astronaut.SetVisible(true);
