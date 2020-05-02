@@ -128,7 +128,6 @@ namespace Gameplay
             _abilities = new List<Ability>();
             foreach (var abilityData in Role.abilities)
                 _abilities.Add(new Ability(abilityData, this));
-            SetHighlight(false);
         }
 
         private void OnDestroy()
@@ -162,7 +161,8 @@ namespace Gameplay
             if (isLocalCharacter) LocalAstronaut = this;
 
             yield return null;
-
+            
+            SetHighlight(false);
             DelayedSetup();
         }
 
