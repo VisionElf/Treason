@@ -101,8 +101,8 @@ namespace Gameplay.Tasks
                 var swipeCompleted = Math.Abs(card.anchoredPosition.x - _boundsY.y) < 0.5f;
                 if (swipeCompleted)
                 {
-                    if (swipeTime < minTime) DenyCard(DenyCardReason.TooSlow);
-                    else if (swipeTime > maxTime) DenyCard(DenyCardReason.TooFast);
+                    if (swipeTime < minTime) DenyCard(DenyCardReason.TooFast);
+                    else if (swipeTime > maxTime) DenyCard(DenyCardReason.TooSlow);
                     else AcceptCard();
                 }
                 else
