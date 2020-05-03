@@ -51,7 +51,7 @@ namespace Gameplay.Tasks
             StartCoroutine(StartStepCoroutine());
         }
 
-        public override void Setup()
+        public void Setup()
         {
             _leftPanelLights = new Image[5];
             _rightPanelLights = new Image[5];

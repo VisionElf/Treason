@@ -46,7 +46,7 @@ namespace Gameplay.Tasks
             onTaskStart?.Invoke();
         }
 
-        public override void Setup()
+        public void Setup()
         {
             var type = _parameters.type;
 

@@ -91,7 +91,7 @@ namespace Gameplay.Tasks
             }
         }
 
-        public override void Setup()
+        public void Setup()
         {
             _leaves = new List<Image>();
             for (var i = 0; i < _leavesCount; i++)
