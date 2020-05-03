@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay.Tasks
 {
-    public class SimonSaysManager : MonoBehaviour
+    public class SimonSaysCanvas : TaskCanvas
     {
         [Header("Settings")]
         public Color indicatorHighlightcolor;
@@ -47,10 +47,11 @@ namespace Gameplay.Tasks
         {
             Setup();
 
+            onTaskStart?.Invoke();
             StartCoroutine(StartStepCoroutine());
         }
 
-        private void Setup()
+        public override void Setup()
         {
             _leftPanelLights = new Image[5];
             _rightPanelLights = new Image[5];
@@ -113,15 +114,8 @@ namespace Gameplay.Tasks
 
             SetButtonsInteractable(false);
             yield return new WaitForSeconds(1f);
-            Close();
-        }
-
-        private void Close()
-        {
-            transform.GetChild(0).GetComponent<RectTransform>().DOAnchorPosY(-1000f, 0.4f).OnComplete(() =>
-                {
-                    Destroy(gameObject);
-                });
+            
+            onTaskComplete?.Invoke();
         }
 
         private void UpdateCurrentLights()

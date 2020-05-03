@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Gameplay.Tasks.UploadData
+namespace Gameplay.Tasks
 {
-    public class UploadDataManager : MonoBehaviour
+    public class UploadDataCanvas : TaskCanvas
     {
         [Header("References")]
         public TMP_Text leftFolderText;
@@ -29,24 +28,31 @@ namespace Gameplay.Tasks.UploadData
         public TMP_Text progressText;
         public TMP_Text timeRemainingText;
 
-        public RectTransform root;
+        private UploadDataParameters _parameters;
 
-        private void Start()
+        private void Awake()
         {
-            Setup(new UploadDataParameters
+            _parameters = new UploadDataParameters
             {
                 room = "Cafeteria",
                 type = ConsoleType.Upload
-            });
+            };
         }
 
-        public void Setup(UploadDataParameters parameters)
+        private void Start()
         {
-            var type = parameters.type;
+            Setup();
+            
+            onTaskStart?.Invoke();
+        }
+
+        public override void Setup()
+        {
+            var type = _parameters.type;
 
             var isUpload = type == ConsoleType.Upload;
 
-            leftFolderText.text = isUpload ? "My Tablet" : parameters.room;
+            leftFolderText.text = isUpload ? "My Tablet" : _parameters.room;
             rightFolderText.text = isUpload ? "Headquarters" : "My Tablet";
             
             tower.gameObject.SetActive(isUpload);
@@ -63,8 +69,6 @@ namespace Gameplay.Tasks.UploadData
             runningAnimator.enabled = false;
             leftFolderAnimator.enabled = false;
             rightFolderAnimator.enabled = false;
-            
-            Open();
         }
 
         private void OnButtonClick()
@@ -100,25 +104,7 @@ namespace Gameplay.Tasks.UploadData
             timeRemainingText.text = "Complete!";
             
             yield return new WaitForSeconds(.5f);
-            Close();
-        }
-
-        private void Open()
-        {
-            var pos = root.anchoredPosition;
-            pos.y = -1000f;
-            root.anchoredPosition = pos;
-            root.DOAnchorPosY(0f, 0.4f);
-        }
-
-        private void Close()
-        {
-            root.DOAnchorPosY(-1000f, 0.4f).OnComplete(DestroyCanvas);
-        }
-
-        private void DestroyCanvas()
-        {
-            Destroy(gameObject);
+            onTaskComplete?.Invoke();
         }
     }
 

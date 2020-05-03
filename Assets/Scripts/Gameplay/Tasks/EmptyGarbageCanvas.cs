@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using CustomExtensions;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace Gameplay.Tasks
 {
-    public class EmptyGarbageManager : MonoBehaviour
+    public class EmptyGarbageCanvas : TaskCanvas
     {
         public float distanceToPull;
 
@@ -16,7 +14,6 @@ namespace Gameplay.Tasks
         public AudioClip garbLoop;
         public AudioClip garbEnd;
         
-        public RectTransform root;
         public Image leafPrefab;
         public Sprite[] leavesSprites;
         public RectTransform leavesParent;
@@ -45,6 +42,8 @@ namespace Gameplay.Tasks
         private void Start()
         {
             Setup();
+            
+            onTaskStart?.Invoke();
         }
 
         private void Update()
@@ -86,17 +85,17 @@ namespace Gameplay.Tasks
                 _leaves.Remove(img);
                 Destroy(img.gameObject);
                 if (_leaves.Count <= 0)
-                    Hide();
+                {
+                    onTaskComplete?.Invoke();
+                }
             }
         }
 
-        private void Setup()
+        public override void Setup()
         {
             _leaves = new List<Image>();
-            for (int i = 0; i < _leavesCount; i++)
-            {
+            for (var i = 0; i < _leavesCount; i++)
                 CreateLeaf();
-            }
 
             _handleWorldPosition = handle.transform.position;
             _handlePosition = handleRectTransform.anchoredPosition;
@@ -140,11 +139,6 @@ namespace Gameplay.Tasks
         {
             _audioSource.Stop();
             _audioSource.PlayOneShot(garbEnd);
-        }
-
-        private void Hide()
-        {
-            root.DOAnchorPosY(-1000f, 0.4f);
         }
 
         private void ResetPositions()
