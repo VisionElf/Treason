@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: c9677149e2948af4aa88c25c658ce8c5
+timeCreated: 1587415324
+licenseType: Free
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: nav_chartCourse_base
+  - first:
+      213: 21300002
+    second: nav_chartCourse_checkPt
+  - first:
+      213: 21300004
+    second: nav_chartCourse_checkPtShadow
+  - first:
+      213: 21300006
+    second: nav_chartCourse_end
+  - first:
+      213: 21300008
+    second: nav_chartCourse_endShadow
+  - first:
+      213: 21300010
+    second: nav_chartCourse_ship
+  - first:
+      213: 21300012
+    second: nav_chartCourse_start
+  - first:
+      213: 21300014
+    second: nav_chartCourse_startShadow
+  externalObjects: {}
+  usedFileIDs: []
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 572
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nav_chartCourse_base
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 3
+        width: 504
+        height: 304
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -252, y: -152}
+        - {x: -252, y: 152}
+        - {x: 252, y: 152}
+        - {x: 252, y: -152}
+      physicsShape:
+      - - {x: -252, y: 152}
+        - {x: -252, y: -152}
+        - {x: 252, y: -152}
+        - {x: 252, y: 152}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee83db010d8148babb0f1189e73dcf83
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_checkPt
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 83
+        width: 43
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: -21.5}
+        - {x: -21.5, y: 21.5}
+        - {x: 21.5, y: 21.5}
+        - {x: 21.5, y: -21.5}
+      physicsShape:
+      - - {x: -3.5, y: -14.5}
+        - {x: -3.5, y: -21.5}
+        - {x: 3.5, y: -21.5}
+        - {x: 3.5, y: -14.5}
+        - {x: 1.5, y: -12.5}
+        - {x: -1.5, y: -12.5}
+      - - {x: -11.5, y: -6.5}
+        - {x: -18.5, y: -13.5}
+        - {x: -18.5, y: -14.5}
+        - {x: -14.5, y: -18.5}
+        - {x: -12.5, y: -18.5}
+        - {x: -6.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -10.5, y: -6.5}
+      - - {x: 10.5, y: -6.5}
+        - {x: 6.5, y: -10.5}
+        - {x: 6.5, y: -13.5}
+        - {x: 13.5, y: -18.5}
+        - {x: 16.5, y: -18.5}
+        - {x: 18.5, y: -15.5}
+        - {x: 18.5, y: -11.5}
+        - {x: 11.5, y: -6.5}
+      - - {x: -21.5, y: 3.5}
+        - {x: -21.5, y: -3.5}
+        - {x: -14.5, y: -3.5}
+        - {x: -12.5, y: -1.5}
+        - {x: -12.5, y: 1.5}
+        - {x: -14.5, y: 3.5}
+      - - {x: 11.5, y: 1.5}
+        - {x: 11.5, y: -1.5}
+        - {x: 13.5, y: -3.5}
+        - {x: 21.5, y: -3.5}
+        - {x: 21.5, y: 3.5}
+        - {x: 13.5, y: 3.5}
+      - - {x: -14.5, y: 17.5}
+        - {x: -18.5, y: 13.5}
+        - {x: -18.5, y: 12.5}
+        - {x: -12.5, y: 6.5}
+        - {x: -10.5, y: 6.5}
+        - {x: -6.5, y: 8.5}
+        - {x: -6.5, y: 11.5}
+        - {x: -10.5, y: 17.5}
+      - - {x: 6.5, y: 11.5}
+        - {x: 6.5, y: 10.5}
+        - {x: 10.5, y: 6.5}
+        - {x: 12.5, y: 6.5}
+        - {x: 18.5, y: 12.5}
+        - {x: 16.5, y: 17.5}
+        - {x: 12.5, y: 17.5}
+      - - {x: -2.5, y: 21.5}
+        - {x: -3.5, y: 20.5}
+        - {x: -3.5, y: 13.5}
+        - {x: -1.5, y: 12.5}
+        - {x: 2.5, y: 12.5}
+        - {x: 3.5, y: 14.5}
+        - {x: 3.5, y: 21.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4f9596785044c6974fa580a57c0e45
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_checkPtShadow
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 128
+        width: 43
+        height: 43
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.5, y: -21.5}
+        - {x: -21.5, y: 21.5}
+        - {x: 21.5, y: 21.5}
+        - {x: 21.5, y: -21.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e31973f3d3b4e19a0ce0fdfde80cf04
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_end
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 241
+        width: 64
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4848485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -33}
+        - {x: -32, y: 33}
+        - {x: 32, y: 33}
+        - {x: 32, y: -33}
+      physicsShape:
+      - - {x: 20, y: 30}
+        - {x: 17, y: 31}
+        - {x: 5, y: 31}
+        - {x: 4, y: 28}
+        - {x: 15, y: 20}
+        - {x: 23, y: -16}
+        - {x: -5, y: -28}
+        - {x: -26, y: 7}
+        - {x: -7, y: 24}
+        - {x: -4, y: 30}
+        - {x: -6, y: 31}
+        - {x: -15, y: 31}
+        - {x: -32, y: 20}
+        - {x: -32, y: -18}
+        - {x: -22, y: -29}
+        - {x: -15, y: -32}
+        - {x: -13, y: -33}
+        - {x: 15, y: -33}
+        - {x: 29, y: -24}
+        - {x: 32, y: -18}
+        - {x: 32, y: 13}
+      - - {x: -3, y: 33}
+        - {x: -5, y: 31}
+        - {x: -5, y: 28}
+        - {x: -2, y: 25}
+        - {x: 2, y: 25}
+        - {x: 5, y: 28}
+        - {x: 5, y: 32}
+        - {x: 4, y: 33}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e79c51d75d940f5bbcab52bb49cf384
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_endShadow
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 173
+        width: 64
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4848485}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: -33}
+        - {x: -32, y: 33}
+        - {x: 32, y: 33}
+        - {x: 32, y: -33}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3db587900b84bcbb9446acc6b971cae
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_ship
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 36
+        width: 34
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -14, y: 11.5}
+        - {x: -7, y: 22.5}
+        - {x: 17, y: 22.5}
+        - {x: 17, y: -22.5}
+        - {x: -17, y: -22.5}
+        - {x: -17, y: 5.5}
+      physicsShape:
+      - - {x: -9, y: 22.5}
+        - {x: -17, y: 18.5}
+        - {x: -17, y: -11.5}
+        - {x: -14, y: -22.5}
+        - {x: 12, y: -22.5}
+        - {x: 17, y: -8.5}
+        - {x: 17, y: 13.5}
+        - {x: 13, y: 22.5}
+      - - {x: -2, y: 13.5}
+        - {x: 1, y: 16.5}
+        - {x: 0, y: 18.5}
+        - {x: -1, y: 17.5}
+        - {x: 3, y: 13.5}
+        - {x: 4, y: 10.5}
+        - {x: 7, y: 8.5}
+        - {x: 7, y: 9.5}
+        - {x: 5, y: 11.5}
+        - {x: 4, y: 11.5}
+        - {x: 1, y: 8.5}
+        - {x: 1, y: 7.5}
+        - {x: 4, y: 4.5}
+        - {x: 5, y: 4.5}
+        - {x: 6, y: 5.5}
+        - {x: 9, y: 1.5}
+        - {x: 11, y: 1.5}
+        - {x: 9.999999, y: 2.5}
+        - {x: 6, y: -1.5}
+        - {x: 5, y: -8.5}
+      - - {x: 4, y: -0.5}
+        - {x: 7, y: 0.5}
+        - {x: 7, y: 3.5}
+        - {x: 4, y: 4.5}
+        - {x: 2, y: 2.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c29c292583cc4b6290152adedfd67b2d
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_start
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 157
+        width: 14
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -7}
+        - {x: -7, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: -7}
+      physicsShape:
+      - - {x: -5, y: 7}
+        - {x: -7, y: 5}
+        - {x: -7, y: -5}
+        - {x: -5, y: -7}
+        - {x: 5, y: -7}
+        - {x: 7, y: -5}
+        - {x: 7, y: 5}
+        - {x: 5, y: 7}
+      - - {x: -2, y: 1}
+        - {x: 0, y: 2}
+        - {x: 2, y: 1}
+        - {x: 0, y: -2}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5131dd15f8904fb2a8c99e25cc6da2eb
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nav_chartCourse_startShadow
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 20
+        width: 14
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: -7}
+        - {x: -7, y: 7}
+        - {x: 7, y: 7}
+        - {x: 7, y: -7}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2bf5d436364e089f38e2a13be9f476
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
