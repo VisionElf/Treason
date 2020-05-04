@@ -432,7 +432,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18606776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.88, y: -2.61, z: 0}
+  m_LocalPosition: {x: 0.88, y: -2.61, z: 0.00095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2097766883}
@@ -474,8 +474,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1292330511
-  m_SortingLayer: 3
+  m_SortingLayerID: -2058335787
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a12b2b561f0d29f49ada9b69fd9b8618, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3329,7 +3329,7 @@ GameObject:
   - component: {fileID: 171098810}
   - component: {fileID: 171098811}
   m_Layer: 0
-  m_Name: Weapons
+  m_Name: weapons_indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6343,7 +6343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: O2
+  data: {fileID: 11400000, guid: 620209be5ca554243860685647eece80, type: 2}
   doors: []
   sabotageIcon: {fileID: 21300014, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   minimapPosition: {fileID: 522504629}
@@ -20395,7 +20395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Storage
+  data: {fileID: 11400000, guid: 06e34020cf77f1044b6da968a1106829, type: 2}
   doors:
   - {fileID: 2099181617}
   - {fileID: 462354819}
@@ -22376,7 +22376,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Med Bay
+  data: {fileID: 11400000, guid: 834688f33eec9424eb86ff6a9a43b84d, type: 2}
   doors:
   - {fileID: 1122472154}
   sabotageIcon: {fileID: 0}
@@ -23976,7 +23976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Admin
+  data: {fileID: 11400000, guid: d12bcf1a982affa4ebe848e69b286108, type: 2}
   doors: []
   sabotageIcon: {fileID: 0}
   minimapPosition: {fileID: 904015690}
@@ -24351,7 +24351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Shields
+  data: {fileID: 11400000, guid: 6cc2a56ade7f1954b94f8d1dad3e6798, type: 2}
   doors: []
   sabotageIcon: {fileID: 0}
   minimapPosition: {fileID: 309595239}
@@ -24431,7 +24431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Reactor
+  data: {fileID: 11400000, guid: 1b18b9e5693cc1447be3f7ac51f0561e, type: 2}
   doors: []
   sabotageIcon: {fileID: 21300016, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   minimapPosition: {fileID: 179809654}
@@ -25435,7 +25435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Upper Engine
+  data: {fileID: 11400000, guid: 7b2f55034522d11429a92d2741c04559, type: 2}
   doors:
   - {fileID: 1397695032}
   - {fileID: 342310760}
@@ -26750,7 +26750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Security
+  data: {fileID: 11400000, guid: cd29b7164ffe68f4b8b1fb5943f3e864, type: 2}
   doors:
   - {fileID: 967962667}
   sabotageIcon: {fileID: 0}
@@ -29486,7 +29486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Lower Engine
+  data: {fileID: 11400000, guid: 4f3fc75a810dbf644b5badffabfd53c6, type: 2}
   doors:
   - {fileID: 671713945}
   - {fileID: 1864840141}
@@ -30164,7 +30164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Cafeteria
+  data: {fileID: 11400000, guid: 152c7b950f886964dbec681dd2567738, type: 2}
   doors:
   - {fileID: 164301506}
   - {fileID: 1062354454}
@@ -30903,7 +30903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Comms
+  data: {fileID: 11400000, guid: 996057aa2c56b9647bbae07d957fa0c0, type: 2}
   doors: []
   sabotageIcon: {fileID: 21300008, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   minimapPosition: {fileID: 1980486757}
@@ -31797,7 +31797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Electrical
+  data: {fileID: 11400000, guid: f1f0de3fe9684d24a982d99b6aa0fc2a, type: 2}
   doors:
   - {fileID: 330780111}
   sabotageIcon: {fileID: 21300012, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
@@ -33439,7 +33439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Weapons
+  data: {fileID: 11400000, guid: 0085bcfa1d0e16b4f8374db8141f7d43, type: 2}
   doors: []
   sabotageIcon: {fileID: 0}
   minimapPosition: {fileID: 562160904}
@@ -37285,7 +37285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4847b3f52d12cb848a3be32a2fa7bdc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomName: Navigation
+  data: {fileID: 11400000, guid: 7e4c3256dd0144a4ebb7bf6aa874d5b7, type: 2}
   doors: []
   sabotageIcon: {fileID: 0}
   minimapPosition: {fileID: 1179392109}

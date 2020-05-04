@@ -37,7 +37,7 @@ namespace Gameplay
         {
             foreach (var room in rooms)
             {
-                if (room.roomName.Equals(roomName))
+                if (room.RoomName.Equals(roomName))
                     return room;
             }
 

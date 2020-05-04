@@ -25,7 +25,7 @@ namespace HUD
             if (localPlayer)
             {
                 var room = Map.Instance.GetRoomAt(localPlayer.transform.position);
-                if (room) SetRoomName(room.roomName);
+                if (room) SetRoomName(room.RoomName);
                 else SetRoomName("");
             }
         }

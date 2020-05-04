@@ -1,15 +1,17 @@
 ﻿using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
+using Gameplay.Data;
 
 namespace Gameplay
 {
     public class MapRoom : MonoBehaviour
     {
-        public string roomName;
+        public RoomData data;
         public Door[] doors;
         public Sprite sabotageIcon;
         public Transform minimapPosition;
+
+        public string RoomName => data.roomName;
 
         private BoxCollider2D _boxCollider2D;
 
