@@ -1,6 +1,5 @@
 ﻿using Gameplay;
 using Gameplay.Abilities.Data;
-using Gameplay.Data;
 using UnityEngine;
 
 namespace Cameras

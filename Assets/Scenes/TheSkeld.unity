@@ -505,8 +505,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 18606778}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &37328689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,8 +1402,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 76564672}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &77964072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,8 +1644,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 96379851}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &100988155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4085,8 +4085,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 189859136}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1001 &197085553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4571,8 +4571,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 205325945}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!61 &205325947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4698,8 +4698,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 211762234}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &216603330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,8 +4928,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 225216620}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &226534447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7386,8 +7386,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 318491153}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &320912065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7487,8 +7487,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 320912067}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1001 &322847393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7647,8 +7647,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 326882556}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &328171144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7748,8 +7748,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 328171146}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &330455861
 GameObject:
   m_ObjectHideFlags: 0
@@ -8200,8 +8200,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 338593307}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!114 &342310760 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7690898935440736750, guid: 9e5997220750e814687ef6baae1aaf15,
@@ -10470,8 +10470,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 453941577}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &456462639
 GameObject:
   m_ObjectHideFlags: 0
@@ -10734,8 +10734,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 460086762}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!114 &462354819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7690898935440736750, guid: 9e5997220750e814687ef6baae1aaf15,
@@ -10847,8 +10847,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 464019410}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &466183684
 GameObject:
   m_ObjectHideFlags: 0
@@ -12463,8 +12463,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 539506019}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 1b046343337acfb4a96c4bed4daf0ddd, type: 2}
+  taskParameters: []
 --- !u!1 &544787430
 GameObject:
   m_ObjectHideFlags: 0
@@ -13409,8 +13409,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 588796631}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &593329733
 GameObject:
   m_ObjectHideFlags: 0
@@ -13511,8 +13511,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 593329735}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!61 &593329737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14535,8 +14535,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 697029036}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &699236622
 GameObject:
   m_ObjectHideFlags: 0
@@ -15856,8 +15856,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 761370819}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!60 &761370821
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16423,8 +16423,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 797173327}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &798286089
 GameObject:
   m_ObjectHideFlags: 0
@@ -17056,8 +17056,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 849696622}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &855726699
 GameObject:
   m_ObjectHideFlags: 0
@@ -17962,8 +17962,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 900053496}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &904015689
 GameObject:
   m_ObjectHideFlags: 0
@@ -22165,8 +22165,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1206072911}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1206667955
 GameObject:
   m_ObjectHideFlags: 0
@@ -22693,8 +22693,10 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1234377747}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
+  taskParameters:
+  - Cafeteria
+  - download
 --- !u!1 &1239958357
 GameObject:
   m_ObjectHideFlags: 0
@@ -22896,8 +22898,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1241998230}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1248144611
 GameObject:
   m_ObjectHideFlags: 0
@@ -23595,8 +23597,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1276626963}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1001 &1280969209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24160,8 +24162,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1310749793}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!60 &1310749795
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24648,8 +24650,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1355605253}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!60 &1355605255
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25187,8 +25189,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1377989072}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1385320214
 GameObject:
   m_ObjectHideFlags: 0
@@ -25621,8 +25623,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1397556317}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!114 &1397695032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8277020863340030473, guid: 4f3f79310f87668459e5a6f042a5c8b3,
@@ -28804,8 +28806,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1537989111}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1539161186
 GameObject:
   m_ObjectHideFlags: 0
@@ -29407,8 +29409,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1563145781}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1565822893
 GameObject:
   m_ObjectHideFlags: 0
@@ -32018,8 +32020,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1702481093}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1706338107
 GameObject:
   m_ObjectHideFlags: 0
@@ -32643,8 +32645,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1718235889}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!60 &1718235891
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -33990,8 +33992,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1813926497}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1001 &1818982751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34305,8 +34307,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1828274643}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1828737421
 GameObject:
   m_ObjectHideFlags: 0
@@ -34406,8 +34408,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1828737423}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1830628336
 GameObject:
   m_ObjectHideFlags: 0
@@ -34507,8 +34509,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1830628338}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1830818832
 GameObject:
   m_ObjectHideFlags: 0
@@ -34608,8 +34610,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1830818834}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1001 &1847766605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35272,8 +35274,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1893381196}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1912273842
 GameObject:
   m_ObjectHideFlags: 0
@@ -36102,8 +36104,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1955403007}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1958158602
 GameObject:
   m_ObjectHideFlags: 0
@@ -36203,8 +36205,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1958158604}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1961819766
 GameObject:
   m_ObjectHideFlags: 0
@@ -36422,8 +36424,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1972792990}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &1980342260
 GameObject:
   m_ObjectHideFlags: 0
@@ -37099,8 +37101,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 2035075091}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &2044685929
 GameObject:
   m_ObjectHideFlags: 0
@@ -38032,8 +38034,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 2076079225}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &2076788619
 GameObject:
   m_ObjectHideFlags: 0
@@ -39021,8 +39023,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 2120439667}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!1 &2125869244
 GameObject:
   m_ObjectHideFlags: 0
@@ -39123,8 +39125,8 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 2125869246}
-  targetType: {fileID: 11400000, guid: 1a958c2c95cafac41b7e800506697253, type: 2}
   taskData: {fileID: 0}
+  taskParameters: []
 --- !u!60 &2125869248
 PolygonCollider2D:
   m_ObjectHideFlags: 0

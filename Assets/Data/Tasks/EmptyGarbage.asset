@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
-  m_Name: TestTask
+  m_Name: EmptyGarbage
   m_EditorClassIdentifier: 
-  roomName: Cafeteria
-  taskName: Fixing Wire
+  taskName: Empty Garbage
   taskType: 0
-  taskPrefab: {fileID: 5405549832186948177, guid: cc50fc31a578329488e7f43caa2e564b,
+  taskPrefab: {fileID: 3780728768400285557, guid: 1b23e9495a234384a93dcefae1290230,
     type: 3}

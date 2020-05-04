@@ -1,5 +1,4 @@
-﻿using Gameplay.Data;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 
 namespace Gameplay.Abilities.Data.Editor

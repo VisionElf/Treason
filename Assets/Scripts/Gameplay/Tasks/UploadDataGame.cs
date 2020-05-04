@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Gameplay.Tasks
 {
-    public class UploadDataCanvas : TaskCanvas
+    public class UploadDataGame : TaskGame
     {
         [Header("References")]
         public TMP_Text leftFolderText;
@@ -30,27 +30,9 @@ namespace Gameplay.Tasks
 
         private UploadDataParameters _parameters;
 
-        private void Awake()
-        {
-            _parameters = new UploadDataParameters
-            {
-                room = "Cafeteria",
-                type = ConsoleType.Upload
-            };
-        }
-
-        private void Start()
-        {
-            Setup();
-            
-            onTaskStart?.Invoke();
-        }
-
         public void Setup()
         {
-            var type = _parameters.type;
-
-            var isUpload = type == ConsoleType.Upload;
+            var isUpload = _parameters.isUpload;
 
             leftFolderText.text = isUpload ? "My Tablet" : _parameters.room;
             rightFolderText.text = isUpload ? "Headquarters" : "My Tablet";
@@ -104,19 +86,31 @@ namespace Gameplay.Tasks
             timeRemainingText.text = "Complete!";
             
             yield return new WaitForSeconds(.5f);
-            onTaskComplete?.Invoke();
+            onTaskComplete?.Invoke(this);
+        }
+
+        public override void StartTask(string[] parameters)
+        {
+            if (parameters.Length >= 2)
+            {
+                _parameters = new UploadDataParameters
+                {
+                    room = parameters[0],
+                    isUpload = parameters[1].ToLower().Equals("upload") 
+                };
+                Setup();
+            }
+            else
+            {
+                throw new Exception($"Wrong parameters count for task: {this}");
+            }
         }
     }
 
     [Serializable]
     public struct UploadDataParameters
     {
-        public ConsoleType type;
+        public bool isUpload;
         public string room;
-    }
-
-    public enum ConsoleType
-    {
-        Download, Upload
     }
 }

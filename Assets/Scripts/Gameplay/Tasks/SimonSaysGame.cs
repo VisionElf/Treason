@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay.Tasks
 {
-    public class SimonSaysCanvas : TaskCanvas
+    public class SimonSaysGame : TaskGame
     {
         [Header("Settings")]
         public Color indicatorHighlightcolor;
@@ -43,11 +43,9 @@ namespace Gameplay.Tasks
             _audioSource = GetComponent<AudioSource>();
         }
 
-        private void Start()
+        public override void StartTask(string[] parameters)
         {
             Setup();
-
-            onTaskStart?.Invoke();
             StartCoroutine(StartStepCoroutine());
         }
 
@@ -115,7 +113,7 @@ namespace Gameplay.Tasks
             SetButtonsInteractable(false);
             yield return new WaitForSeconds(1f);
             
-            onTaskComplete?.Invoke();
+            onTaskComplete?.Invoke(this);
         }
 
         private void UpdateCurrentLights()

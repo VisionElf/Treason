@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Gameplay.Tasks
 {
-    public class SwipeCardCanvas : TaskCanvas
+    public class SwipeCardGame : TaskGame
     {
         [Header("Settings")]
         public float minTime;
@@ -42,13 +42,6 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
-        }
-
-        private void Start()
-        {
-            Setup();
-
-            onTaskStart?.Invoke();
         }
 
         private void OnEnable()
@@ -191,7 +184,7 @@ namespace Gameplay.Tasks
             card.DOAnchorPos(_cardWalletPosition, duration).SetEase(Ease.Linear);
             card.DOScale(Vector3.one * 0.75f, duration).SetEase(Ease.Linear).OnComplete(() =>
             {
-                onTaskComplete?.Invoke();
+                onTaskComplete?.Invoke(this);
             });
         }
 
@@ -200,6 +193,11 @@ namespace Gameplay.Tasks
             BadRead,
             TooSlow,
             TooFast
+        }
+
+        public override void StartTask(string[] parameters)
+        {
+            Setup();
         }
     }
 }

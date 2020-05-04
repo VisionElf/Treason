@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay.Tasks
 {
-    public class EmptyGarbageCanvas : TaskCanvas
+    public class EmptyGarbageGame : TaskGame
     {
         public float distanceToPull;
 
@@ -37,13 +37,6 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
-        }
-
-        private void Start()
-        {
-            Setup();
-            
-            onTaskStart?.Invoke();
         }
 
         private void Update()
@@ -86,9 +79,11 @@ namespace Gameplay.Tasks
                 Destroy(img.gameObject);
                 if (_leaves.Count <= 0)
                 {
-                    onTaskComplete?.Invoke();
+                    onTaskComplete?.Invoke(this);
                 }
             }
+
+            Debug.Log(_leaves.Count);
         }
 
         public void Setup()
@@ -166,6 +161,11 @@ namespace Gameplay.Tasks
             obj.transform.localPosition = new Vector3(Random.Range(-170f, 170f), Random.Range(0, 250));
             obj.transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
             _leaves.Add(obj);
+        }
+
+        public override void StartTask(string[] parameters)
+        {
+            Setup();
         }
     }
 }
