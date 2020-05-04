@@ -2,7 +2,7 @@
 
 namespace Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Color")]
     public class ColorData : ScriptableObject
     {
         public Color color1 = Color.white;

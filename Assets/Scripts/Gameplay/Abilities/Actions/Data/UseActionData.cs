@@ -2,7 +2,7 @@
 
 namespace Gameplay.Abilities.Actions.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Actions/Use Action")]
     public class UseActionData : ActionData
     {
         public override void Execute(ActionContext context)

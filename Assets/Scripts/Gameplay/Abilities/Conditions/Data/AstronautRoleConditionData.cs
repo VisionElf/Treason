@@ -5,8 +5,8 @@ using Gameplay.Abilities.Actions.Data;
 
 namespace Gameplay.Abilities.Conditions.Data
 {
-    [CreateAssetMenu]
-    public class RoleConditionData : ConditionData
+    [CreateAssetMenu(menuName = "Gameplay/Abilities/Conditions/Astronaut Role Condition")]
+    public class AstronautRoleConditionData : ConditionData
     {
         public Context source;
         public ConditionComparison comparison;

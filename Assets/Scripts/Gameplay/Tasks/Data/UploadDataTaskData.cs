@@ -2,7 +2,7 @@
 
 namespace Gameplay.Tasks.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Tasks/Upload Data Task")]
     public class UploadDataTaskData : TaskData
     {
     }

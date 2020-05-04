@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91aeb013a702fa443a5ab189cf841772, type: 3}
-  m_Name: KillAbility
+  m_Name: ImpostorKillAbility
   m_EditorClassIdentifier: 
   actionData: {fileID: 11400000, guid: cff22a2e27c17b74c90d767187cbb361, type: 2}
   cooldown: 25
@@ -20,6 +20,7 @@ MonoBehaviour:
   conditions:
   - {fileID: 11400000, guid: 1977d8a2fc27e0c4a8059b43fb4c4ece, type: 2}
   - {fileID: 11400000, guid: 245211d05799faf45af4e7414683870a, type: 2}
+  ghostKeepAbility: 0
   abilityIcon: {fileID: 21300036, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
   shortcutKey: 116
   buttonLocationInfo:

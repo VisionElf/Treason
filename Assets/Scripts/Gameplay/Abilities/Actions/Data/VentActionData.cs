@@ -4,7 +4,7 @@ using Gameplay.Interactables;
 
 namespace Gameplay.Abilities.Actions.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Actions/Vent Action")]
     public class VentActionData : ActionData
     {
         public override void Execute(ActionContext context)

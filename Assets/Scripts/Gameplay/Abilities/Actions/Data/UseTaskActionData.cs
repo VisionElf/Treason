@@ -4,7 +4,7 @@ using Gameplay.Interactables;
 
 namespace Gameplay.Abilities.Actions.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Actions/Use Task Action")]
     public class UseTaskActionData : ActionData
     {
         public override void Execute(ActionContext context)

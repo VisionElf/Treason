@@ -2,7 +2,7 @@
 
 namespace Gameplay.Abilities.Actions.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Actions/Kill Action")]
     public class KillActionData : ActionData
     {
         public override void Execute(ActionContext context)

@@ -6,7 +6,7 @@ using HUD;
 
 namespace Gameplay.Abilities.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Abilities/Ability")]
     public class AbilityData : ScriptableObject
     {
         [Header("Action")]
