@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay.Tasks
 {
-    public class SetCourseCanvas : MonoBehaviour
+    public class SetCourseCanvas : TaskCanvas
     {
         [Header("Settings")] public int checkpointsCount = 5;
         public int verticalPossibilities = 4;
@@ -27,6 +27,7 @@ namespace Gameplay.Tasks
         private void Start()
         {
             Setup();
+            onTaskStart?.Invoke();
         }
 
         private void OnEnable()
@@ -125,6 +126,10 @@ namespace Gameplay.Tasks
                 var nextPos = _checkpoints[index + 1].AnchoredPosition;
                 var dir = nextPos - pos;
                 ship.up = dir.normalized;
+            }
+            else
+            {
+                onTaskComplete?.Invoke();
             }
         }
 
