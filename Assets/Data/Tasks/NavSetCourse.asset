@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
   m_Name: NavSetCourse
   m_EditorClassIdentifier: 
+  room: {fileID: 11400000, guid: 7e4c3256dd0144a4ebb7bf6aa874d5b7, type: 2}
   taskName: Empty Garbage
   taskType: 0
+  isCancellable: 0
   taskPrefab: {fileID: 6051733508061422336, guid: 2078013fe650d574da09a13b3130d3ab,
     type: 3}

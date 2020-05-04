@@ -16,9 +16,9 @@ MonoBehaviour:
   roleColor: {r: 1, g: 0, b: 0, a: 1}
   playerNameColor: {r: 1, g: 0, b: 0, a: 1}
   abilities:
-  - {fileID: 11400000, guid: 21b849048827f944b9eb396893b4db7f, type: 2}
-  - {fileID: 11400000, guid: 531bd5f48bbb26f4eb003fa590648af4, type: 2}
-  - {fileID: 11400000, guid: 76f7bdaab60109648a0d68a457f0e319, type: 2}
-  - {fileID: 11400000, guid: 176bdc1655d6dfd4aa6bb0b44ccbc770, type: 2}
+  - {fileID: 11400000, guid: 9087dc16438d58b4fb2bbe9b3ea7d836, type: 2}
   - {fileID: 11400000, guid: 54b23d14ed738f445af9f69a4e8ec2be, type: 2}
   - {fileID: 11400000, guid: fdc7a1ade714fc64dbbd9eb2d9787a24, type: 2}
+  - {fileID: 11400000, guid: 531bd5f48bbb26f4eb003fa590648af4, type: 2}
+  - {fileID: 11400000, guid: 176bdc1655d6dfd4aa6bb0b44ccbc770, type: 2}
+  - {fileID: 11400000, guid: 76f7bdaab60109648a0d68a457f0e319, type: 2}

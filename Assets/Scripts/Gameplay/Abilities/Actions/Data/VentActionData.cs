@@ -8,9 +8,13 @@ namespace Gameplay.Abilities.Actions.Data
     {
         public override void Execute(ActionContext context)
         {
-            var source = context.Get<Astronaut>(Context.Source);
-            var vent = context.Get<Vent>(Context.Target);
-            vent.Interact(source);
+            Astronaut source = context.Get<Astronaut>(Context.Source);
+            Vent vent = context.Get<Vent>(Context.Target);
+
+            if (source.State == AstronautState.IN_VENT)
+                vent.Exit(source);
+            else
+                vent.Enter(source);
         }
     }
 }

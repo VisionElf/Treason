@@ -1,9 +1,8 @@
-﻿using Gameplay.Abilities.Actions.Data;
+﻿using UnityEngine;
+using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
 using Gameplay.Abilities.Data;
 using HUD;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace Gameplay.Abilities
 {
@@ -14,7 +13,7 @@ namespace Gameplay.Abilities
         private readonly ITarget _source;
         private ITarget _currentTarget;
         private float _lastExecutedTime;
-        
+
         public AbilityButton Button { get; set; }
         public bool GhostKeepAbility => AbilityData.ghostKeepAbility;
 
@@ -42,7 +41,7 @@ namespace Gameplay.Abilities
                 else
                     Button.ResetIcon();
             }
-            
+
             if ((!AbilityData.RequireTarget || _currentTarget != null) && Input.GetKeyDown(AbilityData.shortcutKey))
                 Execute();
         }

@@ -20,22 +20,10 @@ namespace Gameplay.Interactables
         public AudioClip[] moveSounds;
 
         [Header("Gameplay")]
-        public TargetTypeData targetType;
         public Vent[] accessibleVents;
 
-        private Astronaut _player;
+        private Astronaut _astronaut;
         private bool _canInteract;
-
-        private void Awake()
-        {
-            targetType.Add(this);
-            SetHighlight(false);
-        }
-
-        private void OnDestroy()
-        {
-            targetType.Remove(this);
-        }
 
         private void Start()
         {
@@ -46,8 +34,8 @@ namespace Gameplay.Interactables
         public void OnEnterVentBegin()
         {
             _canInteract = false;
-            _player.State = PlayerState.IN_VENT;
-            _player.animator.Play("Astronaut_Vent_In");
+            _astronaut.State = AstronautState.IN_VENT;
+            _astronaut.animator.Play("Astronaut_Vent_In");
             audioSource.pitch = Random.Range(0.75f, 1.25f);
             audioSource.PlayOneShot(openCloseSound);
         }
@@ -61,7 +49,7 @@ namespace Gameplay.Interactables
         public void OnExitVentBegin()
         {
             _canInteract = false;
-            _player.animator.Play("Astronaut_Vent_Out");
+            _astronaut.animator.Play("Astronaut_Vent_Out");
             audioSource.pitch = Random.Range(0.75f, 1.25f);
             audioSource.PlayOneShot(openCloseSound);
             ClearArrows();
@@ -70,21 +58,46 @@ namespace Gameplay.Interactables
         public void OnExitVentEnd()
         {
             _canInteract = true;
-            _player.State = PlayerState.NORMAL;
+            _astronaut.State = AstronautState.NORMAL;
+        }
+
+        public void Enter(Astronaut astronaut)
+        {
+            if (_canInteract)
+            {
+                SetAstronaut(astronaut);
+                _canInteract = false;
+                StartCoroutine(EnterVent());
+            }
+        }
+
+        public void Exit(Astronaut astronaut)
+        {
+            if (_canInteract)
+            {
+                SetAstronaut(astronaut);
+                _canInteract = false;
+                StartCoroutine(ExitVent());
+            }
+        }
+
+        public void SetAstronaut(Astronaut astronaut)
+        {
+            _astronaut = astronaut;
         }
 
         private IEnumerator EnterVent()
         {
-            _player.ResetSpeed();
+            _astronaut.ResetSpeed();
 
-            while (Vector3.Distance(transform.position, _player.transform.position) > 0.1f)
+            while (Vector3.Distance(transform.position, _astronaut.transform.position) > 0.1f)
             {
-                _player.WalkTowards(transform.position);
+                _astronaut.WalkTowards(transform.position);
                 yield return null;
             }
-            _player.transform.position = transform.position;
+            _astronaut.transform.position = transform.position;
 
-            _player.ResetSpeed();
+            _astronaut.ResetSpeed();
             animator.Play("Vent_Enter");
 
             yield return null;
@@ -103,7 +116,7 @@ namespace Gameplay.Interactables
                 Vector3 direction = vent.arrowOrigin.position - arrowOrigin.position;
                 float angle = Vector3.SignedAngle(direction, Vector3.right, Vector3.back);
                 GameObject arrow = Instantiate(arrowPrefab, arrowOrigin.position, Quaternion.Euler(0f, 0f, angle), arrowOrigin);
-                arrow.GetComponent<VentArrow>().Initialize(_player, this, vent);
+                arrow.GetComponent<VentArrow>().Initialize(_astronaut, this, vent);
             }
         }
 
@@ -113,29 +126,10 @@ namespace Gameplay.Interactables
                 Destroy(arrowOrigin.transform.GetChild(i).gameObject);
         }
 
-        public void SetPlayer(Astronaut player)
-        {
-            _player = player;
-        }
-
         public void PlayMoveSound()
         {
             audioSource.pitch = Random.Range(0.75f, 1.25f);
             audioSource.PlayOneShot(moveSounds[Random.Range(0, moveSounds.Length)]);
-        }
-
-        public void Interact(Astronaut astronaut)
-        {
-            if (_canInteract)
-            {
-                SetPlayer(astronaut);
-                _canInteract = false;
-
-                if (_player.State == PlayerState.IN_VENT)
-                    StartCoroutine(ExitVent());
-                else
-                    StartCoroutine(EnterVent());
-            }
         }
     }
 }

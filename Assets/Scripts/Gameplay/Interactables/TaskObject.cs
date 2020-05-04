@@ -1,4 +1,5 @@
-﻿using Gameplay.Tasks;
+using UnityEngine;
+using Gameplay.Tasks;
 using Gameplay.Tasks.Data;
 
 namespace Gameplay.Interactables
@@ -8,12 +9,18 @@ namespace Gameplay.Interactables
         public TaskData taskData;
         public string[] taskParameters;
 
-        public override void Interact()
+        public bool IsCancellable => taskData.isCancellable;
+
+        private GameObject _task;
+
+        public void StartTask()
         {
-            if (taskData)
-            {
-                TaskManager.Instance.CreateTaskGame(taskData.taskPrefab, taskParameters);
-            }
+            TaskManager.Instance.CreateTaskGame(taskData.taskPrefab, taskParameters);
+        }
+
+        public void StopTask()
+        {
+            // TODO: Hide task slide animation
         }
     }
 }

@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 936001130848182421}
   - component: {fileID: 8364088978122960097}
   m_Layer: 0
-  m_Name: VentOutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -288,10 +288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05936c7d5198ef459c89dce3dffc085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTypeData: {fileID: 0}
+  targetTypeData: {fileID: 11400000, guid: 0b7eaed86d662374287f0df90f41bec4, type: 2}
   specificIcon: {fileID: 0}
-  actionData: {fileID: 0}
-  interactRange: 0
   spriteRenderer: {fileID: 4325752740235946223}
   arrowPrefab: {fileID: 1139136766282123568, guid: ff45aa59463ae8842a57cd7fee95dddc,
     type: 3}
@@ -303,7 +301,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6e6611f6b54fb841a2daadd3ba4aefe, type: 3}
   - {fileID: 8300000, guid: a19c0491c10b12746b302927464b8153, type: 3}
   - {fileID: 8300000, guid: 6ccdd19e14388f84caae1072d47250ed, type: 3}
-  targetType: {fileID: 11400000, guid: 0b7eaed86d662374287f0df90f41bec4, type: 2}
   accessibleVents: []
 --- !u!212 &4325752740235946223
 SpriteRenderer:

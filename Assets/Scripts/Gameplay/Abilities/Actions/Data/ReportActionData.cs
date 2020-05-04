@@ -12,7 +12,8 @@ namespace Gameplay.Abilities.Actions.Data
 
             if (target != null)
             {
-                target.Interact();
+                Debug.Log("Reported!");
+                Destroy(target.gameObject);
             }
         }
     }

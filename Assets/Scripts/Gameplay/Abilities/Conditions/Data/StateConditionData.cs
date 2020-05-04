@@ -8,7 +8,7 @@ namespace Gameplay.Abilities.Conditions.Data
     {
         public Context source;
         public ConditionComparison comparison;
-        public PlayerState value;
+        public AstronautState value;
 
         public override bool Evaluate(ActionContext context)
         {

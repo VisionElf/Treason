@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
+
 using CustomExtensions;
 using Data;
 using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
-using Photon.Pun;
-using TMPro;
-using UnityEngine;
-using Vector2 = UnityEngine.Vector2;
-using Vector3 = UnityEngine.Vector3;
-using Photon.Realtime;
-using UnityEngine.SceneManagement;
-using Gameplay.Lights;
-using HUD;
 
 namespace Gameplay
 {
-    public enum PlayerState
+    public enum AstronautState
     {
         NORMAL,
         IN_VENT,
         GHOST,
         SPAWNING
+    }
+
+    public enum AstronautTaskState
+    {
+        NONE,
+        IN_TASK
     }
 
     public enum Direction
@@ -87,7 +90,8 @@ namespace Gameplay
 
         public bool IsRunning { get; private set; }
         public RoleData Role { get; private set; }
-        public PlayerState State { get; set; }
+        public AstronautState State { get; set; }
+        public AstronautTaskState TaskState { get; set; }
         public List<Ability> Abilities { get; private set; }
 
         private AudioSource _audioSource;
@@ -101,16 +105,17 @@ namespace Gameplay
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
             _audioSource = GetComponent<AudioSource>();
-            State = PlayerState.NORMAL;
+            State = AstronautState.NORMAL;
+            TaskState = AstronautTaskState.NONE;
 
             if (photonView && photonView.Owner != null)
             {
                 isLocalCharacter = photonView.IsMine;
 
-                var roleIndex = photonView.Owner.GetColorIndex();
+                int roleIndex = photonView.Owner.GetRoleIndex();
                 SetRole(roleIndex);
 
-                var colorIndex = photonView.Owner.GetRoleIndex();
+                int colorIndex = photonView.Owner.GetColorIndex();
                 SetColor(colorIndex);
             }
             else
@@ -188,7 +193,7 @@ namespace Gameplay
 
             Abilities?.ForEach((a) => a.Update());
 
-            if (isLocalCharacter && (State == PlayerState.NORMAL || State == PlayerState.GHOST))
+            if (isLocalCharacter && CanMove())
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -198,10 +203,10 @@ namespace Gameplay
             outline.transform.localPosition = spriteRenderer.transform.localPosition;
             outline.transform.localScale = spriteRenderer.transform.localScale;
 
-            if (!isLocalCharacter && State != PlayerState.GHOST)
+            if (!isLocalCharacter && State != AstronautState.GHOST)
             {
                 Astronaut localCharacter = LocalAstronaut;
-                if (localCharacter && localCharacter.State != PlayerState.GHOST)
+                if (localCharacter && localCharacter.State != AstronautState.GHOST)
                 {
                     Vector2 pos = transform.position;
                     Vector2 localPos = localCharacter.transform.position;
@@ -258,7 +263,7 @@ namespace Gameplay
 
             _previousPosition = transform.localPosition;
 
-            if (State == PlayerState.NORMAL)
+            if (State == AstronautState.NORMAL)
             {
                 animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
                 animator.SetBool(AnimatorHashRunning, IsRunning);
@@ -285,7 +290,7 @@ namespace Gameplay
 
         private void OnSpawnBegin()
         {
-            State = PlayerState.SPAWNING;
+            State = AstronautState.SPAWNING;
             _audioSource.PlayOneShot(spawnSound);
             animator.SetTrigger(AnimatorHashSpawn);
         }
@@ -293,7 +298,13 @@ namespace Gameplay
         // Animation Event
         private void OnSpawnEnd()
         {
-            State = PlayerState.NORMAL;
+            State = AstronautState.NORMAL;
+        }
+
+        public bool CanMove()
+        {
+            return (State == AstronautState.NORMAL || State == AstronautState.GHOST) &&
+                TaskState == AstronautTaskState.NONE;
         }
 
         public void SetFacingDirection(Direction dir)
@@ -327,7 +338,7 @@ namespace Gameplay
 
         public void ToGhost()
         {
-            State = PlayerState.GHOST;
+            State = AstronautState.GHOST;
             gameObject.SetLayerRecursively(GhostLayerName);
             spriteRenderer.sortingLayerName = GhostLayerName;
             _hitbox.isTrigger = true;
