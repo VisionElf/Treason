@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace Gameplay.Tasks
 {
-    public class SetCourseCanvas : TaskCanvas
+    public class SetCourseGame : TaskGame
     {
         [Header("Settings")] public int checkpointsCount = 5;
         public int verticalPossibilities = 4;
@@ -23,12 +23,6 @@ namespace Gameplay.Tasks
 
         private int _currentCheckpoint;
         private bool _isMoving;
-
-        private void Start()
-        {
-            Setup();
-            onTaskStart?.Invoke();
-        }
 
         private void OnEnable()
         {
@@ -129,7 +123,8 @@ namespace Gameplay.Tasks
             }
             else
             {
-                onTaskComplete?.Invoke();
+                onTaskComplete?.Invoke(this);
+                onTaskShouldDisappear?.Invoke(this);
             }
         }
 
@@ -146,6 +141,11 @@ namespace Gameplay.Tasks
             foreach (var obj in _dottedLines) Destroy(obj.gameObject);
             _checkpoints.Clear();
             _dottedLines.Clear();
+        }
+
+        public override void StartTask(string[] parameters)
+        {
+            Setup();
         }
     }
 }

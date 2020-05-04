@@ -1,17 +1,19 @@
-﻿using Gameplay.Abilities.Data;
-using Gameplay.Data;
-using UnityEngine;
+﻿using Gameplay.Tasks;
+using Gameplay.Tasks.Data;
 
 namespace Gameplay.Interactables
 {
     public class TaskObject : Interactable
     {
-        public TargetTypeData targetType;
         public TaskData taskData;
+        public string[] taskParameters;
 
         public override void Interact()
         {
-            Debug.Log("OnUse");
+            if (taskData)
+            {
+                TaskManager.Instance.CreateTaskGame(taskData.taskPrefab, taskParameters);
+            }
         }
     }
 }
