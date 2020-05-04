@@ -395,6 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426f3a01560a47b438675a305733e394, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  durationInSeconds: 3
   leftFolderText: {fileID: 6754626631138769645}
   rightFolderText: {fileID: 2658587381264398708}
   leftFolderAnimator: {fileID: 6370642882183106964}

@@ -8,6 +8,9 @@ namespace Gameplay.Tasks
 {
     public class UploadDataGame : TaskGame
     {
+        [Header("Settings")]
+        public float durationInSeconds = 10;
+        
         [Header("References")]
         public TMP_Text leftFolderText;
         public TMP_Text rightFolderText;
@@ -69,24 +72,23 @@ namespace Gameplay.Tasks
 
         private IEnumerator ProgressCoroutine()
         {
-            var duration = 10f;
-
             var time = 0f;
-            while (time < duration)
+            while (time < durationInSeconds)
             {
-                var percent = Mathf.Clamp01(time / duration);
+                var percent = Mathf.Clamp01(time / durationInSeconds);
                 progressImage.fillAmount = percent;
                 progressText.text = $"{Mathf.RoundToInt(percent * 100)}%";
-                timeRemainingText.text = $"Estimated Time: {Mathf.RoundToInt(duration - time)}s";
+                timeRemainingText.text = $"Estimated Time: {Mathf.RoundToInt(durationInSeconds - time)}s";
                 
                 yield return null;
                 time += Time.deltaTime;
             }
 
             timeRemainingText.text = "Complete!";
-            
-            yield return new WaitForSeconds(.5f);
             onTaskComplete?.Invoke(this);
+
+            yield return new WaitForSeconds(.5f);
+            onTaskShouldDisappear?.Invoke(this);
         }
 
         public override void StartTask(string[] parameters)

@@ -6,6 +6,7 @@ namespace Gameplay.Tasks
     public abstract class TaskGame : MonoBehaviour
     {
         public Action<TaskGame> onTaskComplete;
+        public Action<TaskGame> onTaskShouldDisappear;
 
         private RectTransform _rectTransform;
         public RectTransform RectTransform

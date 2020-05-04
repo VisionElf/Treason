@@ -113,6 +113,8 @@ namespace Gameplay.Tasks
             MoveCardToWallet();
             GreenLightOn();
             SetStatusText("ACCEPTED. THANK YOU.");
+            
+            onTaskComplete?.Invoke(this);
         }
 
         private void DenyCard(DenyCardReason reason)
@@ -184,7 +186,7 @@ namespace Gameplay.Tasks
             card.DOAnchorPos(_cardWalletPosition, duration).SetEase(Ease.Linear);
             card.DOScale(Vector3.one * 0.75f, duration).SetEase(Ease.Linear).OnComplete(() =>
             {
-                onTaskComplete?.Invoke(this);
+                onTaskShouldDisappear?.Invoke(this);
             });
         }
 

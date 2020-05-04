@@ -111,9 +111,10 @@ namespace Gameplay.Tasks
             }
 
             SetButtonsInteractable(false);
-            yield return new WaitForSeconds(1f);
-            
             onTaskComplete?.Invoke(this);
+            yield return new WaitForSeconds(.5f);
+            
+            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void UpdateCurrentLights()

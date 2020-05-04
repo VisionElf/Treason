@@ -80,10 +80,9 @@ namespace Gameplay.Tasks
                 if (_leaves.Count <= 0)
                 {
                     onTaskComplete?.Invoke(this);
+                    onTaskShouldDisappear?.Invoke(this);
                 }
             }
-
-            Debug.Log(_leaves.Count);
         }
 
         public void Setup()

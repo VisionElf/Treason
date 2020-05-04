@@ -124,6 +124,7 @@ namespace Gameplay.Tasks
             else
             {
                 onTaskComplete?.Invoke(this);
+                onTaskShouldDisappear?.Invoke(this);
             }
         }
 

@@ -10,7 +10,10 @@ namespace Gameplay.Interactables
 
         public override void Interact()
         {
-            TaskManager.Instance.CreateTaskGame(taskData.taskPrefab, taskParameters);
+            if (taskData)
+            {
+                TaskManager.Instance.CreateTaskGame(taskData.taskPrefab, taskParameters);
+            }
         }
     }
 }

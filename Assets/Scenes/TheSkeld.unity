@@ -7487,8 +7487,10 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 320912067}
-  taskData: {fileID: 0}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
+  taskParameters:
+  - Admin
+  - upload
 --- !u!1001 &322847393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7647,7 +7649,7 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 326882556}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: b757d9fa949f1a34aabfd73acf71d3b3, type: 2}
   taskParameters: []
 --- !u!1 &328171144
 GameObject:
@@ -10734,8 +10736,10 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 460086762}
-  taskData: {fileID: 0}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
+  taskParameters:
+  - Comms
+  - download
 --- !u!114 &462354819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7690898935440736750, guid: 9e5997220750e814687ef6baae1aaf15,
@@ -16423,8 +16427,10 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 797173327}
-  taskData: {fileID: 0}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
+  taskParameters:
+  - Weapons
+  - download
 --- !u!1 &798286089
 GameObject:
   m_ObjectHideFlags: 0
@@ -17962,8 +17968,10 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 900053496}
-  taskData: {fileID: 0}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
+  taskParameters:
+  - Naviguation
+  - download
 --- !u!1 &904015689
 GameObject:
   m_ObjectHideFlags: 0
@@ -24162,7 +24170,7 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1310749793}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: d03ae1ddc498d634189b0fcace732d34, type: 2}
   taskParameters: []
 --- !u!60 &1310749795
 PolygonCollider2D:
@@ -28806,8 +28814,10 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1537989111}
-  taskData: {fileID: 0}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
+  taskParameters:
+  - Electrical
+  - download
 --- !u!1 &1539161186
 GameObject:
   m_ObjectHideFlags: 0
@@ -29336,7 +29346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563145779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.287, y: -4.26, z: -0.0045}
+  m_LocalPosition: {x: 3.287, y: -4.26, z: -0.00426}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 906899312}
@@ -29409,7 +29419,7 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1563145781}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 1b046343337acfb4a96c4bed4daf0ddd, type: 2}
   taskParameters: []
 --- !u!1 &1565822893
 GameObject:
@@ -32645,7 +32655,7 @@ MonoBehaviour:
   actionData: {fileID: 0}
   interactRange: 0
   spriteRenderer: {fileID: 1718235889}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 319e69e226021014f8389c134a788ee2, type: 2}
   taskParameters: []
 --- !u!60 &1718235891
 PolygonCollider2D:
