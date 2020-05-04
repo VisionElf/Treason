@@ -4,7 +4,7 @@ using Gameplay.Abilities.Data;
 
 namespace Gameplay.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Role")]
     public class RoleData : ScriptableObject
     {
         public string roleName;

@@ -2,7 +2,7 @@
 
 namespace Gameplay.Abilities.Actions.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Actions/Show Cameras Action")]
     public class ShowCamerasActionData : ActionData
     {
         public override void Execute(ActionContext context)

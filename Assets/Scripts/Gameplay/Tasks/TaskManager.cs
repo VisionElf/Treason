@@ -33,6 +33,7 @@ namespace Gameplay.Tasks
             _openedTask = Instantiate(task.taskPrefab, transform);
             _taskGames.Add(_openedTask);
 
+            Astronaut.LocalAstronaut.ResetSpeed();
             Astronaut.LocalAstronaut.TaskState = AstronautTaskState.InTask;
             _openedTask.StartTask(task);
 

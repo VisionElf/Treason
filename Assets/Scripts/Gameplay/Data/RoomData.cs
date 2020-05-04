@@ -2,7 +2,7 @@
 
 namespace Gameplay.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Room")]
     public class RoomData : ScriptableObject
     {
         public string roomName;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Gameplay.Abilities.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Abilities/Target Type")]
     public class TargetTypeData : ScriptableObject
     {
         private List<ITarget> _targets = new List<ITarget>();

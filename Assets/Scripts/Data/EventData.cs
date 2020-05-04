@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Event")]
     public class EventData : ScriptableObject
     {
         private List<Action> _actions = new List<Action>();

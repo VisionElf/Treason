@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outline - Task
+  m_Name: Outline - Yellow
   m_Shader: {fileID: -6465566751694194690, guid: 9a1bf423388ba0f45a4355792b18f6ff,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA

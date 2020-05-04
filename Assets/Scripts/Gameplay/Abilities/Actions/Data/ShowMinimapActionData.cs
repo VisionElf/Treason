@@ -2,7 +2,7 @@
 
 namespace Gameplay.Abilities.Actions.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Actions/Show Minimap Action")]
     public class ShowMinimapActionData : ActionData
     {
         public MiniMapType miniMapType;

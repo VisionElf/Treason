@@ -4,7 +4,7 @@ using Gameplay.Data;
 
 namespace Gameplay.Tasks.Data
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Gameplay/Tasks/Task")]
     public class TaskData : ScriptableObject
     {
         [Header("Task")]
