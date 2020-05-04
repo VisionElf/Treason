@@ -15,6 +15,6 @@ MonoBehaviour:
   room: {fileID: 11400000, guid: 1b18b9e5693cc1447be3f7ac51f0561e, type: 2}
   taskName: Empty Garbage
   taskType: 0
-  isCancellable: 0
+  isCancellable: 1
   taskPrefab: {fileID: 6554961236967571258, guid: 611d92e4fca999e4cb98e44bcde6e7c7,
     type: 3}

@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
   m_Name: DownloadData
   m_EditorClassIdentifier: 
+  room: {fileID: 0}
   taskName: Download Data
   taskType: 0
+  isCancellable: 1
   taskPrefab: {fileID: 3217232921497474444, guid: e35ad6d77fb7bfe4b901b57f58bf656b,
     type: 3}
