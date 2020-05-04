@@ -1,12 +1,11 @@
 ﻿using System.Collections;
-using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Gameplay.Interactables
 {
-    public class Vent : MonoBehaviour, ITarget
+    public class Vent : Interactable
     {
         [Header("Arrow")]
         public GameObject arrowPrefab;
@@ -14,7 +13,6 @@ namespace Gameplay.Interactables
 
         [Header("Animation")]
         public Animator animator;
-        public SpriteRenderer spriteRenderer;
 
         [Header("Audio")]
         public AudioSource audioSource;
@@ -137,29 +135,6 @@ namespace Gameplay.Interactables
                     StartCoroutine(ExitVent());
                 else
                     StartCoroutine(EnterVent());
-            }
-        }
-
-        public Vector3 GetPosition()
-        {
-            return transform.position;
-        }
-
-        public void SetHighlight(bool value)
-        {
-            if (value)
-                SetShaderParameters(Color.red, new Color(1f, 0f, 0f, 0.25f), true);
-            else
-                SetShaderParameters(Color.red, new Color(1f, 0f, 0f, 0f), false);
-        }
-
-        public void SetShaderParameters(Color outlineColor, Color innerColor, bool outlineEnabled)
-        {
-            if (spriteRenderer)
-            {
-                spriteRenderer.material.SetColor(Interactable.ShaderOutlineColor, outlineColor);
-                spriteRenderer.material.SetColor(Interactable.ShaderInnerColor, innerColor);
-                spriteRenderer.material.SetInt(Interactable.ShaderOutlineEnabled, outlineEnabled ? 1 : 0);
             }
         }
     }

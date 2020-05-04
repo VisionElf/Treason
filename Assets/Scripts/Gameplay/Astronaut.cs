@@ -350,6 +350,7 @@ namespace Gameplay
 
         public Vector3 GetCenter() => (Vector2)transform.position + _hitbox.offset;
         public Vector3 GetPosition() => transform.position;
+        public void SetOutline(bool value) { }
         public void SetHighlight(bool value) => outline.enabled = value;
     }
 }

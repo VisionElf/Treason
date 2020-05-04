@@ -288,11 +288,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f05936c7d5198ef459c89dce3dffc085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTypeData: {fileID: 0}
+  specificIcon: {fileID: 0}
+  actionData: {fileID: 0}
+  interactRange: 0
+  spriteRenderer: {fileID: 4325752740235946223}
   arrowPrefab: {fileID: 1139136766282123568, guid: ff45aa59463ae8842a57cd7fee95dddc,
     type: 3}
   arrowOrigin: {fileID: 8377989387451005687}
   animator: {fileID: 4325752740235946222}
-  spriteRenderer: {fileID: 4325752740235946223}
   audioSource: {fileID: 544232038705390371}
   openCloseSound: {fileID: 8300000, guid: 22f76549c00ce4e4b991303295c3391f, type: 3}
   moveSounds:
@@ -319,7 +323,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c63d63db747534148a4d8c779d4a4dec, type: 2}
+  - {fileID: 2100000, guid: 03ded85c7c201cf458a247e8e6050363, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
