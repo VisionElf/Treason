@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
 using UnityEngine;
@@ -15,7 +14,7 @@ namespace Gameplay.Interactables
 
         [Header("Animation")]
         public Animator animator;
-        public SpriteRenderer outline;
+        public SpriteRenderer spriteRenderer;
 
         [Header("Audio")]
         public AudioSource audioSource;
@@ -149,15 +148,19 @@ namespace Gameplay.Interactables
         public void SetHighlight(bool value)
         {
             if (value)
-                SetShaderParameters(Color.red, .5f);
+                SetShaderParameters(Color.red, new Color(1f, 0f, 0f, 0.25f), true);
             else
-                SetShaderParameters(Color.white, 0f);
+                SetShaderParameters(Color.red, new Color(1f, 0f, 0f, 0f), false);
         }
 
-        public void SetShaderParameters(Color color, float blend)
+        public void SetShaderParameters(Color outlineColor, Color innerColor, bool outlineEnabled)
         {
-            outline.material.SetColor("_Color", color);
-            outline.material.SetFloat("_Blend", blend);
+            if (spriteRenderer)
+            {
+                spriteRenderer.material.SetColor(Interactable.ShaderOutlineColor, outlineColor);
+                spriteRenderer.material.SetColor(Interactable.ShaderInnerColor, innerColor);
+                spriteRenderer.material.SetInt(Interactable.ShaderOutlineEnabled, outlineEnabled ? 1 : 0);
+            }
         }
     }
 }

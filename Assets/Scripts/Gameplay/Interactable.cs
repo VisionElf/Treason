@@ -15,9 +15,14 @@ namespace Gameplay
 
         private bool _isUsing;
 
+        public static readonly int ShaderOutlineColor = Shader.PropertyToID("_OutlineColor");
+        public static readonly int ShaderOutlineEnabled = Shader.PropertyToID("_OutlineEnabled");
+        public static readonly int ShaderInnerColor = Shader.PropertyToID("_InnerColor");
+
         private void Awake()
         {
             targetTypeData.Add(this);
+            SetShaderParameters(Color.white, new Color(1f, 1f, 1f, 0f), false);
         }
 
         private void OnDestroy()
@@ -51,17 +56,18 @@ namespace Gameplay
         public void SetHighlight(bool value)
         {
             if (value)
-                SetShaderParameters(Color.green, .5f);
+                SetShaderParameters(Color.white, new Color(1f, 1f, 1f, 0.25f), true);
             else
-                SetShaderParameters(Color.white, 0f);
+                SetShaderParameters(Color.white, new Color(1f, 1f, 1f, 0f), false);
         }
 
-        public void SetShaderParameters(Color color, float blend)
+        public void SetShaderParameters(Color outlineColor, Color innerColor, bool outlineEnabled)
         {
             if (spriteRenderer)
             {
-                spriteRenderer.material.SetColor("_Color", color);
-                spriteRenderer.material.SetFloat("_Blend", blend);   
+                spriteRenderer.material.SetColor(ShaderOutlineColor, outlineColor);
+                spriteRenderer.material.SetColor(ShaderInnerColor, innerColor);
+                spriteRenderer.material.SetInt(ShaderOutlineEnabled, outlineEnabled ? 1 : 0);
             }
         }
     }

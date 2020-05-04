@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MiniMapMat
-  m_Shader: {fileID: -6465566751694194690, guid: 65d3bcc49de4db346ab74d20609549b7,
+  m_Name: SpriteOutline256
+  m_Shader: {fileID: -6465566751694194690, guid: 9a1bf423388ba0f45a4355792b18f6ff,
     type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,8 +24,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats: []
+    m_Floats:
+    - Vector1_35312774: 0
+    - _OutlineEnabled: 1
+    - _OutlineThickness: 7.5
     m_Colors:
-    - _Color1: {r: 1, g: 0.92156863, b: 0.015686275, a: 0.75}
-    - _Color2: {r: 1, g: 1, b: 1, a: 0}
-    - _Color3: {r: 1, g: 1, b: 1, a: 0}
+    - Color_46513623: {r: 1, g: 0.9957261, b: 0, a: 1}
+    - Color_FA4A2375: {r: 1, g: 1, b: 0, a: 0.5019608}
+    - _InnerColor: {r: 1, g: 1, b: 1, a: 0.2509804}
+    - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}

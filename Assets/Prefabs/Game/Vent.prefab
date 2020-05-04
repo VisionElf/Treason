@@ -292,7 +292,7 @@ MonoBehaviour:
     type: 3}
   arrowOrigin: {fileID: 8377989387451005687}
   animator: {fileID: 4325752740235946222}
-  outline: {fileID: 4325752740235946223}
+  spriteRenderer: {fileID: 4325752740235946223}
   audioSource: {fileID: 544232038705390371}
   openCloseSound: {fileID: 8300000, guid: 22f76549c00ce4e4b991303295c3391f, type: 3}
   moveSounds:
@@ -319,7 +319,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bb8ccdb0b65fbe541b150d0010b8192e, type: 2}
+  - {fileID: 2100000, guid: c63d63db747534148a4d8c779d4a4dec, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
