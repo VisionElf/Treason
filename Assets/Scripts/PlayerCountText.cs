@@ -1,6 +1,6 @@
-﻿using Photon.Pun;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine;
+using Photon.Pun;
 
 [RequireComponent(typeof(TMP_Text))]
 public class PlayerCountText : MonoBehaviour

@@ -1,6 +1,7 @@
-﻿using Gameplay.Abilities;
+﻿using UnityEngine;
+
+using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
-using UnityEngine;
 
 namespace Gameplay
 {
@@ -8,7 +9,7 @@ namespace Gameplay
     {
         [Header("Interactable")]
         public TargetTypeData targetTypeData;
-        public Sprite specificIcon;
+        public Sprite overrideIcon;
         public SpriteRenderer spriteRenderer;
 
         public static readonly int ShaderOutlineEnabled = Shader.PropertyToID("_OutlineEnabled");

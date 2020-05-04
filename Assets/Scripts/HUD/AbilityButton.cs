@@ -1,7 +1,8 @@
-﻿using Gameplay.Abilities;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
+using Gameplay.Abilities;
 
 namespace HUD
 {
@@ -33,7 +34,7 @@ namespace HUD
         public void SetAbility(Ability ability)
         {
             ability.Button = this;
-                
+
             _button.onClick.AddListener(ability.Execute);
             _ability = ability;
 
@@ -45,7 +46,7 @@ namespace HUD
         public void SetIcon(Sprite sprite)
         {
             if (sprite == null || sprite == icons[0].sprite) return;
-            
+
             foreach (var icon in icons)
                 icon.sprite = sprite;
         }

@@ -1,18 +1,16 @@
-﻿using CustomExtensions;
-using Gameplay;
-using Photon.Pun;
-using System.Linq;
-using Gameplay.Abilities.Data;
+﻿using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+using CustomExtensions;
+using Data;
+using Gameplay;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        public const string DeleteInGameTag = "DeleteInGame";
-
         public Astronaut astronautPrefab;
         public Transform characterParent;
         public Transform[] characterSpawnPoints;

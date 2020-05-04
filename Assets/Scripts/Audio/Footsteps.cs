@@ -1,9 +1,9 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Linq;
+using UnityEngine;
+
 using CustomExtensions;
 using Gameplay;
-using UnityEngine;
 
 namespace Audio
 {
@@ -33,7 +33,7 @@ namespace Audio
 
         private void LateUpdate()
         {
-            if (astronaut.State == AstronautState.GHOST) return;
+            if (astronaut.State == AstronautState.Ghost) return;
 
             if (!astronaut.IsRunning)
             {

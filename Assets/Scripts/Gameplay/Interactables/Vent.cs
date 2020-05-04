@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Gameplay.Abilities.Data;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -34,7 +33,7 @@ namespace Gameplay.Interactables
         public void OnEnterVentBegin()
         {
             _canInteract = false;
-            _astronaut.State = AstronautState.IN_VENT;
+            _astronaut.State = AstronautState.InVent;
             _astronaut.animator.Play("Astronaut_Vent_In");
             audioSource.pitch = Random.Range(0.75f, 1.25f);
             audioSource.PlayOneShot(openCloseSound);
@@ -58,7 +57,7 @@ namespace Gameplay.Interactables
         public void OnExitVentEnd()
         {
             _canInteract = true;
-            _astronaut.State = AstronautState.NORMAL;
+            _astronaut.State = AstronautState.Normal;
         }
 
         public void Enter(Astronaut astronaut)

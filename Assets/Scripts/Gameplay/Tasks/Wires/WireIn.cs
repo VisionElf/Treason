@@ -1,6 +1,4 @@
-﻿using System;
-using System.Drawing;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Color = UnityEngine.Color;
 

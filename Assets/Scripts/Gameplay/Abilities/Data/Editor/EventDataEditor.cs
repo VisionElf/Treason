@@ -1,6 +1,8 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+using Data;
+
 namespace Gameplay.Abilities.Data.Editor
 {
     [CustomEditor(typeof(EventData))]

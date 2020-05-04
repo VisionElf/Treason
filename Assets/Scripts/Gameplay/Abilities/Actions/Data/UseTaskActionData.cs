@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 using Gameplay.Interactables;
 
 namespace Gameplay.Abilities.Actions.Data
@@ -13,14 +14,14 @@ namespace Gameplay.Abilities.Actions.Data
 
             if (target != null)
             {
-                if (astronaut.TaskState == AstronautTaskState.IN_TASK && target.IsCancellable)
+                if (astronaut.TaskState == AstronautTaskState.InTask && target.IsCancellable)
                 {
-                    astronaut.TaskState = AstronautTaskState.NONE;
+                    astronaut.TaskState = AstronautTaskState.None;
                     target.StopTask();
                 }
                 else
                 {
-                    astronaut.TaskState = AstronautTaskState.IN_TASK;
+                    astronaut.TaskState = AstronautTaskState.InTask;
                     target.StartTask();
                 }
             }

@@ -19,7 +19,7 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _rectTransform = GetComponent<RectTransform>();
-            
+
             defaultParent.SetActive(true);
             reachedParent.SetActive(false);
             destinationParent.SetActive(false);

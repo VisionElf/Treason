@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
+using Gameplay.Tasks.Data;
+
 namespace Gameplay.Tasks
 {
     public abstract class TaskGame : MonoBehaviour

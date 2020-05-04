@@ -6,11 +6,10 @@ namespace Gameplay.Tasks
     public class DottedLine : MonoBehaviour
     {
         private Material _instantiatedMaterial;
-        private Image _image;
-    
+
         private void Awake()
         {
-            var img = GetComponent<Image>();
+            Image img = GetComponent<Image>();
             _instantiatedMaterial = Instantiate(img.material);
             img.material = _instantiatedMaterial;
         }

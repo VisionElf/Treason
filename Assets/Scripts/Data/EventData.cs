@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Gameplay.Abilities.Data
+namespace Data
 {
     [CreateAssetMenu]
     public class EventData : ScriptableObject

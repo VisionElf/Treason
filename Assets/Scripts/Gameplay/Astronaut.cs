@@ -11,27 +11,28 @@ using CustomExtensions;
 using Data;
 using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
+using Gameplay.Data;
 
 namespace Gameplay
 {
     public enum AstronautState
     {
-        NORMAL,
-        IN_VENT,
-        GHOST,
-        SPAWNING
+        Normal,
+        InVent,
+        Ghost,
+        Spawning
     }
 
     public enum AstronautTaskState
     {
-        NONE,
-        IN_TASK
+        None,
+        InTask
     }
 
     public enum Direction
     {
-        RIGHT,
-        LEFT
+        Right,
+        Left
     }
 
     public class Astronaut : MonoBehaviourPun, ITarget
@@ -105,8 +106,8 @@ namespace Gameplay
             _body = GetComponent<Rigidbody2D>();
             _hitbox = GetComponent<Collider2D>();
             _audioSource = GetComponent<AudioSource>();
-            State = AstronautState.NORMAL;
-            TaskState = AstronautTaskState.NONE;
+            State = AstronautState.Normal;
+            TaskState = AstronautTaskState.None;
 
             if (photonView && photonView.Owner != null)
             {
@@ -203,10 +204,10 @@ namespace Gameplay
             outline.transform.localPosition = spriteRenderer.transform.localPosition;
             outline.transform.localScale = spriteRenderer.transform.localScale;
 
-            if (!isLocalCharacter && State != AstronautState.GHOST)
+            if (!isLocalCharacter && State != AstronautState.Ghost)
             {
                 Astronaut localCharacter = LocalAstronaut;
-                if (localCharacter && localCharacter.State != AstronautState.GHOST)
+                if (localCharacter && localCharacter.State != AstronautState.Ghost)
                 {
                     Vector2 pos = transform.position;
                     Vector2 localPos = localCharacter.transform.position;
@@ -259,11 +260,11 @@ namespace Gameplay
                 dist.y = 0f;
             IsRunning = dist.magnitude > 0f;
             if (IsRunning && dist.x != 0)
-                SetFacingDirection(dist.x < 0 ? Direction.LEFT : Direction.RIGHT);
+                SetFacingDirection(dist.x < 0 ? Direction.Left : Direction.Right);
 
             _previousPosition = transform.localPosition;
 
-            if (State == AstronautState.NORMAL)
+            if (State == AstronautState.Normal)
             {
                 animator.SetFloat(AnimatorHashSpeed, Mathf.Clamp(speed, minAnimationSpeed, maxAnimationSpeed));
                 animator.SetBool(AnimatorHashRunning, IsRunning);
@@ -290,7 +291,7 @@ namespace Gameplay
 
         private void OnSpawnBegin()
         {
-            State = AstronautState.SPAWNING;
+            State = AstronautState.Spawning;
             _audioSource.PlayOneShot(spawnSound);
             animator.SetTrigger(AnimatorHashSpawn);
         }
@@ -298,13 +299,13 @@ namespace Gameplay
         // Animation Event
         private void OnSpawnEnd()
         {
-            State = AstronautState.NORMAL;
+            State = AstronautState.Normal;
         }
 
         public bool CanMove()
         {
-            return (State == AstronautState.NORMAL || State == AstronautState.GHOST) &&
-                TaskState == AstronautTaskState.NONE;
+            return (State == AstronautState.Normal || State == AstronautState.Ghost) &&
+                TaskState == AstronautTaskState.None;
         }
 
         public void SetFacingDirection(Direction dir)
@@ -338,7 +339,7 @@ namespace Gameplay
 
         public void ToGhost()
         {
-            State = AstronautState.GHOST;
+            State = AstronautState.Ghost;
             gameObject.SetLayerRecursively(GhostLayerName);
             spriteRenderer.sortingLayerName = GhostLayerName;
             _hitbox.isTrigger = true;

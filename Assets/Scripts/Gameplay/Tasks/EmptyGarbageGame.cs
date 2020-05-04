@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
-using CustomExtensions;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+
+using CustomExtensions;
+using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
 {
@@ -13,17 +15,17 @@ namespace Gameplay.Tasks
         public AudioClip garbStart;
         public AudioClip garbLoop;
         public AudioClip garbEnd;
-        
+
         public Image leafPrefab;
         public Sprite[] leavesSprites;
         public RectTransform leavesParent;
 
         public PointerListener handle;
         public RectTransform handleRectTransform;
-        
+
         public RectTransform bars;
         public BoxCollider2D bottomCollider;
-        
+
         private int _leavesCount = 60;
         private bool _handlePressed;
 
@@ -44,7 +46,7 @@ namespace Gameplay.Tasks
             var newHoldingDown = false;
             var mousePos = Input.mousePosition;
             var delta = _handleWorldPosition.y - mousePos.y;
-            
+
             if (_handlePressed && delta > 0)
             {
                 var percent = Mathf.Clamp01(delta / distanceToPull);
@@ -58,13 +60,13 @@ namespace Gameplay.Tasks
                     pos.y = -_handlePosition.y;
                     newHoldingDown = true;
                 }
-                
+
                 handleRectTransform.anchoredPosition = pos;
                 bars.transform.localScale = new Vector3(1f, scaleY, 1f);
             }
             else
                 ResetPositions();
-            
+
             SetHoldingDown(newHoldingDown);
 
             bottomCollider.enabled = !_isHoldingDown;
@@ -147,7 +149,7 @@ namespace Gameplay.Tasks
         {
             _handlePressed = true;
         }
-        
+
         private void OnUp()
         {
             _handlePressed = false;

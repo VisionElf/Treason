@@ -1,6 +1,6 @@
-﻿using ExitGames.Client.Photon;
-using Photon.Pun;
+﻿using Photon.Pun;
 using Photon.Realtime;
+using ExitGames.Client.Photon;
 
 public static class NetworkEvents
 {

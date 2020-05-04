@@ -1,6 +1,7 @@
-﻿using Gameplay;
-using Gameplay.Abilities.Data;
-using UnityEngine;
+﻿using UnityEngine;
+
+using Data;
+using Gameplay;
 
 namespace Cameras
 {

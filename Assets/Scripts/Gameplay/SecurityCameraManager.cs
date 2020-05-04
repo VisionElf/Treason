@@ -1,6 +1,7 @@
-﻿using Gameplay.Abilities.Data;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+
+using Data;
 
 namespace Gameplay
 {

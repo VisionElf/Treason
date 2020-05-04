@@ -1,7 +1,8 @@
-﻿using Gameplay.Abilities.Data;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Data
+using Gameplay.Abilities.Data;
+
+namespace Gameplay.Data
 {
     [CreateAssetMenu]
     public class RoleData : ScriptableObject

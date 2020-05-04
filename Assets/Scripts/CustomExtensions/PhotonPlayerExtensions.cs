@@ -1,6 +1,7 @@
-﻿using ExitGames.Client.Photon;
+﻿using Photon.Realtime;
+using ExitGames.Client.Photon;
+
 using Gameplay;
-using Photon.Realtime;
 
 namespace CustomExtensions
 {

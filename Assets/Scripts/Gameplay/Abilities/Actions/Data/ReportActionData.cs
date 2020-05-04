@@ -1,5 +1,6 @@
-﻿using Gameplay.Interactables;
-using UnityEngine;
+﻿using UnityEngine;
+
+using Gameplay.Interactables;
 
 namespace Gameplay.Abilities.Actions.Data
 {

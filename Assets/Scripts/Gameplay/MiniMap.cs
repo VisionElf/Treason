@@ -30,7 +30,7 @@ namespace Gameplay
         {
             if (_instance == null)
                 _instance = Instantiate(Resources.Load<MiniMap>("Menu/MiniMap"));
-            
+
             if (_isShowing && miniMapType == _currentMapType)
                 HideMiniMap();
             else

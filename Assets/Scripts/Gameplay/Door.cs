@@ -7,11 +7,11 @@ namespace Gameplay
         public float closeDuration;
         public AudioClip closeSound;
         public AudioClip openSound;
-        
+
         private Animator _animator;
         private bool _closed;
         private AudioSource _audioSource;
-        
+
         private static readonly int AnimatorHashClosed = Animator.StringToHash("Closed");
 
         private void Awake()

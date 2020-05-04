@@ -32,6 +32,6 @@ Material:
     m_Colors:
     - Color_46513623: {r: 1, g: 0.9957261, b: 0, a: 1}
     - Color_FA4A2375: {r: 1, g: 1, b: 0, a: 0.5019608}
-    - _HighlightColor: {r: 1, g: 1, b: 1, a: 0.5019608}
+    - _HighlightColor: {r: 1, g: 1, b: 1, a: 0.32941177}
     - _InnerColor: {r: 1, g: 1, b: 1, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}

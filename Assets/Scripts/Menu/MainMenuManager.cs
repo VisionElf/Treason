@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using CustomExtensions;
-using Managers;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
-using TMPro;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
+using Managers;
 
 namespace Menu
 {

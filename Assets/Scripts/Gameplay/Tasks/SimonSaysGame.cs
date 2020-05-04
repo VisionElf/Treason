@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using DG.Tweening;
+using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
 {
@@ -16,11 +17,11 @@ namespace Gameplay.Tasks
         public float delayBetweenLights = 1f;
         public float postDelay = 0.5f;
         public AudioClip sound;
-        
+
         [Header("References")]
         public RectTransform leftPanelLightContainer;
         public RectTransform leftPanelButtonsContainer;
-        
+
         public RectTransform rightPanelLightContainer;
         public RectTransform rightPanelButtonsContainer;
 
@@ -29,7 +30,7 @@ namespace Gameplay.Tasks
 
         private Image[] _leftPanelButtons;
         private Button[] _rightPanelButtons;
-        
+
         private List<int> _answer;
         private List<int> _currentAnswer;
 
@@ -61,7 +62,7 @@ namespace Gameplay.Tasks
                 _leftPanelLights[i] = leftPanelLightContainer.GetChild(i).GetComponent<Image>();
                 _rightPanelLights[i] = rightPanelLightContainer.GetChild(i).GetComponent<Image>();
             }
-            
+
             for (var i = 0; i < 9; i++)
             {
                 _leftPanelButtons[i] = leftPanelButtonsContainer.GetChild(i).GetComponent<Image>();
@@ -71,7 +72,7 @@ namespace Gameplay.Tasks
                 _rightPanelButtons[i].onClick.AddListener(() => OnButtonPressed(index));
             }
             _indicatorColor = _leftPanelButtons[0].color;
-            
+
             _answer = new List<int>();
             for (var i = 0; i < stepCount; i++)
                 _answer.Add(Random.Range(0, 9));
@@ -89,11 +90,11 @@ namespace Gameplay.Tasks
         {
             _currentStep = 1;
             _currentAnswer = new List<int>();
-            
+
             while (_currentStep <= stepCount)
             {
                 _currentAnswer.Clear();
-                
+
                 SetCurrentStepLights(_currentStep);
                 SetButtonsInteractable(false);
                 UpdateCurrentLights();
@@ -103,9 +104,9 @@ namespace Gameplay.Tasks
                 yield return new WaitForSeconds(postDelay);
 
                 SetButtonsInteractable(true);
-            
+
                 yield return WaitForCompletionOrError();
-                
+
                 if (CurrentAnswerIsCorrect())
                     _currentStep++;
             }
@@ -113,7 +114,7 @@ namespace Gameplay.Tasks
             SetButtonsInteractable(false);
             onTaskComplete?.Invoke(this);
             yield return new WaitForSeconds(.5f);
-            
+
             onTaskShouldDisappear?.Invoke(this);
         }
 

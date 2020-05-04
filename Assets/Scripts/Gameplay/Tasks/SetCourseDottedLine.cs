@@ -8,7 +8,7 @@ namespace Gameplay.Tasks
         public DottedLine sprite;
         public Image fill;
         public DottedLine shadow;
-        
+
         private RectTransform _rectTransform;
 
         private void Awake()

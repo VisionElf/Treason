@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using EventData = Gameplay.Abilities.Data.EventData;
+
+using Data;
 
 namespace Gameplay.Lights
 {

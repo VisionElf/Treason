@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using CustomExtensions;
-using Data;
-using ExitGames.Client.Photon;
-using Managers;
+using UnityEngine;
+using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
-using TMPro;
-using UnityEngine;
+using EventData = ExitGames.Client.Photon.EventData;
+
+using CustomExtensions;
+using Managers;
+using Data;
 
 public class HostManager : MonoBehaviour
 {

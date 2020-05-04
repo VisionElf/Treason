@@ -54,10 +54,10 @@ namespace Gameplay.Tasks
                     var basePosX = map.position.x + distance * _currentCheckpoint;
 
                     var percent = (mousePosX - basePosX) / distance;
-                    
+
                     var currPos = _checkpoints[_currentCheckpoint].AnchoredPosition;
                     var targetPos = _checkpoints[_currentCheckpoint + 1].AnchoredPosition;
-                    
+
                     ship.anchoredPosition = Vector2.Lerp(currPos, targetPos, percent);
                     _dottedLines[_currentCheckpoint].SetProgress(percent);
 

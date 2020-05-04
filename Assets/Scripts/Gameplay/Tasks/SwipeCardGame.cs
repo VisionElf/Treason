@@ -1,9 +1,11 @@
 ﻿using System;
-using CustomExtensions;
-using DG.Tweening;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
+
+using CustomExtensions;
+using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
 {
@@ -108,12 +110,12 @@ namespace Gameplay.Tasks
         private void AcceptCard()
         {
             cardListener.enabled = false;
-            
+
             _audioSource.PlayOneShot(acceptSound);
             MoveCardToWallet();
             GreenLightOn();
             SetStatusText("ACCEPTED. THANK YOU.");
-            
+
             onTaskComplete?.Invoke(this);
         }
 

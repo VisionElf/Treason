@@ -1,7 +1,8 @@
-﻿using Gameplay;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
+using Gameplay;
 
 namespace Menu
 {

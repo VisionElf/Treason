@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
 using Gameplay.Abilities.Data;
@@ -37,7 +38,7 @@ namespace Gameplay.Abilities
             if (Button)
             {
                 if (_currentTarget != null && _currentTarget is Interactable interactable)
-                    Button.SetIcon(interactable.specificIcon);
+                    Button.SetIcon(interactable.overrideIcon);
                 else
                     Button.ResetIcon();
             }

@@ -1,8 +1,8 @@
-﻿using DG.Tweening;
-using Gameplay;
-using Managers;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine;
+using DG.Tweening;
+
+using Gameplay;
 
 namespace HUD
 {

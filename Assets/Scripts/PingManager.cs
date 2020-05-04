@@ -1,7 +1,8 @@
 ﻿using System.Collections;
-using Managers;
-using Photon.Pun;
 using UnityEngine;
+using Photon.Pun;
+
+using Managers;
 
 public class PingManager : SingletonMB<PingManager>
 {

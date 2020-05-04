@@ -1,6 +1,6 @@
-﻿using Photon.Pun;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class LobbyStartButton : MonoBehaviour
 {

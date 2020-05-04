@@ -1,7 +1,7 @@
 ﻿using System.Collections;
-using Gameplay;
-using Managers;
 using UnityEngine;
+
+using Gameplay;
 
 namespace Menu
 {

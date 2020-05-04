@@ -1,8 +1,8 @@
-﻿using Photon.Pun;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine;
+using Photon.Pun;
 
-[RequireComponent(typeof(PingText))]
+[RequireComponent(typeof(TMP_Text))]
 public class PingText : MonoBehaviour
 {
     private TMP_Text _text;

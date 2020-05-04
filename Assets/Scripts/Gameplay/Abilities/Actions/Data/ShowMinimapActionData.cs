@@ -6,7 +6,7 @@ namespace Gameplay.Abilities.Actions.Data
     public class ShowMinimapActionData : ActionData
     {
         public MiniMapType miniMapType;
-        
+
         public override void Execute(ActionContext context)
         {
             MiniMap.ToggleMiniMap(miniMapType);

@@ -1,8 +1,9 @@
-﻿using Gameplay;
-using Gameplay.Abilities;
-using Gameplay.Abilities.Data;
-using System.Linq;
+﻿using System.Linq;
 using UnityEngine;
+
+using Data;
+using Gameplay;
+using Gameplay.Abilities;
 
 namespace HUD
 {

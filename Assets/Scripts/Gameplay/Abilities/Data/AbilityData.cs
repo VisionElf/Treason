@@ -1,7 +1,8 @@
-﻿using Gameplay.Abilities.Actions.Data;
+﻿using UnityEngine;
+
+using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
 using HUD;
-using UnityEngine;
 
 namespace Gameplay.Abilities.Data
 {

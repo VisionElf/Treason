@@ -1,5 +1,6 @@
-﻿using Gameplay.Interactables;
-using UnityEngine;
+﻿using UnityEngine;
+
+using Gameplay.Interactables;
 
 namespace Gameplay.Abilities.Actions.Data
 {
@@ -11,7 +12,7 @@ namespace Gameplay.Abilities.Actions.Data
             Astronaut source = context.Get<Astronaut>(Context.Source);
             Vent vent = context.Get<Vent>(Context.Target);
 
-            if (source.State == AstronautState.IN_VENT)
+            if (source.State == AstronautState.InVent)
                 vent.Exit(source);
             else
                 vent.Enter(source);
