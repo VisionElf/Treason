@@ -26,6 +26,8 @@ namespace Gameplay
         private List<MiniMapRoomElement> _roomElements;
         private static MiniMapType _currentMapType;
 
+        private Material _instantiatedMaterial;
+
         public static void ToggleMiniMap(MiniMapType miniMapType)
         {
             if (_instance == null)
@@ -44,6 +46,9 @@ namespace Gameplay
 
         private void Awake()
         {
+            _instantiatedMaterial = Instantiate(minimapBackground.material);
+            minimapBackground.material = _instantiatedMaterial;
+            
             _roomElements = new List<MiniMapRoomElement>();
             var map = Map.Instance;
             foreach (var room in map.rooms)
@@ -93,7 +98,7 @@ namespace Gameplay
         public void SetMiniMapColor(Color color)
         {
             color.a = 0.75f;
-            minimapBackground.material.SetColor("_Color1", color);
+            _instantiatedMaterial.SetColor("_Color1", color);
         }
 
         private Color GetMiniMapColor(MiniMapType miniMapType)
