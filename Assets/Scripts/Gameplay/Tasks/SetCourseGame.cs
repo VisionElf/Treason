@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+
+using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
 {
@@ -143,7 +144,7 @@ namespace Gameplay.Tasks
             _dottedLines.Clear();
         }
 
-        public override void StartTask(string[] parameters)
+        public override void StartTask(TaskData task)
         {
             Setup();
         }

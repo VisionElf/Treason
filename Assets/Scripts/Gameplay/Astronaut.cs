@@ -85,16 +85,15 @@ namespace Gameplay
         [Header("Sounds")]
         public AudioClip spawnSound;
 
-        private Vector3 _previousPosition;
-        private Rigidbody2D _body;
-        private Collider2D _hitbox;
-
         public bool IsRunning { get; private set; }
         public RoleData Role { get; private set; }
         public AstronautState State { get; set; }
         public AstronautTaskState TaskState { get; set; }
         public List<Ability> Abilities { get; private set; }
 
+        private Vector3 _previousPosition;
+        private Rigidbody2D _body;
+        private Collider2D _hitbox;
         private AudioSource _audioSource;
         private Direction _facingDirection;
 
@@ -188,9 +187,6 @@ namespace Gameplay
         public void Update()
         {
             UpdateDepth();
-
-            if (Debug.isDebugBuild && Input.GetKeyDown(KeyCode.Space) && isLocalCharacter)
-                Kill();
 
             Abilities?.ForEach((a) => a.Update());
 

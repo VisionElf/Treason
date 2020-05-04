@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
-  m_Name: ReactorSimonSays
+  m_Name: Cafeteria_EmptyGarbage
   m_EditorClassIdentifier: 
-  room: {fileID: 11400000, guid: 1b18b9e5693cc1447be3f7ac51f0561e, type: 2}
+  room: {fileID: 11400000, guid: 152c7b950f886964dbec681dd2567738, type: 2}
   taskName: Empty Garbage
   taskType: 0
   isCancellable: 1
-  taskPrefab: {fileID: 6554961236967571258, guid: 611d92e4fca999e4cb98e44bcde6e7c7,
+  taskPrefab: {fileID: 3780728768400285557, guid: 1b23e9495a234384a93dcefae1290230,
     type: 3}

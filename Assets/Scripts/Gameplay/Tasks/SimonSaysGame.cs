@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using DG.Tweening;
+
 using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
@@ -42,12 +43,6 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
-        }
-
-        public override void StartTask(string[] parameters)
-        {
-            Setup();
-            StartCoroutine(StartStepCoroutine());
         }
 
         public void Setup()
@@ -184,6 +179,12 @@ namespace Gameplay.Tasks
         {
             while (_currentAnswer.Count < _currentStep && CurrentAnswerIsCorrect())
                 yield return null;
+        }
+
+        public override void StartTask(TaskData task)
+        {
+            Setup();
+            StartCoroutine(StartStepCoroutine());
         }
     }
 }

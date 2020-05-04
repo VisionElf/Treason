@@ -498,13 +498,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 18606778}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &37328689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,13 +1392,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 76564672}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &77964072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,12 +1506,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8133333, y: 1.0415821}
   m_EdgeRadius: 0
---- !u!223 &81879221 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 1036256681951539680, guid: 791cf63e9a5b3f3498530cf4023785a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1036256681653783422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &95188171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,13 +1631,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 96379851}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &100988155
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,13 +4069,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 189859136}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1001 &197085553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4562,13 +4552,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 205325945}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!61 &205325947
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4687,13 +4676,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 211762234}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &216603330
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,13 +4903,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 225216620}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &226534447
 GameObject:
   m_ObjectHideFlags: 0
@@ -7371,13 +7358,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 318491153}
-  taskData: {fileID: 0}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 90f8d94ccbc79264bad53007a69e1347, type: 2}
 --- !u!1 &320912065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7470,15 +7456,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 320912067}
-  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
-  taskParameters:
-  - Admin
-  - upload
+  taskData: {fileID: 11400000, guid: 7c55b9d28bc5dfa45989ce61a554d087, type: 2}
 --- !u!1001 &322847393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7630,13 +7613,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 326882556}
   taskData: {fileID: 11400000, guid: b757d9fa949f1a34aabfd73acf71d3b3, type: 2}
-  taskParameters: []
 --- !u!1 &328171144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7729,13 +7711,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 328171146}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &330455861
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,13 +8160,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 338593307}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!114 &342310760 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7690898935440736750, guid: 9e5997220750e814687ef6baae1aaf15,
@@ -10447,13 +10427,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 453941577}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &456462639
 GameObject:
   m_ObjectHideFlags: 0
@@ -10709,15 +10688,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 460086762}
-  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
-  taskParameters:
-  - Comms
-  - download
+  taskData: {fileID: 11400000, guid: ff18476d3a6126341a8b4d3d94578069, type: 2}
 --- !u!114 &462354819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7690898935440736750, guid: 9e5997220750e814687ef6baae1aaf15,
@@ -10822,13 +10798,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 464019410}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &466183684
 GameObject:
   m_ObjectHideFlags: 0
@@ -11978,7 +11953,7 @@ GameObject:
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &522504629
 Transform:
   m_ObjectHideFlags: 0
@@ -12436,13 +12411,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 539506019}
   taskData: {fileID: 11400000, guid: 1b046343337acfb4a96c4bed4daf0ddd, type: 2}
-  taskParameters: []
 --- !u!1 &544787430
 GameObject:
   m_ObjectHideFlags: 0
@@ -13380,13 +13354,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 588796631}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &593329733
 GameObject:
   m_ObjectHideFlags: 0
@@ -13480,13 +13453,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 593329735}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!61 &593329737
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14502,13 +14474,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 697029036}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &699236622
 GameObject:
   m_ObjectHideFlags: 0
@@ -15821,13 +15792,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 761370819}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!60 &761370821
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16386,15 +16356,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 797173327}
-  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
-  taskParameters:
-  - Weapons
-  - download
+  taskData: {fileID: 11400000, guid: 7064af6a79f53534387bf84cadf2f89d, type: 2}
 --- !u!1 &798286089
 GameObject:
   m_ObjectHideFlags: 0
@@ -17044,13 +17011,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 849696622}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &855726699
 GameObject:
   m_ObjectHideFlags: 0
@@ -17948,15 +17914,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 900053496}
-  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
-  taskParameters:
-  - Naviguation
-  - download
+  taskData: {fileID: 11400000, guid: ade1238a34417e4429428fcbc83bccd1, type: 2}
 --- !u!1 &904015689
 GameObject:
   m_ObjectHideFlags: 0
@@ -22151,13 +22114,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1206072911}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1206667955
 GameObject:
   m_ObjectHideFlags: 0
@@ -22615,7 +22577,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1620083936}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1234377747
 SpriteRenderer:
@@ -22677,15 +22639,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1234377747}
-  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
-  taskParameters:
-  - Cafeteria
-  - download
+  taskData: {fileID: 11400000, guid: 70503bf78d863d64096733d0b8ca516c, type: 2}
 --- !u!1 &1239958357
 GameObject:
   m_ObjectHideFlags: 0
@@ -22880,13 +22839,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1241998230}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1248144611
 GameObject:
   m_ObjectHideFlags: 0
@@ -23577,13 +23535,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1276626963}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1001 &1280969209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24140,13 +24097,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1310749793}
   taskData: {fileID: 11400000, guid: d03ae1ddc498d634189b0fcace732d34, type: 2}
-  taskParameters: []
 --- !u!60 &1310749795
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24626,13 +24582,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1355605253}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!60 &1355605255
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25163,13 +25118,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1377989072}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1385320214
 GameObject:
   m_ObjectHideFlags: 0
@@ -25595,13 +25549,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1397556317}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!114 &1397695032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8277020863340030473, guid: 4f3f79310f87668459e5a6f042a5c8b3,
@@ -28776,15 +28729,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1537989111}
-  taskData: {fileID: 11400000, guid: 5b8538225819fdc4daca1562e1471ca6, type: 2}
-  taskParameters:
-  - Electrical
-  - download
+  taskData: {fileID: 11400000, guid: 5d746c055979af245887274c609af209, type: 2}
 --- !u!1 &1539161186
 GameObject:
   m_ObjectHideFlags: 0
@@ -29379,13 +29329,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1563145781}
-  taskData: {fileID: 11400000, guid: 1b046343337acfb4a96c4bed4daf0ddd, type: 2}
-  taskParameters: []
+  taskData: {fileID: 11400000, guid: 32071b30362bdeb4c85c2255404545a2, type: 2}
 --- !u!1 &1565822893
 GameObject:
   m_ObjectHideFlags: 0
@@ -30056,9 +30005,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2120439666}
-  - {fileID: 539506018}
   - {fileID: 1234377746}
+  - {fileID: 539506018}
+  - {fileID: 2120439666}
   - {fileID: 2035075090}
   - {fileID: 981006470}
   m_Father: {fileID: 1625180779}
@@ -31986,13 +31935,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1702481093}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1706338107
 GameObject:
   m_ObjectHideFlags: 0
@@ -32609,13 +32557,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1718235889}
   taskData: {fileID: 11400000, guid: 319e69e226021014f8389c134a788ee2, type: 2}
-  taskParameters: []
 --- !u!60 &1718235891
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -33954,13 +33901,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1813926497}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1001 &1818982751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34267,13 +34213,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1828274643}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1828737421
 GameObject:
   m_ObjectHideFlags: 0
@@ -34366,13 +34311,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1828737423}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1830628336
 GameObject:
   m_ObjectHideFlags: 0
@@ -34465,13 +34409,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1830628338}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1830818832
 GameObject:
   m_ObjectHideFlags: 0
@@ -34564,13 +34507,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1830818834}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1001 &1847766605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35226,13 +35168,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1893381196}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1912273842
 GameObject:
   m_ObjectHideFlags: 0
@@ -36054,13 +35995,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1955403007}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1958158602
 GameObject:
   m_ObjectHideFlags: 0
@@ -36153,13 +36093,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1958158604}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1961819766
 GameObject:
   m_ObjectHideFlags: 0
@@ -36370,13 +36309,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1972792990}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &1980342260
 GameObject:
   m_ObjectHideFlags: 0
@@ -37045,13 +36983,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 2035075091}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &2044685929
 GameObject:
   m_ObjectHideFlags: 0
@@ -37976,13 +37913,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 2076079225}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &2076788619
 GameObject:
   m_ObjectHideFlags: 0
@@ -38901,7 +38837,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1620083936}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2120439667
 SpriteRenderer:
@@ -38963,13 +38899,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 2120439667}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!1 &2125869244
 GameObject:
   m_ObjectHideFlags: 0
@@ -39063,13 +38998,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d959643053b6934384751f3ba1dd864, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 2125869246}
   taskData: {fileID: 0}
-  taskParameters: []
 --- !u!60 &2125869248
 PolygonCollider2D:
   m_ObjectHideFlags: 0

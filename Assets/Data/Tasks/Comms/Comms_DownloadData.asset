@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
-  m_Name: NavSetCourse
+  m_Script: {fileID: 11500000, guid: 80a7ce6bb70913c448ee7c97e04d1fe4, type: 3}
+  m_Name: Comms_DownloadData
   m_EditorClassIdentifier: 
-  room: {fileID: 11400000, guid: 7e4c3256dd0144a4ebb7bf6aa874d5b7, type: 2}
-  taskName: Empty Garbage
+  room: {fileID: 11400000, guid: 996057aa2c56b9647bbae07d957fa0c0, type: 2}
+  taskName: Download Data
   taskType: 0
   isCancellable: 1
-  taskPrefab: {fileID: 6051733508061422336, guid: 2078013fe650d574da09a13b3130d3ab,
+  taskPrefab: {fileID: 3217232921497474444, guid: e35ad6d77fb7bfe4b901b57f58bf656b,
     type: 3}

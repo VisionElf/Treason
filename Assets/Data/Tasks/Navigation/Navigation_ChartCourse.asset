@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
+  m_Name: Navigation_ChartCourse
+  m_EditorClassIdentifier: 
+  room: {fileID: 11400000, guid: 7e4c3256dd0144a4ebb7bf6aa874d5b7, type: 2}
+  taskName: Chart Course
+  taskType: 0
+  isCancellable: 1
+  taskPrefab: {fileID: 6051733508061422336, guid: 2078013fe650d574da09a13b3130d3ab,
+    type: 3}

@@ -199,7 +199,7 @@ namespace Gameplay.Tasks
             TooFast
         }
 
-        public override void StartTask(string[] parameters)
+        public override void StartTask(TaskData task)
         {
             Setup();
         }

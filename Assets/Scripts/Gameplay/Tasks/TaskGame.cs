@@ -21,6 +21,10 @@ namespace Gameplay.Tasks
             }
         }
 
-        public abstract void StartTask(string[] parameters);
+        public abstract void StartTask(TaskData task);
+        public virtual void CancelTask()
+        {
+            onTaskShouldDisappear(this);
+        }
     }
 }

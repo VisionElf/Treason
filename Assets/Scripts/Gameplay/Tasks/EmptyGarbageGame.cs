@@ -164,7 +164,7 @@ namespace Gameplay.Tasks
             _leaves.Add(obj);
         }
 
-        public override void StartTask(string[] parameters)
+        public override void StartTask(TaskData task)
         {
             Setup();
         }

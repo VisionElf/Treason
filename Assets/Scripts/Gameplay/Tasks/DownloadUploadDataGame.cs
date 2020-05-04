@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
+using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
 {
-    public class UploadDataGame : TaskGame
+    public class DownloadUploadDataGame : TaskGame
     {
         [Header("Settings")]
         public float durationInSeconds = 10;
-        
+
         [Header("References")]
         public TMP_Text leftFolderText;
         public TMP_Text rightFolderText;
@@ -18,7 +20,7 @@ namespace Gameplay.Tasks
         public Animator leftFolderAnimator;
         public Animator rightFolderAnimator;
         public Animator runningAnimator;
-        
+
         public GameObject tower;
         public GameObject rightFiles;
 
@@ -26,28 +28,24 @@ namespace Gameplay.Tasks
         public Button downloadButton;
 
         public GameObject progress;
-        
+
         public Image progressImage;
         public TMP_Text progressText;
         public TMP_Text timeRemainingText;
 
-        private UploadDataParameters _parameters;
-
-        public void Setup()
+        public void Setup(string roomName, bool isUpload)
         {
-            var isUpload = _parameters.isUpload;
-
-            leftFolderText.text = isUpload ? "My Tablet" : _parameters.room;
+            leftFolderText.text = isUpload ? "My Tablet" : roomName;
             rightFolderText.text = isUpload ? "Headquarters" : "My Tablet";
-            
+
             tower.gameObject.SetActive(isUpload);
             uploadButton.gameObject.SetActive(isUpload);
-            
+
             rightFiles.gameObject.SetActive(!isUpload);
             downloadButton.gameObject.SetActive(!isUpload);
-            
+
             progress.SetActive(false);
-            
+
             uploadButton.onClick.AddListener(OnButtonClick);
             downloadButton.onClick.AddListener(OnButtonClick);
 
@@ -72,14 +70,14 @@ namespace Gameplay.Tasks
 
         private IEnumerator ProgressCoroutine()
         {
-            var time = 0f;
+            float time = 0f;
             while (time < durationInSeconds)
             {
-                var percent = Mathf.Clamp01(time / durationInSeconds);
+                float percent = Mathf.Clamp01(time / durationInSeconds);
                 progressImage.fillAmount = percent;
                 progressText.text = $"{Mathf.RoundToInt(percent * 100)}%";
                 timeRemainingText.text = $"Estimated Time: {Mathf.RoundToInt(durationInSeconds - time)}s";
-                
+
                 yield return null;
                 time += Time.deltaTime;
             }
@@ -91,28 +89,18 @@ namespace Gameplay.Tasks
             onTaskShouldDisappear?.Invoke(this);
         }
 
-        public override void StartTask(string[] parameters)
+        public override void StartTask(TaskData task)
         {
-            if (parameters.Length >= 2)
-            {
-                _parameters = new UploadDataParameters
-                {
-                    room = parameters[0],
-                    isUpload = parameters[1].ToLower().Equals("upload") 
-                };
-                Setup();
-            }
-            else
-            {
-                throw new Exception($"Wrong parameters count for task: {this}");
-            }
-        }
-    }
+            bool isUpload;
 
-    [Serializable]
-    public struct UploadDataParameters
-    {
-        public bool isUpload;
-        public string room;
+            if (task is UploadDataTaskData)
+                isUpload = true;
+            else if (task is DownloadDataTaskData)
+                isUpload = false;
+            else
+                throw new ArgumentException("Wrong TaskData type for this Game");
+
+            Setup(task.room.roomName, isUpload);
+        }
     }
 }

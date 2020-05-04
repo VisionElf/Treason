@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
-  m_Name: EmptyGarbage
+  m_Name: Storage_EmptyChute
   m_EditorClassIdentifier: 
-  room: {fileID: 0}
-  taskName: Empty Garbage
+  room: {fileID: 11400000, guid: 06e34020cf77f1044b6da968a1106829, type: 2}
+  taskName: Empty Chute
   taskType: 0
   isCancellable: 1
   taskPrefab: {fileID: 3780728768400285557, guid: 1b23e9495a234384a93dcefae1290230,

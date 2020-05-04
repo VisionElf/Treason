@@ -15,15 +15,9 @@ namespace Gameplay.Abilities.Actions.Data
             if (target != null)
             {
                 if (astronaut.TaskState == AstronautTaskState.InTask && target.IsCancellable)
-                {
-                    astronaut.TaskState = AstronautTaskState.None;
                     target.StopTask();
-                }
                 else
-                {
-                    astronaut.TaskState = AstronautTaskState.InTask;
                     target.StartTask();
-                }
             }
         }
     }
