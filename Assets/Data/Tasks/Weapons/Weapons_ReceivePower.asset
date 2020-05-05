@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
+  m_Name: Weapons_ReceivePower
+  m_EditorClassIdentifier: 
+  room: {fileID: 11400000, guid: 0085bcfa1d0e16b4f8374db8141f7d43, type: 2}
+  taskName: Receive Power
+  taskType: 0
+  isCancellable: 1
+  taskPrefab: {fileID: 4050266544758243232, guid: d7eab54a61ae1514eac2e5c3926d3e3e,
+    type: 3}
+  taskParameters: []
