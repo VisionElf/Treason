@@ -79,8 +79,14 @@ namespace Gameplay.Tasks
             if (CurrentSlider.GetPercent().y >= 1f)
             {
                 onTaskComplete?.Invoke(this);
+                Invoke(nameof(Disappear), 0.5f);
                 Debug.Log("complete");
             }
+        }
+
+        private void Disappear()
+        {
+            onTaskShouldDisappear?.Invoke(this);
         }
 
         public override void StartTask(TaskData task)
