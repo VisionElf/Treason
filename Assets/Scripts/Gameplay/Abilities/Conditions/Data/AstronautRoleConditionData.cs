@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 
-using Gameplay.Data;
 using Gameplay.Abilities.Actions.Data;
+using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Gameplay.Abilities.Conditions.Data
 {

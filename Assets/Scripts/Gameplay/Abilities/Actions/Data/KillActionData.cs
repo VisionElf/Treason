@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Gameplay.Entities;
+
 namespace Gameplay.Abilities.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Kill Action")]

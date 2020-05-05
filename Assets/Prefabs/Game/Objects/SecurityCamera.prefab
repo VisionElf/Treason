@@ -97,8 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actualCamera: {fileID: 0}
   index: 3
-  cameraStartEvent: {fileID: 11400000, guid: 0c29bf3fc40a9124a9045fc2e63050bf, type: 2}
-  cameraStopEvent: {fileID: 11400000, guid: c63d6fe5ecb4afb4ea1e67f79e8f2dc5, type: 2}
+  cameraStartEvent: {fileID: 11400000, guid: 441b6984c7254664d9f3e924843e6fdf, type: 2}
+  cameraStopEvent: {fileID: 11400000, guid: 6115ad4ce83130e4ca7a66af4766c44b, type: 2}
 --- !u!95 &2531683994668669665
 Animator:
   serializedVersion: 3

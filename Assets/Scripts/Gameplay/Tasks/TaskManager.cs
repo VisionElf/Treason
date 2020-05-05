@@ -2,6 +2,7 @@
 using UnityEngine;
 using DG.Tweening;
 
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
@@ -33,8 +34,7 @@ namespace Gameplay.Tasks
             _openedTask = Instantiate(task.taskPrefab, transform);
             _taskGames.Add(_openedTask);
 
-            Astronaut.LocalAstronaut.ResetSpeed();
-            Astronaut.LocalAstronaut.TaskState = AstronautTaskState.InTask;
+            Astronaut.LocalAstronaut.Freeze();
             _openedTask.StartTask(task);
 
             Vector2 pos = _openedTask.RectTransform.anchoredPosition;
@@ -57,12 +57,14 @@ namespace Gameplay.Tasks
             }
         }
 
+        public bool IsTaskOpened() => _openedTask != null;
+
         private void OnTaskShouldDisappear(TaskGame taskGame)
         {
             _audioSource.PlayOneShot(taskDisappearSound);
             taskGame.RectTransform.DOAnchorPosY(-Screen.height, .4f).OnComplete(() =>
             {
-                Astronaut.LocalAstronaut.TaskState = AstronautTaskState.None;
+                Astronaut.LocalAstronaut.Unfreeze();
                 Destroy(taskGame.gameObject);
             });
         }

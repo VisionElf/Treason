@@ -3,6 +3,7 @@ using TMPro;
 using DG.Tweening;
 
 using Gameplay;
+using Gameplay.Entities;
 
 namespace HUD
 {
@@ -21,10 +22,10 @@ namespace HUD
 
         private void Update()
         {
-            var localPlayer = Astronaut.LocalAstronaut;
+            Astronaut localPlayer = Astronaut.LocalAstronaut;
             if (localPlayer)
             {
-                var room = Map.Instance.GetRoomAt(localPlayer.transform.position);
+                MapRoom room = Map.Instance.GetRoomAt(localPlayer.transform.position);
                 if (room) SetRoomName(room.RoomName);
                 else SetRoomName("");
             }

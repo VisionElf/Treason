@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-using Data;
+using Gameplay.Data;
 
 namespace Gameplay
 {

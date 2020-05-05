@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-using Gameplay;
+using Gameplay.Entities;
 
 [RequireComponent(typeof(Collider2D))]
 public class AudioSourceZone : MonoBehaviour

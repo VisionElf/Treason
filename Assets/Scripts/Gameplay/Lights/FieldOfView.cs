@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-using Data;
+using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Gameplay.Lights
 {
@@ -10,7 +11,7 @@ namespace Gameplay.Lights
         public const float Angle = 361f;
 
         [Header("Events")]
-        public EventData[] disableEvents;
+        public EventData onLocalAstronautToGhost;
 
         [Header("Base")]
         public float radius = 3f;
@@ -48,14 +49,12 @@ namespace Gameplay.Lights
 
         private void Awake()
         {
-            foreach (EventData e in disableEvents)
-                e.Register(() => SetActive(false));
+            onLocalAstronautToGhost.Register(() => SetActive(false));
         }
 
         private void OnDestroy()
         {
-            foreach (EventData e in disableEvents)
-                e.Unregister(() => SetActive(false));
+            onLocalAstronautToGhost.Unregister(() => SetActive(false));
         }
 
         private void Start()

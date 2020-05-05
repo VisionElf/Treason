@@ -2,12 +2,14 @@
 using UnityEngine.UI;
 using TMPro;
 
-using Gameplay;
+using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Menu
 {
     public class RoleMenu : MonoBehaviour
     {
+        [Header("Role Menu")]
         public TMP_Text roleText;
         public TMP_Text descriptionText;
         public Image backgroundImage;
@@ -24,7 +26,7 @@ namespace Menu
 
         private void Start()
         {
-            var audioSource = GetComponent<AudioSource>();
+            AudioSource audioSource = GetComponent<AudioSource>();
             audioSource.PlayOneShot(menuSound);
         }
 
@@ -34,8 +36,8 @@ namespace Menu
 
             _animator.enabled = true;
 
-            var role = localAstronaut.Role;
-            var impostorsCount = 1;
+            RoleData role = localAstronaut.Role;
+            int impostorsCount = 1;
 
             roleText.text = role.roleName;
             roleText.color = role.roleColor;

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 
-using Gameplay.Interactables;
+using Gameplay.Entities;
+using Gameplay.Entities.Interactables;
+using Gameplay.Tasks;
 
 namespace Gameplay.Abilities.Actions.Data
 {
@@ -14,10 +16,10 @@ namespace Gameplay.Abilities.Actions.Data
 
             if (target != null)
             {
-                if (astronaut.TaskState == AstronautTaskState.InTask && target.IsCancellable)
-                    target.StopTask();
+                if (!TaskManager.Instance.IsTaskOpened())
+                    TaskManager.Instance.CreateTaskGame(target.taskData);
                 else
-                    target.StartTask();
+                    TaskManager.Instance.ExitCurrentTaskGame();
             }
         }
     }

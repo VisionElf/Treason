@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using CustomExtensions;
-using Data;
-using Gameplay;
+using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Managers
 {
@@ -15,7 +15,7 @@ namespace Managers
         public Transform characterParent;
         public Transform[] characterSpawnPoints;
 
-        public EventData OnLocalAstronautCreated;
+        public EventData onLocalAstronautCreated;
 
         private void OnEnable()
         {
@@ -47,7 +47,7 @@ namespace Managers
             }
 
             Astronaut.LocalAstronaut.CreateAbilities();
-            OnLocalAstronautCreated.TriggerEvent();
+            onLocalAstronautCreated.TriggerEvent();
 
             if (characterParent != null)
                 astronaut.transform.SetParent(characterParent);

@@ -2,11 +2,13 @@
 using UnityEngine;
 
 using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Gameplay
 {
     public class MapRoom : MonoBehaviour
     {
+        [Header("Map Room")]
         public RoomData data;
         public Door[] doors;
         public Sprite sabotageIcon;

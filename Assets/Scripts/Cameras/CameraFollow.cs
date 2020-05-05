@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-using Data;
-using Gameplay;
+using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Cameras
 {

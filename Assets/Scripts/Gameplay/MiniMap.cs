@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+using Gameplay.Entities;
+
 namespace Gameplay
 {
     public enum MiniMapType
@@ -13,12 +15,11 @@ namespace Gameplay
 
     public class MiniMap : MonoBehaviour
     {
+        [Header("Mini Map")]
         public RectTransform minimapObject;
         public Image minimapBackground;
         public RectTransform astronautIcon;
         public MiniMapRoomElement roomElementPrefab;
-
-        private Astronaut _player;
 
         private static MiniMap _instance;
         private static bool _isShowing;
@@ -39,29 +40,26 @@ namespace Gameplay
                 _instance.Show(miniMapType);
         }
 
-        public static void HideMiniMap()
-        {
-            _instance.Hide();
-        }
+        public static void HideMiniMap() => _instance.Hide();
 
         private void Awake()
         {
             _instantiatedMaterial = Instantiate(minimapBackground.material);
             minimapBackground.material = _instantiatedMaterial;
-            
+
             _roomElements = new List<MiniMapRoomElement>();
-            var map = Map.Instance;
+            Map map = Map.Instance;
             foreach (var room in map.rooms)
             {
-                var posPercent = map.GetPositionPercent(room.GetCenter());
-                var pos = GetMiniMapPosition(posPercent);
+                Vector2 posPercent = map.GetPositionPercent(room.GetCenter());
+                Vector2 pos = GetMiniMapPosition(posPercent);
                 AddMiniMapRoomElement(pos, room);
             }
         }
 
         private Vector2 GetMiniMapPosition(Vector3 percent)
         {
-            var position = percent;
+            Vector3 position = percent;
             position.Scale(minimapObject.sizeDelta);
             return position;
         }
@@ -70,15 +68,18 @@ namespace Gameplay
         {
             if (!astronautIcon.gameObject.activeSelf) return;
 
-            var posPercent = Map.Instance.GetPositionPercent(Astronaut.LocalAstronaut.transform.position);
+            Vector2 posPercent = Map.Instance.GetPositionPercent(Astronaut.LocalAstronaut.transform.position);
             astronautIcon.anchoredPosition = GetMiniMapPosition(posPercent);
         }
 
         private void Show(MiniMapType miniMapType)
         {
-            _currentMapType = miniMapType;
-            _isShowing = true;
             gameObject.SetActive(true);
+
+            _currentMapType = miniMapType;
+            if (_currentMapType == MiniMapType.Admin)
+                Astronaut.LocalAstronaut.Freeze();
+            _isShowing = true;
             SetMiniMapColor(GetMiniMapColor(miniMapType));
 
             astronautIcon.gameObject.SetActive(miniMapType == MiniMapType.Standard);
@@ -92,6 +93,9 @@ namespace Gameplay
         public void Hide()
         {
             _isShowing = false;
+            if (_currentMapType == MiniMapType.Admin)
+                Astronaut.LocalAstronaut.Unfreeze();
+
             gameObject.SetActive(false);
         }
 
@@ -108,7 +112,7 @@ namespace Gameplay
                 case MiniMapType.Standard:
                     return Color.blue;
                 case MiniMapType.Admin:
-                    return Color.yellow;
+                    return Color.green;
                 case MiniMapType.Sabotage:
                     return Color.red;
             }
@@ -118,15 +122,12 @@ namespace Gameplay
 
         public void AddMiniMapRoomElement(Vector3 pos, MapRoom room)
         {
-            var roomElement = Instantiate(roomElementPrefab, minimapObject);
+            MiniMapRoomElement roomElement = Instantiate(roomElementPrefab, minimapObject);
             roomElement.GetComponent<RectTransform>().anchoredPosition = pos;
             roomElement.SetRoom(room);
             _roomElements.Add(roomElement);
         }
 
-        public Vector2 GetSize()
-        {
-            return minimapObject.sizeDelta;
-        }
+        public Vector2 GetSize() => minimapObject.sizeDelta;
     }
 }

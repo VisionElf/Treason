@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldown: 25
   abilityRange: 1
   targetTypes:
-  - {fileID: 11400000, guid: c9f0815df4761ac42bece6b5f76cef60, type: 2}
+  - {fileID: 11400000, guid: 0889ecea6d3cd9e488a3e9175f5f16d8, type: 2}
   conditions:
   - {fileID: 11400000, guid: 1977d8a2fc27e0c4a8059b43fb4c4ece, type: 2}
   - {fileID: 11400000, guid: 245211d05799faf45af4e7414683870a, type: 2}

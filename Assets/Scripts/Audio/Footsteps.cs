@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 
 using CustomExtensions;
-using Gameplay;
+using Gameplay.Entities;
 
 namespace Audio
 {
@@ -23,6 +23,7 @@ namespace Audio
     {
         public const float RunAnimationLength = 0.2f;
 
+        [Header("Footsteps")]
         public float period;
         public float offset;
         public FootstepsList[] list;

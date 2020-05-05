@@ -1,10 +1,13 @@
 ﻿using Unity.Mathematics;
 using UnityEngine;
 
+using Gameplay.Entities;
+
 namespace Gameplay.Lights
 {
     public class LightSystem : MonoBehaviour
     {
+        [Header("Light System")]
         public float range;
         public BoxCollider2D mapCollider;
         public int resolution;

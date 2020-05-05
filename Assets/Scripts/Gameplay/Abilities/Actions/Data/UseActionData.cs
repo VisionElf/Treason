@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+using Gameplay.Entities;
+
 namespace Gameplay.Abilities.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Use Action")]
@@ -7,8 +9,8 @@ namespace Gameplay.Abilities.Actions.Data
     {
         public override void Execute(ActionContext context)
         {
-            var target = context.Get<MonoBehaviour>(Context.Target);
-            target.SendMessage("Interact");
+            UseableEntity target = context.Get<UseableEntity>(Context.Target);
+            target.action.Execute(context);
         }
     }
 }

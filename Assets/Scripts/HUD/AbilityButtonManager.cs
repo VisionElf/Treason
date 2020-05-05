@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-using Data;
-using Gameplay;
+using Gameplay.Data;
 using Gameplay.Abilities;
+using Gameplay.Entities;
 
 namespace HUD
 {

@@ -375,8 +375,8 @@ MonoBehaviour:
   - {fileID: 3127086077283772177}
   - {fileID: 7603100588543373116}
   - {fileID: 4096905994896478154}
-  cameraStartEvent: {fileID: 11400000, guid: 0c29bf3fc40a9124a9045fc2e63050bf, type: 2}
-  cameraStopEvent: {fileID: 11400000, guid: c63d6fe5ecb4afb4ea1e67f79e8f2dc5, type: 2}
+  cameraStartEvent: {fileID: 11400000, guid: 441b6984c7254664d9f3e924843e6fdf, type: 2}
+  cameraStopEvent: {fileID: 11400000, guid: 6115ad4ce83130e4ca7a66af4766c44b, type: 2}
 --- !u!1 &952688921554549332
 GameObject:
   m_ObjectHideFlags: 0

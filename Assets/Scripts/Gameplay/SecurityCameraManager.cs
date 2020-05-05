@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-using Data;
+using Gameplay.Data;
+using Gameplay.Entities;
 
 namespace Gameplay
 {
     public class SecurityCameraManager : MonoBehaviour
     {
+        [Header("Security Camera Manager")]
         public RawImage[] rawImages;
         public EventData cameraStartEvent;
         public EventData cameraStopEvent;
@@ -25,25 +27,25 @@ namespace Gameplay
                 _instance.Hide();
         }
 
-        public static void HideCameras()
+        public static void HideCameras() => _instance.Hide();
+
+        private void Show()
         {
-            _instance.Hide();
+            gameObject.SetActive(true);
+
+            Astronaut.LocalAstronaut.Freeze();
+            _isShowing = true;
+            cameraStartEvent.TriggerEvent();
         }
 
         private void Hide()
         {
-            _isShowing = false;
-            gameObject.SetActive(false);
             cameraStopEvent.TriggerEvent();
-        }
+            _isShowing = false;
+            Astronaut.LocalAstronaut.Unfreeze();
 
-        private void Show()
-        {
-            _isShowing = true;
-            gameObject.SetActive(true);
-            cameraStartEvent.TriggerEvent();
+            gameObject.SetActive(false);
         }
-
         private void Start()
         {
             for (var i = 0; i < 4; i++)

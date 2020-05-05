@@ -2,6 +2,7 @@
 
 using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
+using Gameplay.Entities.Data;
 using HUD;
 
 namespace Gameplay.Abilities.Data
@@ -17,7 +18,7 @@ namespace Gameplay.Abilities.Data
 
         [Header("Target Settings")]
         public float abilityRange;
-        public TargetTypeData[] targetTypes;
+        public EntityTypeData[] targetTypes;
         public ConditionData[] conditions;
 
         [Header("Ghost Settings")]

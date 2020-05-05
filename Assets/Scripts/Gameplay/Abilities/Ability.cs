@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 
+using HUD;
+using Gameplay.Entities;
+using Gameplay.Entities.Data;
+using Gameplay.Abilities.Data;
 using Gameplay.Abilities.Actions.Data;
 using Gameplay.Abilities.Conditions.Data;
-using Gameplay.Abilities.Data;
-using HUD;
 
 namespace Gameplay.Abilities
 {
@@ -11,18 +13,18 @@ namespace Gameplay.Abilities
     {
         public AbilityData AbilityData;
 
-        private readonly ITarget _source;
-        private ITarget _currentTarget;
+        private readonly IEntity _source;
+        private IEntity _currentTarget;
         private float _lastExecutedTime;
 
         public AbilityButton Button { get; set; }
         public bool GhostKeepAbility => AbilityData.ghostKeepAbility;
 
-        public Ability(AbilityData abilityData, ITarget source)
+        public Ability(AbilityData abilityData, IEntity source)
         {
             AbilityData = abilityData;
             _source = source;
-            _lastExecutedTime = - AbilityData.cooldown;
+            _lastExecutedTime = -AbilityData.cooldown;
         }
 
         public void Update()
@@ -35,35 +37,27 @@ namespace Gameplay.Abilities
 
             SetTarget(GetClosestAvailableTarget());
 
-            if (Button)
-            {
-                if (_currentTarget != null && _currentTarget is Interactable interactable)
-                    Button.SetIcon(interactable.overrideIcon);
-                else
-                    Button.ResetIcon();
-            }
-
             if ((!AbilityData.RequireTarget || _currentTarget != null) && Input.GetKeyDown(AbilityData.shortcutKey))
                 Execute();
         }
 
-        private ITarget GetClosestAvailableTarget()
+        private IEntity GetClosestAvailableTarget()
         {
-            ITarget closestTarget = null;
-            var minDist = AbilityData.abilityRange;
+            IEntity closestTarget = null;
+            float minDist = AbilityData.abilityRange;
 
-            var context = GetCurrentContext();
-            foreach (var targetType in AbilityData.targetTypes)
+            ActionContext context = GetCurrentContext();
+            foreach (EntityTypeData entityType in AbilityData.targetTypes)
             {
-                foreach (var target in targetType.Targets)
+                foreach (IEntity target in entityType.entities)
                 {
                     if (target == _source) continue;
                     context.Set(Context.Target, target);
                     if (!EvaluateConditions(context)) continue;
 
-                    var sourcePos = _source.GetPosition();
-                    var targetPos = target.GetPosition();
-                    var dist = Vector3.Distance(sourcePos, targetPos);
+                    Vector2 sourcePos = _source.GetPosition();
+                    Vector2 targetPos = target.GetPosition();
+                    float dist = Vector3.Distance(sourcePos, targetPos);
                     if (dist < minDist)
                     {
                         closestTarget = target;
@@ -79,26 +73,20 @@ namespace Gameplay.Abilities
             return AbilityData.conditions.Evaluate(context);
         }
 
-        private ActionContext GetCurrentContext(ITarget target = null)
+        private ActionContext GetCurrentContext(IEntity target = null)
         {
             if (target == null) target = _currentTarget;
-            return new ActionContext(
-                Context.Source, _source,
-                Context.Target, target
-                );
+            return new ActionContext(Context.Source, _source, Context.Target, target);
         }
 
         public void Execute()
         {
-            var context = new ActionContext(
-                Context.Source, _source,
-                Context.Target, _currentTarget
-            );
+            ActionContext context = new ActionContext(Context.Source, _source, Context.Target, _currentTarget);
             AbilityData.actionData.Execute(context);
             _lastExecutedTime = Time.time;
         }
 
-        private void SetTarget(ITarget target)
+        private void SetTarget(IEntity target)
         {
             if (_currentTarget == target) return;
 
@@ -109,14 +97,14 @@ namespace Gameplay.Abilities
 
         public float GetCooldownPercent()
         {
-            var elapsed = Time.time - _lastExecutedTime;
+            float elapsed = Time.time - _lastExecutedTime;
             return Mathf.Clamp01(elapsed / AbilityData.cooldown);
         }
 
         public int GetCooldownSeconds()
         {
-            var elapsed = Time.time - _lastExecutedTime;
-            var remaining = Mathf.RoundToInt(AbilityData.cooldown - elapsed);
+            float elapsed = Time.time - _lastExecutedTime;
+            int remaining = Mathf.RoundToInt(AbilityData.cooldown - elapsed);
             return remaining;
         }
 
@@ -129,7 +117,7 @@ namespace Gameplay.Abilities
 
         public bool IsInCooldown()
         {
-            var percent = GetCooldownPercent();
+            float percent = GetCooldownPercent();
             return percent < 1f;
         }
     }

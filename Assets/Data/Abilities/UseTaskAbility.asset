@@ -16,7 +16,7 @@ MonoBehaviour:
   cooldown: 0
   abilityRange: 1
   targetTypes:
-  - {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
+  - {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   conditions: []
   ghostKeepAbility: 1
   abilityIcon: {fileID: 21300048, guid: 9236c603e0d825d4a984d58d1701de67, type: 3}
