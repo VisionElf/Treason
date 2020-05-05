@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DottedLineMat
+  m_Name: DottedLineMatDivert
   m_Shader: {fileID: -6465566751694194690, guid: 4083713f0bb84b343ad509c2fee202d9,
     type: 3}
   m_ShaderKeywords: 
@@ -31,7 +31,7 @@ Material:
     m_Floats:
     - Vector1_BB28B9C7: -1
     - Vector1_EF12A345: 200
-    - _Speed: -1
+    - _Speed: -4
     - _Width: 250
     m_Colors:
     - Vector2_DE634F3A: {r: 1, g: 1, b: 0, a: 0}
