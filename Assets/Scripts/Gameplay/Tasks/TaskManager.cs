@@ -31,10 +31,10 @@ namespace Gameplay.Tasks
 
         public void CreateTaskGame<TTask>(TTask task) where TTask : TaskData
         {
+            Astronaut.LocalAstronaut.Freeze();
             _openedTask = Instantiate(task.taskPrefab, transform);
             _taskGames.Add(_openedTask);
 
-            Astronaut.LocalAstronaut.Freeze();
             _openedTask.StartTask(task);
 
             Vector2 pos = _openedTask.RectTransform.anchoredPosition;
@@ -62,11 +62,8 @@ namespace Gameplay.Tasks
         private void OnTaskShouldDisappear(TaskGame taskGame)
         {
             _audioSource.PlayOneShot(taskDisappearSound);
-            taskGame.RectTransform.DOAnchorPosY(-Screen.height, .4f).OnComplete(() =>
-            {
-                Astronaut.LocalAstronaut.Unfreeze();
-                Destroy(taskGame.gameObject);
-            });
+            taskGame.RectTransform.DOAnchorPosY(-Screen.height, 0.4f).OnComplete(() => Destroy(taskGame.gameObject));
+            Astronaut.LocalAstronaut.Unfreeze();
         }
 
         private void OnTaskComplete(TaskGame taskGame)
