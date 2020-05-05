@@ -1,0 +1,543 @@
+fileFormatVersion: 2
+guid: 3c36665eec0b6f240bb05152bfba853c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: CalibratorBaseWWires
+  - first:
+      213: 21300002
+    second: calibratorButton
+  - first:
+      213: 21300004
+    second: calibratorContactBase1Lit
+  - first:
+      213: 21300006
+    second: calibratorContactBase2Lit
+  - first:
+      213: 21300008
+    second: calibratorContactBase3Lit
+  - first:
+      213: 21300010
+    second: calibratorGauge
+  - first:
+      213: 21300012
+    second: calibratorGaugeBorder
+  - first:
+      213: 21300014
+    second: calibratorSpin1
+  - first:
+      213: 21300016
+    second: calibratorSpin2
+  - first:
+      213: 21300018
+    second: calibratorSpin3
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 676
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CalibratorBaseWWires
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 175
+        width: 500
+        height: 500
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -250, y: -250}
+        - {x: -250, y: 250}
+        - {x: 250, y: 250}
+        - {x: 250, y: -250}
+      physicsShape:
+      - - {x: -250, y: 250}
+        - {x: -250, y: -250}
+        - {x: 51, y: -250}
+        - {x: 51, y: 250}
+      - - {x: 57, y: 250}
+        - {x: 56, y: 249}
+        - {x: 56, y: -250}
+        - {x: 250, y: -250}
+        - {x: 250, y: 250}
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0752cb15e734af398a4171ef5d0bdfc
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorButton
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 2
+        width: 109
+        height: 38
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -54.5, y: -19}
+        - {x: -54.5, y: 19}
+        - {x: 54.5, y: 19}
+        - {x: 54.5, y: -19}
+      physicsShape:
+      - - {x: -54.5, y: 19}
+        - {x: -54.5, y: -14}
+        - {x: 51.5, y: -14}
+        - {x: 54.5, y: -11}
+        - {x: 54.5, y: 19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b56a8dda3341718c312cd558903182
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorContactBase1Lit
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 92
+        width: 59
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: -16}
+        - {x: -28.5, y: 16}
+        - {x: 28.5, y: 16}
+        - {x: 28.5, y: -16}
+      physicsShape:
+      - - {x: -28.5, y: 16}
+        - {x: -28.5, y: -16}
+        - {x: 28.5, y: -16}
+        - {x: 28.5, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c753c59598d4a02a1313da03c3f596c
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorContactBase2Lit
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 127
+        width: 59
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: -16}
+        - {x: -28.5, y: 16}
+        - {x: 28.5, y: 16}
+        - {x: 28.5, y: -16}
+      physicsShape:
+      - - {x: -28.5, y: 16}
+        - {x: -28.5, y: -16}
+        - {x: 28.5, y: -16}
+        - {x: 28.5, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc35031cbb3f40f4bac7ba7e6620eaaf
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorContactBase3Lit
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 57
+        width: 59
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28.5, y: -16}
+        - {x: -28.5, y: 16}
+        - {x: 28.5, y: 16}
+        - {x: 28.5, y: -16}
+      physicsShape:
+      - - {x: -28.5, y: 16}
+        - {x: -28.5, y: -16}
+        - {x: 28.5, y: -16}
+        - {x: 28.5, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3a23d157be4f03b995d07b6b5a4727
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorGauge
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 8
+        width: 135
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67.5, y: -16}
+        - {x: -67.5, y: 16}
+        - {x: 67.5, y: 16}
+        - {x: 67.5, y: -16}
+      physicsShape:
+      - - {x: -67.5, y: 16}
+        - {x: -67.5, y: -16}
+        - {x: 67.5, y: -16}
+        - {x: 67.5, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2727dc4bf54ceca789d4789eed2d53
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorGaugeBorder
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 8
+        width: 135
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 67.5, y: -16}
+        - {x: -67.5, y: -16}
+        - {x: -67.5, y: 16}
+        - {x: 67.5, y: 16}
+      physicsShape:
+      - - {x: -67.5, y: 16}
+        - {x: -67.5, y: -16}
+        - {x: 67.5, y: -16}
+        - {x: 67.5, y: 16}
+      - - {x: -61.5, y: 9.999999}
+        - {x: 61.5, y: 9.999999}
+        - {x: 61.5, y: -9.999999}
+        - {x: -61.5, y: -9.999999}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367a94036aed4185a57730a1989464f1
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorSpin1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 42
+        width: 138
+        height: 131
+      alignment: 9
+      pivot: {x: 0.47, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 65.5}
+        - {x: 21, y: 65.5}
+        - {x: 45, y: 49.5}
+        - {x: 68.99999, y: 13.5}
+        - {x: 68.99999, y: -30.5}
+        - {x: 24, y: -65.5}
+        - {x: -31, y: -65.5}
+        - {x: -63, y: -40.5}
+        - {x: -69, y: -18.5}
+        - {x: -69, y: 41.5}
+      physicsShape:
+      - - {x: 68.99999, y: -14.5}
+        - {x: 68.99999, y: 12.5}
+        - {x: 50, y: 41.5}
+        - {x: 31, y: 59.5}
+        - {x: 17, y: 65.5}
+        - {x: -21, y: 65.5}
+        - {x: -31, y: 63.5}
+        - {x: -47, y: 53.5}
+        - {x: -60, y: 39.5}
+        - {x: -67, y: 24.5}
+        - {x: -69, y: 19.5}
+        - {x: -69, y: -20.5}
+        - {x: -67, y: -27.5}
+        - {x: -57, y: -43.5}
+        - {x: -43, y: -56.5}
+        - {x: -26, y: -65.5}
+        - {x: 21, y: -65.5}
+        - {x: 37, y: -55.5}
+        - {x: 51, y: -41.5}
+      - - {x: -31, y: -33.5}
+        - {x: -46, y: 3.5}
+        - {x: -39, y: 24.5}
+        - {x: 0.9999995, y: 41.5}
+        - {x: 21, y: 34.5}
+        - {x: 37, y: 11.5}
+        - {x: 33, y: 7.5}
+        - {x: 33, y: -8.5}
+        - {x: 37, y: -13.5}
+        - {x: 36, y: -14.5}
+        - {x: 29, y: -27.5}
+        - {x: -1, y: -42.5}
+      - - {x: -38, y: 12.5}
+        - {x: -38, y: -15.5}
+        - {x: -36, y: -21.5}
+        - {x: 25, y: -21.5}
+        - {x: 25, y: 12.5}
+        - {x: 18, y: 16.5}
+        - {x: -31, y: 16.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0114bdeb4c474a3286647834a32594e3
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorSpin2
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 42
+        width: 138
+        height: 131
+      alignment: 9
+      pivot: {x: 0.47, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 65.5}
+        - {x: 21, y: 65.5}
+        - {x: 45, y: 49.5}
+        - {x: 68.99999, y: 13.5}
+        - {x: 68.99999, y: -30.5}
+        - {x: 24, y: -65.5}
+        - {x: -31, y: -65.5}
+        - {x: -63, y: -40.5}
+        - {x: -69, y: -18.5}
+        - {x: -69, y: 41.5}
+      physicsShape:
+      - - {x: 69.00002, y: -14.5}
+        - {x: 69.00002, y: 12.5}
+        - {x: 50.00002, y: 41.5}
+        - {x: 31.00002, y: 59.5}
+        - {x: 17.00001, y: 65.5}
+        - {x: -20.99998, y: 65.5}
+        - {x: -30.99998, y: 63.5}
+        - {x: -46.99998, y: 53.5}
+        - {x: -59.99998, y: 39.5}
+        - {x: -66.99998, y: 24.5}
+        - {x: -68.99998, y: 19.5}
+        - {x: -68.99998, y: -20.5}
+        - {x: -66.99998, y: -27.5}
+        - {x: -56.99998, y: -43.5}
+        - {x: -42.99998, y: -56.5}
+        - {x: -25.99998, y: -65.5}
+        - {x: 21.00002, y: -65.5}
+        - {x: 37.00002, y: -55.5}
+        - {x: 51.00001, y: -41.5}
+      - - {x: -30.99998, y: -33.5}
+        - {x: -45.99998, y: 3.5}
+        - {x: -38.99998, y: 24.5}
+        - {x: 1.000015, y: 41.5}
+        - {x: 21.00002, y: 34.5}
+        - {x: 37.00002, y: 11.5}
+        - {x: 33.00002, y: 7.5}
+        - {x: 33.00002, y: -8.5}
+        - {x: 37.00002, y: -13.5}
+        - {x: 36.00002, y: -14.5}
+        - {x: 29.00001, y: -27.5}
+        - {x: -0.999985, y: -42.5}
+      - - {x: 23.00002, y: 16.5}
+        - {x: -31.99998, y: 16.5}
+        - {x: -37.99998, y: 15.5}
+        - {x: -37.99998, y: -15.5}
+        - {x: -31.99998, y: -21.5}
+        - {x: 21.00002, y: -21.5}
+        - {x: 25.00001, y: -16.5}
+        - {x: 25.00001, y: 11.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ab26803c0a43c8a8b1f31b71d197c2
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: calibratorSpin3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 42
+        width: 138
+        height: 131
+      alignment: 9
+      pivot: {x: 0.47, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 65.5}
+        - {x: 21, y: 65.5}
+        - {x: 45, y: 49.5}
+        - {x: 68.99999, y: 13.5}
+        - {x: 68.99999, y: -30.5}
+        - {x: 24, y: -65.5}
+        - {x: -31, y: -65.5}
+        - {x: -63, y: -40.5}
+        - {x: -69, y: -18.5}
+        - {x: -69, y: 41.5}
+      physicsShape:
+      - - {x: 68.99999, y: -14.5}
+        - {x: 68.99999, y: 12.5}
+        - {x: 50, y: 41.5}
+        - {x: 31, y: 59.5}
+        - {x: 17, y: 65.5}
+        - {x: -21, y: 65.5}
+        - {x: -31, y: 63.5}
+        - {x: -47, y: 53.5}
+        - {x: -60, y: 39.5}
+        - {x: -67, y: 24.5}
+        - {x: -69, y: 19.5}
+        - {x: -69, y: -20.5}
+        - {x: -67, y: -27.5}
+        - {x: -57, y: -43.5}
+        - {x: -43, y: -56.5}
+        - {x: -26, y: -65.5}
+        - {x: 21, y: -65.5}
+        - {x: 37, y: -55.5}
+        - {x: 51, y: -41.5}
+      - - {x: -31, y: -33.5}
+        - {x: -46, y: 3.5}
+        - {x: -39, y: 24.5}
+        - {x: 0.9999995, y: 41.5}
+        - {x: 21, y: 34.5}
+        - {x: 37, y: 11.5}
+        - {x: 33, y: 7.5}
+        - {x: 33, y: -8.5}
+        - {x: 37, y: -13.5}
+        - {x: 36, y: -14.5}
+        - {x: 29, y: -27.5}
+        - {x: -1, y: -42.5}
+      - - {x: -37, y: 16.5}
+        - {x: -38, y: 13.5}
+        - {x: -38, y: -21.5}
+        - {x: 21, y: -21.5}
+        - {x: 25, y: -15.5}
+        - {x: 25, y: 9.5}
+        - {x: 18, y: 16.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0731daabeb704e1b9c3ffcddac81a7c3
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: af2bcb87eecaa964bbcb0bc49e71b2d1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

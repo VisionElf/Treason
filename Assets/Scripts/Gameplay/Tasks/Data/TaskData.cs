@@ -13,6 +13,7 @@ namespace Gameplay.Tasks.Data
         public TaskType taskType;
         public bool isCancellable;
         public TaskGame taskPrefab;
+        public string[] taskParameters;
     }
 
     public enum TaskType
