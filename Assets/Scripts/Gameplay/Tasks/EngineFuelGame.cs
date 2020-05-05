@@ -40,11 +40,6 @@ namespace Gameplay.Tasks
             _audioSource = GetComponent<AudioSource>();
         }
 
-        private void Start()
-        {
-            Setup();
-        }
-
         private void Update()
         {
             if (_isFilling)
@@ -69,10 +64,8 @@ namespace Gameplay.Tasks
             redLight.color = _isFilling && _currentPercent < 1f ? _redColorOff : Color.red;
         }
 
-        private void Setup()
+        private void Setup(bool isGasCan)
         {
-            var isGasCan = false; // TODO:
-            
             gasCan.SetActive(isGasCan);
             fuel.SetActive(!isGasCan);
         }
@@ -99,7 +92,10 @@ namespace Gameplay.Tasks
 
         public override void StartTask(TaskData task)
         {
-            Setup();
+            if (task.taskParameters.Length == 1)
+            {
+                Setup(task.taskParameters[0].Equals("GAS_CAN"));
+            }
         }
     }
 }
