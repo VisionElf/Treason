@@ -14694,7 +14694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1032955953}
-  maxVolume: 1
+  maxVolume: 0.5
   fadeInDuration: 1
   fadeOutDuration: 1
 --- !u!1001 &710914395
@@ -21078,7 +21078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145769180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.7129993, y: 2.871, z: 0.0036}
+  m_LocalPosition: {x: -1.7129993, y: 2.871, z: 0.002871}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2094849188}
@@ -21140,8 +21140,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2058335787
-  m_SortingLayer: 4
+  m_SortingLayerID: -1292330511
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4324902547523078344, guid: 4659f8d0c20c39343a8b134de830825b,
     type: 3}
@@ -32491,7 +32491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718235887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59, y: -0.59, z: -0.00005}
+  m_LocalPosition: {x: -0.59, y: -0.59, z: -0.00059}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1619045224}
@@ -35973,7 +35973,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1292330511
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a6184b754504b6947ad20f34de30e6f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -36000,7 +36000,7 @@ MonoBehaviour:
   targetTypeData: {fileID: 11400000, guid: 6fde3117cbdff8a46b6d75880c15e2ee, type: 2}
   overrideIcon: {fileID: 0}
   spriteRenderer: {fileID: 1955403007}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 81587ab077cf8604d844d14bb1ebdef3, type: 2}
 --- !u!1 &1958158602
 GameObject:
   m_ObjectHideFlags: 0
