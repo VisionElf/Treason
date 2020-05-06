@@ -8,6 +8,7 @@ namespace Gameplay.Entities
     {
         [Header("Astronaut Body")]
         public AudioClip killSound;
+        public AudioClip fallSound;
         public AudioSource audioSource;
 
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
@@ -16,9 +17,16 @@ namespace Gameplay.Entities
 
         private ColorData _data;
 
+        // Animation Event
         private void PlayKillSound()
         {
             audioSource.PlayOneShot(killSound);
+        }
+
+        // Animation Event
+        private void PlayFallSound()
+        {
+            audioSource.PlayOneShot(fallSound);
         }
 
         public void SetColor(ColorData data)

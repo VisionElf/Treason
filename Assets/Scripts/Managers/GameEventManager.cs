@@ -36,16 +36,27 @@ namespace Managers
             audioSource.PlayOneShot(swordSound, swordSoundVolume);
         }
 
+        // Animation Event
+        private void PlayAlarmSound()
+        {
+            audioSource.PlayOneShot(emergencyMeetingSound);
+        }
+
+        // Animation Event
+        private void PlaySuspenseSound()
+        {
+            audioSource.PlayOneShot(deadBodyReportedSound);
+        }
+
         public void ReportDeadBody(Astronaut reporter, AstronautBody body)
         {
             foreach (Image image in astronautImages)
                 body.ApplyColor(image.material);
 
-            audioSource.PlayOneShot(deadBodyReportedSound);
             animator.SetBool(AnimatorHashDeadBodyReported, true);
             animator.SetBool(AnimatorHashEmergencyMeeting, false);
             animator.SetTrigger(AnimatorHashAnim);
-            Destroy(body.gameObject);
+            //Destroy(body.gameObject);
         }
 
         public void EmergencyMeeting(Astronaut source)
@@ -53,7 +64,6 @@ namespace Managers
             foreach (Image image in astronautImages)
                 source.ApplyColor(image.material);
 
-            audioSource.PlayOneShot(emergencyMeetingSound);
             animator.SetBool(AnimatorHashDeadBodyReported, false);
             animator.SetBool(AnimatorHashEmergencyMeeting, true);
             animator.SetTrigger(AnimatorHashAnim);
