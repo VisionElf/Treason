@@ -7,8 +7,11 @@ namespace Utilities
         public Vector2 axisMultiplier = Vector2.one;
         public Vector2 boundsX;
         public Vector2 boundsY;
+
+        public AnimationCurve offsetCurveX;
+        public AnimationCurve rotationCurveZ;
         
-        public bool Interractable { get; set; }
+        public bool Interactable { get; set; }
         
         private bool _isDragging;
         
@@ -22,6 +25,11 @@ namespace Utilities
             _parentPosition = _rectTransform.parent.position;
             
             _rect = GetRect();
+        }
+
+        private void Start()
+        {
+            Interactable = true;
         }
 
         private void OnEnable()
@@ -51,8 +59,17 @@ namespace Utilities
                 var mousePos = (Input.mousePosition - _parentPosition) / transform.lossyScale.x;
                 mousePos.Scale(axisMultiplier);
 
-                mousePos.x = Mathf.Clamp(mousePos.x, _rect.xMin, _rect.xMax);
+                mousePos.x = Mathf.Clamp(mousePos.x, _rect.xMin, _rect.xMax); 
                 mousePos.y = Mathf.Clamp(mousePos.y, _rect.yMin, _rect.yMax);
+
+                var percent = GetPercent();
+                var offsetX = offsetCurveX.Evaluate(percent.y);
+                mousePos.x += offsetX;
+
+                var rotationZ = rotationCurveZ.Evaluate(percent.y);
+                var rotation = _rectTransform.localRotation.eulerAngles;
+                rotation.z = rotationZ;
+                _rectTransform.localRotation = Quaternion.Euler(rotation);
                 
                 _rectTransform.anchoredPosition = mousePos;
             }
@@ -88,12 +105,12 @@ namespace Utilities
 
         private void OnUp()
         {
-            if (Interractable) _isDragging = false;
+            if (Interactable) _isDragging = false;
         }
 
         private void OnDown()
         {
-            if (Interractable) _isDragging = true;
+            if (Interactable) _isDragging = true;
         }
     }
 }
