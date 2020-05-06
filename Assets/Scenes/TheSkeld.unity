@@ -1727,7 +1727,7 @@ GameObject:
   - component: {fileID: 100988156}
   - component: {fileID: 100988157}
   m_Layer: 0
-  m_Name: fans1_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2089,7 +2089,7 @@ GameObject:
   - component: {fileID: 110204698}
   - component: {fileID: 110204699}
   m_Layer: 0
-  m_Name: red_light_11_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5312,7 +5312,7 @@ GameObject:
   - component: {fileID: 174590260}
   - component: {fileID: 174590261}
   m_Layer: 0
-  m_Name: floor_light2_2_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8301,7 +8301,7 @@ GameObject:
   - component: {fileID: 271883783}
   - component: {fileID: 271883784}
   m_Layer: 0
-  m_Name: red_light_3_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8908,7 +8908,7 @@ GameObject:
   - component: {fileID: 286048765}
   - component: {fileID: 286048766}
   m_Layer: 0
-  m_Name: red_light_9_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10191,7 +10191,7 @@ GameObject:
   - component: {fileID: 352886741}
   - component: {fileID: 352886742}
   m_Layer: 0
-  m_Name: floor_cable_top_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11281,7 +11281,7 @@ GameObject:
   - component: {fileID: 389380298}
   - component: {fileID: 389380299}
   m_Layer: 0
-  m_Name: red_light_13_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11642,7 +11642,7 @@ GameObject:
   - component: {fileID: 410717449}
   - component: {fileID: 410717450}
   m_Layer: 0
-  m_Name: reactor_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11997,7 +11997,7 @@ GameObject:
   - component: {fileID: 431055496}
   - component: {fileID: 431055497}
   m_Layer: 0
-  m_Name: red_light_17_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12079,7 +12079,7 @@ GameObject:
   - component: {fileID: 445827641}
   - component: {fileID: 445827642}
   m_Layer: 0
-  m_Name: floor_light3_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12457,7 +12457,7 @@ GameObject:
   - component: {fileID: 459789235}
   - component: {fileID: 459789236}
   m_Layer: 0
-  m_Name: red_light_22_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13229,7 +13229,7 @@ GameObject:
   - component: {fileID: 501397601}
   - component: {fileID: 501397602}
   m_Layer: 0
-  m_Name: pipe_light2_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14358,7 +14358,7 @@ GameObject:
   - component: {fileID: 544787431}
   - component: {fileID: 544787432}
   m_Layer: 0
-  m_Name: red_light_19_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15057,7 +15057,7 @@ GameObject:
   - component: {fileID: 584617856}
   - component: {fileID: 584617857}
   m_Layer: 0
-  m_Name: red_light_15_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15622,7 +15622,7 @@ GameObject:
   - component: {fileID: 628661051}
   - component: {fileID: 628661052}
   m_Layer: 0
-  m_Name: red_light_8_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17768,7 +17768,7 @@ GameObject:
   - component: {fileID: 763058960}
   - component: {fileID: 763058961}
   m_Layer: 0
-  m_Name: red_light_1_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17916,7 +17916,7 @@ GameObject:
   - component: {fileID: 781561819}
   - component: {fileID: 781561820}
   m_Layer: 0
-  m_Name: red_light_23_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18953,7 +18953,7 @@ GameObject:
   - component: {fileID: 855726700}
   - component: {fileID: 855726701}
   m_Layer: 0
-  m_Name: red_light_5_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19568,7 +19568,7 @@ GameObject:
   - component: {fileID: 887320618}
   - component: {fileID: 887320619}
   m_Layer: 0
-  m_Name: red_light_7_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20618,7 +20618,7 @@ GameObject:
   - component: {fileID: 933317621}
   - component: {fileID: 933317622}
   m_Layer: 0
-  m_Name: hologram_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21346,7 +21346,7 @@ GameObject:
   - component: {fileID: 979497219}
   - component: {fileID: 979497220}
   m_Layer: 0
-  m_Name: red_light_14_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21434,7 +21434,7 @@ GameObject:
   - component: {fileID: 987255905}
   - component: {fileID: 987255906}
   m_Layer: 0
-  m_Name: red_light_21_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21780,7 +21780,7 @@ GameObject:
   - component: {fileID: 1021418614}
   - component: {fileID: 1021418615}
   m_Layer: 0
-  m_Name: red_light_25_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25024,7 +25024,7 @@ GameObject:
   - component: {fileID: 1248144612}
   - component: {fileID: 1248144613}
   m_Layer: 0
-  m_Name: floor_light2_1_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25317,7 +25317,7 @@ GameObject:
   - component: {fileID: 1257112856}
   - component: {fileID: 1257112857}
   m_Layer: 0
-  m_Name: red_light_16_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26311,7 +26311,7 @@ GameObject:
   - component: {fileID: 1322121160}
   - component: {fileID: 1322121161}
   m_Layer: 0
-  m_Name: red_light_12_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27632,7 +27632,7 @@ GameObject:
   - component: {fileID: 1394927244}
   - component: {fileID: 1394927245}
   m_Layer: 0
-  m_Name: red_light_10_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28537,7 +28537,7 @@ GameObject:
   - component: {fileID: 1438484244}
   - component: {fileID: 1438484245}
   m_Layer: 0
-  m_Name: red_light_24_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28619,7 +28619,7 @@ GameObject:
   - component: {fileID: 1438551700}
   - component: {fileID: 1438551701}
   m_Layer: 0
-  m_Name: pipe_light3_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28701,7 +28701,7 @@ GameObject:
   - component: {fileID: 1441827075}
   - component: {fileID: 1441827076}
   m_Layer: 0
-  m_Name: red_light_4_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31275,7 +31275,7 @@ GameObject:
   - component: {fileID: 1543809750}
   - component: {fileID: 1543809751}
   m_Layer: 0
-  m_Name: reactor_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32069,7 +32069,7 @@ GameObject:
   - component: {fileID: 1596008076}
   - component: {fileID: 1596008077}
   m_Layer: 0
-  m_Name: red_light_2_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32349,7 +32349,7 @@ GameObject:
   - component: {fileID: 1619407685}
   - component: {fileID: 1619407686}
   m_Layer: 0
-  m_Name: floor_light1_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33564,7 +33564,7 @@ GameObject:
   - component: {fileID: 1667993552}
   - component: {fileID: 1667993553}
   m_Layer: 0
-  m_Name: pipes1_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33646,7 +33646,7 @@ GameObject:
   - component: {fileID: 1668508596}
   - component: {fileID: 1668508597}
   m_Layer: 0
-  m_Name: floor_cable_bot_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34681,7 +34681,7 @@ GameObject:
   - component: {fileID: 1710634530}
   - component: {fileID: 1710634531}
   m_Layer: 0
-  m_Name: red_light_6_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35312,7 +35312,7 @@ GameObject:
   - component: {fileID: 1735955951}
   - component: {fileID: 1735955952}
   m_Layer: 0
-  m_Name: servers_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35394,7 +35394,7 @@ GameObject:
   - component: {fileID: 1741398921}
   - component: {fileID: 1741398922}
   m_Layer: 0
-  m_Name: red_light_20_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35977,7 +35977,7 @@ GameObject:
   - component: {fileID: 1778649640}
   - component: {fileID: 1778649641}
   m_Layer: 0
-  m_Name: pipe_light1_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38076,7 +38076,7 @@ GameObject:
   - component: {fileID: 1923445732}
   - component: {fileID: 1923445733}
   m_Layer: 10
-  m_Name: terrarium_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39579,7 +39579,7 @@ GameObject:
   - component: {fileID: 2029169713}
   - component: {fileID: 2029169714}
   m_Layer: 0
-  m_Name: red_light_18_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39758,7 +39758,7 @@ GameObject:
   - component: {fileID: 2044685930}
   - component: {fileID: 2044685931}
   m_Layer: 0
-  m_Name: pipes2_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41130,7 +41130,7 @@ GameObject:
   - component: {fileID: 2094849188}
   - component: {fileID: 2094849189}
   m_Layer: 10
-  m_Name: reactor_control_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41212,7 +41212,7 @@ GameObject:
   - component: {fileID: 2095849255}
   - component: {fileID: 2095849256}
   m_Layer: 0
-  m_Name: fans2_OutsideMask
+  m_Name: OutsideMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
