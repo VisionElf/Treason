@@ -3,6 +3,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 using Gameplay.Tasks.Data;
+using Utilities;
 
 namespace Gameplay.Tasks
 {
@@ -51,19 +52,29 @@ namespace Gameplay.Tasks
                 if (_currentCheckpoint + 1 < _checkpoints.Count)
                 {
                     var mousePosX = Input.mousePosition.x;
-                    var distance = map.sizeDelta.x / (checkpointsCount - 1);
-                    var basePosX = map.position.x + distance * _currentCheckpoint;
+                    var mousePosY = Input.mousePosition.y;
+                    var yDistance = Mathf.Abs(mousePosY - ship.transform.position.y);
+                    if (yDistance < 30f)
+                    {
+                        var distance = map.sizeDelta.x / (checkpointsCount - 1);
+                        var basePosX = map.position.x + distance * _currentCheckpoint;
 
-                    var percent = (mousePosX - basePosX) / distance;
+                        var percent = (mousePosX - basePosX) / distance;
 
-                    var currPos = _checkpoints[_currentCheckpoint].AnchoredPosition;
-                    var targetPos = _checkpoints[_currentCheckpoint + 1].AnchoredPosition;
+                        var currPos = _checkpoints[_currentCheckpoint].AnchoredPosition;
+                        var targetPos = _checkpoints[_currentCheckpoint + 1].AnchoredPosition;
 
-                    ship.anchoredPosition = Vector2.Lerp(currPos, targetPos, percent);
-                    _dottedLines[_currentCheckpoint].SetProgress(percent);
+                        ship.anchoredPosition = Vector2.Lerp(currPos, targetPos, percent);
+                        _dottedLines[_currentCheckpoint].SetProgress(percent);
 
-                    if (percent >= 0.99f)
-                        SetShipCheckpoint(_currentCheckpoint + 1);
+                        if (percent >= 0.99f)
+                            SetShipCheckpoint(_currentCheckpoint + 1);
+                    }
+                    else
+                    {
+                        ship.anchoredPosition = _checkpoints[_currentCheckpoint].AnchoredPosition;
+                        _isMoving = false;
+                    }
                 }
             }
         }

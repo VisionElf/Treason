@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using Gameplay.Tasks.Data;
 using UnityEngine;
+using Utilities;
 
 namespace Gameplay.Tasks
 {
