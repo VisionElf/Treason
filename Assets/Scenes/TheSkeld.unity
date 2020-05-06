@@ -26846,7 +26846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 1355605253}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 8fbdacdebeff5934995ada98f84a0a08, type: 2}
 --- !u!60 &1355605255
 PolygonCollider2D:
   m_ObjectHideFlags: 0

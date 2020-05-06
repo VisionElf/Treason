@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 23a7957577321994e835b9f18b671e3b, type: 3}
-  m_Name: MedBay_SubmitScan
+  m_Name: MedBay_InspectSample
   m_EditorClassIdentifier: 
   room: {fileID: 11400000, guid: 834688f33eec9424eb86ff6a9a43b84d, type: 2}
-  taskName: Submit Scan
+  taskName: Inspect Sample
   taskType: 0
   isCancellable: 0
-  taskPrefab: {fileID: 7640642776959320493, guid: ac0a519de81a1c8489daa5589990e612,
+  taskPrefab: {fileID: 225455952147827265, guid: a0cce63d26f88d44e940bd8182f3eeae,
     type: 3}
   taskParameters: []
