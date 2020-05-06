@@ -258,7 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: e5eb997fc2ad83d4ba78868232427040, type: 2}
   spriteRenderer: {fileID: 1673448501312811757}
-  killSound: {fileID: 8300000, guid: a1addc751caa38741805109ed26a3255, type: 3}
+  killSound: {fileID: 8300000, guid: eb7604bc073225d4d9bf6f2be1215173, type: 3}
   audioSource: {fileID: 673486624516152329}
 --- !u!95 &7541688153605476179
 Animator:
