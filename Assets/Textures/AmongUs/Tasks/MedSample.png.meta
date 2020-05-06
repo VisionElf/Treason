@@ -1,0 +1,576 @@
+fileFormatVersion: 2
+guid: af7e26e8110aae548b4af5866dd01340
+timeCreated: 1587415324
+licenseType: Free
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: medBay_back
+  - first:
+      213: 21300002
+    second: medBay_buttonConfirm
+  - first:
+      213: 21300004
+    second: medBay_dispenser
+  - first:
+      213: 21300006
+    second: medBay_glassBack
+  - first:
+      213: 21300008
+    second: medBay_glassFrontTestTubes
+  - first:
+      213: 21300010
+    second: medBay_liquid
+  - first:
+      213: 21300012
+    second: medBay_panelBottom
+  - first:
+      213: 21300014
+    second: medBay_panelCenter
+  - first:
+      213: 21300016
+    second: medBay_panelTop
+  - first:
+      213: 21300018
+    second: medBay_sampleButton
+  externalObjects: {}
+  usedFileIDs: []
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 1008
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: medBay_back
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 63
+        width: 500
+        height: 500
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -250, y: -250}
+        - {x: -250, y: 250}
+        - {x: 250, y: 250}
+        - {x: 250, y: -250}
+      physicsShape:
+      - - {x: -250, y: 250}
+        - {x: -250, y: -250}
+        - {x: 250, y: -250}
+        - {x: 250, y: 250}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093b406cd4d6420eaa97e3ac01928369
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_buttonConfirm
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 415
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: -16}
+        - {x: -16, y: 16}
+        - {x: 16, y: 16}
+        - {x: 16, y: -16}
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -16}
+        - {x: 16, y: -16}
+        - {x: 16, y: 16}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 977f11a9e8364562be471325c459c5f4
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_dispenser
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 319
+        width: 39
+        height: 41
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: -20.5}
+        - {x: -19.5, y: 20.5}
+        - {x: 19.5, y: 20.5}
+        - {x: 19.5, y: -20.5}
+      physicsShape:
+      - - {x: -19.5, y: 20.5}
+        - {x: -19.5, y: -2.5}
+        - {x: -9.5, y: -20.5}
+        - {x: 8.5, y: -20.5}
+        - {x: 19.5, y: -6.5}
+        - {x: 19.5, y: 20.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016ca6cc1dce4ca989072d18f10e4e05
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_glassBack
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 136
+        width: 431
+        height: 149
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -163.5, y: 40.5}
+        - {x: -163.5, y: -7.5}
+        - {x: -209.5, y: -74.5}
+        - {x: -215.5, y: -74.5}
+        - {x: -215.5, y: 10.5}
+        - {x: -171.5, y: 74.5}
+        - {x: 171.5, y: 74.5}
+        - {x: 215.5, y: 10.5}
+        - {x: 215.5, y: -74.5}
+        - {x: 208.5, y: -74.5}
+        - {x: 163.5, y: -7.5}
+        - {x: 159.5, y: 44.5}
+        - {x: -75.5, y: 44.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b5350c82054ad2a511d0dbd4f1a79f
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_glassFrontTestTubes
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 287
+        width: 431
+        height: 160
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -137.5, y: 79.99999}
+        - {x: -106.5, y: 79.99999}
+        - {x: -104.5, y: 19}
+        - {x: -80.5, y: 21}
+        - {x: -80.5, y: 79.99999}
+        - {x: -43.5, y: 79.99999}
+        - {x: -41.5, y: 19}
+        - {x: -18.5, y: 19}
+        - {x: -17.5, y: 79.99999}
+        - {x: 19.5, y: 79.99999}
+        - {x: 21.5, y: 19}
+        - {x: 45.5, y: 21}
+        - {x: 44.5, y: 77}
+        - {x: 51.5, y: 79.99999}
+        - {x: 82.5, y: 79.99999}
+        - {x: 91.5, y: 18}
+        - {x: 108.5, y: 21}
+        - {x: 108.5, y: 79.99999}
+        - {x: 145.5, y: 79.99999}
+        - {x: 147.5, y: 19}
+        - {x: 189.5, y: 18}
+        - {x: 215.5, y: -20}
+        - {x: 215.5, y: -29}
+        - {x: 144.5, y: -33}
+        - {x: 144.5, y: -79.99999}
+        - {x: 108.5, y: -79.99999}
+        - {x: 106.5, y: -52}
+        - {x: 81.5, y: -46}
+        - {x: 81.5, y: -79.99999}
+        - {x: 48.5, y: -79.99999}
+        - {x: 19.5, y: -54}
+        - {x: 19.5, y: -79.99999}
+        - {x: -20.5, y: -79.99999}
+        - {x: -13.5, y: -52}
+        - {x: -44.5, y: -48}
+        - {x: -44.5, y: -79.99999}
+        - {x: -80.5, y: -79.99999}
+        - {x: -82.5, y: -52}
+        - {x: -107.5, y: -46}
+        - {x: -107.5, y: -79.99999}
+        - {x: -143.5, y: -79.99999}
+        - {x: -145.5, y: -31}
+        - {x: -215.5, y: -29}
+        - {x: -215.5, y: -18}
+        - {x: -190.5, y: 18}
+        - {x: -143.5, y: 21}
+        - {x: -144.5, y: 77}
+      physicsShape:
+      - - {x: -127.5, y: -18}
+        - {x: -127.5, y: 66}
+        - {x: -136.5, y: 66}
+        - {x: -136.5, y: -18}
+      - - {x: -73.49999, y: 66}
+        - {x: -73.49999, y: -18}
+        - {x: -65.5, y: -18}
+        - {x: -64.5, y: -16}
+        - {x: -64.5, y: 65}
+        - {x: -68.5, y: 66}
+      - - {x: -10.5, y: 66}
+        - {x: -10.5, y: -18}
+        - {x: -1.5, y: -18}
+        - {x: -0.5, y: -16}
+        - {x: -0.5, y: 54}
+        - {x: -1.5, y: 66}
+      - - {x: 53.5, y: 66}
+        - {x: 52.5, y: 64}
+        - {x: 52.5, y: -18}
+        - {x: 61.5, y: -18}
+        - {x: 61.5, y: 66}
+      - - {x: 115.5, y: 66}
+        - {x: 115.5, y: -17}
+        - {x: 117.5, y: -18}
+        - {x: 122.5, y: -18}
+        - {x: 124.5, y: -15}
+        - {x: 124.5, y: 65}
+        - {x: 121.5, y: 66}
+      - - {x: -115.5, y: 12}
+        - {x: -118.5, y: 11}
+        - {x: -118.5, y: -1}
+        - {x: -114.5, y: -1}
+        - {x: -112.5, y: 1}
+        - {x: -112.5, y: 9.999999}
+        - {x: -113.5, y: 12}
+      - - {x: -55.5, y: 1}
+        - {x: -53.5, y: -1}
+        - {x: -50.5, y: 0}
+        - {x: -50.5, y: 9}
+        - {x: -52.5, y: 11}
+        - {x: -55.5, y: 9.999999}
+      - - {x: 8.5, y: 1}
+        - {x: 10.5, y: -1}
+        - {x: 13.5, y: 0}
+        - {x: 13.5, y: 9.999999}
+        - {x: 11.5, y: 12}
+        - {x: 8.5, y: 11}
+      - - {x: 73.49999, y: 12}
+        - {x: 70.5, y: 9}
+        - {x: 70.5, y: 1}
+        - {x: 72.5, y: -1}
+        - {x: 74.5, y: -1}
+        - {x: 76.5, y: 1}
+        - {x: 76.5, y: 9.999999}
+        - {x: 74.5, y: 12}
+      - - {x: 133.5, y: 1}
+        - {x: 135.5, y: -1}
+        - {x: 138.5, y: 0}
+        - {x: 138.5, y: 9}
+        - {x: 136.5, y: 11}
+        - {x: 133.5, y: 9.999999}
+      - - {x: -115.5, y: 66.99999}
+        - {x: -118.5, y: 66}
+        - {x: -118.5, y: 35}
+        - {x: -116.5, y: 33}
+        - {x: -114.5, y: 33}
+        - {x: -112.5, y: 35}
+        - {x: -112.5, y: 65}
+        - {x: -113.5, y: 66.99999}
+      - - {x: -55.5, y: 35}
+        - {x: -53.5, y: 33}
+        - {x: -50.5, y: 34}
+        - {x: -50.5, y: 64}
+        - {x: -52.5, y: 66}
+        - {x: -55.5, y: 65}
+      - - {x: 8.5, y: 35}
+        - {x: 10.5, y: 33}
+        - {x: 13.5, y: 34}
+        - {x: 13.5, y: 64}
+        - {x: 11.5, y: 66}
+        - {x: 8.5, y: 65}
+      - - {x: 74.5, y: 66.99999}
+        - {x: 72.5, y: 66.99999}
+        - {x: 70.5, y: 64}
+        - {x: 70.5, y: 35}
+        - {x: 72.5, y: 33}
+        - {x: 74.5, y: 33}
+        - {x: 76.5, y: 35}
+        - {x: 76.5, y: 66}
+      - - {x: 133.5, y: 35}
+        - {x: 135.5, y: 33}
+        - {x: 138.5, y: 34}
+        - {x: 138.5, y: 64}
+        - {x: 136.5, y: 66}
+        - {x: 133.5, y: 65}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1369b17896fa489ca3aee193354a2f39
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_liquid
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 362
+        width: 30
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -42.5}
+        - {x: -15, y: 42.5}
+        - {x: 15, y: 42.5}
+        - {x: 15, y: -42.5}
+      physicsShape:
+      - - {x: -15, y: 42.5}
+        - {x: -15, y: -40.5}
+        - {x: -11, y: -42.5}
+        - {x: 12, y: -42.5}
+        - {x: 15, y: -38.5}
+        - {x: 15, y: 42.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ad4d0ef71342b5875426b3b18529de
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_panelBottom
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 449
+        width: 504
+        height: 114
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -252, y: -57}
+        - {x: -252, y: 57}
+        - {x: 252, y: 57}
+        - {x: 252, y: -57}
+      physicsShape:
+      - - {x: -252, y: 57}
+        - {x: -252, y: -57}
+        - {x: 252, y: -57}
+        - {x: 252, y: 57}
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4f012c3afe4c20920276e42ab476a3
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_panelCenter
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 488
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -175, y: 66}
+        - {x: 175, y: 66}
+        - {x: 244, y: -33}
+        - {x: 244, y: -66}
+        - {x: -244, y: -66}
+        - {x: -244, y: -33}
+        - {x: -178, y: 65}
+      physicsShape:
+      - - {x: 230, y: -14}
+        - {x: 176, y: 64}
+        - {x: 173, y: 66}
+        - {x: -175, y: 66}
+        - {x: -184, y: 54}
+        - {x: -190, y: 45}
+        - {x: -197, y: 35}
+        - {x: -203, y: 26}
+        - {x: -214, y: 9.999999}
+        - {x: -219, y: 3}
+        - {x: -225, y: -6}
+        - {x: -232, y: -16}
+        - {x: -244, y: -34}
+        - {x: -244, y: -66}
+        - {x: 244, y: -66}
+        - {x: 244, y: -35}
+        - {x: 243, y: -33}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a09b3eb2bdb46f1b93a6e6a4ff28fce
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_panelTop
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 4
+        width: 504
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -252, y: -28.5}
+        - {x: -252, y: 28.5}
+        - {x: 252, y: 28.5}
+        - {x: 252, y: -28.5}
+      physicsShape:
+      - - {x: -252, y: 28.5}
+        - {x: -252, y: -28.5}
+        - {x: 252, y: -28.5}
+        - {x: 252, y: 28.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d849bba5a794967879f23ade7467b38
+      internalID: 21300016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: medBay_sampleButton
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 383
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -15}
+        - {x: -15, y: 15}
+        - {x: 15, y: 15}
+        - {x: 15, y: -15}
+      physicsShape:
+      - - {x: -11, y: 15}
+        - {x: -15, y: 9.999999}
+        - {x: -15, y: -9}
+        - {x: -12, y: -15}
+        - {x: 13, y: -15}
+        - {x: 15, y: -14}
+        - {x: 15, y: 15}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 059c0c8689d84496be71a0f887b61a4c
+      internalID: 21300018
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
