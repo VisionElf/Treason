@@ -259,6 +259,7 @@ MonoBehaviour:
   entityType: {fileID: 11400000, guid: e5eb997fc2ad83d4ba78868232427040, type: 2}
   spriteRenderer: {fileID: 1673448501312811757}
   killSound: {fileID: 8300000, guid: eb7604bc073225d4d9bf6f2be1215173, type: 3}
+  fallSound: {fileID: 8300000, guid: c1560d33d8144714688ed5e92c3a93ff, type: 3}
   audioSource: {fileID: 673486624516152329}
 --- !u!95 &7541688153605476179
 Animator:
@@ -354,7 +355,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.81190544, y: 0.5544785}
+  m_Size: {x: 0.84256095, y: 0.6796875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

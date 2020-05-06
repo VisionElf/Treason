@@ -48,7 +48,7 @@ namespace Gameplay.Tasks
         {
             _asteroids = new List<Asteroid>();
             mask.onDown += OnDown;
-            
+
             _currentScore = 0;
             UpdateText();
             UpdateLines();
@@ -63,7 +63,7 @@ namespace Gameplay.Tasks
                 var remaining = scoreGoal - _currentScore;
                 if (_asteroids.Count < remaining)
                     CreateAsteroid();
-                
+
                 yield return new WaitForSeconds(spawnRate);
             }
         }
@@ -73,7 +73,7 @@ namespace Gameplay.Tasks
             var pos = GetRandomPositionInCollider(spawnZone);
             var targetPos = GetRandomPositionInCollider(destinationZone);
             var dir = targetPos - pos;
-            
+
             var ast = Instantiate(asteroidsPrefabs.Random(), asteroidContainer);
             ast.Launch(pos, speed.Random(), dir, rotationSpeed.Random());
 
@@ -153,7 +153,7 @@ namespace Gameplay.Tasks
         {
             scoreText.text = $"destroyed: {_currentScore}";
         }
-        
+
         public override void StartTask(TaskData task)
         {
             Setup();

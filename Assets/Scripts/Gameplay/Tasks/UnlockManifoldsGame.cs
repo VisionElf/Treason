@@ -35,11 +35,11 @@ namespace Gameplay.Tasks
             }
 
             buttons.Shuffle();
-            
+
             buttonsParent.DetachChildren();
             foreach (var btn in buttons)
                 btn.transform.SetParent(buttonsParent);
-            
+
             _buttonsPressed = new List<Button>();
 
             Reset();
@@ -52,11 +52,11 @@ namespace Gameplay.Tasks
                 _audioSource.clip = buttonSound;
                 _audioSource.pitch = Mathf.Lerp(0.5f, 2f, index / 9f);
                 _audioSource.Play();
-                
+
                 _currentIndex = index + 1;
                 button.interactable = false;
                 _buttonsPressed.Add(button);
-                
+
                 if (index == 9)
                     Complete();
             }
