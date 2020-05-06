@@ -56,7 +56,7 @@ namespace Managers
             animator.SetBool(AnimatorHashDeadBodyReported, true);
             animator.SetBool(AnimatorHashEmergencyMeeting, false);
             animator.SetTrigger(AnimatorHashAnim);
-            //Destroy(body.gameObject);
+            Destroy(body.gameObject);
         }
 
         public void EmergencyMeeting(Astronaut source)
