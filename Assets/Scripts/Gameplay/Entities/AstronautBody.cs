@@ -6,11 +6,20 @@ namespace Gameplay.Entities
 {
     public class AstronautBody : Entity
     {
+        [Header("Astronaut Body")]
+        public AudioClip killSound;
+        public AudioSource audioSource;
+
         private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
         private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
         private static readonly int ShaderColor3 = Shader.PropertyToID("_Color3");
 
         private ColorData _data;
+
+        private void PlayKillSound()
+        {
+            audioSource.PlayOneShot(killSound);
+        }
 
         public void SetColor(ColorData data)
         {
