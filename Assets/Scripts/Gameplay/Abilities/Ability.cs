@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-using HUD;
+using Gameplay.Abilities.Data;
+using Gameplay.Actions;
+using Gameplay.Conditions.Data;
 using Gameplay.Entities;
 using Gameplay.Entities.Data;
-using Gameplay.Abilities.Data;
-using Gameplay.Abilities.Actions.Data;
-using Gameplay.Abilities.Conditions.Data;
+using HUD;
 
 namespace Gameplay.Abilities
 {

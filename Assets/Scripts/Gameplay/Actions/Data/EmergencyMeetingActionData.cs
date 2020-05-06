@@ -3,7 +3,7 @@
 using Gameplay.Entities;
 using Managers;
 
-namespace Gameplay.Abilities.Actions.Data
+namespace Gameplay.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Emergency Meeting Action")]
     public class EmergencyMeetingActionData : ActionData

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-using Gameplay.Abilities.Actions.Data;
+using Gameplay.Actions;
 
-namespace Gameplay.Abilities.Conditions.Data
+namespace Gameplay.Conditions.Data
 {
     public abstract class ConditionData : ScriptableObject
     {

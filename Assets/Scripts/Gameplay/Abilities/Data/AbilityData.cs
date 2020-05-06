@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-using Gameplay.Abilities.Actions.Data;
-using Gameplay.Abilities.Conditions.Data;
+using Gameplay.Actions.Data;
+using Gameplay.Conditions.Data;
 using Gameplay.Entities.Data;
 using HUD;
 

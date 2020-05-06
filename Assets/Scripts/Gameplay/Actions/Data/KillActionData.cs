@@ -2,7 +2,7 @@
 
 using Gameplay.Entities;
 
-namespace Gameplay.Abilities.Actions.Data
+namespace Gameplay.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Kill Action")]
     public class KillActionData : ActionData

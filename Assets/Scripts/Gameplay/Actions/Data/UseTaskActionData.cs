@@ -4,7 +4,7 @@ using Gameplay.Entities;
 using Gameplay.Entities.Interactables;
 using Gameplay.Tasks;
 
-namespace Gameplay.Abilities.Actions.Data
+namespace Gameplay.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Use Task Action")]
     public class UseTaskActionData : ActionData

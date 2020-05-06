@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-using Gameplay.Abilities.Actions.Data;
+using Gameplay.Actions.Data;
 
 namespace Gameplay.Entities
 {

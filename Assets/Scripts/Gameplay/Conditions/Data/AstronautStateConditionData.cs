@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-using Gameplay.Abilities.Actions.Data;
+using Gameplay.Actions;
 using Gameplay.Entities;
 
-namespace Gameplay.Abilities.Conditions.Data
+namespace Gameplay.Conditions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Abilities/Conditions/Astronaut State Condition")]
     public class AstronautStateConditionData : ConditionData

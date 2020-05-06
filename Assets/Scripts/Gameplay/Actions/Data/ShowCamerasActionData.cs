@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Gameplay.Abilities.Actions.Data
+namespace Gameplay.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Show Cameras Action")]
     public class ShowCamerasActionData : ActionData

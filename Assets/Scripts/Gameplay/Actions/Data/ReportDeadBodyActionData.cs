@@ -3,7 +3,7 @@
 using Gameplay.Entities;
 using Managers;
 
-namespace Gameplay.Abilities.Actions.Data
+namespace Gameplay.Actions.Data
 {
     [CreateAssetMenu(menuName = "Gameplay/Actions/Report Dead Body Action")]
     public class ReportDeadBodyActionData : ActionData
