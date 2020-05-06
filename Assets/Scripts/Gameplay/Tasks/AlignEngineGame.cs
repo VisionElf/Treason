@@ -1,4 +1,6 @@
-﻿using Gameplay.Tasks.Data;
+﻿using System.Collections;
+using DG.Tweening;
+using Gameplay.Tasks.Data;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,11 +20,6 @@ namespace Gameplay.Tasks
         public GameObject guidelines;
         public Image middileLine;
         public DraggableObject slider;
-
-        private void Start()
-        {
-            Setup();
-        }
 
         private void Setup()
         {
@@ -49,8 +46,22 @@ namespace Gameplay.Tasks
             if (IsCorrectAngle())
             {
                 onTaskComplete?.Invoke(this);
-                guidelines.SetActive(true);
+                StartCoroutine(EndCoroutine());
             }
+        }
+
+        private IEnumerator EndCoroutine()
+        {
+            var blinkCount = 4;
+            for (var i = 0; i < blinkCount; i++)
+            {
+                guidelines.SetActive(true);
+                yield return new WaitForSeconds(.1f);
+                guidelines.SetActive(false);
+                yield return new WaitForSeconds(.1f);
+            }
+            
+            onTaskShouldDisappear?.Invoke(this);
         }
 
         private bool IsCorrectAngle()
@@ -65,6 +76,7 @@ namespace Gameplay.Tasks
 
         public override void StartTask(TaskData task)
         {
+            Setup();
         }
     }
 }
