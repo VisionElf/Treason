@@ -68,7 +68,7 @@ namespace Gameplay.Tasks
                     slider.transform.GetChild(1).GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f, 1f);
                 }
             }
-            CurrentSlider.Interractable = true;
+            CurrentSlider.Interactable = true;
             _currentFill = tankFills[_roomIndex];
             CurrentSlider.onUp += OnUp;
             CurrentWires.transform.SetAsLastSibling();

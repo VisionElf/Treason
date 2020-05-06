@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: ac6eff01087d9be478550249c655adeb
+timeCreated: 1587415323
+licenseType: Free
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: comms_base
+  - first:
+      213: 21300002
+    second: comms_dial
+  - first:
+      213: 21300004
+    second: comms_dialShadow
+  - first:
+      213: 21300006
+    second: comms_Light
+  - first:
+      213: 21300008
+    second: comms_lightShine
+  - first:
+      213: 21300010
+    second: comms_panelGlass
+  externalObjects: {}
+  usedFileIDs: []
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 704
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: comms_base
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 577
+        height: 486
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -91.5, y: 243}
+        - {x: 30.5, y: 243}
+        - {x: 111.5, y: 162}
+        - {x: 168.5, y: 147}
+        - {x: 179.5, y: 109}
+        - {x: 288.5, y: 107}
+        - {x: 288.5, y: -243}
+        - {x: -217.5, y: -243}
+        - {x: -228.5, y: -188}
+        - {x: -257.5, y: -159}
+        - {x: -288.5, y: -97}
+        - {x: -288.5, y: 8}
+        - {x: -267.5, y: 74}
+        - {x: -223.5, y: 141}
+        - {x: -129.5, y: 212}
+        - {x: -113.5, y: 236}
+      physicsShape:
+      - - {x: 169.5, y: 113}
+        - {x: 172.5, y: 115}
+        - {x: 174.5, y: 127}
+        - {x: 166.5, y: 142}
+        - {x: 160.5, y: 147}
+        - {x: 144.5, y: 147}
+        - {x: 90.5, y: 170}
+        - {x: 87.5, y: 179}
+        - {x: 77.5, y: 195}
+        - {x: 67.5, y: 206}
+        - {x: 50.5, y: 219}
+        - {x: 30.5, y: 229}
+        - {x: 29.5, y: 233}
+        - {x: 23.5, y: 240}
+        - {x: 11.5, y: 243}
+        - {x: -11.5, y: 243}
+        - {x: -25.5, y: 233}
+        - {x: -36.5, y: 238}
+        - {x: -48.5, y: 243}
+        - {x: -88.5, y: 243}
+        - {x: -100.5, y: 241}
+        - {x: -117.5, y: 228}
+        - {x: -135.5, y: 192}
+        - {x: -139.5, y: 174}
+        - {x: -167.5, y: 174}
+        - {x: -182.5, y: 168}
+        - {x: -191.5, y: 164}
+        - {x: -200.5, y: 158}
+        - {x: -218.5, y: 141}
+        - {x: -235.5, y: 120}
+        - {x: -255.5, y: 87}
+        - {x: -268.5, y: 63}
+        - {x: -279.5, y: 34}
+        - {x: -284.5, y: 20}
+        - {x: -288.5, y: -2}
+        - {x: -288.5, y: -79.99999}
+        - {x: -283.5, y: -90}
+        - {x: -283.5, y: -106}
+        - {x: -280.5, y: -112}
+        - {x: -270.5, y: -114}
+        - {x: -270.5, y: -126}
+        - {x: -264.5, y: -135}
+        - {x: -254.5, y: -153}
+        - {x: -243.5, y: -175}
+        - {x: -220.5, y: -194}
+        - {x: -217.5, y: -194}
+        - {x: -217.5, y: -242}
+        - {x: -216.5, y: -243}
+        - {x: 288.5, y: -243}
+        - {x: 288.5, y: 106}
+        - {x: 287.5, y: 107}
+      - - {x: -220.5, y: -174}
+        - {x: -219.5, y: -174}
+        - {x: -217.5, y: -172}
+        - {x: -217.5, y: -179}
+        - {x: -217.5, y: -178}
+      - - {x: -225.5, y: -152}
+        - {x: -217.5, y: -146}
+        - {x: -217.5, y: -143}
+        - {x: -218.5, y: -150}
+        - {x: -221.5, y: -150}
+        - {x: -224.5, y: -151}
+      - - {x: -224.5, y: -120}
+        - {x: -222.5, y: -112}
+        - {x: -236.5, y: -106}
+        - {x: -224.5, y: -97}
+        - {x: -232.5, y: -82}
+        - {x: -243.5, y: -81}
+        - {x: -270.5, y: -98.99999}
+        - {x: -267.5, y: -87}
+        - {x: -254.5, y: -81}
+        - {x: -243.5, y: -72.99999}
+        - {x: -241.5, y: -59}
+        - {x: -246.5, y: -55}
+        - {x: -256.5, y: -55}
+        - {x: -266.5, y: -64}
+        - {x: -278.5, y: -72}
+        - {x: -269.5, y: -56}
+        - {x: -248.5, y: -40}
+        - {x: -240.5, y: -28}
+        - {x: -246.5, y: -11}
+        - {x: -264.5, y: -15}
+        - {x: -276.5, y: -28}
+        - {x: -276.5, y: -29}
+        - {x: -279.5, y: -31}
+        - {x: -279.5, y: -34}
+        - {x: -278.5, y: -14}
+        - {x: -277.5, y: -13}
+        - {x: -265.5, y: 31}
+        - {x: -242.5, y: 84}
+        - {x: -212.5, y: 129}
+        - {x: -193.5, y: 148}
+        - {x: -178.5, y: 155}
+        - {x: -138.5, y: 160}
+        - {x: -137.5, y: 137}
+        - {x: -125.5, y: 111}
+        - {x: -121.5, y: 107}
+        - {x: -215.5, y: 108}
+        - {x: -218.5, y: 105}
+        - {x: -217.5, y: -130}
+        - {x: -219.5, y: -128}
+        - {x: -229.5, y: -126}
+      - - {x: -267.5, y: -37}
+        - {x: -267.5, y: -36}
+        - {x: -259.5, y: -29}
+        - {x: -257.5, y: -27}
+        - {x: -259.5, y: -28}
+        - {x: -259.5, y: -29}
+        - {x: -263.5, y: -33}
+        - {x: -263.5, y: -34}
+        - {x: -270.5, y: -40}
+        - {x: -270.5, y: -41}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee128c4d0ddc4130a5af3d4f2c15ebab
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comms_dial
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 227
+        width: 122
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 68.5}
+        - {x: 3, y: 68.5}
+        - {x: 41, y: 40.5}
+        - {x: 61, y: 4.5}
+        - {x: 61, y: -42.5}
+        - {x: 24, y: -68.5}
+        - {x: -25, y: -68.5}
+        - {x: -56, y: -44.5}
+        - {x: -61, y: -10.5}
+        - {x: -61, y: 4.5}
+        - {x: -46, y: 38.5}
+      physicsShape:
+      - - {x: -53, y: -59.5}
+        - {x: -61, y: -62.5}
+        - {x: -61, y: -68.5}
+        - {x: -37, y: -68.5}
+        - {x: -37, y: -66.5}
+        - {x: -42, y: -59.5}
+      - - {x: 61, y: -8.5}
+        - {x: 61, y: 3.5}
+        - {x: 54, y: 16.5}
+        - {x: 43, y: 35.5}
+        - {x: 21, y: 55.5}
+        - {x: 3, y: 68.5}
+        - {x: -4, y: 68.5}
+        - {x: -24, y: 52.5}
+        - {x: -42, y: 37.5}
+        - {x: -61, y: 4.5}
+        - {x: -61, y: -11.5}
+        - {x: -58, y: -27.5}
+        - {x: -57, y: -39.5}
+        - {x: -50, y: -48.5}
+        - {x: -25, y: -67.5}
+        - {x: -24, y: -68.5}
+        - {x: 24, y: -68.5}
+        - {x: 28, y: -65.5}
+        - {x: 40, y: -55.5}
+        - {x: 55, y: -41.5}
+      - - {x: -47, y: 68.5}
+        - {x: -51, y: 64.5}
+        - {x: -51, y: 61.5}
+        - {x: -47, y: 58.5}
+        - {x: -45, y: 58.5}
+        - {x: -36, y: 66.5}
+        - {x: -36, y: 68.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc2856cf3aa4d05ae5a6ec6e07cefd4
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comms_dialShadow
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 88
+        width: 122
+        height: 137
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 24.5}
+        - {x: -6, y: 68.5}
+        - {x: 4, y: 68.5}
+        - {x: 61, y: 24.5}
+        - {x: 61, y: -41.5}
+        - {x: 25, y: -68.5}
+        - {x: -25, y: -68.5}
+        - {x: -57, y: -46.5}
+        - {x: -61, y: -15.5}
+      physicsShape:
+      - - {x: -61, y: 68.5}
+        - {x: -61, y: 56.5}
+        - {x: -56, y: 51.5}
+        - {x: -41, y: 51.5}
+        - {x: -36, y: 58.5}
+        - {x: -36, y: 68.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2466afb281274d34b1b7553abb3f76bd
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comms_Light
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 209
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: -12}
+        - {x: -12, y: 12}
+        - {x: 12, y: 12}
+        - {x: 12, y: -12}
+      physicsShape:
+      - - {x: -12, y: 12}
+        - {x: -12, y: -11}
+        - {x: -9.999999, y: -12}
+        - {x: 12, y: -12}
+        - {x: 12, y: 9.999999}
+        - {x: 11, y: 12}
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa416d57dfa46588166c64389330fe6
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comms_lightShine
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 348
+        width: 17
+        height: 16
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 8}
+        - {x: 8.5, y: 8}
+        - {x: 8.5, y: -8}
+        - {x: -8.5, y: -8}
+        - {x: -8.5, y: 6}
+      physicsShape:
+      - - {x: -6.5, y: 8}
+        - {x: -8.5, y: 6}
+        - {x: -8.5, y: -1}
+        - {x: -7.5, y: -2}
+        - {x: -5.5, y: -2}
+        - {x: 3.5, y: 6}
+        - {x: 3.5, y: 8}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901c2a57e12746a49b07e60d1a848b35
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: comms_panelGlass
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 366
+        width: 196
+        height: 121
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -97.99999, y: -60.5}
+        - {x: -97.99999, y: 60.5}
+        - {x: 97.99999, y: 60.5}
+        - {x: 97.99999, y: -60.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40639bef4a4e42baace1468564ad77e6
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

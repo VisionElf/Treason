@@ -2,30 +2,33 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PointerListener : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
+namespace Utilities
 {
-    public Action onDown;
-    public Action onUp;
-    public Action onEnter;
-    public Action onExit;
-
-    public void OnPointerDown(PointerEventData eventData)
+    public class PointerListener : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        onDown?.Invoke();
-    }
+        public Action onDown;
+        public Action onUp;
+        public Action onEnter;
+        public Action onExit;
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        onUp?.Invoke();
-    }
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            onDown?.Invoke();
+        }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        onEnter?.Invoke();
-    }
+        public void OnPointerUp(PointerEventData eventData)
+        {
+            onUp?.Invoke();
+        }
 
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        onExit?.Invoke();
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            onEnter?.Invoke();
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            onExit?.Invoke();
+        }
     }
 }
