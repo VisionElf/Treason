@@ -6632,7 +6632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 211762234}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 6c015a9592af16b48ba59b74206c1791, type: 2}
 --- !u!1 &216603330
 GameObject:
   m_ObjectHideFlags: 0
@@ -9662,7 +9662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 328171146}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: e5ca666749ad88648a1e86c0642bb2b9, type: 2}
 --- !u!1 &330455861
 GameObject:
   m_ObjectHideFlags: 0
@@ -40982,7 +40982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 2076079225}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: d39abbf08b071b141b2b207dd40e5a7f, type: 2}
 --- !u!1 &2076788619
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,6 +27,13 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+
+            for (var i = 0; i < gaugesButtons.Length; i++)
+            {
+                var btn = gaugesButtons[i];
+                var index = i;
+                btn.onClick.AddListener(() => OnButtonClick(index));
+            }
         }
 
         private void Start()
@@ -39,14 +46,8 @@ namespace Gameplay.Tasks
             foreach (var lit in lits)
                 lit.SetActive(false);
 
-            for (var i = 0; i < gaugesButtons.Length; i++)
-            {
-                var btn = gaugesButtons[i];
+            foreach (var btn in gaugesButtons)
                 btn.interactable = true;
-                
-                var index = i;
-                btn.onClick.AddListener(() => OnButtonClick(index));
-            }
 
             var startRotation = Quaternion.Euler(0f, 0f, Random.Range(90f, 270f));
 
@@ -92,6 +93,7 @@ namespace Gameplay.Tasks
                 else
                 {
                     onTaskComplete?.Invoke(this);
+                    Invoke(nameof(Disappear), 1f);
                 }
             }
             else
@@ -99,6 +101,11 @@ namespace Gameplay.Tasks
                 _audioSource.PlayOneShot(wrongSound);
                 Setup();
             }
+        }
+
+        private void Disappear()
+        {
+            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Update()

@@ -1,5 +1,4 @@
-﻿using System;
-using CustomExtensions;
+﻿using CustomExtensions;
 using DG.Tweening;
 using Gameplay.Tasks.Data;
 using TMPro;
@@ -19,9 +18,16 @@ namespace Gameplay.Tasks
         private string _correctCode;
         private string _currentCode;
 
-        private void Start()
+        private void Awake()
         {
-            Setup();
+            for (var i = 0; i < 9; i++)
+            {
+                var number = i + 1;
+                buttons[i].onClick.AddListener(() => OnNumberButtonClick(number));
+            }
+            buttons[9].onClick.AddListener(Erase);
+            buttons[10].onClick.AddListener(() => OnNumberButtonClick(0));
+            buttons[11].onClick.AddListener(Validate);
         }
 
         private void Setup()
@@ -31,15 +37,6 @@ namespace Gameplay.Tasks
             _currentCode = "";
             noteText.text = $"today's code\n{_correctCode}";
 
-            for (var i = 0; i < 9; i++)
-            {
-                var number = i + 1;
-                buttons[i].onClick.AddListener(() => OnNumberButtonClick(number));
-            }
-            buttons[9].onClick.AddListener(Erase);
-            buttons[10].onClick.AddListener(() => OnNumberButtonClick(0));
-            buttons[11].onClick.AddListener(Validate);
-
             UpdateCodeText();
         }
 
@@ -47,6 +44,7 @@ namespace Gameplay.Tasks
         {
             if (_currentCode.Equals(_correctCode))
             {
+                codeText.text = "OK";
                 onTaskComplete?.Invoke(this);
                 Invoke(nameof(Disappear), 0.5f);
             }

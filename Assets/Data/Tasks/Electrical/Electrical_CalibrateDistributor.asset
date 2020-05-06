@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a7ce6bb70913c448ee7c97e04d1fe4, type: 3}
+  m_Name: Electrical_CalibrateDistributor
+  m_EditorClassIdentifier: 
+  room: {fileID: 11400000, guid: f1f0de3fe9684d24a982d99b6aa0fc2a, type: 2}
+  taskName: Calibrate Distributor
+  taskType: 0
+  isCancellable: 1
+  taskPrefab: {fileID: 7324718780851209663, guid: b30c200dd118a5b45af694988783b5d9,
+    type: 3}
+  taskParameters: []
