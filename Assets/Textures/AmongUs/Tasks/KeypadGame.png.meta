@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 4b7e625be85110c4a9519108d7f3b8d8
+timeCreated: 1587415326
+licenseType: Free
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: admin_keypad_0
+  - first:
+      213: 21300002
+    second: admin_keypad_1
+  - first:
+      213: 21300004
+    second: admin_keypad_2
+  - first:
+      213: 21300006
+    second: admin_keypad_3
+  - first:
+      213: 21300008
+    second: admin_keypad_4
+  - first:
+      213: 21300010
+    second: admin_keypad_5
+  - first:
+      213: 21300012
+    second: admin_keypad_6
+  - first:
+      213: 21300014
+    second: admin_keypad_7
+  - first:
+      213: 21300016
+    second: admin_keypad_8
+  - first:
+      213: 21300018
+    second: admin_keypad_9
+  - first:
+      213: 21300020
+    second: admin_keypad_base
+  - first:
+      213: 21300022
+    second: admin_keypad_check
+  - first:
+      213: 21300024
+    second: admin_keypad_note
+  - first:
+      213: 21300026
+    second: admin_keypad_x
+  externalObjects: {}
+  usedFileIDs: []
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 936
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: admin_keypad_0
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 260
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -41, y: 42}
+        - {x: -42, y: 41}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 41}
+        - {x: 41, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7686dce81e4718beda79427e52ea76
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 80
+        width: 82
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: -41.5}
+        - {x: -41, y: 41.5}
+        - {x: 41, y: 41.5}
+        - {x: 41, y: -41.5}
+      physicsShape:
+      - - {x: -41, y: 41.5}
+        - {x: -41, y: -41.5}
+        - {x: 41, y: -41.5}
+        - {x: 41, y: 40.5}
+        - {x: 40, y: 41.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14edce7d678d4728942be8954f562de5
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_2
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 346
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -41, y: 42}
+        - {x: -42, y: 41}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 41}
+        - {x: 41, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531dd30707cd43dcb1fc711edab0393f
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 165
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -42, y: 42}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4f19dc453ef46d989704c490f953299
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 87
+        width: 83
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41.5, y: -41.5}
+        - {x: -41.5, y: 41.5}
+        - {x: 41.5, y: 41.5}
+        - {x: 41.5, y: -41.5}
+      physicsShape:
+      - - {x: -41.5, y: 41.5}
+        - {x: -41.5, y: -41.5}
+        - {x: 41.5, y: -41.5}
+        - {x: 41.5, y: 41.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c8c783668ff452db93c978a618d6772
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 172
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -42, y: 42}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2765e68ad144f4a25f6b41c71501b0
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_6
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 346
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -41, y: 42}
+        - {x: -42, y: 41}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 41}
+        - {x: 41, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0379fda29c24b5f9321a764137dbbef
+      internalID: 21300012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_7
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 89
+        width: 82
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: -41.5}
+        - {x: -41, y: 41.5}
+        - {x: 41, y: 41.5}
+        - {x: 41, y: -41.5}
+      physicsShape:
+      - - {x: -41, y: 41.5}
+        - {x: -41, y: -41.5}
+        - {x: 41, y: -41.5}
+        - {x: 41, y: 40.5}
+        - {x: 40, y: 41.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f717e578cd34e99996f51c72414507a
+      internalID: 21300014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 82
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: -41.5}
+        - {x: -41, y: 41.5}
+        - {x: 41, y: 41.5}
+        - {x: 41, y: -41.5}
+      physicsShape:
+      - - {x: -41, y: 41.5}
+        - {x: -41, y: -41.5}
+        - {x: 41, y: -41.5}
+        - {x: 41, y: 40.5}
+        - {x: 40, y: 41.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea0d6182599e4539828302f94c64edcc
+      internalID: 21300016
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 174
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -41, y: 42}
+        - {x: -42, y: 41}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 41}
+        - {x: 41, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5b5f4ff9b14d409bcf42b6c94cd413
+      internalID: 21300018
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_base
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 432
+        width: 372
+        height: 503
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -186, y: -251.5}
+        - {x: -186, y: 251.5}
+        - {x: 186, y: 251.5}
+        - {x: 186, y: -251.5}
+      physicsShape:
+      - - {x: -186, y: 251.5}
+        - {x: -186, y: -251.5}
+        - {x: 186, y: -251.5}
+        - {x: 186, y: 251.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05850e01ce254cdd9c2818a52e0923e9
+      internalID: 21300020
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_check
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 78
+        width: 82
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: -41.5}
+        - {x: -41, y: 41.5}
+        - {x: 41, y: 41.5}
+        - {x: 41, y: -41.5}
+      physicsShape:
+      - - {x: -41, y: 41.5}
+        - {x: -41, y: -41.5}
+        - {x: 41, y: -41.5}
+        - {x: 41, y: 40.5}
+        - {x: 40, y: 41.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c162a596ed4eb7a486f6a19de0a51c
+      internalID: 21300022
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_note
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 253
+        width: 241
+        height: 177
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: -88.5}
+        - {x: -79.49999, y: -78.5}
+        - {x: -117.5, y: 6.5}
+        - {x: -120.5, y: 19.5}
+        - {x: -120.5, y: 37.5}
+        - {x: 15.5, y: 88.5}
+        - {x: 21.5, y: 88.5}
+        - {x: 51.5, y: 28.5}
+        - {x: 71.5, y: 5.5}
+        - {x: 120.5, y: -26.5}
+        - {x: 120.5, y: -41.5}
+        - {x: 69.5, y: -88.5}
+      physicsShape:
+      - - {x: -120.5, y: -85.49999}
+        - {x: -120.5, y: -88.5}
+        - {x: -33.5, y: -88.5}
+        - {x: -33.5, y: -86.5}
+        - {x: -39.5, y: -82.5}
+        - {x: -117.5, y: -82.5}
+      - - {x: 112.5, y: -47.5}
+        - {x: 120.5, y: -35.5}
+        - {x: 120.5, y: -27.5}
+        - {x: 104.5, y: -18.5}
+        - {x: 82.5, y: -5.5}
+        - {x: 71.5, y: 4.5}
+        - {x: 61.5, y: 14.5}
+        - {x: 42.5, y: 42.5}
+        - {x: 24.5, y: 76.5}
+        - {x: 24.5, y: 80.5}
+        - {x: 23.5, y: 87.5}
+        - {x: 22.5, y: 88.5}
+        - {x: 13.5, y: 88.5}
+        - {x: 9.5, y: 84.5}
+        - {x: -4.5, y: 77.5}
+        - {x: -15.5, y: 71.5}
+        - {x: -50.5, y: 55.5}
+        - {x: -66.5, y: 49.5}
+        - {x: -106.5, y: 35.5}
+        - {x: -120.5, y: 32.5}
+        - {x: -120.5, y: 20.5}
+        - {x: -110.5, y: -0.5}
+        - {x: -86.5, y: -38.5}
+        - {x: -77.5, y: -50.5}
+        - {x: -62.5, y: -65.5}
+        - {x: -41.5, y: -75.5}
+        - {x: -28.5, y: -79.49999}
+        - {x: -2.5, y: -84.5}
+        - {x: 23.5, y: -88.5}
+        - {x: 56.5, y: -88.5}
+        - {x: 64.5, y: -85.49999}
+        - {x: 73.49999, y: -80.5}
+        - {x: 96.5, y: -62.5}
+      - - {x: 78.5, y: 88.5}
+        - {x: 74.5, y: 84.5}
+        - {x: 74.5, y: 6.5}
+        - {x: 80.5, y: 1.5}
+        - {x: 120.5, y: 1.5}
+        - {x: 120.5, y: 88.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 863d76e9b76e489f954863285936c0ce
+      internalID: 21300024
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: admin_keypad_x
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 163
+        width: 84
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42, y: -42}
+        - {x: -42, y: 42}
+        - {x: 42, y: 42}
+        - {x: 42, y: -42}
+      physicsShape:
+      - - {x: -42, y: 42}
+        - {x: -42, y: -42}
+        - {x: 42, y: -42}
+        - {x: 42, y: 42}
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2986e4411e3465ea6ca5f544476a520
+      internalID: 21300026
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
