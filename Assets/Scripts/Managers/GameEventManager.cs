@@ -24,11 +24,13 @@ namespace Managers
         private static readonly int AnimatorHashDeadBodyReported = Animator.StringToHash("DeadBodyReported");
         private static readonly int AnimatorHashEmergencyMeeting = Animator.StringToHash("EmergencyMeeting");
 
+        // Animation Event
         private void PlayZapSound()
         {
             audioSource.PlayOneShot(zapSound, zapSoundVolume);
         }
 
+        // Animation Event
         private void PlaySwordSound()
         {
             audioSource.PlayOneShot(swordSound, swordSoundVolume);
