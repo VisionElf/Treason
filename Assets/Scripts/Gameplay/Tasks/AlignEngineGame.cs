@@ -14,7 +14,7 @@ namespace Gameplay.Tasks
         [Header("Settings")]
         public float engineMaxAngle;
         public float angleTolerance;
-        
+
         [Header("References")]
         public RectTransform engine;
         public GameObject guidelines;
@@ -27,17 +27,17 @@ namespace Gameplay.Tasks
             slider.SetPercentY(startPercent);
 
             guidelines.SetActive(false);
-            
+
             slider.onUp += OnUp;
         }
-        
+
         private void Update()
         {
             if (IsCorrectAngle())
                 middileLine.color = Color.green;
             else
                 middileLine.color = Color.red;
-            
+
             engine.rotation = Quaternion.Euler(0f, 0f, GetAngle());
         }
 
@@ -60,7 +60,7 @@ namespace Gameplay.Tasks
                 guidelines.SetActive(false);
                 yield return new WaitForSeconds(.1f);
             }
-            
+
             onTaskShouldDisappear?.Invoke(this);
         }
 

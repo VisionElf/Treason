@@ -43,7 +43,7 @@ namespace Gameplay.Tasks
             {
                 var btn = gaugesButtons[i];
                 btn.interactable = true;
-                
+
                 var index = i;
                 btn.onClick.AddListener(() => OnButtonClick(index));
             }
@@ -81,13 +81,13 @@ namespace Gameplay.Tasks
                 if (_currentIndex >= 2)
                     _audioSource.Stop();
                 _audioSource.PlayOneShot(rightSound);
-                
+
                 _currentIndex++;
 
                 if (_currentIndex < 3)
                 {
                     spins[_currentIndex].enabled = true;
-                    spinsShadows[_currentIndex].enabled = true;   
+                    spinsShadows[_currentIndex].enabled = true;
                 }
                 else
                 {

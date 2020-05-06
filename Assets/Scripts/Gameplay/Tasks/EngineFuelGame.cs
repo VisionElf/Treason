@@ -14,7 +14,7 @@ namespace Gameplay.Tasks
         public PointerListener button;
         public Image redLight;
         public Image greenLight;
-        
+
         public Image gasCanFill;
         public GameObject gasCan;
 
@@ -51,7 +51,7 @@ namespace Gameplay.Tasks
                     _currentPercent = 1f;
                     onTaskComplete?.Invoke(this);
                     Invoke(nameof(Disappear), 0.5f);
-                    
+
                     _isFilling = false;
                     _audioSource.Stop();
                 }
@@ -79,7 +79,7 @@ namespace Gameplay.Tasks
                 _audioSource.Play();
             }
         }
-        
+
         private void OnUp()
         {
             _isFilling = false;

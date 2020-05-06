@@ -6,7 +6,7 @@ namespace Gameplay.Tasks
     public class DottedLine : MonoBehaviour
     {
         public bool setWidthOnStart;
-        
+
         private Material _instantiatedMaterial;
         private Image _image;
 

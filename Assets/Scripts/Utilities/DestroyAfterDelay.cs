@@ -3,7 +3,7 @@
 public class DestroyAfterDelay : MonoBehaviour
 {
     public float delay;
-    
+
     private void Start()
     {
         Invoke(nameof(DestroyObj), delay);

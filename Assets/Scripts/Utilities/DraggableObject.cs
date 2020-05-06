@@ -10,11 +10,11 @@ namespace Utilities
 
         public AnimationCurve offsetCurveX;
         public AnimationCurve rotationCurveZ;
-        
+
         public bool Interactable { get; set; }
-        
+
         private bool _isDragging;
-        
+
         private RectTransform _rectTransform;
         private Vector3 _parentPosition;
         private Rect _rect;
@@ -23,7 +23,7 @@ namespace Utilities
         {
             _rectTransform = GetComponent<RectTransform>();
             _parentPosition = _rectTransform.parent.position;
-            
+
             _rect = GetRect();
         }
 
@@ -47,7 +47,7 @@ namespace Utilities
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
-            
+
             var rect = GetRect();
             Gizmos.DrawWireCube(rect.center, rect.size);
         }
@@ -59,11 +59,11 @@ namespace Utilities
                 var mousePos = (Input.mousePosition - _parentPosition) / transform.lossyScale.x;
                 mousePos.Scale(axisMultiplier);
 
-                mousePos.x = Mathf.Clamp(mousePos.x, _rect.xMin, _rect.xMax); 
+                mousePos.x = Mathf.Clamp(mousePos.x, _rect.xMin, _rect.xMax);
                 mousePos.y = Mathf.Clamp(mousePos.y, _rect.yMin, _rect.yMax);
 
                 _rectTransform.anchoredPosition = mousePos;
-                
+
                 UpdatePositionAndAngle();
             }
         }
@@ -98,7 +98,7 @@ namespace Utilities
                 pos = _rectTransform.anchoredPosition;
             else
                 pos = transform.position;
-            
+
             var width = boundsX.y - boundsX.x;
             var height = boundsY.y - boundsY.x;
             return new Rect(0, 0, width, height)

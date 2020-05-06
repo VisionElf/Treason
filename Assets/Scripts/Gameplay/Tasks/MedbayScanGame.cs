@@ -26,7 +26,7 @@ namespace Gameplay.Tasks
         {
             var color = "Purple";
             var colorId = color.Substring(0, 3).ToUpper() + "P0";
-            
+
             text = string.Format(text, colorId, color);
             charStatsText.text = "";
             foreach (var c in text)
@@ -38,7 +38,7 @@ namespace Gameplay.Tasks
 
                 if (c != '\t' && c != '\n' && c != ' ')
                     textSound.Play();
-                
+
                 charStatsText.text += c;
             }
         }
@@ -47,7 +47,7 @@ namespace Gameplay.Tasks
         {
             var color = "Purple";
             var colorId = color.Substring(0, 3).ToUpper() + "P0";
-            
+
             var text = string.Format(charStatsText.text, colorId, color);
             StartCoroutine(AnimateText(text));
         }
@@ -66,7 +66,7 @@ namespace Gameplay.Tasks
                     onTaskShouldDisappear?.Invoke(this);
                 }
             }
-            
+
             UpdateTexts();
         }
 
