@@ -62,17 +62,24 @@ namespace Utilities
                 mousePos.x = Mathf.Clamp(mousePos.x, _rect.xMin, _rect.xMax); 
                 mousePos.y = Mathf.Clamp(mousePos.y, _rect.yMin, _rect.yMax);
 
-                var percent = GetPercent();
-                var offsetX = offsetCurveX.Evaluate(percent.y);
-                mousePos.x += offsetX;
-
-                var rotationZ = rotationCurveZ.Evaluate(percent.y);
-                var rotation = _rectTransform.localRotation.eulerAngles;
-                rotation.z = rotationZ;
-                _rectTransform.localRotation = Quaternion.Euler(rotation);
-                
                 _rectTransform.anchoredPosition = mousePos;
+                
+                UpdatePositionAndAngle();
             }
+        }
+
+        private void UpdatePositionAndAngle()
+        {
+            var pos = _rectTransform.anchoredPosition;
+            var percent = GetPercent();
+            var offsetX = offsetCurveX.Evaluate(percent.y);
+            pos.x += offsetX;
+
+            var rotationZ = rotationCurveZ.Evaluate(percent.y);
+            var rotation = _rectTransform.localRotation.eulerAngles;
+            rotation.z = rotationZ;
+            _rectTransform.localRotation = Quaternion.Euler(rotation);
+            _rectTransform.anchoredPosition = pos;
         }
 
         public Vector2 GetPercent()
@@ -111,6 +118,14 @@ namespace Utilities
         private void OnDown()
         {
             if (Interactable) _isDragging = true;
+        }
+
+        public void SetPercentY(float percent)
+        {
+            var pos = _rectTransform.anchoredPosition;
+            pos.y = Mathf.Lerp(_rect.yMin, _rect.yMax, percent);
+            _rectTransform.anchoredPosition = pos;
+            UpdatePositionAndAngle();
         }
     }
 }

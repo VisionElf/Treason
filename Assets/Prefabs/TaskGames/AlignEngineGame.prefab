@@ -812,6 +812,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3950466347136767279}
+  - component: {fileID: 1937050686096367471}
   m_Layer: 0
   m_Name: AlignEngineGame
   m_TagString: Untagged
@@ -840,6 +841,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1937050686096367471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367556272759075727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2587ce3208c01643aa69cd821138326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engineMaxAngle: 45
+  angleTolerance: 1
+  engine: {fileID: 7620940148710468718}
+  guidelines: {fileID: 2016863418827010678}
+  middileLine: {fileID: 723445613395393962}
+  slider: {fileID: 8887073146063911358}
 --- !u!1 &9113040196210442740
 GameObject:
   m_ObjectHideFlags: 0
