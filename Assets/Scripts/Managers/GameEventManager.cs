@@ -8,6 +8,10 @@ namespace Managers
     public class GameEventManager : SingletonMB<GameEventManager>
     {
         [Header("Sounds")]
+        public AudioClip zapSound;
+        public float zapSoundVolume;
+        public AudioClip swordSound;
+        public float swordSoundVolume;
         public AudioClip deadBodyReportedSound;
         public AudioClip emergencyMeetingSound;
 
@@ -19,6 +23,16 @@ namespace Managers
         private static readonly int AnimatorHashAnim = Animator.StringToHash("Anim");
         private static readonly int AnimatorHashDeadBodyReported = Animator.StringToHash("DeadBodyReported");
         private static readonly int AnimatorHashEmergencyMeeting = Animator.StringToHash("EmergencyMeeting");
+
+        private void PlayZapSound()
+        {
+            audioSource.PlayOneShot(zapSound, zapSoundVolume);
+        }
+
+        private void PlaySwordSound()
+        {
+            audioSource.PlayOneShot(swordSound, swordSoundVolume);
+        }
 
         public void ReportDeadBody(Astronaut reporter, AstronautBody body)
         {

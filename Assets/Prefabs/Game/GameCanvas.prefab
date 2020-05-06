@@ -11004,10 +11004,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e9aa3588da45b74c8d792d8fa60f191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deadBodyReportedEvent: {fileID: 11400000, guid: f2fcc99d78dc7a54aaf5cd74af8d16f4,
-    type: 2}
-  emergencyMeetingEvent: {fileID: 11400000, guid: 481ec4264bbc14c4dba275fe2b8e93a6,
-    type: 2}
+  zapSound: {fileID: 8300000, guid: 2728397494f499e429a0a9a87d1a2497, type: 3}
+  zapSoundVolume: 0.25
+  swordSound: {fileID: 8300000, guid: 904e5dac478027947a51617d0fd247db, type: 3}
+  swordSoundVolume: 0.4
   deadBodyReportedSound: {fileID: 8300000, guid: a5a57b1435e09bd4c81019f9b275c0f0,
     type: 3}
   emergencyMeetingSound: {fileID: 8300000, guid: 0f1e9d79ff9796741bc03b8daaba463d,
