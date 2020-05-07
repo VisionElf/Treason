@@ -119,7 +119,7 @@ namespace Gameplay.Tasks
             }
             
             onTaskComplete?.Invoke(this);
-            Invoke(nameof(Disappear), 1f);
+            Invoke(nameof(Disappear), .5f);
         }
 
         private void Disappear()

@@ -75,12 +75,19 @@ namespace Gameplay.Tasks
             {
                 _leaves.Remove(leaf);
                 Destroy(leaf.gameObject);
+                
+            }
+
+            if (_leaves.Count == 0)
+            {
+                onTaskComplete?.Invoke(this);
+                Invoke(nameof(Disappear), 0.5f);
             }
         }
 
-        private void Start()
+        private void Disappear()
         {
-            Setup();
+            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Update()
