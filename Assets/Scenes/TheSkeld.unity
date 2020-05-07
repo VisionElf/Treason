@@ -15479,7 +15479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 593329735}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 406f1dfa98a698749b374e08af4f526b, type: 2}
 --- !u!61 &593329737
 BoxCollider2D:
   m_ObjectHideFlags: 0
