@@ -40,7 +40,7 @@ namespace Gameplay.Tasks
             Vector2 pos = _openedTask.RectTransform.anchoredPosition;
             pos.y = -Screen.height;
             _openedTask.RectTransform.anchoredPosition = pos;
-            _openedTask.RectTransform.DOAnchorPosY(0, .4f);
+            _openedTask.RectTransform.DOAnchorPosY(0, .2f).SetEase(Ease.Linear);
 
             _openedTask.onTaskComplete += OnTaskComplete;
             _openedTask.onTaskShouldDisappear += OnTaskShouldDisappear;
@@ -62,7 +62,7 @@ namespace Gameplay.Tasks
         private void OnTaskShouldDisappear(TaskGame taskGame)
         {
             _audioSource.PlayOneShot(taskDisappearSound);
-            taskGame.RectTransform.DOAnchorPosY(-Screen.height, 0.4f).OnComplete(() => Destroy(taskGame.gameObject));
+            taskGame.RectTransform.DOAnchorPosY(-Screen.height, 0.2f).SetEase(Ease.Linear).OnComplete(() => Destroy(taskGame.gameObject));
             Astronaut.LocalAstronaut.Unfreeze();
         }
 

@@ -80,7 +80,6 @@ namespace Gameplay.Tasks
             {
                 onTaskComplete?.Invoke(this);
                 Invoke(nameof(Disappear), 0.5f);
-                Debug.Log("complete");
             }
         }
 
@@ -92,7 +91,7 @@ namespace Gameplay.Tasks
         public override void StartTask(TaskData task)
         {
 //            _roomIndex = _rooms.IndexOf(task.room.roomName); TODO: get target room name, not source
-            _roomIndex = 0;
+            _roomIndex = Random.Range(0, _rooms.Length);
             Setup();
         }
     }

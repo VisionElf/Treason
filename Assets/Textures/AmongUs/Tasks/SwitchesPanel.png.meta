@@ -1,0 +1,544 @@
+fileFormatVersion: 2
+guid: 14ed2491913fd1944af79b2e5afe66ce
+timeCreated: 1587415324
+licenseType: Free
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: electricity_switches_base
+  - first:
+      213: 21300002
+    second: electricity_switches_button
+  - first:
+      213: 21300004
+    second: electricity_switches_buttonShine
+  - first:
+      213: 21300006
+    second: electricity_switches_Switch
+  - first:
+      213: 21300008
+    second: electricity_switches_SwitchShadow
+  - first:
+      213: 21300010
+    second: electricity_switches_wiresTop
+  externalObjects: {}
+  usedFileIDs: []
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 728
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: electricity_switches_base
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 3
+        width: 504
+        height: 504
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -252, y: -252}
+        - {x: -252, y: 252}
+        - {x: 252, y: 252}
+        - {x: 252, y: -252}
+      physicsShape:
+      - - {x: -252, y: 252}
+        - {x: -252, y: -252}
+        - {x: 252, y: -252}
+        - {x: 252, y: 252}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86faec988cf48a2a40d9f4848231310
+      internalID: 21300000
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electricity_switches_button
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 694
+        width: 30
+        height: 33
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: -16.5}
+        - {x: -15, y: 16.5}
+        - {x: 15, y: 16.5}
+        - {x: 15, y: -16.5}
+      physicsShape:
+      - - {x: -15, y: 16.5}
+        - {x: -15, y: -12.5}
+        - {x: -5, y: -15.5}
+        - {x: 8, y: -15.5}
+        - {x: 15, y: -9.5}
+        - {x: 15, y: 13.5}
+        - {x: 14, y: 16.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20aac5d31145473f95ea9a8a71dbcf47
+      internalID: 21300002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electricity_switches_buttonShine
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 671
+        width: 21
+        height: 21
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10.5, y: 10.5}
+        - {x: 10.5, y: 10.5}
+        - {x: 10.5, y: -8.5}
+        - {x: 8.5, y: -10.5}
+        - {x: -10.5, y: -10.5}
+      physicsShape:
+      - - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 6.5}
+        - {x: -10.5, y: 0.5}
+        - {x: -9.5, y: -0.5}
+        - {x: -6.5, y: 0.5}
+        - {x: 2.5, y: 4.5}
+        - {x: 3.5, y: 6.5}
+        - {x: 3.5, y: 10.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e2a65233f1c43dcb16c720724f56f59
+      internalID: 21300004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electricity_switches_Switch
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 513
+        width: 39
+        height: 52
+      alignment: 9
+      pivot: {x: 0.474359, y: 0.07692308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -19.5, y: 26}
+        - {x: 19.5, y: 26}
+        - {x: 19.5, y: -8}
+        - {x: 7.5, y: -26}
+        - {x: -19.5, y: -26}
+      physicsShape:
+      - - {x: -16.5, y: 26}
+        - {x: -19.5, y: 25}
+        - {x: -19.5, y: 4.999998}
+        - {x: -18.5, y: 2}
+        - {x: -14.5, y: -24}
+        - {x: -8.5, y: -26}
+        - {x: 8.5, y: -26}
+        - {x: 12.5, y: -19}
+        - {x: 19.5, y: 7.999998}
+        - {x: 19.5, y: 26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ce2e513d1e45c299a0a3353f4264b9
+      internalID: 21300006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electricity_switches_SwitchShadow
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 434
+        width: 37
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4864865, y: 0.9591837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -18.5, y: -24.5}
+        - {x: -18.5, y: 24.5}
+        - {x: 18.5, y: 24.5}
+        - {x: 18.5, y: -24.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 816021cb4f2945e38c0f5bbfa20dd511
+      internalID: 21300008
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: electricity_switches_wiresTop
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 202
+        width: 530
+        height: 525
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -221, y: 262.5}
+        - {x: -180, y: 262.5}
+        - {x: -179, y: 205.5}
+        - {x: -153, y: 180.5}
+        - {x: -70, y: 155.5}
+        - {x: 79, y: 145.5}
+        - {x: 131, y: 156.5}
+        - {x: 234, y: 128.5}
+        - {x: 265, y: 87.5}
+        - {x: 265, y: 46.5}
+        - {x: 198, y: 107.5}
+        - {x: 184, y: 59.5}
+        - {x: 115, y: 63.5}
+        - {x: 85.99999, y: 107.5}
+        - {x: 64, y: 115.5}
+        - {x: 90, y: 50.5}
+        - {x: 34, y: 67.5}
+        - {x: -23, y: 104.5}
+        - {x: -79.99999, y: 107.5}
+        - {x: -64, y: 66.5}
+        - {x: -96, y: 55.5}
+        - {x: -219, y: 133.5}
+        - {x: -225, y: 85.49999}
+        - {x: -179, y: 32.5}
+        - {x: -206, y: 21.5}
+        - {x: -230, y: 31.5}
+        - {x: -220, y: -30.5}
+        - {x: -185, y: -86.5}
+        - {x: -185, y: -115.5}
+        - {x: -211, y: -113.5}
+        - {x: -187, y: -179.5}
+        - {x: -187, y: -212.5}
+        - {x: -207, y: -209.5}
+        - {x: -181, y: -262.5}
+        - {x: -205, y: -262.5}
+        - {x: -239, y: -211.5}
+        - {x: -265, y: -46.5}
+        - {x: -265, y: 101.5}
+        - {x: -255, y: 161.5}
+      physicsShape:
+      - - {x: -197, y: -236.5}
+        - {x: -209, y: -222.5}
+        - {x: -221, y: -188.5}
+        - {x: -222, y: -179.5}
+        - {x: -208, y: -197.5}
+        - {x: -199, y: -205.5}
+        - {x: -188, y: -207.5}
+        - {x: -186, y: -205.5}
+        - {x: -187, y: -179.5}
+        - {x: -194, y: -163.5}
+        - {x: -198, y: -157.5}
+        - {x: -209, y: -142.5}
+        - {x: -217, y: -122.5}
+        - {x: -223, y: -106.5}
+        - {x: -231, y: -71.5}
+        - {x: -228, y: -76.5}
+        - {x: -222, y: -84.5}
+        - {x: -198, y: -109.5}
+        - {x: -190, y: -111.5}
+        - {x: -184, y: -104.5}
+        - {x: -185, y: -91.5}
+        - {x: -189, y: -81.5}
+        - {x: -194, y: -74.5}
+        - {x: -212, y: -51.5}
+        - {x: -221, y: -32.5}
+        - {x: -226, y: -19.5}
+        - {x: -231, y: 5.5}
+        - {x: -235, y: 29.5}
+        - {x: -236, y: 50.5}
+        - {x: -232, y: 43.5}
+        - {x: -220, y: 31.5}
+        - {x: -205, y: 24.5}
+        - {x: -193, y: 26.5}
+        - {x: -190, y: 32.5}
+        - {x: -190, y: 41.5}
+        - {x: -192, y: 44.5}
+        - {x: -212, y: 51.5}
+        - {x: -224, y: 65.5}
+        - {x: -231, y: 86.5}
+        - {x: -232, y: 98.49999}
+        - {x: -227, y: 122.5}
+        - {x: -224, y: 141.5}
+        - {x: -219, y: 159.5}
+        - {x: -217, y: 165.5}
+        - {x: -216, y: 169.5}
+        - {x: -213, y: 159.5}
+        - {x: -210, y: 152.5}
+        - {x: -206, y: 144.5}
+        - {x: -195, y: 128.5}
+        - {x: -185, y: 117.5}
+        - {x: -172, y: 108.5}
+        - {x: -161, y: 102.5}
+        - {x: -141, y: 96.5}
+        - {x: -128, y: 91.5}
+        - {x: -114, y: 83.5}
+        - {x: -97, y: 63.5}
+        - {x: -91.99999, y: 61.5}
+        - {x: -76, y: 62.5}
+        - {x: -69, y: 68.5}
+        - {x: -70, y: 77.5}
+        - {x: -76, y: 90.5}
+        - {x: -82, y: 98.49999}
+        - {x: -95, y: 110.5}
+        - {x: -112, y: 117.5}
+        - {x: -128, y: 120.5}
+        - {x: -139, y: 124.5}
+        - {x: -157, y: 135.5}
+        - {x: -173, y: 151.5}
+        - {x: -170, y: 156.5}
+        - {x: -161, y: 150.5}
+        - {x: -135, y: 138.5}
+        - {x: -125, y: 133.5}
+        - {x: -61, y: 114.5}
+        - {x: -43, y: 109.5}
+        - {x: -15, y: 102.5}
+        - {x: 5, y: 90.5}
+        - {x: 29, y: 71.5}
+        - {x: 39, y: 66.5}
+        - {x: 60, y: 61.5}
+        - {x: 74, y: 62.5}
+        - {x: 76, y: 66.5}
+        - {x: 75, y: 74.5}
+        - {x: 66, y: 91.5}
+        - {x: 50, y: 106.5}
+        - {x: 38, y: 114.5}
+        - {x: 14, y: 125.5}
+        - {x: 51, y: 124.5}
+        - {x: 70, y: 121.5}
+        - {x: 81, y: 115.5}
+        - {x: 102, y: 89.5}
+        - {x: 103, y: 86.5}
+        - {x: 114, y: 67.5}
+        - {x: 114, y: 65.5}
+        - {x: 117, y: 62.5}
+        - {x: 131, y: 62.5}
+        - {x: 144, y: 63.5}
+        - {x: 147, y: 64.5}
+        - {x: 145, y: 76.5}
+        - {x: 138, y: 94.5}
+        - {x: 128, y: 113.5}
+        - {x: 120, y: 122.5}
+        - {x: 138, y: 122.5}
+        - {x: 148, y: 106.5}
+        - {x: 151, y: 96.5}
+        - {x: 156, y: 86.5}
+        - {x: 160, y: 68.5}
+        - {x: 165, y: 62.5}
+        - {x: 182, y: 63.5}
+        - {x: 185, y: 66.5}
+        - {x: 184, y: 76.5}
+        - {x: 180, y: 87.5}
+        - {x: 177, y: 102.5}
+        - {x: 171, y: 116.5}
+        - {x: 169, y: 120.5}
+        - {x: 185, y: 116.5}
+        - {x: 210, y: 103.5}
+        - {x: 221, y: 98.49999}
+        - {x: 231, y: 88.5}
+        - {x: 242, y: 68.5}
+        - {x: 246, y: 65.5}
+        - {x: 262, y: 65.5}
+        - {x: 265, y: 66.5}
+        - {x: 265, y: 79.49999}
+        - {x: 264, y: 84.5}
+        - {x: 255, y: 99.5}
+        - {x: 246, y: 110.5}
+        - {x: 237, y: 118.5}
+        - {x: 227, y: 126.5}
+        - {x: 202, y: 137.5}
+        - {x: 184, y: 140.5}
+        - {x: 169, y: 142.5}
+        - {x: 159, y: 142.5}
+        - {x: 156, y: 146.5}
+        - {x: 141, y: 154.5}
+        - {x: 121, y: 153.5}
+        - {x: 91, y: 147.5}
+        - {x: 85.99999, y: 144.5}
+        - {x: 64, y: 145.5}
+        - {x: 45, y: 146.5}
+        - {x: 31, y: 147.5}
+        - {x: 15, y: 148.5}
+        - {x: -14, y: 150.5}
+        - {x: -44, y: 152.5}
+        - {x: -76, y: 156.5}
+        - {x: -95, y: 160.5}
+        - {x: -122, y: 168.5}
+        - {x: -133, y: 171.5}
+        - {x: -155, y: 180.5}
+        - {x: -173, y: 190.5}
+        - {x: -185, y: 202.5}
+        - {x: -190, y: 212.5}
+        - {x: -188, y: 233.5}
+        - {x: -180, y: 246.5}
+        - {x: -180, y: 257.5}
+        - {x: -184, y: 262.5}
+        - {x: -211, y: 262.5}
+        - {x: -217, y: 255.5}
+        - {x: -220, y: 247.5}
+        - {x: -229, y: 229.5}
+        - {x: -241, y: 203.5}
+        - {x: -247, y: 179.5}
+        - {x: -254, y: 150.5}
+        - {x: -261, y: 112.5}
+        - {x: -263, y: 95.5}
+        - {x: -265, y: 72.5}
+        - {x: -265, y: -30.5}
+        - {x: -263, y: -49.5}
+        - {x: -261, y: -64.5}
+        - {x: -260, y: -70.5}
+        - {x: -259, y: -75.5}
+        - {x: -257, y: -86.5}
+        - {x: -250, y: -118.5}
+        - {x: -247, y: -134.5}
+        - {x: -246, y: -152.5}
+        - {x: -244, y: -168.5}
+        - {x: -239, y: -194.5}
+        - {x: -236, y: -205.5}
+        - {x: -231, y: -218.5}
+        - {x: -222, y: -236.5}
+        - {x: -216, y: -245.5}
+        - {x: -200, y: -262.5}
+        - {x: -191, y: -262.5}
+        - {x: -190, y: -261.5}
+        - {x: -190, y: -249.5}
+        - {x: -191, y: -246.5}
+      - - {x: -179, y: 41.5}
+        - {x: -179, y: -262.5}
+        - {x: 265, y: -262.5}
+        - {x: 265, y: 45.5}
+        - {x: -174, y: 45.5}
+      - - {x: -22, y: 103.5}
+        - {x: -54, y: 103.5}
+        - {x: -64, y: 96.5}
+        - {x: -64, y: 90.5}
+        - {x: -56, y: 56.5}
+        - {x: -48, y: 47.5}
+        - {x: -35, y: 47.5}
+        - {x: -28, y: 55.5}
+        - {x: -19, y: 85.49999}
+        - {x: -19, y: 96.5}
+      - - {x: -261, y: 228.5}
+        - {x: -265, y: 226.5}
+        - {x: -265, y: 217.5}
+        - {x: -264, y: 216.5}
+        - {x: -255, y: 216.5}
+        - {x: -251, y: 220.5}
+        - {x: -251, y: 228.5}
+      - - {x: -263, y: 262.5}
+        - {x: -265, y: 259.5}
+        - {x: -265, y: 236.5}
+        - {x: -262, y: 232.5}
+        - {x: -256, y: 230.5}
+        - {x: -242, y: 230.5}
+        - {x: -234, y: 238.5}
+        - {x: -234, y: 261.5}
+        - {x: -236, y: 262.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 526b3dc01bbc4768b4ac4624f2efd719
+      internalID: 21300010
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag:
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

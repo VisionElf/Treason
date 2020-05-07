@@ -27381,7 +27381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 1377989072}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: a31c4acd52c7d1240a9cbe0599acd7c7, type: 2}
 --- !u!1 &1385320214
 GameObject:
   m_ObjectHideFlags: 0
