@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 76564672}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 3bbc3c638ed02a344a3bf5bb7f5bc88b, type: 2}
 --- !u!1 &77964072
 GameObject:
   m_ObjectHideFlags: 0
@@ -25105,7 +25105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityType: {fileID: 11400000, guid: 373508824e1ef2141aef083c6e093e8c, type: 2}
   spriteRenderer: {fileID: 1241998230}
-  taskData: {fileID: 0}
+  taskData: {fileID: 11400000, guid: 91c9c5e0ed1651f4c8b4de2159a16523, type: 2}
 --- !u!1 &1248144611
 GameObject:
   m_ObjectHideFlags: 0
