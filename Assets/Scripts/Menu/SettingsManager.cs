@@ -23,6 +23,11 @@ namespace Menu
 
         private void Awake()
         {
+            _rectTransform = GetComponent<RectTransform>();
+        }
+
+        private void Start()
+        {
             var sfxVolume = PlayerPrefs.GetFloat(PrefsSfxVolume, 1f);
             var ambianceVolume = PlayerPrefs.GetFloat(PrefsAmbianceVolume, 1f);
             
@@ -31,12 +36,7 @@ namespace Menu
 
             sfxSlider.value = sfxVolume;
             ambianceSlider.value = ambianceVolume;
-
-            _rectTransform = GetComponent<RectTransform>();
-        }
-
-        private void Start()
-        {
+            
             _rectTransform.anchoredPosition = new Vector2(0f, -Screen.height);
             _isShowed = false;
         }
