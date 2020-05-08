@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a7fb95eeafa42246a092387753c0ef9, type: 3}
-  m_Name: LightGreenColor
+  m_Name: LimeColor
   m_EditorClassIdentifier: 
   colorName: Lime
   color1: {r: 0.3137255, g: 0.9333334, b: 0.22352943, a: 1}
