@@ -1,5 +1,4 @@
-﻿using System;
-using Decoration;
+﻿using Decoration;
 using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
@@ -10,11 +9,15 @@ namespace Gameplay.Tasks
 {
     public class CalibratorGame : TaskGame
     {
+        [Header("Settings")]
         public float angleTolerance = 10f;
+        public float speed;
 
+        [Header("Sounds")]
         public AudioClip rightSound;
         public AudioClip wrongSound;
 
+        [Header("References")]
         public Image[] gaugesFills;
         public Button[] gaugesButtons;
         public RotatingObject[] spins;
@@ -54,12 +57,14 @@ namespace Gameplay.Tasks
 
             foreach (var obj in spins)
             {
+                obj.SetSpeed(speed);
                 obj.transform.rotation = startRotation;
                 obj.enabled = false;
             }
 
             foreach (var obj in spinsShadows)
             {
+                obj.SetSpeed(speed);
                 obj.transform.rotation = startRotation;
                 obj.enabled = false;
             }
@@ -79,8 +84,11 @@ namespace Gameplay.Tasks
 
             if (rotation <= angleTolerance || rotation >= 360 - angleTolerance)
             {
-                spins[index].StopRotateAndReset();
-                spinsShadows[index].StopRotateAndReset();
+                spins[index].SetRotationZ(0f);
+                spins[index].enabled = false;
+                spinsShadows[index].SetRotationZ(0f);
+                spinsShadows[index].enabled = false;
+                
                 lits[index].SetActive(true);
                 gaugesButtons[index].interactable = false;
                 if (_currentIndex >= 2)
@@ -113,6 +121,7 @@ namespace Gameplay.Tasks
                 var spin = spins[_currentIndex];
                 var rotation = spin.transform.rotation.eulerAngles.z;
                 var isCorrect = rotation <= angleTolerance || rotation >= 360 - angleTolerance;
+                gaugesFills[_currentIndex].fillAmount = isCorrect ? 0.9f : 0.1f;
                 lits[_currentIndex].SetActive(isCorrect);
             }
         }

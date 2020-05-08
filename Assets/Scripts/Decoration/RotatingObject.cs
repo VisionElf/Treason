@@ -11,10 +11,16 @@ namespace Decoration
             transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
         }
 
-        public void StopRotateAndReset()
+        public void SetRotationZ(float angle)
         {
-            speed = 0f;
-            transform.rotation = Quaternion.identity;
+            var rotation = transform.rotation.eulerAngles;
+            rotation.z = angle;
+            transform.rotation = Quaternion.Euler(rotation);
+        }
+
+        public void SetSpeed(float value)
+        {
+            speed = value;
         }
     }
 }
