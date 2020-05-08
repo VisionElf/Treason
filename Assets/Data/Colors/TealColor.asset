@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7fb95eeafa42246a092387753c0ef9, type: 3}
   m_Name: TealColor
   m_EditorClassIdentifier: 
+  colorName: Teal
   color1: {r: 0.21960786, g: 0.9921569, b: 0.8588236, a: 1}
   color2: {r: 0.57254905, g: 0.78039217, b: 0.8509804, a: 1}
   color3: {r: 0.14117648, g: 0.65882355, b: 0.74509805, a: 1}

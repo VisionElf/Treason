@@ -65,6 +65,7 @@ namespace Gameplay.Entities
         [Header("Misc")]
         public bool isLocalCharacter;
         public ColorListData colorList;
+        public int debugColorIndex;
         public EntityTypeData entityType;
 
         [Header("Dead")]
@@ -114,6 +115,7 @@ namespace Gameplay.Entities
             }
             else
             {
+                SetColor(debugColorIndex);
                 SetRole(debugRoleIndex);
             }
 
@@ -360,5 +362,11 @@ namespace Gameplay.Entities
         public Vector3 GetPosition() => transform.position;
         public void SetOutline(bool value) { }
         public void SetHighlight(bool value) => outline.enabled = value;
+        
+        public string GetColorName()
+        {
+            var data = colorList.list[_colorIndex];
+            return data.colorName;
+        }
     }
 }

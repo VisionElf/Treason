@@ -707,6 +707,7 @@ MonoBehaviour:
     m_Bits: 2048
   isLocalCharacter: 0
   colorList: {fileID: 11400000, guid: f50cf8bc3f0a93e4cb34a550ff354a1f, type: 2}
+  debugColorIndex: 6
   entityType: {fileID: 11400000, guid: 0889ecea6d3cd9e488a3e9175f5f16d8, type: 2}
   localAstronautToGhostEvent: {fileID: 11400000, guid: 9c903deaad3bb2541848761f45757e5f,
     type: 2}

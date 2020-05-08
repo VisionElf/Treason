@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a7fb95eeafa42246a092387753c0ef9, type: 3}
   m_Name: PinkColor
   m_EditorClassIdentifier: 
+  colorName: Pink
   color1: {r: 0.92549026, g: 0.32941177, b: 0.7254902, a: 1}
   color2: {r: 0.57254905, g: 0.78039217, b: 0.8509804, a: 1}
   color3: {r: 0.67058825, g: 0.16862746, b: 0.6784314, a: 1}

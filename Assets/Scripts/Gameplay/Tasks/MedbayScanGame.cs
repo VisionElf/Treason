@@ -44,9 +44,9 @@ namespace Gameplay.Tasks
             }
         }
 
-        private void Setup()
+        private void Setup(Astronaut source)
         {
-            var color = "Purple";
+            var color = source.GetColorName();
             var colorId = color.Substring(0, 3).ToUpper() + "P0";
 
             var text = string.Format(charStatsText.text, colorId, color);
@@ -90,7 +90,7 @@ namespace Gameplay.Tasks
 
         public override void StartTask(TaskData task, Astronaut source)
         {
-            Setup();
+            Setup(source);
         }
     }
 }
