@@ -6,17 +6,9 @@ namespace Decoration
     {
         public float speed;
 
-        public bool IsPaused { get; set; }
-
-        private void Awake()
-        {
-            IsPaused = true;
-        }
-        
         void Update()
         {
-            if (!IsPaused)
-                transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
+            transform.Rotate(new Vector3(0f, 0f, speed * Time.deltaTime));
         }
 
         public void StopRotateAndReset()

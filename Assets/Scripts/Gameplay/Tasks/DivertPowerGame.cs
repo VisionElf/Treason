@@ -1,4 +1,5 @@
 ﻿using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -79,16 +80,10 @@ namespace Gameplay.Tasks
             if (CurrentSlider.GetPercent().y >= 1f)
             {
                 onTaskComplete?.Invoke(this);
-                Invoke(nameof(Disappear), 0.5f);
             }
         }
 
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
-        }
-
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
 //            _roomIndex = _rooms.IndexOf(task.room.roomName); TODO: get target room name, not source
             _roomIndex = Random.Range(0, _rooms.Length);

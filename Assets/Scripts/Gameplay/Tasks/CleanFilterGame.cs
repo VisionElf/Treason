@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using Utilities;
@@ -81,13 +82,7 @@ namespace Gameplay.Tasks
             if (_leaves.Count == 0)
             {
                 onTaskComplete?.Invoke(this);
-                Invoke(nameof(Disappear), 0.5f);
             }
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Update()
@@ -110,7 +105,7 @@ namespace Gameplay.Tasks
         {
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

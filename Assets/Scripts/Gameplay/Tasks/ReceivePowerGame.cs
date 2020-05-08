@@ -1,5 +1,5 @@
-﻿using System;
-using DG.Tweening;
+﻿using DG.Tweening;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using Utilities;
@@ -41,16 +41,10 @@ namespace Gameplay.Tasks
                 {
                     rightWires.SetActive(true);
                     onTaskComplete?.Invoke(this);
-                    Invoke(nameof(Disappear), 0.5f);
                 });
         }
 
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
-        }
-
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

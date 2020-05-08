@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using Utilities;
 
@@ -83,7 +84,6 @@ namespace Gameplay.Tasks
                 if (_leaves.Count <= 0)
                 {
                     onTaskComplete?.Invoke(this);
-                    onTaskShouldDisappear?.Invoke(this);
                 }
             }
         }
@@ -165,7 +165,7 @@ namespace Gameplay.Tasks
             _leaves.Add(obj);
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

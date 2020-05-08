@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using TMPro;
 using UnityEngine;
@@ -63,7 +64,6 @@ namespace Gameplay.Tasks
                 {
                     _finished = true;
                     onTaskComplete?.Invoke(this);
-                    onTaskShouldDisappear?.Invoke(this);
                 }
             }
 
@@ -88,7 +88,7 @@ namespace Gameplay.Tasks
             statusText.text = $"Scan Complete in {Mathf.RoundToInt(time)} seconds.";
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

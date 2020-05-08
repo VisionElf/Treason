@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,17 +49,15 @@ namespace Gameplay.Tasks
 
         private IEnumerator EndCoroutine()
         {
-            for (var i = 0; i < 3; i++)
-            {
-                SetColor(Color.yellow);
-                yield return new WaitForSeconds(0.1f);
-                SetColor(Color.white);
-                yield return new WaitForSeconds(0.1f);
-            }
-
+            SetColor(Color.yellow);
+            yield return new WaitForSeconds(0.05f);
+            SetColor(Color.white);
+            yield return new WaitForSeconds(0.05f);
+            SetColor(Color.yellow);
+            yield return new WaitForSeconds(0.05f);
+            SetColor(Color.white);
+            yield return new WaitForSeconds(0.05f);
             SetColor(Color.green);
-            yield return new WaitForSeconds(0.5f);
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void SetColor(Color color)
@@ -67,7 +66,7 @@ namespace Gameplay.Tasks
                 img.color = color;
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

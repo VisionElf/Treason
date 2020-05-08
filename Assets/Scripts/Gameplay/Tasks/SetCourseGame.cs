@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Gameplay.Entities;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,10 +11,16 @@ namespace Gameplay.Tasks
 {
     public class SetCourseGame : TaskGame
     {
-        [Header("Settings")] public int checkpointsCount = 5;
+        [Header("Settings")]
+        public int checkpointsCount = 5;
         public int verticalPossibilities = 4;
 
-        [Header("Reference")] public SetCourseDottedLine dottedLinePrefab;
+        [Header("Sounds")]
+        public AudioClip checkpointReachedSound;
+        public AudioClip destinationReachedSound;
+        
+        [Header("Reference")]
+        public SetCourseDottedLine dottedLinePrefab;
         public SetCourseCheckpoint checkpointPrefab;
         public RectTransform ship;
         public PointerListener shipListener;
@@ -25,6 +33,13 @@ namespace Gameplay.Tasks
 
         private int _currentCheckpoint;
         private bool _isMoving;
+
+        private AudioSource _audioSource;
+
+        private void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+        }
 
         private void OnEnable()
         {
@@ -129,14 +144,16 @@ namespace Gameplay.Tasks
 
             if (index + 1 < _checkpoints.Count)
             {
+                if (index > 0)
+                    _audioSource.PlayOneShot(checkpointReachedSound);
                 var nextPos = _checkpoints[index + 1].AnchoredPosition;
                 var dir = nextPos - pos;
                 ship.up = dir.normalized;
             }
             else
             {
+                _audioSource.PlayOneShot(destinationReachedSound);
                 onTaskComplete?.Invoke(this);
-                onTaskShouldDisappear?.Invoke(this);
             }
         }
 
@@ -155,7 +172,7 @@ namespace Gameplay.Tasks
             _dottedLines.Clear();
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

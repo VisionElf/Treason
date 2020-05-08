@@ -406,7 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 730a26086e509d54db24460ec460729a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 0.3
+  duration: 0.15
   switchSound: {fileID: 8300000, guid: c2abdab8333d6694c939727ac837d6d5, type: 3}
   leftWires: {fileID: 4739944011057970880}
   rightWires: {fileID: 5470216706242865006}

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using TMPro;
 using UnityEngine;
@@ -99,13 +100,7 @@ namespace Gameplay.Tasks
             {
                 StopAllCoroutines();
                 onTaskComplete?.Invoke(this);
-                Invoke(nameof(Disappear), 1f);
             }
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private Vector2 GetRandomPositionInCollider(BoxCollider2D collider)
@@ -154,7 +149,7 @@ namespace Gameplay.Tasks
             scoreText.text = $"destroyed: {_currentScore}";
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

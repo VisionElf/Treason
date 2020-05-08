@@ -5,6 +5,7 @@ using TMPro;
 using DG.Tweening;
 
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using Utilities;
 
@@ -185,12 +186,9 @@ namespace Gameplay.Tasks
 
         private void MoveCardToWallet()
         {
-            var duration = 1f;
+            var duration = .5f;
             card.DOAnchorPos(_cardWalletPosition, duration).SetEase(Ease.Linear);
-            card.DOScale(Vector3.one * 0.75f, duration).SetEase(Ease.Linear).OnComplete(() =>
-            {
-                onTaskShouldDisappear?.Invoke(this);
-            });
+            card.DOScale(Vector3.one * 0.75f, duration).SetEase(Ease.Linear);
         }
 
         public enum DenyCardReason
@@ -200,7 +198,7 @@ namespace Gameplay.Tasks
             TooFast
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

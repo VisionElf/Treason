@@ -1,4 +1,5 @@
 ﻿using Decoration;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -60,20 +61,14 @@ namespace Gameplay.Tasks
                 if (!state) return;
             }
 
-            backgroundRotate.IsPaused = false;
+            backgroundRotate.enabled = true;
             
             onTaskComplete?.Invoke(this);
-            Invoke(nameof(Disappear), 0.5f);
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Setup()
         {
-            backgroundRotate.IsPaused = true;
+            backgroundRotate.enabled = false;
             
             _buttonStates = new bool[buttons.Length];
             for (var i = 0; i < _buttonStates.Length; i++)
@@ -94,7 +89,7 @@ namespace Gameplay.Tasks
 
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

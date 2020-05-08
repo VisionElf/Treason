@@ -1,4 +1,5 @@
 ﻿using System;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using TMPro;
 using UnityEngine;
@@ -117,7 +118,6 @@ namespace Gameplay.Tasks
                 etaText.text = "THANK YOU";
                 statusText.text = "TEST COMPLETE";
                 onTaskComplete?.Invoke(this);
-                Invoke(nameof(Disappear), 1f);
             }
             else
             {
@@ -138,11 +138,6 @@ namespace Gameplay.Tasks
             Invoke(nameof(Setup), 1f);
         }
 
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
-        }
-
         private void StartSample()
         {
             _audioSource.PlayOneShot(buttonSound);
@@ -159,7 +154,7 @@ namespace Gameplay.Tasks
             statusText.text = "GO GRAB A COFFEE";
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

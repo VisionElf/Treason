@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -89,8 +90,6 @@ namespace Gameplay.Tasks
         {
             yield return new WaitForSeconds(0.5f);
             onTaskComplete?.Invoke(this);
-            yield return new WaitForSeconds(0.5f);
-            onTaskShouldDisappear?.Invoke(this);
             _coroutine = null;
         }
 
@@ -104,7 +103,7 @@ namespace Gameplay.Tasks
             _isTurning = true;
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

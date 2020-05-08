@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 using DG.Tweening;
-
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 
 namespace Gameplay.Tasks
@@ -108,9 +108,6 @@ namespace Gameplay.Tasks
 
             SetButtonsInteractable(false);
             onTaskComplete?.Invoke(this);
-            yield return new WaitForSeconds(.5f);
-
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void UpdateCurrentLights()
@@ -181,7 +178,7 @@ namespace Gameplay.Tasks
                 yield return null;
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
             StartCoroutine(StartStepCoroutine());

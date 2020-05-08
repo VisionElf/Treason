@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,12 +72,6 @@ namespace Gameplay.Tasks
         private void Complete()
         {
             onTaskComplete?.Invoke(this);
-            Invoke(nameof(Disappear), 0.5f);
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Reset()
@@ -87,7 +82,7 @@ namespace Gameplay.Tasks
             _currentIndex = 0;
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

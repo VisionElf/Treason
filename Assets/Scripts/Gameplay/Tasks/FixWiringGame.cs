@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CustomExtensions;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -119,13 +120,7 @@ namespace Gameplay.Tasks
             }
             
             onTaskComplete?.Invoke(this);
-            Invoke(nameof(Disappear), .5f);
-        }
-
-        private void Disappear()
-        {
             _audioSource.PlayOneShot(closeSound);
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void ResetCurrentWirePosition()
@@ -201,7 +196,7 @@ namespace Gameplay.Tasks
             return colors;
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using TMPro;
 using UnityEngine;
@@ -72,13 +73,7 @@ namespace Gameplay.Tasks
                 glow.gameObject.SetActive(false);
                 statusText.text = "REACTOR NOMINAL";
                 onTaskComplete?.Invoke(this);
-                Invoke(nameof(Disappear), 1f);
             }
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Setup()
@@ -87,7 +82,7 @@ namespace Gameplay.Tasks
             glow.gameObject.SetActive(false);
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

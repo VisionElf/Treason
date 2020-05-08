@@ -1,4 +1,5 @@
-﻿using Gameplay.Tasks.Data;
+﻿using Gameplay.Entities;
+using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
@@ -50,7 +51,6 @@ namespace Gameplay.Tasks
                 {
                     _currentPercent = 1f;
                     onTaskComplete?.Invoke(this);
-                    Invoke(nameof(Disappear), 0.5f);
 
                     _isFilling = false;
                     _audioSource.Stop();
@@ -86,12 +86,7 @@ namespace Gameplay.Tasks
             _audioSource.Stop();
         }
 
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
-        }
-
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             if (task.taskParameters.Length == 1)
             {

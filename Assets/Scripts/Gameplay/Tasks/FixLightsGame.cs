@@ -1,4 +1,5 @@
 ﻿using System;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,12 +49,6 @@ namespace Gameplay.Tasks
             }
             
             onTaskComplete?.Invoke(this);
-            Invoke(nameof(Disappear), 1f);
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void SetSwitchState(int index, bool state)
@@ -80,7 +75,7 @@ namespace Gameplay.Tasks
             }
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

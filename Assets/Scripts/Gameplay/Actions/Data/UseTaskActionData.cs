@@ -17,9 +17,9 @@ namespace Gameplay.Actions.Data
             if (target != null)
             {
                 if (!TaskManager.Instance.IsTaskOpened())
-                    TaskManager.Instance.CreateTaskGame(target.taskData);
+                    TaskManager.Instance.CreateTaskGame(target.taskData, astronaut);
                 else
-                    TaskManager.Instance.ExitCurrentTaskGame();
+                    TaskManager.Instance.HideCurrentTask();
             }
         }
     }

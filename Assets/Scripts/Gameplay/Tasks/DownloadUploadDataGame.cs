@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Gameplay.Entities;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -84,12 +85,9 @@ namespace Gameplay.Tasks
 
             timeRemainingText.text = "Complete!";
             onTaskComplete?.Invoke(this);
-
-            yield return new WaitForSeconds(.5f);
-            onTaskShouldDisappear?.Invoke(this);
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             bool isUpload;
 

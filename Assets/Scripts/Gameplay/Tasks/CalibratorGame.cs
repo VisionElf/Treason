@@ -1,5 +1,6 @@
 ﻿using System;
 using Decoration;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,6 +64,9 @@ namespace Gameplay.Tasks
                 obj.enabled = false;
             }
 
+            foreach (var fill in gaugesFills)
+                fill.fillAmount = .1f;
+
             _currentIndex = 0;
 
             spins[0].enabled = true;
@@ -93,7 +97,6 @@ namespace Gameplay.Tasks
                 else
                 {
                     onTaskComplete?.Invoke(this);
-                    Invoke(nameof(Disappear), 1f);
                 }
             }
             else
@@ -101,11 +104,6 @@ namespace Gameplay.Tasks
                 _audioSource.PlayOneShot(wrongSound);
                 Setup();
             }
-        }
-
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private void Update()
@@ -119,7 +117,7 @@ namespace Gameplay.Tasks
             }
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
         }
     }

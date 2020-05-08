@@ -1,5 +1,6 @@
 ﻿using CustomExtensions;
 using DG.Tweening;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using TMPro;
 using UnityEngine;
@@ -46,7 +47,6 @@ namespace Gameplay.Tasks
             {
                 codeText.text = "OK";
                 onTaskComplete?.Invoke(this);
-                Invoke(nameof(Disappear), 0.5f);
             }
         }
 
@@ -79,12 +79,7 @@ namespace Gameplay.Tasks
             img.DOColor(Color.white, 0.1f);
         }
 
-        private void Disappear()
-        {
-            onTaskShouldDisappear?.Invoke(this);
-        }
-
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using DG.Tweening;
+using Gameplay.Entities;
 using Gameplay.Tasks.Data;
 using Unity.Mathematics;
 using UnityEngine;
@@ -60,8 +61,6 @@ namespace Gameplay.Tasks
                 guidelines.SetActive(false);
                 yield return new WaitForSeconds(.1f);
             }
-
-            onTaskShouldDisappear?.Invoke(this);
         }
 
         private bool IsCorrectAngle()
@@ -74,7 +73,7 @@ namespace Gameplay.Tasks
             return Mathf.Lerp(engineMaxAngle, -engineMaxAngle, slider.GetPercent().y);
         }
 
-        public override void StartTask(TaskData task)
+        public override void StartTask(TaskData task, Astronaut source)
         {
             Setup();
         }
