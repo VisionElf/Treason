@@ -27,7 +27,7 @@ namespace HUD
 
         private void CreateAbilityButtons()
         {
-            Astronaut.LocalAstronaut.Abilities.ForEach((a) => CreateAbilityButton(a));
+            Astronaut.LocalAstronaut.Abilities.ForEach(CreateAbilityButton);
         }
 
         private void UpdateAbilityButtons()

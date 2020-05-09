@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -101,11 +100,7 @@ namespace Gameplay.Entities
 
             if (photonView && photonView.Owner != null)
             {
-                isLocalCharacter = photonView.IsMine;
-
-                int roleIndex = photonView.Owner.GetRoleIndex();
-                SetRole(roleIndex);
-
+                SetRole(photonView.Owner.GetRoleIndex());
                 SetColor(photonView.Owner.GetColorIndex());
             }
             else
@@ -113,31 +108,9 @@ namespace Gameplay.Entities
                 SetColor(debugColorIndex);
                 SetRole(debugRoleIndex);
             }
-
-            if (isLocalCharacter) LocalAstronaut = this;
         }
 
-        public void CreateAbilities()
-        {
-            Abilities = new List<Ability>();
-            foreach (AbilityData abilityData in Role.abilities)
-                Abilities.Add(new Ability(abilityData, this));
-        }
-
-        public void RemoveNonGhostAbilities()
-        {
-            List<Ability> currentAbilities = new List<Ability>(Abilities);
-            foreach (Ability ability in currentAbilities)
-                if (!ability.GhostKeepAbility) Abilities.Remove(ability);
-        }
-
-        private void OnDestroy()
-        {
-            entityType.Remove(this);
-            Astronauts.Remove(this);
-        }
-
-        private IEnumerator Start()
+        private void Start()
         {
             _previousPosition = transform.localPosition;
 
@@ -159,20 +132,32 @@ namespace Gameplay.Entities
                 gameObject.AddComponent<AudioListener>();
             }
 
-            if (isLocalCharacter) LocalAstronaut = this;
-
-            yield return null;
-
             SetHighlight(false);
-            DelayedSetup();
-        }
-
-        private void DelayedSetup()
-        {
+            
             if (isLocalCharacter || Role == LocalAstronaut.Role)
                 playerNameText.color = Role.playerNameColor;
             else
                 playerNameText.color = Color.white;
+        }
+
+        public void CreateAbilities()
+        {
+            Abilities = new List<Ability>();
+            foreach (AbilityData abilityData in Role.abilities)
+                Abilities.Add(new Ability(abilityData, this));
+        }
+
+        public void RemoveNonGhostAbilities()
+        {
+            List<Ability> currentAbilities = new List<Ability>(Abilities);
+            foreach (Ability ability in currentAbilities)
+                if (!ability.GhostKeepAbility) Abilities.Remove(ability);
+        }
+
+        private void OnDestroy()
+        {
+            entityType.Remove(this);
+            Astronauts.Remove(this);
         }
 
         public void Update()

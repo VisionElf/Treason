@@ -4,14 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using CustomExtensions;
+using Gameplay;
 using Gameplay.Data;
 using Gameplay.Entities;
+using Utilities;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
-        public Astronaut astronautPrefab;
+        public GamePlayer playerPrefab;
         public Transform characterParent;
         public Transform[] characterSpawnPoints;
 
@@ -33,26 +35,11 @@ namespace Managers
             if (PhotonNetwork.IsConnected)
                 index = PhotonNetwork.PlayerList.Length - 1;
             var spawnPosition = characterSpawnPoints[index % characterSpawnPoints.Length].position;
-
-            Astronaut astronaut;
-            if (PhotonNetwork.IsConnected)
-            {
-                astronaut = PhotonNetwork.Instantiate(astronautPrefab.name, spawnPosition, Quaternion.identity).GetComponent<Astronaut>();
-            }
-            else
-            {
-                astronaut = Instantiate(astronautPrefab, spawnPosition, Quaternion.identity);
-                astronaut.isLocalCharacter = true;
-                Astronaut.LocalAstronaut = astronaut;
-            }
-
-            Astronaut.LocalAstronaut.CreateAbilities();
+            
+            var player = Utils.HybridInstantiate(playerPrefab, spawnPosition, Quaternion.identity);
+            player.CreateAstronaut(spawnPosition, characterParent);
+            
             onLocalAstronautCreated.TriggerEvent();
-
-            if (characterParent != null)
-                astronaut.transform.SetParent(characterParent);
-            if (SceneManager.GetActiveScene().buildIndex == 1)
-                astronaut.Spawn();
         }
 
         private void UpdatePlayer(Player player)

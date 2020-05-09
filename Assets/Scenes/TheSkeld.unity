@@ -17100,7 +17100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be07fad6dce34994eacb0b2ed4210d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  astronautPrefab: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+  playerPrefab: {fileID: 6360491896356439007, guid: 28454d451b03a68409949659e64d2c3b,
     type: 3}
   characterParent: {fileID: 1299661200}
   characterSpawnPoints:
