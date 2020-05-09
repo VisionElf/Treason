@@ -51,7 +51,7 @@ namespace Managers
         public void ReportDeadBody(Astronaut reporter, AstronautBody body)
         {
             foreach (Image image in astronautImages)
-                body.ApplyColor(image.material);
+                image.material = body.ColorData.material;
 
             animator.SetBool(AnimatorHashDeadBodyReported, true);
             animator.SetBool(AnimatorHashEmergencyMeeting, false);
@@ -62,7 +62,7 @@ namespace Managers
         public void EmergencyMeeting(Astronaut source)
         {
             foreach (Image image in astronautImages)
-                source.ApplyColor(image.material);
+                image.material = source.ColorData.material;
 
             animator.SetBool(AnimatorHashDeadBodyReported, false);
             animator.SetBool(AnimatorHashEmergencyMeeting, true);

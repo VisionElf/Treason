@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LimeColor
   m_EditorClassIdentifier: 
   colorName: Lime
+  material: {fileID: 2100000, guid: 3e0e9793ad494654291a498de78b1c69, type: 2}
   color1: {r: 0.3137255, g: 0.9333334, b: 0.22352943, a: 1}
   color2: {r: 0.57254905, g: 0.78039217, b: 0.8509804, a: 1}
   color3: {r: 0.08235294, g: 0.654902, b: 0.25882354, a: 1}

@@ -18,7 +18,8 @@ namespace Gameplay
         [Header("Mini Map")]
         public RectTransform minimapObject;
         public Image minimapBackground;
-        public RectTransform astronautIcon;
+        public RectTransform astronautIconTransform;
+        public Image astronautIconImage;
         public MiniMapRoomElement roomElementPrefab;
 
         private static MiniMap _instance;
@@ -47,6 +48,8 @@ namespace Gameplay
             _instantiatedMaterial = Instantiate(minimapBackground.material);
             minimapBackground.material = _instantiatedMaterial;
 
+            astronautIconImage.material = Astronaut.LocalAstronaut.ColorData.material;
+
             _roomElements = new List<MiniMapRoomElement>();
             Map map = Map.Instance;
             foreach (var room in map.rooms)
@@ -66,10 +69,10 @@ namespace Gameplay
 
         private void Update()
         {
-            if (!astronautIcon.gameObject.activeSelf) return;
+            if (!astronautIconTransform.gameObject.activeSelf) return;
 
             Vector2 posPercent = Map.Instance.GetPositionPercent(Astronaut.LocalAstronaut.transform.position);
-            astronautIcon.anchoredPosition = GetMiniMapPosition(posPercent);
+            astronautIconTransform.anchoredPosition = GetMiniMapPosition(posPercent);
         }
 
         private void Show(MiniMapType miniMapType)
@@ -82,7 +85,7 @@ namespace Gameplay
             _isShowing = true;
             SetMiniMapColor(GetMiniMapColor(miniMapType));
 
-            astronautIcon.gameObject.SetActive(miniMapType == MiniMapType.Standard);
+            astronautIconTransform.gameObject.SetActive(miniMapType == MiniMapType.Standard);
             foreach (var elt in _roomElements)
             {
                 elt.TogglePlayerCountInRoomVisibility(miniMapType == MiniMapType.Admin);

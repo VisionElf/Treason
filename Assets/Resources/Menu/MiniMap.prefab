@@ -114,7 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimapObject: {fileID: 7873738248861814910}
   minimapBackground: {fileID: 7873738248861814909}
-  astronautIcon: {fileID: 7873738247385891165}
+  astronautIconTransform: {fileID: 7873738247385891165}
+  astronautIconImage: {fileID: 7873738247385891164}
   roomElementPrefab: {fileID: 2283292643672689870, guid: 1c4e926542eb5ac4b9bbaa0afedf9a8d,
     type: 3}
 --- !u!1 &7873738247385891166

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TealColor
   m_EditorClassIdentifier: 
   colorName: Teal
+  material: {fileID: 2100000, guid: 0fbc60074eed3934c806b5d47c3fe7c2, type: 2}
   color1: {r: 0.21960786, g: 0.9921569, b: 0.8588236, a: 1}
   color2: {r: 0.57254905, g: 0.78039217, b: 0.8509804, a: 1}
   color3: {r: 0.14117648, g: 0.65882355, b: 0.74509805, a: 1}

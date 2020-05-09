@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BlueColor
   m_EditorClassIdentifier: 
   colorName: Blue
+  material: {fileID: 2100000, guid: eca7df5a097736b4db874c451a2cd536, type: 2}
   color1: {r: 0.07450981, g: 0.18039216, b: 0.80784315, a: 1}
   color2: {r: 0.57254905, g: 0.7764706, b: 0.84705883, a: 1}
   color3: {r: 0.03529412, g: 0.08235294, b: 0.5529412, a: 1}

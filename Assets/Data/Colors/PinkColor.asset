@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PinkColor
   m_EditorClassIdentifier: 
   colorName: Pink
+  material: {fileID: 2100000, guid: 54749354a623f8c459ab965ea21a7321, type: 2}
   color1: {r: 0.92549026, g: 0.32941177, b: 0.7254902, a: 1}
   color2: {r: 0.57254905, g: 0.78039217, b: 0.8509804, a: 1}
   color3: {r: 0.67058825, g: 0.16862746, b: 0.6784314, a: 1}

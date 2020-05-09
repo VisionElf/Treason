@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PurpleColor
   m_EditorClassIdentifier: 
   colorName: Purple
+  material: {fileID: 2100000, guid: f933a64c60f0eaa4287441cb2cf491e3, type: 2}
   color1: {r: 0.41960788, g: 0.18431373, b: 0.7294118, a: 1}
   color2: {r: 0.57254905, g: 0.78039217, b: 0.8509804, a: 1}
   color3: {r: 0.23137257, g: 0.09019608, b: 0.48627454, a: 1}

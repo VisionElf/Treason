@@ -33,10 +33,6 @@ namespace Gameplay.Entities
         public static Astronaut LocalAstronaut;
         public static List<Astronaut> Astronauts = new List<Astronaut>();
 
-        private static readonly int ShaderColor1 = Shader.PropertyToID("_Color1");
-        private static readonly int ShaderColor2 = Shader.PropertyToID("_Color2");
-        private static readonly int ShaderColor3 = Shader.PropertyToID("_Color3");
-
         private static readonly int AnimatorHashSpawn = Animator.StringToHash("Spawn");
         private static readonly int AnimatorHashSpeed = Animator.StringToHash("Speed");
         private static readonly int AnimatorHashRunning = Animator.StringToHash("Running");
@@ -84,12 +80,12 @@ namespace Gameplay.Entities
         public AstronautState State { get; set; }
         public List<Ability> Abilities { get; private set; }
 
+        public ColorData ColorData { get; private set; }
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
         private Collider2D _hitbox;
         private AudioSource _audioSource;
         private Direction _facingDirection;
-        private int _colorIndex;
         private bool _isFrozen;
 
         private void Awake()
@@ -110,8 +106,7 @@ namespace Gameplay.Entities
                 int roleIndex = photonView.Owner.GetRoleIndex();
                 SetRole(roleIndex);
 
-                _colorIndex = photonView.Owner.GetColorIndex();
-                SetColor(_colorIndex);
+                SetColor(photonView.Owner.GetColorIndex());
             }
             else
             {
@@ -225,16 +220,8 @@ namespace Gameplay.Entities
 
         private void SetColor(int colorIndex)
         {
-            _colorIndex = colorIndex;
-            ApplyColor(spriteRenderer.material);
-        }
-
-        public void ApplyColor(Material material)
-        {
-            ColorData data = colorList.list[_colorIndex];
-            material.SetColor(ShaderColor1, data.color1);
-            material.SetColor(ShaderColor2, data.color2);
-            material.SetColor(ShaderColor3, data.color3);
+            ColorData = colorList.list[colorIndex];
+            spriteRenderer.material = ColorData.material;
         }
 
         private void SetVisible(bool visible)
@@ -332,7 +319,7 @@ namespace Gameplay.Entities
         {
             GameObject deadAstronaut = Instantiate(astronautBodyPrefab, transform.position, transform.rotation, transform.parent);
             deadAstronaut.transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y);
-            deadAstronaut.GetComponent<AstronautBody>().SetColor(colorList.list[_colorIndex]);
+            deadAstronaut.GetComponent<AstronautBody>().SetColor(ColorData);
             ToGhost();
         }
 
@@ -365,8 +352,7 @@ namespace Gameplay.Entities
         
         public string GetColorName()
         {
-            var data = colorList.list[_colorIndex];
-            return data.colorName;
+            return ColorData.colorName;
         }
     }
 }
