@@ -236,8 +236,8 @@ namespace Gameplay.Entities
 
         private void UpdateDepth()
         {
-            var position = transform.localPosition;
-            position.z = position.y / 1000f;
+            Vector3 position = transform.localPosition;
+            position.z = position.y / 10f;
             transform.localPosition = position;
         }
 

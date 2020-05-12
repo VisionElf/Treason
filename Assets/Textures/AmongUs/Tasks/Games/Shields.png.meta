@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: fd4eed08c2028dc4bb11fd3632cb7610
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: shield_Gauge100
+  - first:
+      213: 21300002
+    second: shield_Panel
+  - first:
+      213: 21300004
+    second: shield_screen
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 12
+  maxTextureSize: 984
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shield_Gauge100
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 27
+        width: 449
+        height: 449
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8.5, y: 224.5}
+        - {x: 8.5, y: 224.5}
+        - {x: 110.5, y: 199.5}
+        - {x: 196.5, y: 115.5}
+        - {x: 224.5, y: 9.5}
+        - {x: 224.5, y: -11.5}
+        - {x: 196.5, y: -114.5}
+        - {x: 110.5, y: -199.5}
+        - {x: 9.5, y: -224.5}
+        - {x: -9.5, y: -224.5}
+        - {x: -15.5, y: -223.5}
+        - {x: -114.5, y: -197.5}
+        - {x: -197.5, y: -112.5}
+        - {x: -224.5, y: -9.5}
+        - {x: -224.5, y: 8.5}
+        - {x: -199.5, y: 112.5}
+        - {x: -113.5, y: 198.5}
+      physicsShape:
+      - - {x: 106.5, y: -198.5}
+        - {x: 112.5, y: -196.5}
+        - {x: 196.5, y: -112.5}
+        - {x: 198.5, y: -105.5}
+        - {x: 204.5, y: -83.5}
+        - {x: 224.5, y: -8.5}
+        - {x: 224.5, y: 8.5}
+        - {x: 208.5, y: 68.5}
+        - {x: 205.5, y: 79.49999}
+        - {x: 201.5, y: 94.5}
+        - {x: 198.5, y: 105.5}
+        - {x: 196.5, y: 112.5}
+        - {x: 112.5, y: 196.5}
+        - {x: 105.5, y: 198.5}
+        - {x: 101.5, y: 199.5}
+        - {x: 90.5, y: 202.5}
+        - {x: 86.5, y: 203.5}
+        - {x: 75.5, y: 206.5}
+        - {x: 15.5, y: 222.5}
+        - {x: 8.5, y: 224.5}
+        - {x: -8.5, y: 224.5}
+        - {x: -26.5, y: 219.5}
+        - {x: -45.5, y: 214.5}
+        - {x: -105.5, y: 198.5}
+        - {x: -112.5, y: 196.5}
+        - {x: -196.5, y: 112.5}
+        - {x: -198.5, y: 105.5}
+        - {x: -206.5, y: 75.5}
+        - {x: -212.5, y: 53.5}
+        - {x: -213.5, y: 49.5}
+        - {x: -216.5, y: 38.5}
+        - {x: -218.5, y: 27.5}
+        - {x: -220.5, y: 23.5}
+        - {x: -224.5, y: 8.5}
+        - {x: -224.5, y: -8.5}
+        - {x: -223.5, y: -12.5}
+        - {x: -207.5, y: -72.5}
+        - {x: -200.5, y: -98.49999}
+        - {x: -196.5, y: -112.5}
+        - {x: -112.5, y: -196.5}
+        - {x: -106.5, y: -198.5}
+        - {x: -87.5, y: -203.5}
+        - {x: -76.5, y: -206.5}
+        - {x: -46.5, y: -214.5}
+        - {x: -20.5, y: -221.5}
+        - {x: -16.5, y: -222.5}
+        - {x: -9.5, y: -224.5}
+        - {x: 9.5, y: -224.5}
+        - {x: 31.5, y: -218.5}
+      - - {x: 169.5, y: -182.5}
+        - {x: 177.5, y: -170.5}
+        - {x: 204.5, y: -122.5}
+        - {x: 224.5, y: -122.5}
+        - {x: 224.5, y: -113.5}
+        - {x: 202.5, y: -113.5}
+        - {x: 196.5, y: -118.5}
+        - {x: 162.5, y: -175.5}
+        - {x: 161.5, y: -179.5}
+        - {x: 161.5, y: -189.5}
+        - {x: 183.5, y: -224.5}
+        - {x: 193.5, y: -224.5}
+        - {x: 193.5, y: -223.5}
+        - {x: 189.5, y: -215.5}
+        - {x: 175.5, y: -191.5}
+      - - {x: -13.5, y: -213.5}
+        - {x: -20.5, y: -211.5}
+        - {x: -36.5, y: -207.5}
+        - {x: -58.5, y: -201.5}
+        - {x: -103.5, y: -189.5}
+        - {x: -109.5, y: -188.5}
+        - {x: -188.5, y: -109.5}
+        - {x: -189.5, y: -103.5}
+        - {x: -190.5, y: -99.5}
+        - {x: -206.5, y: -39.5}
+        - {x: -213.5, y: -13.5}
+        - {x: -216.5, y: 0.5}
+        - {x: -213.5, y: 9.5}
+        - {x: -210.5, y: 24.5}
+        - {x: -207.5, y: 35.5}
+        - {x: -206.5, y: 39.5}
+        - {x: -200.5, y: 61.5}
+        - {x: -198.5, y: 68.5}
+        - {x: -195.5, y: 80.5}
+        - {x: -191.5, y: 95.5}
+        - {x: -188.5, y: 106.5}
+        - {x: -188.5, y: 109.5}
+        - {x: -109.5, y: 188.5}
+        - {x: -102.5, y: 189.5}
+        - {x: -72.5, y: 197.5}
+        - {x: -46.5, y: 204.5}
+        - {x: -1.5, y: 216.5}
+        - {x: 11.5, y: 213.5}
+        - {x: 19.5, y: 210.5}
+        - {x: 35.5, y: 207.5}
+        - {x: 46.5, y: 204.5}
+        - {x: 61.5, y: 200.5}
+        - {x: 72.5, y: 197.5}
+        - {x: 76.5, y: 196.5}
+        - {x: 87.5, y: 193.5}
+        - {x: 102.5, y: 189.5}
+        - {x: 109.5, y: 188.5}
+        - {x: 188.5, y: 109.5}
+        - {x: 188.5, y: 106.5}
+        - {x: 195.5, y: 80.5}
+        - {x: 214.5, y: 9.5}
+        - {x: 216.5, y: 5.5}
+        - {x: 216.5, y: -2.5}
+        - {x: 210.5, y: -24.5}
+        - {x: 209.5, y: -28.5}
+        - {x: 206.5, y: -39.5}
+        - {x: 205.5, y: -43.5}
+        - {x: 202.5, y: -54.5}
+        - {x: 201.5, y: -58.5}
+        - {x: 194.5, y: -84.5}
+        - {x: 189.5, y: -103.5}
+        - {x: 188.5, y: -109.5}
+        - {x: 109.5, y: -188.5}
+        - {x: 103.5, y: -189.5}
+        - {x: 58.5, y: -201.5}
+        - {x: 32.5, y: -208.5}
+        - {x: -1.5, y: -217.5}
+        - {x: -2.5, y: -216.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599297a408ad4d84a3f160154b32f17b
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_Panel
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 3
+        width: 152
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -41, y: 66}
+        - {x: 46, y: 66}
+        - {x: 76, y: 6}
+        - {x: 76, y: -14}
+        - {x: 41, y: -66}
+        - {x: -42, y: -66}
+        - {x: -76, y: -6}
+        - {x: -76, y: 6}
+      physicsShape:
+      - - {x: 76, y: 5}
+        - {x: 71, y: 14}
+        - {x: 44, y: 61}
+        - {x: 40, y: 66}
+        - {x: -39, y: 66}
+        - {x: -42, y: 64}
+        - {x: -49, y: 52}
+        - {x: -68, y: 19}
+        - {x: -76, y: 4}
+        - {x: -76, y: -6}
+        - {x: -63, y: -28}
+        - {x: -45, y: -59}
+        - {x: -40, y: -66}
+        - {x: 41, y: -66}
+        - {x: 52, y: -47}
+        - {x: 76, y: -5}
+      - - {x: -37, y: -52}
+        - {x: -59, y: -14}
+        - {x: -68, y: 0}
+        - {x: -60, y: 12}
+        - {x: -42, y: 43}
+        - {x: -34, y: 59}
+        - {x: 34, y: 59}
+        - {x: 41, y: 45}
+        - {x: 68, y: -1}
+        - {x: 57, y: -16}
+        - {x: 39, y: -49}
+        - {x: 34, y: -59}
+        - {x: -34, y: -59}
+      - - {x: -56, y: 66}
+        - {x: -76, y: 46}
+        - {x: -76, y: 37}
+        - {x: -75, y: 37}
+        - {x: -47, y: 65}
+        - {x: -47, y: 66}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f860e843f64477f98114333ce4e7abe
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shield_screen
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 478
+        width: 505
+        height: 505
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -252.5, y: -252.5}
+        - {x: -252.5, y: 252.5}
+        - {x: 252.5, y: 252.5}
+        - {x: 252.5, y: -252.5}
+      physicsShape:
+      - - {x: -252.5, y: 252.5}
+        - {x: -252.5, y: -252.5}
+        - {x: 251.5, y: -252.5}
+        - {x: 252.5, y: -251.5}
+        - {x: 252.5, y: 251.5}
+        - {x: 251.5, y: 252.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 612156117026420ba7239b0474ccf2ef
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
