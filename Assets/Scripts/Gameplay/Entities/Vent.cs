@@ -86,10 +86,14 @@ namespace Gameplay.Entities
         {
             Astronaut.Freeze();
 
-            while (Vector3.Distance(transform.position, Astronaut.transform.position) > 0.1f)
+            float oldDistance = float.PositiveInfinity;
+            float distance = Vector3.Distance(transform.position, Astronaut.transform.position);
+            while (distance > 0.15f && oldDistance != distance)
             {
                 Astronaut.WalkTowards(transform.position);
                 yield return null;
+                oldDistance = distance;
+                distance = Vector3.Distance(transform.position, Astronaut.transform.position);
             }
             Astronaut.ResetSpeed();
             Astronaut.transform.position = transform.position;
