@@ -5,19 +5,18 @@ namespace Gameplay.Entities
     public class Door : MonoBehaviour
     {
         public float closeDuration;
+        public AudioSource audioSource;
         public AudioClip closeSound;
         public AudioClip openSound;
 
         private Animator _animator;
         private bool _closed;
-        private AudioSource _audioSource;
 
         private static readonly int AnimatorHashClosed = Animator.StringToHash("Closed");
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            _audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -29,8 +28,8 @@ namespace Gameplay.Entities
         {
             if (_closed != closed)
             {
-                if (closed) _audioSource.PlayOneShot(closeSound);
-                else _audioSource.PlayOneShot(openSound);
+                if (closed) audioSource.PlayOneShot(closeSound);
+                else audioSource.PlayOneShot(openSound);
             }
             _closed = closed;
             _animator.SetBool(AnimatorHashClosed, _closed);
