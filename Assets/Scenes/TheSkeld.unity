@@ -7171,6 +7171,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: debugRoleIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Name
@@ -19301,6 +19306,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: debugRoleIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Name
@@ -24505,6 +24515,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: debugRoleIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
       propertyPath: m_Name
@@ -27231,6 +27246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: debugRoleIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}
@@ -33725,6 +33745,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460623510227591485, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
+        type: 3}
+      propertyPath: debugRoleIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7460623510227591487, guid: cf2b13f82c82bad4e8463e5f2acfe15f,
         type: 3}

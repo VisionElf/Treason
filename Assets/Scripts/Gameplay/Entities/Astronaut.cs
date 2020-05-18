@@ -43,6 +43,7 @@ namespace Gameplay.Entities
         [Header("Visual")]
         public TMP_Text playerNameText;
         public SpriteRenderer outline;
+        public Transform interactionRangeOrigin;
 
         [Header("Animation")]
         public float minAnimationSpeed;
@@ -332,7 +333,7 @@ namespace Gameplay.Entities
         }
 
         public Vector3 GetCenter() => (Vector2)transform.position + hitbox.offset;
-        public Vector3 GetPosition() => transform.position;
+        public Vector3 GetInteractionRangeOrigin() => interactionRangeOrigin.position;
         public void SetOutline(bool value) { }
         public void SetHighlight(bool value) => outline.enabled = value;
 

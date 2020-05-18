@@ -25,7 +25,7 @@ namespace Gameplay.Entities
             entityType.Remove(this);
         }
 
-        public Vector3 GetPosition() => transform.position;
+        public Vector3 GetInteractionRangeOrigin() => transform.position;
         public void SetOutline(bool value)
         {
             if (spriteRenderer != null)

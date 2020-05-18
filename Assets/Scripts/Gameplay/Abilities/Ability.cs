@@ -55,8 +55,8 @@ namespace Gameplay.Abilities
                     context.Set(Context.Target, target);
                     if (!EvaluateConditions(context)) continue;
 
-                    Vector2 sourcePos = _source.GetPosition();
-                    Vector2 targetPos = target.GetPosition();
+                    Vector2 sourcePos = _source.GetInteractionRangeOrigin();
+                    Vector2 targetPos = target.GetInteractionRangeOrigin();
                     float dist = Vector3.Distance(sourcePos, targetPos);
                     if (dist < minDist)
                     {

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actionData: {fileID: 11400000, guid: cff22a2e27c17b74c90d767187cbb361, type: 2}
   cooldown: 25
-  abilityRange: 1
+  abilityRange: 0.6
   targetTypes:
   - {fileID: 11400000, guid: 0889ecea6d3cd9e488a3e9175f5f16d8, type: 2}
   conditions:
