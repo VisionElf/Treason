@@ -1486,7 +1486,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.8
   floatName: CycleOffset
 --- !u!95 &133111493
 Animator:
@@ -2004,7 +2004,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -4899,7 +4899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.2
   floatName: CycleOffset
 --- !u!95 &184209557
 Animator:
@@ -4912,7 +4912,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -5305,7 +5305,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 407b43c181810094b9f489d9be411bf9, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -5936,7 +5936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.6
   floatName: CycleOffset
 --- !u!95 &235972584
 Animator:
@@ -5949,7 +5949,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -6194,7 +6194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.2
   floatName: CycleOffset
 --- !u!95 &257972381
 Animator:
@@ -6207,7 +6207,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -6308,7 +6308,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -6540,7 +6540,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fc42a6b4e81fb1a498249b24c08aa5c6, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -6641,7 +6641,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 57cfe817b8f59fc4a94be8aced9f6796, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -6871,7 +6871,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9b58f9a6cd9ab714faf43c7cd7830514, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -7104,7 +7104,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 57cfe817b8f59fc4a94be8aced9f6796, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -7423,7 +7423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.1
   floatName: CycleOffset
 --- !u!95 &319772488
 Animator:
@@ -7436,7 +7436,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -8331,7 +8331,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -8509,7 +8509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.7
   floatName: CycleOffset
 --- !u!95 &384126472
 Animator:
@@ -8522,7 +8522,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -8625,7 +8625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.9
   floatName: CycleOffset
 --- !u!95 &385179805
 Animator:
@@ -8638,7 +8638,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -9759,7 +9759,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 98c51725a71686c45b3b407b225110ef, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -10049,7 +10049,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a51ff49d3ac355a42ac78805e20fb9f2, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -10489,7 +10489,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: a5a33d8310f613f4ea2d27a02270497f, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -10589,6 +10589,7 @@ GameObject:
   - component: {fileID: 527113568}
   - component: {fileID: 527113569}
   - component: {fileID: 527113570}
+  - component: {fileID: 527113571}
   m_Layer: 10
   m_Name: FrontPipes
   m_TagString: Untagged
@@ -10671,7 +10672,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 20c3883cdc5fdf3498f1867d6dd188cf, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -10679,6 +10680,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &527113571
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527113567}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.8, y: 1.13}
+    newSize: {x: 0.8, y: 1.13}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16, y: 0.2}
+      - {x: -0.14, y: 0.2}
+      - {x: -0.14, y: -0.23}
+      - {x: 0.14, y: -0.54}
+      - {x: 0.25, y: -0.57}
+      - {x: 0.35, y: -0.54}
+      - {x: 0.4, y: -0.48}
+      - {x: 0.4, y: -0.37}
+      - {x: 0.16, y: -0.14}
 --- !u!1 &528666279
 GameObject:
   m_ObjectHideFlags: 0
@@ -11062,7 +11097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.4
   floatName: CycleOffset
 --- !u!95 &553997632
 Animator:
@@ -11075,7 +11110,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -11227,7 +11262,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fdb8c44aacb89b742bbf9f8e90b07469, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -11363,7 +11398,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -12772,7 +12807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.9
   floatName: CycleOffset
 --- !u!95 &704321015
 Animator:
@@ -12785,7 +12820,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -12963,7 +12998,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1e2fef8f304cc544285a128577b55cfe, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -13361,7 +13396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.3
   floatName: CycleOffset
 --- !u!95 &728353801
 Animator:
@@ -13374,7 +13409,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -13640,7 +13675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.3
   floatName: CycleOffset
 --- !u!95 &746290188
 Animator:
@@ -13653,7 +13688,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -13868,6 +13903,7 @@ GameObject:
   - component: {fileID: 749818073}
   - component: {fileID: 749818074}
   - component: {fileID: 749818075}
+  - component: {fileID: 749818076}
   m_Layer: 10
   m_Name: TopPipe
   m_TagString: Untagged
@@ -13950,7 +13986,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d46749aed5ac39f4db3a87f04e725f66, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -13958,6 +13994,38 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &749818076
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749818072}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.23, y: 2.09}
+    newSize: {x: 1.23, y: 2.09}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.62, y: 0.84}
+      - {x: -0.62, y: 0.08}
+      - {x: -0.62, y: -2}
+      - {x: -0.15, y: -2}
+      - {x: -0.15, y: -0.3}
+      - {x: 0, y: -0.23}
+      - {x: 0.62, y: 0.18}
 --- !u!1 &754952024
 GameObject:
   m_ObjectHideFlags: 0
@@ -15394,7 +15462,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 88b77a9025efe06439c699ecd9f6bb85, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -15629,7 +15697,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -15730,7 +15798,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f6ac722bb7642274ca3187ff23a8b8a0, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -15930,7 +15998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.8
   floatName: CycleOffset
 --- !u!95 &877412661
 Animator:
@@ -15943,7 +16011,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -16200,7 +16268,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 46037c8a11b7fcf458d55e6d93c498a9, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -16479,7 +16547,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 277bb996b9007934a99a7c2fa247a4c8, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -16727,7 +16795,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 1e2fef8f304cc544285a128577b55cfe, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -17317,7 +17385,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 89938d2f9e0aa05449397ba696dc8661, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -17910,7 +17978,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d57c9772b4dbb404eb15ecab309a2d2e, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -19133,7 +19201,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8ccfe17ab89dadf42a3fb385917738e3, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -19644,7 +19712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.7
   floatName: CycleOffset
 --- !u!95 &1218754926
 Animator:
@@ -19657,7 +19725,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -20530,7 +20598,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -20739,7 +20807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.3
   floatName: CycleOffset
 --- !u!95 &1266637809
 Animator:
@@ -20752,7 +20820,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -21107,7 +21175,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -21208,7 +21276,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f6ac722bb7642274ca3187ff23a8b8a0, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -21311,7 +21379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.2
   floatName: CycleOffset
 --- !u!95 &1294046536
 Animator:
@@ -21324,7 +21392,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -21847,7 +21915,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d7b26d34815d1604ab8e0124972cc96d, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -23028,7 +23096,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c4e21a39a3736ed4b848364038570192, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -23559,7 +23627,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bcaa285b5fa50ca4ab4896f7373f4ce2, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -23695,6 +23763,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1499313590}
   - component: {fileID: 1499313591}
+  - component: {fileID: 1499313592}
   m_Layer: 10
   m_Name: Base
   m_TagString: Untagged
@@ -23766,6 +23835,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1499313592
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499313589}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.38, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.43, y: 2.96}
+    newSize: {x: 1.43, y: 2.96}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 3}
+  m_EdgeRadius: 0
 --- !u!1 &1508509483
 GameObject:
   m_ObjectHideFlags: 0
@@ -23859,7 +23954,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f261cc64879aeae479897fe5986f139a, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -25149,7 +25244,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -25218,6 +25313,7 @@ GameObject:
   - component: {fileID: 1629978612}
   - component: {fileID: 1629978613}
   - component: {fileID: 1629978614}
+  - component: {fileID: 1629978615}
   m_Layer: 10
   m_Name: Reactor
   m_TagString: Untagged
@@ -25300,7 +25396,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 742708ab3d9e1a04e912a995334d1f07, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -25308,6 +25404,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1629978615
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629978611}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.81}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5099924, y: 0.4970414}
+    oldSize: {x: 1.539239, y: 1.69}
+    newSize: {x: 1.539239, y: 1.69}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.35, y: 1.5}
+  m_EdgeRadius: 0
 --- !u!1 &1634125191
 GameObject:
   m_ObjectHideFlags: 0
@@ -26677,7 +26799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.1
   floatName: CycleOffset
 --- !u!95 &1722128585
 Animator:
@@ -26690,7 +26812,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -26922,7 +27044,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 83d8f668385e1cc4aa7f2cd6e7b7fd75, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -27165,7 +27287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.5
   floatName: CycleOffset
 --- !u!95 &1795095486
 Animator:
@@ -27178,7 +27300,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -27279,7 +27401,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4d1eaaac6b5bb864b89c750808bce107, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -27380,7 +27502,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f6ac722bb7642274ca3187ff23a8b8a0, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -28989,7 +29111,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: da040ed46d78228419f6746cd7325be2, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -29356,7 +29478,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3bdd732260faa8c48a82d3a0020b66ce, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -29983,7 +30105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.5
   floatName: CycleOffset
 --- !u!95 &1991490808
 Animator:
@@ -29996,7 +30118,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -30181,7 +30303,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -30785,7 +30907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ce42202d7a44244848d2045a1ca844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cycleOffset: 0
+  cycleOffset: 0.9
   floatName: CycleOffset
 --- !u!95 &2086700265
 Animator:
@@ -30798,7 +30920,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 7512376e32fc421448a87c1b830fd323, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -30992,7 +31114,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f6ac722bb7642274ca3187ff23a8b8a0, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0

@@ -317,8 +317,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.58, y: -0.91}
       - {x: 1.57, y: -0.91}
-      - {x: 1.57, y: 0.84}
-      - {x: -1.54, y: 0.84}
+      - {x: 1.57, y: 0.65}
+      - {x: -1.54, y: 0.65}
       - {x: -1.54, y: -1.36}
       - {x: -0.73, y: -1.36}
       - {x: -0.58, y: -1.23}
@@ -415,7 +415,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 86458d6b6d2e6354cacc58a1ac994e34, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -597,7 +597,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dd2d654d5bee1044a93119d6c65d7f90, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
