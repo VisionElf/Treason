@@ -9,6 +9,7 @@ namespace Gameplay.Entities
         [Header("Entity")]
         public EntityTypeData entityType;
         public SpriteRenderer spriteRenderer;
+        public CircleCollider2D overrideInteractionRange;
 
         public static readonly int ShaderOutlineEnabled = Shader.PropertyToID("_OutlineEnabled");
         public static readonly int ShaderHighlightEnabled = Shader.PropertyToID("_HighlightEnabled");
@@ -25,7 +26,8 @@ namespace Gameplay.Entities
             entityType.Remove(this);
         }
 
-        public Vector3 GetInteractionRangeOrigin() => transform.position;
+        public Vector3 GetInteractionOrigin() => transform.position;
+        public CircleCollider2D GetOverrideInteractionRange() => overrideInteractionRange;
         public void SetOutline(bool value)
         {
             if (spriteRenderer != null)

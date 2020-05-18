@@ -745,7 +745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNameText: {fileID: 3241142889095061895}
   outline: {fileID: 5000062614298253507}
-  interactionRangeOrigin: {fileID: 8631501199974311642}
+  interactionOrigin: {fileID: 8631501199974311642}
   minAnimationSpeed: 1
   maxAnimationSpeed: 5
   animator: {fileID: 7541920351911303659}

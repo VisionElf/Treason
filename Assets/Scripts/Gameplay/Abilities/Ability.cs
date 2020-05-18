@@ -55,9 +55,16 @@ namespace Gameplay.Abilities
                     context.Set(Context.Target, target);
                     if (!EvaluateConditions(context)) continue;
 
-                    Vector2 sourcePos = _source.GetInteractionRangeOrigin();
-                    Vector2 targetPos = target.GetInteractionRangeOrigin();
+                    target.SetOutline(true);
+
+                    Vector2 sourcePos = _source.GetInteractionOrigin();
+                    Vector2 targetPos = target.GetInteractionOrigin();
+
                     float dist = Vector3.Distance(sourcePos, targetPos);
+                    CircleCollider2D overrideRange = target.GetOverrideInteractionRange();
+                    if (overrideRange != null)
+                        dist -= overrideRange.radius;
+
                     if (dist < minDist)
                     {
                         closestTarget = target;
