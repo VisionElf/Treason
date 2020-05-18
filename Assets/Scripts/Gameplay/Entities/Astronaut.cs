@@ -12,6 +12,7 @@ using Gameplay.Abilities;
 using Gameplay.Abilities.Data;
 using Gameplay.Data;
 using Gameplay.Entities.Data;
+using Audio;
 
 namespace Gameplay.Entities
 {
@@ -52,6 +53,7 @@ namespace Gameplay.Entities
 
         [Header("Movement")]
         public float speed;
+        public Collider2D hitbox;
 
         [Header("Vision")]
         public float visionRange;
@@ -73,6 +75,7 @@ namespace Gameplay.Entities
 
         [Header("Sounds")]
         public AudioClip spawnSound;
+        public Footsteps footsteps;
 
         public bool IsRunning { get; private set; }
         public RoleData Role { get; private set; }
@@ -82,7 +85,6 @@ namespace Gameplay.Entities
         public ColorData ColorData { get; private set; }
         private Vector3 _previousPosition;
         private Rigidbody2D _body;
-        private Collider2D _hitbox;
         private AudioSource _audioSource;
         private Direction _facingDirection;
         private bool _isFrozen;
@@ -93,7 +95,6 @@ namespace Gameplay.Entities
             entityType.Add(this);
 
             _body = GetComponent<Rigidbody2D>();
-            _hitbox = GetComponent<Collider2D>();
             _audioSource = GetComponent<AudioSource>();
             _isFrozen = false;
             State = AstronautState.Normal;
@@ -125,7 +126,7 @@ namespace Gameplay.Entities
             if (!isLocalCharacter)
             {
                 _body.bodyType = RigidbodyType2D.Static;
-                _hitbox.enabled = false;
+                hitbox.enabled = false;
             }
             else
             {
@@ -133,7 +134,7 @@ namespace Gameplay.Entities
             }
 
             SetHighlight(false);
-            
+
             if (isLocalCharacter || Role == LocalAstronaut.Role)
                 playerNameText.color = Role.playerNameColor;
             else
@@ -313,7 +314,7 @@ namespace Gameplay.Entities
             State = AstronautState.Ghost;
             gameObject.SetLayerRecursively(GhostLayerName);
             spriteRenderer.sortingLayerName = GhostLayerName;
-            _hitbox.isTrigger = true;
+            hitbox.isTrigger = true;
             animator.SetTrigger(AnimatorHashGhost);
 
             if (isLocalCharacter)
@@ -330,11 +331,11 @@ namespace Gameplay.Entities
             }
         }
 
-        public Vector3 GetCenter() => (Vector2)transform.position + _hitbox.offset;
+        public Vector3 GetCenter() => (Vector2)transform.position + hitbox.offset;
         public Vector3 GetPosition() => transform.position;
         public void SetOutline(bool value) { }
         public void SetHighlight(bool value) => outline.enabled = value;
-        
+
         public string GetColorName()
         {
             return ColorData.colorName;

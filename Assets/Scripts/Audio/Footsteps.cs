@@ -27,10 +27,18 @@ namespace Audio
         public float period;
         public float offset;
         public FootstepsList[] list;
+        public FootstepType defaultType;
         public AudioSource source;
         public Astronaut astronaut;
 
         private float _time;
+        private FootstepType _currentType;
+
+        private void Awake()
+        {
+            _time = 0f;
+            _currentType = defaultType;
+        }
 
         private void LateUpdate()
         {
@@ -47,11 +55,13 @@ namespace Audio
             if (_time >= totalPeriod)
             {
                 _time -= totalPeriod;
-                FootstepsList list = GetFootstepList(FootstepType.Metal);
+                FootstepsList list = GetFootstepList(_currentType);
                 list.audioClips.PlayRandomSound(source);
             }
         }
 
         private FootstepsList GetFootstepList(FootstepType type) => list.First((list) => list.type == type);
+
+        public void SetCurrentType(FootstepType? type = null) => _currentType = type ?? defaultType;
     }
 }
