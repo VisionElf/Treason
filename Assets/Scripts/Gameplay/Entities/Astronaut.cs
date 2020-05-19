@@ -168,7 +168,7 @@ namespace Gameplay.Entities
 
             Abilities?.ForEach((a) => a.Update());
 
-            if (isLocalCharacter && CanMove())
+            if (isLocalCharacter && !_isFrozen)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -253,8 +253,6 @@ namespace Gameplay.Entities
 
             WalkIn(new Vector3(x, y).normalized);
         }
-
-        private bool CanMove() => !_isFrozen;
 
         public void Freeze()
         {

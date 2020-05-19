@@ -13,7 +13,7 @@ namespace Gameplay.Tasks
 
         [Header("Sounds")]
         public AudioClip switchSound;
-        
+
         [Header("References")]
         public GameObject leftWires;
         public GameObject rightWires;

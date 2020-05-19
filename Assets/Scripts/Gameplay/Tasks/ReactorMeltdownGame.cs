@@ -13,7 +13,7 @@ namespace Gameplay.Tasks
     {
         [Header("Settings")]
         public Vector2 glowBounds;
-        
+
         [Header("Sounds")]
         public AudioSource handSource;
 
@@ -34,7 +34,7 @@ namespace Gameplay.Tasks
             seq.Append(glow.DOAnchorPosY(glowBounds.x, duration).SetEase(Ease.InOutSine));
             seq.SetLoops(-1);
             seq.Play();
-            
+
             buttonArea.onDown += OnDown;
             buttonArea.onUp += OnUp;
         }
@@ -58,7 +58,7 @@ namespace Gameplay.Tasks
                 glow.gameObject.SetActive(true);
                 statusText.text = "WAITING FOR SECOND USER";
                 handSource.Play();
-            
+
                 Invoke(nameof(OnSecondUserDown), 4f); // DEBUG - SIMULATE SECOND USER
             }
         }

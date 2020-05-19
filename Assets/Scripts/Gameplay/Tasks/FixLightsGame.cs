@@ -47,7 +47,7 @@ namespace Gameplay.Tasks
             {
                 if (!_switchesStates[i]) return;
             }
-            
+
             onTaskComplete?.Invoke(this);
         }
 

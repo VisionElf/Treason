@@ -35,10 +35,10 @@ namespace Managers
             if (PhotonNetwork.IsConnected)
                 index = PhotonNetwork.PlayerList.Length - 1;
             var spawnPosition = characterSpawnPoints[index % characterSpawnPoints.Length].position;
-            
+
             var player = Utils.HybridInstantiate(playerPrefab, spawnPosition, Quaternion.identity);
             player.CreateAstronaut(spawnPosition, characterParent);
-            
+
             onLocalAstronautCreated.TriggerEvent();
         }
 

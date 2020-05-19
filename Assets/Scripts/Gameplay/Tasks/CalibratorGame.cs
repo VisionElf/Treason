@@ -88,7 +88,7 @@ namespace Gameplay.Tasks
                 spins[index].enabled = false;
                 spinsShadows[index].SetRotationZ(0f);
                 spinsShadows[index].enabled = false;
-                
+
                 lits[index].SetActive(true);
                 gaugesButtons[index].interactable = false;
                 if (_currentIndex >= 2)

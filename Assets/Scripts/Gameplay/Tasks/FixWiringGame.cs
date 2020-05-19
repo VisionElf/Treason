@@ -17,20 +17,20 @@ namespace Gameplay.Tasks
         public AudioClip openSound;
         public AudioClip closeSound;
         public AudioClip[] wireSounds;
-        
+
         [Header("References")]
         public Image[] rightLights;
 
         public Image[] leftBases;
         public Image[] rightBases;
         public Image[] wireBases;
-        
+
         public RectTransform[] wires;
         public PointerListener[] nodes;
 
         private RectTransform[] _leftBasesRectTransforms;
         private RectTransform[] _rightBasesRectTransforms;
-        
+
         private RectTransform CurrentWire
         {
             get
@@ -49,11 +49,11 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
-            
+
             for (var i = 0; i < nodes.Length; i++)
             {
                 var node = nodes[i];
-                
+
                 var index = i;
                 node.onDown += () => OnDown(index);
                 node.onUp += () => OnUp(index);
@@ -66,7 +66,7 @@ namespace Gameplay.Tasks
                 ResetCurrentWirePosition();
             else
                 _audioSource.PlayOneShot(wireSounds.Random());
-            
+
             _currentWireIndex = -1;
             CheckForFinish();
         }
@@ -99,7 +99,7 @@ namespace Gameplay.Tasks
             var oldIndex = _connectedWires[leftIndex];
             if (oldIndex >= 0)
                 rightLights[oldIndex].enabled = false;
-            
+
             _connectedWires[leftIndex] = rightIndex;
             if (rightIndex >= 0)
             {
@@ -118,7 +118,7 @@ namespace Gameplay.Tasks
             {
                 if (!rightLight.enabled) return;
             }
-            
+
             onTaskComplete?.Invoke(this);
             _audioSource.PlayOneShot(closeSound);
         }
@@ -162,25 +162,25 @@ namespace Gameplay.Tasks
         private void Setup()
         {
             _audioSource.PlayOneShot(openSound);
-            
+
             _currentWireIndex = -1;
-            
+
             var leftColors = GetRandomColors();
             var rightColors = GetRandomColors();
 
             _leftBasesRectTransforms = new RectTransform[4];
             _rightBasesRectTransforms = new RectTransform[4];
             _connectedWires = new int[4];
-            
+
             for (var i = 0; i < 4; i++)
             {
                 _connectedWires[i] = -1;
-                
+
                 rightLights[i].enabled = false;
 
                 leftBases[i].color = leftColors[i];
                 wireBases[i].color = leftColors[i];
-                
+
                 rightBases[i].color = rightColors[i];
 
                 _leftBasesRectTransforms[i] = leftBases[i].GetComponent<RectTransform>();

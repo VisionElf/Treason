@@ -18,7 +18,7 @@ namespace Gameplay.Tasks
         [Header("Sounds")]
         public AudioClip checkpointReachedSound;
         public AudioClip destinationReachedSound;
-        
+
         [Header("Reference")]
         public SetCourseDottedLine dottedLinePrefab;
         public SetCourseCheckpoint checkpointPrefab;

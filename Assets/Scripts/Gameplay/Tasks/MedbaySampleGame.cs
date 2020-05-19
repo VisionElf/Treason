@@ -16,7 +16,7 @@ namespace Gameplay.Tasks
         [Header("Sounds")]
         public AudioClip buttonSound;
         public AudioClip failSound;
-        
+
         [Header("References")]
         public TMP_Text statusText;
         public TMP_Text etaText;
@@ -24,7 +24,7 @@ namespace Gameplay.Tasks
         public Button[] sampleButtons;
         public Image[] sampleImages;
         public Animator animator;
-        
+
         private float _currentTime;
         private bool _hasStarted;
         private bool _hasFinished;
@@ -46,7 +46,7 @@ namespace Gameplay.Tasks
         {
             _hasStarted = false;
             _hasFinished = false;
-            
+
             etaText.text = "";
             statusText.text = "PRESS TO START      -->";
             startButton.onClick.AddListener(StartSample);
@@ -61,7 +61,7 @@ namespace Gameplay.Tasks
             startButton.interactable = true;
             foreach (var btn in sampleButtons)
                 btn.interactable = true;
-            
+
             _currentTime = 0f;
         }
 
@@ -73,7 +73,7 @@ namespace Gameplay.Tasks
 
                 var remaining = Mathf.RoundToInt(duration - _currentTime);
                 etaText.text = $"ETA {remaining}";
-                
+
                 if (_currentTime >= duration)
                 {
                     _currentTime = duration;
@@ -87,7 +87,7 @@ namespace Gameplay.Tasks
         {
             _currentAnomaly = Random.Range(0, 5);
             animator.SetBool("Empty", false);
-            
+
             statusText.text = "SELECT ANOMALY";
             etaText.text = "";
 
@@ -110,7 +110,7 @@ namespace Gameplay.Tasks
         private void OnSampleButtonClick(int index)
         {
             if (!_hasFinished) return;
-            
+
             if (index == _currentAnomaly)
             {
                 _audioSource.PlayOneShot(buttonSound);
@@ -134,7 +134,7 @@ namespace Gameplay.Tasks
         {
             animator.SetTrigger("End");
             animator.SetBool("Restart", true);
-            
+
             Invoke(nameof(Setup), 1f);
         }
 
