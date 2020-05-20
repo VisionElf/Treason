@@ -24,29 +24,11 @@ namespace Managers
         private static readonly int AnimatorHashDeadBodyReported = Animator.StringToHash("DeadBodyReported");
         private static readonly int AnimatorHashEmergencyMeeting = Animator.StringToHash("EmergencyMeeting");
 
-        // Animation Event
-        private void PlayZapSound()
-        {
-            audioSource.PlayOneShot(zapSound, zapSoundVolume);
-        }
-
-        // Animation Event
-        private void PlaySwordSound()
-        {
-            audioSource.PlayOneShot(swordSound, swordSoundVolume);
-        }
-
-        // Animation Event
-        private void PlayAlarmSound()
-        {
-            audioSource.PlayOneShot(emergencyMeetingSound);
-        }
-
-        // Animation Event
-        private void PlaySuspenseSound()
-        {
-            audioSource.PlayOneShot(deadBodyReportedSound);
-        }
+        // Animation Events
+        private void PlayZapSound() => audioSource.PlayOneShot(zapSound, zapSoundVolume);
+        private void PlaySwordSound() => audioSource.PlayOneShot(swordSound, swordSoundVolume);
+        private void PlayAlarmSound() => audioSource.PlayOneShot(emergencyMeetingSound);
+        private void PlaySuspenseSound() => audioSource.PlayOneShot(deadBodyReportedSound);
 
         public void ReportDeadBody(Astronaut reporter, AstronautBody body)
         {
