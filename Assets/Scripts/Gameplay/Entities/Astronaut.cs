@@ -288,8 +288,6 @@ namespace Gameplay.Entities
             playerNameText.rectTransform.localScale = Vector3.Scale(playerNameText.rectTransform.localScale, newDirection);
         }
 
-        public Vector2 GetPosition2D() => transform.position;
-
         public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
         public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);
         public void ResetSpeed() => _body.velocity = Vector3.zero;
