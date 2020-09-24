@@ -1,5 +1,5 @@
-﻿using Photon.Pun;
-using UnityEngine;
+﻿using UnityEngine;
+using Photon.Pun;
 
 namespace Utilities
 {

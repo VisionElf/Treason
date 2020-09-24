@@ -1,8 +1,7 @@
-﻿using System;
-using DG.Tweening;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using DG.Tweening;
 
 namespace Menu
 {
@@ -12,9 +11,9 @@ namespace Menu
         public AudioMixer ambianceMixer;
         public Slider sfxSlider;
         public Slider ambianceSlider;
-        
+
         public Vector2 volumeRange;
-        
+
         private RectTransform _rectTransform;
         private bool _isShowed;
 
@@ -30,13 +29,13 @@ namespace Menu
         {
             var sfxVolume = PlayerPrefs.GetFloat(PrefsSfxVolume, 1f);
             var ambianceVolume = PlayerPrefs.GetFloat(PrefsAmbianceVolume, 1f);
-            
+
             SetSfxVolume(sfxVolume);
             SetAmbianceVolume(ambianceVolume);
 
             sfxSlider.value = sfxVolume;
             ambianceSlider.value = ambianceVolume;
-            
+
             _rectTransform.anchoredPosition = new Vector2(0f, -Screen.height);
             _isShowed = false;
         }
@@ -44,7 +43,7 @@ namespace Menu
         public void Toggle()
         {
             _isShowed = !_isShowed;
-            if (_isShowed) 
+            if (_isShowed)
                 Show();
             else
                 Hide();
@@ -66,7 +65,7 @@ namespace Menu
             PlayerPrefs.SetFloat(PrefsSfxVolume, percent);
             PlayerPrefs.Save();
         }
-        
+
         public void SetAmbianceVolume(float percent)
         {
             ambianceMixer.SetFloat("Volume", Mathf.Lerp(volumeRange.x, volumeRange.y, percent));

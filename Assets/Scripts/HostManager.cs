@@ -10,6 +10,7 @@ using EventData = ExitGames.Client.Photon.EventData;
 using CustomExtensions;
 using Managers;
 using Data;
+using Gameplay.Entities;
 
 public class HostManager : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class HostManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var newColor = _availableColors.Dequeue();
+            ColorData newColor = _availableColors.Dequeue();
             ReplaceColor(PhotonNetwork.LocalPlayer, newColor);
         }
     }
@@ -66,7 +67,7 @@ public class HostManager : MonoBehaviour
 
     private IEnumerator WaitForAstronaut(Player player)
     {
-        var astro = player.GetAstronaut();
+        Astronaut astro = player.GetAstronaut();
         while (astro == null)
         {
             astro = player.GetAstronaut();
@@ -78,20 +79,20 @@ public class HostManager : MonoBehaviour
 
     private void AttributeColor(Player player)
     {
-        var colorData = _availableColors.Dequeue();
+        ColorData colorData = _availableColors.Dequeue();
         player.SetColorIndex(colorList.list.IndexOf(colorData));
     }
 
     private void ReplaceColor(Player player, ColorData colorData)
     {
-        var oldColorIndex = player.GetColorIndex();
+        int oldColorIndex = player.GetColorIndex();
         _availableColors.Enqueue(colorList.list[oldColorIndex]);
         player.SetColorIndex(colorList.list.IndexOf(colorData));
     }
 
     private IEnumerator Countdown()
     {
-        var seconds = 1;
+        int seconds = 1;
 
         while (seconds > 0)
         {

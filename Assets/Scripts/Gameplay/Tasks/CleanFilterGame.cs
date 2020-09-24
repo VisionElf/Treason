@@ -14,7 +14,7 @@ namespace Gameplay.Tasks
     {
         [Header("Settings")]
         public float dragForce;
-        
+
         [Header("Sounds")]
         public AudioClip[] leafSounds;
         public AudioClip[] suckSounds;
@@ -25,7 +25,7 @@ namespace Gameplay.Tasks
         public PointerListener leafPrefab;
         public RectTransform leafContainer;
         public RectTransform[] leafSpawnPoints;
-        
+
         private AudioSource _audioSource;
 
         private Rigidbody2D _currentLeaf;
@@ -42,7 +42,7 @@ namespace Gameplay.Tasks
             {
                 var leaf = Instantiate(leafPrefab, leafContainer);
                 leaf.GetComponent<RectTransform>().anchoredPosition = tf.anchoredPosition;
-            
+
                 leaf.onDown += () => OnDown(leaf);
                 leaf.onUp += () => OnUp(leaf);
                 _leaves.Add(leaf);
@@ -54,7 +54,7 @@ namespace Gameplay.Tasks
             _audioSource.PlayOneShot(leafSounds.Random());
             _currentLeaf = leaf.GetComponent<Rigidbody2D>();
         }
-        
+
         private void OnUp(PointerListener leaf)
         {
             var rect = leaf.GetComponent<Rigidbody2D>();
@@ -76,7 +76,7 @@ namespace Gameplay.Tasks
             {
                 _leaves.Remove(leaf);
                 Destroy(leaf.gameObject);
-                
+
             }
 
             if (_leaves.Count == 0)
@@ -94,10 +94,10 @@ namespace Gameplay.Tasks
             {
                 _currentLeaf.AddForce(delta * dragForce);
             }
-            
+
             foreach (var anim in arrowsAnimators)
                 anim.SetBool("Flash", _currentLeaf != null);
-            
+
             _lastMousePos = mousePos;
         }
 

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Photon.Realtime;
+﻿using Photon.Realtime;
 using ExitGames.Client.Photon;
 
 using Gameplay.Entities;
@@ -48,12 +47,7 @@ namespace CustomExtensions
 
         public static Astronaut GetAstronaut(this Player player)
         {
-            List<Astronaut> list = Astronaut.Astronauts;
-            foreach (Astronaut obj in list)
-            {
-                if (Equals(obj.photonView.Owner, player)) return obj;
-            }
-            return null;
+            return Astronaut.Astronauts.Find((a) => Equals(a.photonView.Owner, player));
         }
     }
 }

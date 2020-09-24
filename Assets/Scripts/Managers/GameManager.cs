@@ -1,22 +1,20 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 using CustomExtensions;
 using Gameplay;
 using Gameplay.Data;
-using Gameplay.Entities;
 using Utilities;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
+        [Header("Game Manager")]
         public GamePlayer playerPrefab;
         public Transform characterParent;
         public Transform[] characterSpawnPoints;
-
         public EventData onLocalAstronautCreated;
 
         private void OnEnable()
@@ -31,14 +29,12 @@ namespace Managers
 
         public void Start()
         {
-            var index = 0;
-            if (PhotonNetwork.IsConnected)
-                index = PhotonNetwork.PlayerList.Length - 1;
-            var spawnPosition = characterSpawnPoints[index % characterSpawnPoints.Length].position;
-            
-            var player = Utils.HybridInstantiate(playerPrefab, spawnPosition, Quaternion.identity);
+            int index = PhotonNetwork.IsConnected ? PhotonNetwork.PlayerList.Length - 1 : 0;
+            Vector3 spawnPosition = characterSpawnPoints[index % characterSpawnPoints.Length].position;
+
+            GamePlayer player = Utils.HybridInstantiate(playerPrefab, spawnPosition, Quaternion.identity);
             player.CreateAstronaut(spawnPosition, characterParent);
-            
+
             onLocalAstronautCreated.TriggerEvent();
         }
 

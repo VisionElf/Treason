@@ -168,7 +168,7 @@ namespace Gameplay.Entities
 
             Abilities?.ForEach((a) => a.Update());
 
-            if (isLocalCharacter && CanMove())
+            if (isLocalCharacter && !_isFrozen)
                 Move(Mathf.RoundToInt(Input.GetAxis("Horizontal")), Mathf.RoundToInt(Input.GetAxis("Vertical")));
         }
 
@@ -254,8 +254,6 @@ namespace Gameplay.Entities
             WalkIn(new Vector3(x, y).normalized);
         }
 
-        private bool CanMove() => !_isFrozen;
-
         public void Freeze()
         {
             ResetSpeed();
@@ -289,8 +287,6 @@ namespace Gameplay.Entities
             graphics.localScale = Vector3.Scale(graphics.localScale, newDirection);
             playerNameText.rectTransform.localScale = Vector3.Scale(playerNameText.rectTransform.localScale, newDirection);
         }
-
-        public Vector2 GetPosition2D() => transform.position;
 
         public void WalkIn(Vector3 direction) => _body.velocity = direction * speed;
         public void WalkTowards(Vector3 point) => WalkIn((point - transform.position).normalized);

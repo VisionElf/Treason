@@ -11,7 +11,7 @@ namespace Gameplay.Tasks
         [Header("Sounds")]
         public AudioClip shieldOn;
         public AudioClip shieldOff;
-        
+
         [Header("Reference")]
         public Image background;
         public RotatingObject backgroundRotate;
@@ -23,7 +23,7 @@ namespace Gameplay.Tasks
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
-            
+
             for (var i = 0; i < buttons.Length; i++)
             {
                 var btn = buttons[i];
@@ -39,7 +39,7 @@ namespace Gameplay.Tasks
                 _audioSource.PlayOneShot(shieldOn);
             else
                 _audioSource.PlayOneShot(shieldOff);
-            
+
             UpdateButtonsColor();
             CheckIfFinished();
         }
@@ -62,18 +62,18 @@ namespace Gameplay.Tasks
             }
 
             backgroundRotate.enabled = true;
-            
+
             onTaskComplete?.Invoke(this);
         }
 
         private void Setup()
         {
             backgroundRotate.enabled = false;
-            
+
             _buttonStates = new bool[buttons.Length];
             for (var i = 0; i < _buttonStates.Length; i++)
                 _buttonStates[i] = Random.value > 0.5f;
-            
+
             UpdateButtonsColor();
         }
 
@@ -81,7 +81,7 @@ namespace Gameplay.Tasks
         {
             var percent = (float)GetFinishedStates() / _buttonStates.Length;
             background.color = Color.Lerp(Color.red, Color.white, percent);
-            
+
             for (var i = 0; i < buttons.Length; i++)
             {
                 buttons[i].GetComponent<Image>().color = _buttonStates[i] ? Color.white : Color.red;

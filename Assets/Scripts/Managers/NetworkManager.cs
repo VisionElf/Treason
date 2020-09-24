@@ -35,10 +35,7 @@ namespace Managers
 
         public static void CreateRoom(string roomName, byte maxPlayers = 10)
         {
-            var options = new RoomOptions
-            {
-                MaxPlayers = maxPlayers
-            };
+            var options = new RoomOptions { MaxPlayers = maxPlayers };
             PhotonNetwork.CreateRoom(roomName, options, TypedLobby.Default);
         }
 
